@@ -1,0 +1,282 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>Каталог танцев</h1>
+    <div>
+        <span class="badge bg-info me-2">{{ db_type }}</span>
+        <a href="{{ url_for('add_dance') }}" class="btn btn-primary">➕ Добавить танец</a>
+    </div>
+</div>
+
+<!-- Фильтры и поиск -->
+<div class="row mb-4">
+    <div class="col-md-6">
+        <form method="get" class="row g-2">
+            <div class="col-auto">
+                <label for="per_page" class="col-form-label">Отобразить:</label>
+            </div>
+            <div class="col-auto">
+                <select class="form-select" id="per_page" name="per_page" onchange="this.form.submit()">
+                    <option value="25" {% if per_page == 25 %}selected{% endif %}>25 строк</option>
+                    <option value="50" {% if per_page == 50 %}selected{% endif %}>50 строк</option>
+                    <option value="100" {% if per_page == 100 %}selected{% endif %}>100 строк</option>
+                </select>
+            </div>
+            <input type="hidden" name="search" value="{{ search }}">
+        </form>
+    </div>
+    <div class="col-md-6">
+        <form method="get">
+            <div class="input-group">
+                <input type="text" name="search" class="form-control" placeholder="Поиск по названию или автору..." value="{{ search }}">
+                <input type="hidden" name="per_page" value="{{ per_page }}">
+                <button type="submit" class="btn btn-outline-primary">Поиск</button>
+                {% if search %}
+                <a href="{{ url_for('index', per_page=per_page) }}" class="btn btn-outline-secondary">Сбросить</a>
+                {% endif %}
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Форма для массового удаления -->
+<form id="deleteForm" method="POST" action="{{ url_for('delete_dances') }}">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <button type="button" class="btn btn-outline-danger btn-sm" onclick="toggleSelectAll()">
+                <span id="selectAllText">Выбрать все</span>
+            </button>
+        </div>
+        <div>
+            <button type="button" class="btn btn-danger" onclick="confirmDelete()" id="deleteButton" disabled>
+                🗑️ Удалить выбранные
+            </button>
+        </div>
+    </div>
+
+    <!-- Таблица танцев -->
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th width="40">
+                        <input type="checkbox" id="selectAll" onchange="toggleAllCheckboxes()">
+                    </th>
+                    <th>Название</th>
+                    <th>Тип</th>
+                    <th>Размер</th>
+                    <th>Действия</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if dances and dances.items %}
+                    {% for dance in dances.items %}
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="dance_ids" value="{{ dance.id }}" class="dance-checkbox" onchange="updateDeleteButton()">
+                        </td>
+                        <td>
+                            <strong>{{ dance.name }}</strong>
+                            {% if dance.author %}
+                            <br><small class="text-muted">{{ dance.author }}</small>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if dance.dance_type == 'R' %}
+                                <span class="badge bg-primary">Reel</span>
+                            {% elif dance.dance_type == 'J' %}
+                                <span class="badge bg-success">Jig</span>
+                            {% elif dance.dance_type == 'S' %}
+                                <span class="badge bg-warning">Strathspey</span>
+                            {% else %}
+                                <span class="badge bg-secondary">{{ dance.dance_type or '-' }}</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if dance.count_id and dance.size_id %}
+                                {{ dance.count_id }}x{{ dance.size_id }}
+                            {% elif dance.size_id %}
+                                {{ dance.size_id }} тактов
+                            {% else %}
+                                -
+                            {% endif %}
+                        </td>
+                        <td>
+                            <a href="{{ url_for('view_dance', dance_id=dance.id) }}" class="btn btn-sm btn-outline-info">👁️ Просмотр</a>
+                            <button type="button" class="btn btn-sm btn-outline-danger" onclick="confirmSingleDelete({{ dance.id }}, '{{ dance.name|replace("'", "\\'") }}')">
+                                🗑️ Удалить
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                <tr>
+                    <td colspan="5" class="text-center py-4">
+                        {% if search %}
+                            🎭 Танцы по запросу "{{ search }}" не найдены
+                        {% else %}
+                            📝 Танцы не найдены. <a href="{{ url_for('add_dance') }}">Добавьте первый танец!</a>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</form>
+
+<!-- Пагинация -->
+{% if dances and dances.pages > 1 %}
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        <!-- Первая страница -->
+        {% if dances.page > 1 %}
+        <li class="page-item">
+            <a class="page-link" href="{{ url_for('index', page=1, per_page=per_page, search=search) }}" aria-label="First">
+                <span aria-hidden="true">««</span>
+            </a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+            <span class="page-link">««</span>
+        </li>
+        {% endif %}
+
+        <!-- Предыдущая страница -->
+        {% if dances.has_prev %}
+        <li class="page-item">
+            <a class="page-link" href="{{ url_for('index', page=dances.prev_num, per_page=per_page, search=search) }}" aria-label="Previous">
+                <span aria-hidden="true">«</span>
+            </a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+            <span class="page-link">«</span>
+        </li>
+        {% endif %}
+
+        <!-- Номера страниц -->
+        {% if dances.iter_pages %}
+            {% for page_num in dances.iter_pages(left_edge=2, left_current=2, right_current=2, right_edge=2) %}
+                {% if page_num %}
+                    <li class="page-item {% if page_num == dances.page %}active{% endif %}">
+                        <a class="page-link" href="{{ url_for('index', page=page_num, per_page=per_page, search=search) }}">{{ page_num }}</a>
+                    </li>
+                {% else %}
+                    <li class="page-item disabled"><span class="page-link">...</span></li>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+
+        <!-- Следующая страница -->
+        {% if dances.has_next %}
+        <li class="page-item">
+            <a class="page-link" href="{{ url_for('index', page=dances.next_num, per_page=per_page, search=search) }}" aria-label="Next">
+                <span aria-hidden="true">»</span>
+            </a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+            <span class="page-link">»</span>
+        </li>
+        {% endif %}
+
+        <!-- Последняя страница -->
+        {% if dances.page < dances.pages %}
+        <li class="page-item">
+            <a class="page-link" href="{{ url_for('index', page=dances.pages, per_page=per_page, search=search) }}" aria-label="Last">
+                <span aria-hidden="true">»»</span>
+            </a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+            <span class="page-link">»»</span>
+        </li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}
+
+<!-- Информация о пагинации -->
+{% if dances %}
+<div class="text-muted text-center mt-3">
+    Показано {{ dances.items|length }} из {{ dances.total }} танцев
+    (страница {{ dances.page }} из {{ dances.pages }})
+</div>
+{% endif %}
+
+<!-- JavaScript для управления чекбоксами и удалением -->
+<script>
+let allSelected = false;
+
+function toggleAllCheckboxes() {
+    const checkboxes = document.querySelectorAll('.dance-checkbox');
+    const selectAll = document.getElementById('selectAll');
+    
+    checkboxes.forEach(checkbox => {
+        checkbox.checked = selectAll.checked;
+    });
+    
+    allSelected = selectAll.checked;
+    document.getElementById('selectAllText').textContent = allSelected ? 'Снять все' : 'Выбрать все';
+    updateDeleteButton();
+}
+
+function toggleSelectAll() {
+    const selectAll = document.getElementById('selectAll');
+    selectAll.checked = !allSelected;
+    toggleAllCheckboxes();
+}
+
+function updateDeleteButton() {
+    const checkboxes = document.querySelectorAll('.dance-checkbox:checked');
+    const deleteButton = document.getElementById('deleteButton');
+    
+    if (checkboxes.length > 0) {
+        deleteButton.disabled = false;
+        deleteButton.textContent = `🗑️ Удалить выбранные (${checkboxes.length})`;
+    } else {
+        deleteButton.disabled = true;
+        deleteButton.textContent = '🗑️ Удалить выбранные';
+    }
+}
+
+function confirmDelete() {
+    const checkboxes = document.querySelectorAll('.dance-checkbox:checked');
+    const count = checkboxes.length;
+    
+    if (count === 0) {
+        alert('Выберите танцы для удаления');
+        return;
+    }
+    
+    if (confirm(`Вы уверены, что хотите удалить ${count} танцев?`)) {
+        document.getElementById('deleteForm').submit();
+    }
+}
+
+function confirmSingleDelete(danceId, danceName) {
+    if (confirm(`Вы уверены, что хотите удалить танец "${danceName}"?`)) {
+        // Создаем временную форму для удаления одного танца
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = "{{ url_for('delete_dances') }}";
+        
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = 'dance_ids';
+        input.value = danceId;
+        
+        form.appendChild(input);
+        document.body.appendChild(form);
+        form.submit();
+    }
+}
+
+// Инициализация при загрузке страницы
+document.addEventListener('DOMContentLoaded', function() {
+    updateDeleteButton();
+});
+</script>
+{% endblock %}

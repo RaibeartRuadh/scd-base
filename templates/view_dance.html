@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}{{ dance.name }} - База данных танцев{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h2 class="card-title mb-0">{{ dance.name }}</h2>
+        <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">← Назад к списку</a>
+    </div>
+    <div class="card-body">
+<div class="row">
+    <div class="col-md-6">
+        <h5>Основная информация</h5>
+        <table class="table table-sm">
+            <tr><th>Автор:</th><td>{{ dance.author or '-' }}</td></tr>
+            <tr><th>Тип танца:</th><td>
+                {% if dance.dance_type == 'R' %}Reel
+                {% elif dance.dance_type == 'J' %}Jig
+                {% elif dance.dance_type == 'S' %}Strathspey
+                {% else %}{{ dance.dance_type or '-' }}{% endif %}
+            </td></tr>
+            <tr><th>Размер:</th>
+                <td>
+                    {% if dance.count_id and dance.size_id %}
+                        {{ dance.count_id }}x{{ dance.size_id }}
+                    {% elif dance.size_id %}
+                        {{ dance.size_id }} тактов
+                    {% else %}
+                        -
+                    {% endif %}
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-md-6">
+        <h5>Формат</h5>
+        <table class="table table-sm">
+            <tr><th>Сеты:</th><td>{{ dance.all_couples or '-' }}</td></tr>
+            <tr><th>Танцующие пары:</th><td>{{ dance.dance_couple or '-' }}</td></tr>
+            <tr><th>Тип сета:</th><td>{{ dance.set_type or '-' }}</td></tr>
+            <tr><th>Публикация:</th><td>{{ dance.published or '-' }}</td></tr>
+        </table>
+    </div>
+</div>
+
+        {% if dance.description %}
+        <div class="mt-4">
+            <h5>Описание фигур</h5>
+            <div class="bg-light p-3 rounded">
+                {{ dance.description|replace('\n', '<br>')|safe }}
+            </div>
+        </div>
+        {% endif %}
+
+        {% if dance.note %}
+        <div class="mt-4">
+            <h5>Заметки</h5>
+            <div class="bg-light p-3 rounded">
+                {{ dance.note }}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
