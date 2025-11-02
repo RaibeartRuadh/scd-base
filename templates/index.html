@@ -83,14 +83,16 @@
                             {% endif %}
                         </td>
                         <td>
-                            {% if dance.dance_type == 'R' %}
-                                <span class="badge bg-primary">Reel</span>
-                            {% elif dance.dance_type == 'J' %}
-                                <span class="badge bg-success">Jig</span>
-                            {% elif dance.dance_type == 'S' %}
-                                <span class="badge bg-warning">Strathspey</span>
+                            {% if dance.dance_type_rel %}
+                                <span class="badge 
+                                    {% if dance.dance_type_rel.name == 'Reel' %}bg-primary
+                                    {% elif dance.dance_type_rel.name == 'Jig' %}bg-success
+                                    {% elif dance.dance_type_rel.name == 'Strathspey' %}bg-warning
+                                    {% else %}bg-secondary{% endif %}">
+                                    {{ dance.dance_type_rel.name }}
+                                </span>
                             {% else %}
-                                <span class="badge bg-secondary">{{ dance.dance_type or '-' }}</span>
+                                <span class="badge bg-secondary">-</span>
                             {% endif %}
                         </td>
                         <td>
@@ -103,10 +105,13 @@
                             {% endif %}
                         </td>
                         <td>
-                            <a href="{{ url_for('view_dance', dance_id=dance.id) }}" class="btn btn-sm btn-outline-info">👁️ Просмотр</a>
-                            <button type="button" class="btn btn-sm btn-outline-danger" onclick="confirmSingleDelete({{ dance.id }}, '{{ dance.name|replace("'", "\\'") }}')">
-                                🗑️ Удалить
-                            </button>
+                            <div class="btn-group btn-group-sm">
+                                <a href="{{ url_for('view_dance', dance_id=dance.id) }}" class="btn btn-outline-info">👁️ Просмотр</a>
+                                <a href="{{ url_for('edit_dance', dance_id=dance.id) }}" class="btn btn-outline-primary">✏️ Редактировать</a>
+                                <button type="button" class="btn btn-outline-danger" onclick="confirmSingleDelete({{ dance.id }}, '{{ dance.name|replace("'", "\\'") }}')">
+                                    🗑️ Удалить
+                                </button>
+                            </div>
                         </td>
                     </tr>
                     {% endfor %}
@@ -261,14 +266,8 @@ function confirmSingleDelete(danceId, danceName) {
         // Создаем временную форму для удаления одного танца
         const form = document.createElement('form');
         form.method = 'POST';
-        form.action = "{{ url_for('delete_dances') }}";
+        form.action = "{{ url_for('delete_single_dance', dance_id=0) }}".replace('0', danceId);
         
-        const input = document.createElement('input');
-        input.type = 'hidden';
-        input.name = 'dance_ids';
-        input.value = danceId;
-        
-        form.appendChild(input);
         document.body.appendChild(form);
         form.submit();
     }

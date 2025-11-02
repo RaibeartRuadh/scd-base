@@ -1,14 +1,15 @@
 {% extends "base.html" %}
 
-{% block title %}Добавить танец - База данных танцев{% endblock %}
+{% block title %}Редактировать танец - База данных танцев{% endblock %}
 
 {% block content %}
 <div class="row">
     <div class="col-md-10 mx-auto">
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center">
-                <h2 class="card-title mb-0">📝 Добавить новый танец</h2>
+                <h2 class="card-title mb-0">✏️ Редактировать танец</h2>
                 <div>
+                    <a href="{{ url_for('view_dance', dance_id=dance.id) }}" class="btn btn-outline-secondary btn-sm me-2">👁️ Просмотр</a>
                     <a href="{{ url_for('manage_set_types') }}" class="btn btn-outline-secondary btn-sm me-2">⚙️ Типы сетов</a>
                     <a href="{{ url_for('manage_dance_types') }}" class="btn btn-outline-secondary btn-sm">⚙️ Типы танцев</a>
                 </div>
@@ -19,11 +20,13 @@
                         <div class="col-md-6">
                             <label for="name" class="form-label">Наименование *</label>
                             <input type="text" class="form-control" id="name" name="name" required 
+                                   value="{{ dance.name }}"
                                    placeholder="Введите название танца">
                         </div>
                         <div class="col-md-6">
                             <label for="author" class="form-label">Автор</label>
                             <input type="text" class="form-control" id="author" name="author" 
+                                   value="{{ dance.author or '' }}"
                                    placeholder="Автор танца">
                         </div>
                     </div>
@@ -35,7 +38,10 @@
                                 <option value="">Выберите тип танца</option>
                                 {% if dance_types %}
                                     {% for dance_type in dance_types %}
-                                    <option value="{{ dance_type.id }}">{{ dance_type.name }}</option>
+                                    <option value="{{ dance_type.id }}" 
+                                            {% if dance.dance_type_id == dance_type.id %}selected{% endif %}>
+                                        {{ dance_type.name }}
+                                    </option>
                                     {% endfor %}
                                 {% endif %}
                             </select>
@@ -48,11 +54,13 @@
                         <div class="col-md-4">
                             <label for="count_id" class="form-label">Повторы</label>
                             <input type="number" class="form-control" id="count_id" name="count_id" 
+                                   value="{{ dance.count_id or '' }}"
                                    min="0" placeholder="8">
                         </div>
                         <div class="col-md-4">
                             <label for="size_id" class="form-label">Размер (такты)</label>
                             <input type="number" class="form-control" id="size_id" name="size_id" 
+                                   value="{{ dance.size_id or '' }}"
                                    min="0" placeholder="32">
                         </div>
                     </div>
@@ -64,7 +72,10 @@
                                 <option value="">Выберите формат сета</option>
                                 {% if dance_formats %}
                                     {% for format in dance_formats %}
-                                    <option value="{{ format.id }}">{{ format.name }}</option>
+                                    <option value="{{ format.id }}" 
+                                            {% if dance.dance_format_id == format.id %}selected{% endif %}>
+                                        {{ format.name }}
+                                    </option>
                                     {% endfor %}
                                 {% endif %}
                             </select>
@@ -72,6 +83,7 @@
                         <div class="col-md-6">
                             <label for="dance_couple" class="form-label">Танцующие пары</label>
                             <input type="text" class="form-control" id="dance_couple" name="dance_couple" 
+                                   value="{{ dance.dance_couple or '' }}"
                                    placeholder="3C">
                         </div>
                     </div>
@@ -82,7 +94,10 @@
                             <option value="">Выберите тип сета</option>
                             {% if set_types %}
                                 {% for set_type in set_types %}
-                                <option value="{{ set_type.id }}">{{ set_type.name }}</option>
+                                <option value="{{ set_type.id }}" 
+                                        {% if dance.set_type_id == set_type.id %}selected{% endif %}>
+                                    {{ set_type.name }}
+                                </option>
                                 {% endfor %}
                             {% endif %}
                         </select>
@@ -96,26 +111,46 @@
                     <div class="mb-3">
                         <label for="description" class="form-label">Описание танца</label>
                         <textarea class="form-control" id="description" name="description" rows="6" 
-                                  placeholder="Подробное описание танца, последовательность фигур..."></textarea>
+                                  placeholder="Подробное описание танца, последовательность фигур...">{{ dance.description or '' }}</textarea>
                     </div>
 
                     <div class="mb-3">
                         <label for="published" class="form-label">Публикация</label>
                         <input type="text" class="form-control" id="published" name="published" 
+                               value="{{ dance.published or '' }}"
                                placeholder="Published book 32">
                     </div>
 
                     <div class="mb-3">
                         <label for="note" class="form-label">Заметки</label>
                         <textarea class="form-control" id="note" name="note" rows="3" 
-                                  placeholder="Дополнительные заметки..."></textarea>
+                                  placeholder="Дополнительные заметки...">{{ dance.note or '' }}</textarea>
                     </div>
 
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <a href="{{ url_for('index') }}" class="btn btn-secondary me-md-2">Отмена</a>
-                        <button type="submit" class="btn btn-primary">Сохранить танец</button>
+                        <a href="{{ url_for('view_dance', dance_id=dance.id) }}" class="btn btn-secondary me-md-2">Отмена</a>
+                        <button type="submit" class="btn btn-primary">Обновить танец</button>
                     </div>
                 </form>
+            </div>
+        </div>
+
+        <!-- Информация о танце -->
+        <div class="card mt-4">
+            <div class="card-header">
+                <h5 class="card-title mb-0">📊 Информация о записи</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><strong>ID записи:</strong> {{ dance.id }}</p>
+                        <p><strong>Тип танца:</strong> {{ dance.dance_type_rel.name if dance.dance_type_rel else 'Не указан' }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong>Формат сета:</strong> {{ dance.dance_format_rel.name if dance.dance_format_rel else 'Не указан' }}</p>
+                        <p><strong>Тип сета:</strong> {{ dance.set_type_rel.name if dance.set_type_rel else 'Не указан' }}</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

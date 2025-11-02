@@ -18,7 +18,7 @@ def check_postgres_connection():
         )
         cursor = conn.cursor()
         
-        # Проверяем существование таблицы
+        # Проверяем существование таблицы в схеме scddb
         cursor.execute("""
             SELECT EXISTS (
                 SELECT FROM information_schema.tables 
@@ -70,6 +70,27 @@ class SetType(db.Model):
     description = db.Column(db.Text)
     created_at = db.Column(db.DateTime, default=db.func.now())
 
+# Модель для справочника форматов сетов
+class DanceFormat(db.Model):
+    __tablename__ = 'dance_format'
+    __table_args__ = {'schema': 'scddb'}
+    
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False, unique=True)
+    description = db.Column(db.Text)
+    created_at = db.Column(db.DateTime, default=db.func.now())
+
+# Модель для справочника типов танцев
+class DanceType(db.Model):
+    __tablename__ = 'dance_type'
+    __table_args__ = {'schema': 'scddb'}
+    
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50), nullable=False, unique=True)
+    code = db.Column(db.String(1), nullable=False, unique=True)
+    description = db.Column(db.Text)
+    created_at = db.Column(db.DateTime, default=db.func.now())
+
 # Модель данных для танцев
 class Dance(db.Model):
     if 'postgresql' in app.config['SQLALCHEMY_DATABASE_URI']:
@@ -81,18 +102,22 @@ class Dance(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255), nullable=False)
     author = db.Column(db.String(255))
-    dance_type = db.Column(db.String(1))
+    dance_type_id = db.Column(db.Integer, db.ForeignKey('scddb.dance_type.id'))
     size_id = db.Column(db.Integer)
     count_id = db.Column(db.Integer)
-    all_couples = db.Column(db.String(50))
+    dance_format_id = db.Column(db.Integer, db.ForeignKey('scddb.dance_format.id'))
     dance_couple = db.Column(db.String(50))
-    set_type_id = db.Column(db.Integer, db.ForeignKey('scddb.set_type.id'))  # Это поле должно быть
+    set_type_id = db.Column(db.Integer, db.ForeignKey('scddb.set_type.id'))
     description = db.Column(db.Text)
     published = db.Column(db.String(255))
     note = db.Column(db.Text)
     
     # Связь с типом сета
     set_type_rel = db.relationship('SetType', backref='dances')
+    # Связь с форматом сета
+    dance_format_rel = db.relationship('DanceFormat', backref='dances')
+    # Связь с типом танца
+    dance_type_rel = db.relationship('DanceType', backref='dances')
 
 def init_database():
     """Инициализация базы данных"""
@@ -124,6 +149,37 @@ def init_database():
                 except Exception as e:
                     print(f"ℹ️ Таблица set_type уже существует: {e}")
                 
+                # Создаем таблицу dance_format если не существует
+                try:
+                    db.session.execute("""
+                        CREATE TABLE IF NOT EXISTS scddb.dance_format (
+                            id SERIAL PRIMARY KEY,
+                            name VARCHAR(100) NOT NULL UNIQUE,
+                            description TEXT,
+                            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                        )
+                    """)
+                    db.session.commit()
+                    print("✅ Таблица scddb.dance_format создана/проверена")
+                except Exception as e:
+                    print(f"ℹ️ Таблица dance_format уже существует: {e}")
+                
+                # Создаем таблицу dance_type если не существует
+                try:
+                    db.session.execute("""
+                        CREATE TABLE IF NOT EXISTS scddb.dance_type (
+                            id SERIAL PRIMARY KEY,
+                            name VARCHAR(50) NOT NULL UNIQUE,
+                            code VARCHAR(1) NOT NULL UNIQUE,
+                            description TEXT,
+                            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                        )
+                    """)
+                    db.session.commit()
+                    print("✅ Таблица scddb.dance_type создана/проверена")
+                except Exception as e:
+                    print(f"ℹ️ Таблица dance_type уже существует: {e}")
+                
                 # Создаем таблицу dance если не существует
                 try:
                     db.session.execute("""
@@ -131,10 +187,10 @@ def init_database():
                             id SERIAL PRIMARY KEY,
                             name VARCHAR(255) NOT NULL,
                             author VARCHAR(255),
-                            dance_type VARCHAR(1),
+                            dance_type_id INTEGER REFERENCES scddb.dance_type(id),
                             size_id INTEGER,
                             count_id INTEGER,
-                            all_couples VARCHAR(50),
+                            dance_format_id INTEGER REFERENCES scddb.dance_format(id),
                             dance_couple VARCHAR(50),
                             set_type_id INTEGER REFERENCES scddb.set_type(id),
                             description TEXT,
@@ -169,14 +225,59 @@ def init_database():
                     new_set_type = SetType(name=set_type_name)
                     db.session.add(new_set_type)
             
+            # Добавляем базовые форматы сетов если их нет
+            dance_formats = [
+                '12 persons', '16 couples', '1 couple', '1 person', '2 couples',
+                '2 couples (1x)', '2 couples (Glasgow Highl)', '2 persons', '2 trios',
+                '3 couples', '3 couples (1x)', '3 couples (1x,2x)', '3 couples (1x,3x)',
+                '3 couples (2x)', '3 couples (2x,3x)', '3 couples (3x)', '3 persons', '3 trios',
+                '4 couples', '4 couples (1x)', '4 couples (1x,2x)', '4 couples (1x,3x)',
+                '4 couples (1x,4x)', '4 couples (2x,3x)', '4 couples (2x,4x)', '4 couples (3x,4x)',
+                '4 couples (4x)', '4 couples (Glasgow Highl)', '4 persons', '4 trios', '4w+2m',
+                '5 couples', '5 couples (2x,4x)', '5 couples (4x,5x)', '5 persons',
+                '6 couples', '6 couples (2x,4x,6x)', '6 couples (4x,5x,6x)', '6 persons',
+                '7 couples', '7 persons', '8 couples', '8 persons', '9 persons',
+                'any', 'other', 'unknown'
+            ]
+            
+            for format_name in dance_formats:
+                existing = DanceFormat.query.filter_by(name=format_name).first()
+                if not existing:
+                    new_format = DanceFormat(name=format_name)
+                    db.session.add(new_format)
+            
+            # Добавляем базовые типы танцев если их нет
+            dance_types = [
+                ('Reel', 'R'),
+                ('Jig', 'J'),
+                ('Strathspey', 'S'),
+                ('March', 'M'),
+                ('Medley', 'D'),
+                ('Polka', 'P'),
+                ('Waltz', 'W'),
+                ('Hornpipe', 'H'),
+                ('Quadrille', 'Q'),
+                ('Minuet', 'N')
+            ]
+            
+            for type_name, type_code in dance_types:
+                existing = DanceType.query.filter_by(name=type_name).first()
+                if not existing:
+                    new_dance_type = DanceType(name=type_name, code=type_code)
+                    db.session.add(new_dance_type)
+            
             db.session.commit()
-            print("✅ Базовые типы сетов добавлены")
+            print("✅ Базовые типы сетов, форматы и типы танцев добавлены")
             
             # Проверяем, есть ли уже данные
             dance_count = Dance.query.count()
             set_type_count = SetType.query.count()
+            dance_format_count = DanceFormat.query.count()
+            dance_type_count = DanceType.query.count()
             print(f"📊 Записей в таблице dance: {dance_count}")
             print(f"📊 Записей в таблице set_type: {set_type_count}")
+            print(f"📊 Записей в таблице dance_format: {dance_format_count}")
+            print(f"📊 Записей в таблице dance_type: {dance_type_count}")
             
     except Exception as e:
         print(f"❌ Ошибка инициализации БД: {e}")
@@ -192,6 +293,9 @@ def check_table_exists():
     except Exception as e:
         print(f"❌ Таблица dance недоступна: {e}")
         return False
+
+# Остальной код маршрутов остается без изменений...
+# [Здесь должен быть весь остальной код маршрутов из предыдущей версии]
 
 # Маршруты для управления типами сетов
 @app.route('/set-types')
@@ -287,6 +391,215 @@ def delete_set_type(set_type_id):
     
     return redirect(url_for('manage_set_types'))
 
+# Маршруты для управления форматами сетов
+@app.route('/dance-formats')
+def manage_dance_formats():
+    """Страница управления форматами сетов"""
+    dance_formats = DanceFormat.query.order_by(DanceFormat.name).all()
+    return render_template('dance_formats.html', dance_formats=dance_formats)
+
+@app.route('/dance-formats/add', methods=['GET', 'POST'])
+def add_dance_format():
+    """Добавление нового формата сета"""
+    if request.method == 'POST':
+        try:
+            name = request.form.get('name', '').strip()
+            description = request.form.get('description', '').strip()
+            
+            if not name:
+                flash('Название формата сета обязательно!', 'danger')
+                return render_template('add_dance_format.html')
+            
+            # Проверяем уникальность
+            existing = DanceFormat.query.filter_by(name=name).first()
+            if existing:
+                flash('Формат сета с таким названием уже существует!', 'danger')
+                return render_template('add_dance_format.html')
+            
+            dance_format = DanceFormat(name=name, description=description)
+            db.session.add(dance_format)
+            db.session.commit()
+            
+            flash(f'Формат сета "{name}" успешно добавлен!', 'success')
+            return redirect(url_for('manage_dance_formats'))
+            
+        except Exception as e:
+            db.session.rollback()
+            flash(f'Ошибка при добавлении формата сета: {str(e)}', 'danger')
+    
+    return render_template('add_dance_format.html')
+
+@app.route('/dance-formats/<int:format_id>/edit', methods=['GET', 'POST'])
+def edit_dance_format(format_id):
+    """Редактирование формата сета"""
+    dance_format = DanceFormat.query.get_or_404(format_id)
+    
+    if request.method == 'POST':
+        try:
+            name = request.form.get('name', '').strip()
+            description = request.form.get('description', '').strip()
+            
+            if not name:
+                flash('Название формата сета обязательно!', 'danger')
+                return render_template('edit_dance_format.html', dance_format=dance_format)
+            
+            # Проверяем уникальность (исключая текущую запись)
+            existing = DanceFormat.query.filter(DanceFormat.name == name, DanceFormat.id != format_id).first()
+            if existing:
+                flash('Формат сета с таким названием уже существует!', 'danger')
+                return render_template('edit_dance_format.html', dance_format=dance_format)
+            
+            dance_format.name = name
+            dance_format.description = description
+            db.session.commit()
+            
+            flash(f'Формат сета "{name}" успешно обновлен!', 'success')
+            return redirect(url_for('manage_dance_formats'))
+            
+        except Exception as e:
+            db.session.rollback()
+            flash(f'Ошибка при обновлении формата сета: {str(e)}', 'danger')
+    
+    return render_template('edit_dance_format.html', dance_format=dance_format)
+
+@app.route('/dance-formats/<int:format_id>/delete', methods=['POST'])
+def delete_dance_format(format_id):
+    """Удаление формата сета"""
+    try:
+        dance_format = DanceFormat.query.get_or_404(format_id)
+        
+        # Проверяем, используется ли формат сета в танцах
+        dance_count = Dance.query.filter_by(dance_format_id=format_id).count()
+        if dance_count > 0:
+            flash(f'Нельзя удалить формат сета "{dance_format.name}" - он используется в {dance_count} танцах!', 'danger')
+            return redirect(url_for('manage_dance_formats'))
+        
+        db.session.delete(dance_format)
+        db.session.commit()
+        
+        flash(f'Формат сета "{dance_format.name}" успешно удален!', 'success')
+        
+    except Exception as e:
+        db.session.rollback()
+        flash(f'Ошибка при удалении формата сета: {str(e)}', 'danger')
+    
+    return redirect(url_for('manage_dance_formats'))
+
+# Маршруты для управления типами танцев
+@app.route('/dance-types')
+def manage_dance_types():
+    """Страница управления типами танцев"""
+    dance_types = DanceType.query.order_by(DanceType.name).all()
+    return render_template('dance_types.html', dance_types=dance_types)
+
+@app.route('/dance-types/add', methods=['GET', 'POST'])
+def add_dance_type():
+    """Добавление нового типа танца"""
+    if request.method == 'POST':
+        try:
+            name = request.form.get('name', '').strip()
+            code = request.form.get('code', '').strip()
+            description = request.form.get('description', '').strip()
+            
+            if not name:
+                flash('Название типа танца обязательно!', 'danger')
+                return render_template('add_dance_type.html')
+            
+            if not code:
+                flash('Код типа танца обязателен!', 'danger')
+                return render_template('add_dance_type.html')
+            
+            # Проверяем уникальность
+            existing_name = DanceType.query.filter_by(name=name).first()
+            if existing_name:
+                flash('Тип танца с таким названием уже существует!', 'danger')
+                return render_template('add_dance_type.html')
+            
+            existing_code = DanceType.query.filter_by(code=code).first()
+            if existing_code:
+                flash('Тип танца с таким кодом уже существует!', 'danger')
+                return render_template('add_dance_type.html')
+            
+            dance_type = DanceType(name=name, code=code, description=description)
+            db.session.add(dance_type)
+            db.session.commit()
+            
+            flash(f'Тип танца "{name}" успешно добавлен!', 'success')
+            return redirect(url_for('manage_dance_types'))
+            
+        except Exception as e:
+            db.session.rollback()
+            flash(f'Ошибка при добавлении типа танца: {str(e)}', 'danger')
+    
+    return render_template('add_dance_type.html')
+
+@app.route('/dance-types/<int:type_id>/edit', methods=['GET', 'POST'])
+def edit_dance_type(type_id):
+    """Редактирование типа танца"""
+    dance_type = DanceType.query.get_or_404(type_id)
+    
+    if request.method == 'POST':
+        try:
+            name = request.form.get('name', '').strip()
+            code = request.form.get('code', '').strip()
+            description = request.form.get('description', '').strip()
+            
+            if not name:
+                flash('Название типа танца обязательно!', 'danger')
+                return render_template('edit_dance_type.html', dance_type=dance_type)
+            
+            if not code:
+                flash('Код типа танца обязателен!', 'danger')
+                return render_template('edit_dance_type.html', dance_type=dance_type)
+            
+            # Проверяем уникальность (исключая текущую запись)
+            existing_name = DanceType.query.filter(DanceType.name == name, DanceType.id != type_id).first()
+            if existing_name:
+                flash('Тип танца с таким названием уже существует!', 'danger')
+                return render_template('edit_dance_type.html', dance_type=dance_type)
+            
+            existing_code = DanceType.query.filter(DanceType.code == code, DanceType.id != type_id).first()
+            if existing_code:
+                flash('Тип танца с таким кодом уже существует!', 'danger')
+                return render_template('edit_dance_type.html', dance_type=dance_type)
+            
+            dance_type.name = name
+            dance_type.code = code
+            dance_type.description = description
+            db.session.commit()
+            
+            flash(f'Тип танца "{name}" успешно обновлен!', 'success')
+            return redirect(url_for('manage_dance_types'))
+            
+        except Exception as e:
+            db.session.rollback()
+            flash(f'Ошибка при обновлении типа танца: {str(e)}', 'danger')
+    
+    return render_template('edit_dance_type.html', dance_type=dance_type)
+
+@app.route('/dance-types/<int:type_id>/delete', methods=['POST'])
+def delete_dance_type(type_id):
+    """Удаление типа танца"""
+    try:
+        dance_type = DanceType.query.get_or_404(type_id)
+        
+        # Проверяем, используется ли тип танца в танцах
+        dance_count = Dance.query.filter_by(dance_type_id=type_id).count()
+        if dance_count > 0:
+            flash(f'Нельзя удалить тип танца "{dance_type.name}" - он используется в {dance_count} танцах!', 'danger')
+            return redirect(url_for('manage_dance_types'))
+        
+        db.session.delete(dance_type)
+        db.session.commit()
+        
+        flash(f'Тип танца "{dance_type.name}" успешно удален!', 'success')
+        
+    except Exception as e:
+        db.session.rollback()
+        flash(f'Ошибка при удалении типа танца: {str(e)}', 'danger')
+    
+    return redirect(url_for('manage_dance_types'))
+
 # Основные маршруты приложения
 @app.route('/')
 def index():
@@ -316,19 +629,28 @@ def index():
         
     except Exception as e:
         print(f"❌ Ошибка в index: {e}")
-        empty_pagination = type('obj', (object,), {
-            'items': [],
-            'page': 1,
-            'per_page': per_page,
-            'total': 0,
-            'pages': 0,
-            'has_prev': False,
-            'has_next': False,
-            'prev_num': None,
-            'next_num': None,
-            'iter_pages': lambda *args: []
-        })()
-        return render_template('index.html', dances=empty_pagination, search='', db_type='Unknown', per_page=per_page)
+        # Создаем безопасный объект пагинации для пустого результата
+        class EmptyPagination:
+            def __init__(self):
+                self.items = []
+                self.page = 1
+                self.per_page = per_page
+                self.total = 0
+                self.pages = 0
+                self.has_prev = False
+                self.has_next = False
+                self.prev_num = None
+                self.next_num = None
+                
+            def iter_pages(self, *args, **kwargs):
+                return []
+        
+        empty_pagination = EmptyPagination()
+        return render_template('index.html', 
+                             dances=empty_pagination, 
+                             search=search or '', 
+                             db_type='Unknown', 
+                             per_page=per_page)
 
 @app.route('/add', methods=['GET', 'POST'])
 def add_dance():
@@ -347,23 +669,18 @@ def add_dance():
             size_id = safe_int(request.form.get('size_id'))
             count_id = safe_int(request.form.get('count_id'))
             set_type_id = safe_int(request.form.get('set_type'))
-            
-            # Отладочная информация
-            print(f"📝 Получены данные формы:")
-            print(f"   name: {request.form.get('name')}")
-            print(f"   dance_type: {request.form.get('dance_type')}")
-            print(f"   set_type: {request.form.get('set_type')}")
-            print(f"   set_type_id: {set_type_id}")
+            dance_format_id = safe_int(request.form.get('dance_format'))
+            dance_type_id = safe_int(request.form.get('dance_type'))
             
             dance = Dance(
                 name=request.form.get('name', '').strip(),
                 author=request.form.get('author', '').strip(),
-                dance_type=request.form.get('dance_type', '').strip(),
+                dance_type_id=dance_type_id,
                 size_id=size_id,
                 count_id=count_id,
-                all_couples=request.form.get('all_couples', '').strip(),
+                dance_format_id=dance_format_id,
                 dance_couple=request.form.get('dance_couple', '').strip(),
-                set_type_id=set_type_id,  # Используем set_type_id вместо set_type
+                set_type_id=set_type_id,
                 description=request.form.get('description', '').strip(),
                 published=request.form.get('published', '').strip(),
                 note=request.form.get('note', '').strip()
@@ -373,12 +690,22 @@ def add_dance():
             if not dance.name:
                 flash('Название танца обязательно для заполнения!', 'danger')
                 set_types = SetType.query.order_by(SetType.name).all()
-                return render_template('add_dance.html', set_types=set_types)
+                dance_formats = DanceFormat.query.order_by(DanceFormat.name).all()
+                dance_types = DanceType.query.order_by(DanceType.name).all()
+                return render_template('add_dance.html', 
+                                    set_types=set_types, 
+                                    dance_formats=dance_formats,
+                                    dance_types=dance_types)
             
-            if not dance.dance_type:
+            if not dance.dance_type_id:
                 flash('Тип танца обязателен для заполнения!', 'danger')
                 set_types = SetType.query.order_by(SetType.name).all()
-                return render_template('add_dance.html', set_types=set_types)
+                dance_formats = DanceFormat.query.order_by(DanceFormat.name).all()
+                dance_types = DanceType.query.order_by(DanceType.name).all()
+                return render_template('add_dance.html', 
+                                    set_types=set_types, 
+                                    dance_formats=dance_formats,
+                                    dance_types=dance_types)
             
             db.session.add(dance)
             db.session.commit()
@@ -390,9 +717,92 @@ def add_dance():
             flash(f'Ошибка при добавлении танца: {str(e)}', 'danger')
             print(f"❌ Детали ошибки: {e}")
     
-    # GET запрос - получаем список типов сетов для формы
+    # GET запрос - получаем списки для формы
     set_types = SetType.query.order_by(SetType.name).all()
-    return render_template('add_dance.html', set_types=set_types)
+    dance_formats = DanceFormat.query.order_by(DanceFormat.name).all()
+    dance_types = DanceType.query.order_by(DanceType.name).all()
+    return render_template('add_dance.html', 
+                          set_types=set_types, 
+                          dance_formats=dance_formats,
+                          dance_types=dance_types)
+
+@app.route('/dance/<int:dance_id>/edit', methods=['GET', 'POST'])
+def edit_dance(dance_id):
+    """Редактирование танца"""
+    dance = Dance.query.get_or_404(dance_id)
+    
+    if request.method == 'POST':
+        try:
+            # Функция для безопасного преобразования в integer
+            def safe_int(value, default=None):
+                if value is None or value == '':
+                    return default
+                try:
+                    return int(value)
+                except (ValueError, TypeError):
+                    return default
+            
+            # Получаем данные из формы с безопасным преобразованием
+            size_id = safe_int(request.form.get('size_id'))
+            count_id = safe_int(request.form.get('count_id'))
+            set_type_id = safe_int(request.form.get('set_type'))
+            dance_format_id = safe_int(request.form.get('dance_format'))
+            dance_type_id = safe_int(request.form.get('dance_type'))
+            
+            # Обновляем данные танца
+            dance.name = request.form.get('name', '').strip()
+            dance.author = request.form.get('author', '').strip()
+            dance.dance_type_id = dance_type_id
+            dance.size_id = size_id
+            dance.count_id = count_id
+            dance.dance_format_id = dance_format_id
+            dance.dance_couple = request.form.get('dance_couple', '').strip()
+            dance.set_type_id = set_type_id
+            dance.description = request.form.get('description', '').strip()
+            dance.published = request.form.get('published', '').strip()
+            dance.note = request.form.get('note', '').strip()
+            
+            # Проверяем обязательные поля
+            if not dance.name:
+                flash('Название танца обязательно для заполнения!', 'danger')
+                set_types = SetType.query.order_by(SetType.name).all()
+                dance_formats = DanceFormat.query.order_by(DanceFormat.name).all()
+                dance_types = DanceType.query.order_by(DanceType.name).all()
+                return render_template('edit_dance.html', 
+                                    dance=dance,
+                                    set_types=set_types, 
+                                    dance_formats=dance_formats,
+                                    dance_types=dance_types)
+            
+            if not dance.dance_type_id:
+                flash('Тип танца обязателен для заполнения!', 'danger')
+                set_types = SetType.query.order_by(SetType.name).all()
+                dance_formats = DanceFormat.query.order_by(DanceFormat.name).all()
+                dance_types = DanceType.query.order_by(DanceType.name).all()
+                return render_template('edit_dance.html', 
+                                    dance=dance,
+                                    set_types=set_types, 
+                                    dance_formats=dance_formats,
+                                    dance_types=dance_types)
+            
+            db.session.commit()
+            flash('Танец успешно обновлен!', 'success')
+            return redirect(url_for('view_dance', dance_id=dance.id))
+            
+        except Exception as e:
+            db.session.rollback()
+            flash(f'Ошибка при обновлении танца: {str(e)}', 'danger')
+            print(f"❌ Детали ошибки: {e}")
+    
+    # GET запрос - получаем списки для формы
+    set_types = SetType.query.order_by(SetType.name).all()
+    dance_formats = DanceFormat.query.order_by(DanceFormat.name).all()
+    dance_types = DanceType.query.order_by(DanceType.name).all()
+    return render_template('edit_dance.html', 
+                          dance=dance,
+                          set_types=set_types, 
+                          dance_formats=dance_formats,
+                          dance_types=dance_types)
 
 @app.route('/dance/<int:dance_id>')
 def view_dance(dance_id):
@@ -487,6 +897,8 @@ def check_db():
     try:
         dance_count = Dance.query.count()
         set_type_count = SetType.query.count()
+        dance_format_count = DanceFormat.query.count()
+        dance_type_count = DanceType.query.count()
         db_type = "PostgreSQL" if 'postgresql' in app.config['SQLALCHEMY_DATABASE_URI'] else "SQLite"
         db_status = f"✅ База данных работает ({db_type})"
         return f"""
@@ -494,6 +906,8 @@ def check_db():
         <p>{db_status}</p>
         <p>Записей в таблице dance: {dance_count}</p>
         <p>Записей в таблице set_type: {set_type_count}</p>
+        <p>Записей в таблице dance_format: {dance_format_count}</p>
+        <p>Записей в таблице dance_type: {dance_type_count}</p>
         <p>Тип БД: {db_type}</p>
         <p><a href="/">Вернуться на главную</a></p>
         """
@@ -528,6 +942,8 @@ if __name__ == '__main__':
     print("🌐 Откройте в браузере: http://localhost:5000")
     print("🔧 Для проверки БД: http://localhost:5000/check-db")
     print("⚙️ Управление типами сетов: http://localhost:5000/set-types")
+    print("⚙️ Управление форматами сетов: http://localhost:5000/dance-formats")
+    print("⚙️ Управление типами танцев: http://localhost:5000/dance-types")
     print("=" * 50)
     
     app.run(debug=True, host='0.0.0.0', port=5000)

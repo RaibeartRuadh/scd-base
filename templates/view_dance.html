@@ -6,43 +6,42 @@
 <div class="card">
     <div class="card-header d-flex justify-content-between align-items-center">
         <h2 class="card-title mb-0">{{ dance.name }}</h2>
-        <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">← Назад к списку</a>
+        <div>
+            <a href="{{ url_for('edit_dance', dance_id=dance.id) }}" class="btn btn-outline-primary me-2">✏️ Редактировать</a>
+            <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">← Назад к списку</a>
+        </div>
     </div>
     <div class="card-body">
-<div class="row">
-    <div class="col-md-6">
-        <h5>Основная информация</h5>
-        <table class="table table-sm">
-            <tr><th>Автор:</th><td>{{ dance.author or '-' }}</td></tr>
-            <tr><th>Тип танца:</th><td>
-                {% if dance.dance_type == 'R' %}Reel
-                {% elif dance.dance_type == 'J' %}Jig
-                {% elif dance.dance_type == 'S' %}Strathspey
-                {% else %}{{ dance.dance_type or '-' }}{% endif %}
-            </td></tr>
-            <tr><th>Размер:</th>
-                <td>
-                    {% if dance.count_id and dance.size_id %}
-                        {{ dance.count_id }}x{{ dance.size_id }}
-                    {% elif dance.size_id %}
-                        {{ dance.size_id }} тактов
-                    {% else %}
-                        -
-                    {% endif %}
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="col-md-6">
-        <h5>Формат</h5>
-        <table class="table table-sm">
-            <tr><th>Сеты:</th><td>{{ dance.all_couples or '-' }}</td></tr>
-            <tr><th>Танцующие пары:</th><td>{{ dance.dance_couple or '-' }}</td></tr>
-            <tr><th>Тип сета:</th><td>{{ dance.set_type or '-' }}</td></tr>
-            <tr><th>Публикация:</th><td>{{ dance.published or '-' }}</td></tr>
-        </table>
-    </div>
-</div>
+        <!-- остальное содержимое без изменений -->
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Основная информация</h5>
+                <table class="table table-sm">
+                    <tr><th>Автор:</th><td>{{ dance.author or '-' }}</td></tr>
+                    <tr><th>Тип танца:</th><td>{{ dance.dance_type_rel.name if dance.dance_type_rel else '-' }}</td></tr>
+                    <tr><th>Размер:</th>
+                        <td>
+                            {% if dance.count_id and dance.size_id %}
+                                {{ dance.count_id }}x{{ dance.size_id }}
+                            {% elif dance.size_id %}
+                                {{ dance.size_id }} тактов
+                            {% else %}
+                                -
+                            {% endif %}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <h5>Формат</h5>
+                <table class="table table-sm">
+                    <tr><th>Формат сета:</th><td>{{ dance.dance_format_rel.name if dance.dance_format_rel else '-' }}</td></tr>
+                    <tr><th>Танцующие пары:</th><td>{{ dance.dance_couple or '-' }}</td></tr>
+                    <tr><th>Тип сета:</th><td>{{ dance.set_type_rel.name if dance.set_type_rel else '-' }}</td></tr>
+                    <tr><th>Публикация:</th><td>{{ dance.published or '-' }}</td></tr>
+                </table>
+            </div>
+        </div>
 
         {% if dance.description %}
         <div class="mt-4">

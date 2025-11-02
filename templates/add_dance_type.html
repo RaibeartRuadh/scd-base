@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Добавить тип танца - База данных танцев{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h2 class="card-title mb-0">🎵 Добавить новый тип танца</h2>
+                <a href="{{ url_for('manage_dance_types') }}" class="btn btn-outline-secondary">← Назад к списку</a>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="name" class="form-label">Название типа танца *</label>
+                            <input type="text" class="form-control" id="name" name="name" required 
+                                   placeholder="Например: Reel, Jig, Strathspey..."
+                                   maxlength="50">
+                            <div class="form-text">Уникальное название типа танца</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="code" class="form-label">Код типа *</label>
+                            <input type="text" class="form-control" id="code" name="code" required 
+                                   placeholder="Например: R, J, S..."
+                                   maxlength="1" style="text-transform:uppercase">
+                            <div class="form-text">Уникальный однобуквенный код для идентификации</div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Описание</label>
+                        <textarea class="form-control" id="description" name="description" rows="4" 
+                                  placeholder="Описание типа танца, особенности, история..."></textarea>
+                        <div class="form-text">Необязательное поле для дополнительной информации</div>
+                    </div>
+
+                    <div class="alert alert-info">
+                        <h6>📋 Стандартные типы танцев:</h6>
+                        <div class="row small">
+                            <div class="col-md-6">
+                                <ul class="mb-0">
+                                    <li><strong>Reel</strong> (R) - Рилы</li>
+                                    <li><strong>Jig</strong> (J) - Джиги</li>
+                                    <li><strong>Strathspey</strong> (S) - Стратспи</li>
+                                    <li><strong>March</strong> (M) - Марши</li>
+                                    <li><strong>Medley</strong> (D) - Медли</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="mb-0">
+                                    <li><strong>Polka</strong> (P) - Польки</li>
+                                    <li><strong>Waltz</strong> (W) - Вальсы</li>
+                                    <li><strong>Hornpipe</strong> (H) - Хорнпайпы</li>
+                                    <li><strong>Quadrille</strong> (Q) - Кадрили</li>
+                                    <li><strong>Minuet</strong> (N) - Менуэты</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a href="{{ url_for('manage_dance_types') }}" class="btn btn-secondary me-md-2">Отмена</a>
+                        <button type="submit" class="btn btn-primary">Сохранить тип танца</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
