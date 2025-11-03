@@ -7,11 +7,11 @@
     <div class="col-md-10 mx-auto">
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center">
-                <h2 class="card-title mb-0">📝 Добавить новый танец</h2>
-                <div>
+                <h2 class="card-title mb-0">Добавить новый танец</h2>
+            <!--    <div>
                     <a href="{{ url_for('manage_set_types') }}" class="btn btn-outline-secondary btn-sm me-2">⚙️ Типы сетов</a>
                     <a href="{{ url_for('manage_dance_types') }}" class="btn btn-outline-secondary btn-sm">⚙️ Типы танцев</a>
-                </div>
+                </div> -->
             </div>
             <div class="card-body">
                 <form method="POST">
@@ -45,23 +45,28 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-1">
                             <label for="count_id" class="form-label">Повторы</label>
                             <input type="number" class="form-control" id="count_id" name="count_id" 
-                                   min="0" placeholder="8">
+                                   min="0" placeholder="">
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-2">
                             <label for="size_id" class="form-label">Размер (такты)</label>
                             <input type="number" class="form-control" id="size_id" name="size_id" 
-                                   min="0" placeholder="32">
+                                   min="0" placeholder="">
                         </div>
                     </div>
 
                     <div class="row mb-3">
-                        <div class="col-md-6">
-                            <label for="dance_format" class="form-label">Формат сета</label>
+                        <div class="col-md-3">
+                            <label for="dance_couple" class="form-label">Танцующих пар/танцоров</label>
+                            <input type="text" class="form-control" id="dance_couple" name="dance_couple" 
+                                   placeholder="Укажите число">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="dance_format" class="form-label">Всего пар/танцоров в танце</label>
                             <select class="form-select" id="dance_format" name="dance_format">
-                                <option value="">Выберите формат сета</option>
+                                <option value=""></option>
                                 {% if dance_formats %}
                                     {% for format in dance_formats %}
                                     <option value="{{ format.id }}">{{ format.name }}</option>
@@ -69,15 +74,9 @@
                                 {% endif %}
                             </select>
                         </div>
-                        <div class="col-md-6">
-                            <label for="dance_couple" class="form-label">Танцующие пары</label>
-                            <input type="text" class="form-control" id="dance_couple" name="dance_couple" 
-                                   placeholder="3C">
-                        </div>
-                    </div>
 
-                    <div class="mb-3">
-                        <label for="set_type" class="form-label">Тип сета</label>
+                        <div class="col-md-4">
+                        <label for="set_type" class="form-label">Построение сета</label>
                         <select class="form-select" id="set_type" name="set_type">
                             <option value="">Выберите тип сета</option>
                             {% if set_types %}
@@ -88,8 +87,9 @@
                         </select>
                         <div class="form-text">
                             <a href="{{ url_for('manage_set_types') }}" class="text-decoration-none">
-                                + Добавить новый тип сета
+                                + Добавить/изменить тип сета
                             </a>
+                        </div>
                         </div>
                     </div>
 
@@ -102,13 +102,13 @@
                     <div class="mb-3">
                         <label for="published" class="form-label">Публикация</label>
                         <input type="text" class="form-control" id="published" name="published" 
-                               placeholder="Published book 32">
+                               placeholder="Укажите книгу или источник, в котором была публикация">
                     </div>
 
                     <div class="mb-3">
                         <label for="note" class="form-label">Заметки</label>
                         <textarea class="form-control" id="note" name="note" rows="3" 
-                                  placeholder="Дополнительные заметки..."></textarea>
+                                  placeholder="Дополнительная информация о танце, истории и т.п."></textarea>
                     </div>
 
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">

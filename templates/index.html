@@ -13,9 +13,9 @@
 <div class="row mb-4">
     <div class="col-md-6">
         <form method="get" class="row g-2">
-            <div class="col-auto">
-                <label for="per_page" class="col-form-label">Отобразить:</label>
-            </div>
+    <!--        <div class="col-auto">
+                 <label for="per_page" class="col-form-label">Отобразить:</label>
+            </div> -->
             <div class="col-auto">
                 <select class="form-select" id="per_page" name="per_page" onchange="this.form.submit()">
                     <option value="25" {% if per_page == 25 %}selected{% endif %}>25 строк</option>
