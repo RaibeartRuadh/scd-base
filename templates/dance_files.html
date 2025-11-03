@@ -1,0 +1,251 @@
+{% extends "base.html" %}
+
+{% block title %}Файлы танца {{ dance.name }} - База данных танцев{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <!-- Заголовок -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1>📁 Файлы танца: {{ dance.name }}</h1>
+            <p class="text-muted">Управление схемами, сканами и документами для танца</p>
+        </div>
+        <div>
+            <a href="{{ url_for('view_dance', dance_id=dance.id) }}" class="btn btn-outline-secondary me-2">👁️ Просмотр танца</a>
+            <a href="{{ url_for('edit_dance', dance_id=dance.id) }}" class="btn btn-outline-primary me-2">✏️ Редактировать</a>
+            <a href="{{ url_for('index') }}" class="btn btn-outline-info">📋 К каталогу</a>
+        </div>
+    </div>
+
+    <!-- Информация о танце -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <strong>Название:</strong> {{ dance.name }}<br>
+                    <strong>Автор:</strong> {{ dance.author or 'Не указан' }}<br>
+                    <strong>Тип:</strong> 
+                    {% if dance.dance_type_rel %}
+                        <span class="badge 
+                            {% if dance.dance_type_rel.name == 'Reel' %}bg-primary
+                            {% elif dance.dance_type_rel.name == 'Jig' %}bg-success
+                            {% elif dance.dance_type_rel.name == 'Strathspey' %}bg-warning
+                            {% else %}bg-secondary{% endif %}">
+                            {{ dance.dance_type_rel.name }}
+                        </span>
+                    {% else %}
+                        <span class="badge bg-secondary">-</span>
+                    {% endif %}
+                </div>
+                <div class="col-md-6">
+                    <strong>Размер:</strong> 
+                    {% if dance.count_id and dance.size_id %}
+                        {{ dance.count_id }}x{{ dance.size_id }}
+                    {% elif dance.size_id %}
+                        {{ dance.size_id }} тактов
+                    {% else %}
+                        -
+                    {% endif %}<br>
+                    <strong>Формат:</strong> {{ dance.dance_format_rel.name if dance.dance_format_rel else '-' }}<br>
+                    <strong>Тип сета:</strong> {{ dance.set_type_rel.name if dance.set_type_rel else '-' }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Форма загрузки -->
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">📤 Загрузить новый файл</h5>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="{{ url_for('upload_dance_file', dance_id=dance.id) }}" enctype="multipart/form-data">
+                <div class="row g-3 align-items-end">
+                    <div class="col-md-8">
+                        <label for="file" class="form-label">Выберите файл:</label>
+                        <input type="file" class="form-control" id="file" name="file" required
+                               accept=".png,.jpg,.jpeg,.gif,.pdf,.txt,.doc,.docx">
+                        <div class="form-text">
+                            📎 Разрешенные форматы: PNG, JPG, JPEG, GIF, PDF, TXT, DOC, DOCX (максимальный размер: 16MB)
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-success w-100">
+                            <i class="fas fa-upload"></i> Загрузить файл
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Список файлов -->
+    <div class="card">
+        <div class="card-header bg-secondary text-white d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">📋 Загруженные файлы</h5>
+            <span class="badge bg-light text-dark">{{ files|length }} файл(ов)</span>
+        </div>
+        <div class="card-body">
+            {% if files %}
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th width="50%">Имя файла</th>
+                            <th width="15%">Размер</th>
+                            <th width="20%">Загружен</th>
+                            <th width="15%">Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for file in files %}
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    {% if file.name.lower().endswith(('.png', '.jpg', '.jpeg', '.gif')) %}
+                                        <i class="fas fa-image text-primary me-2"></i>
+                                    {% elif file.name.lower().endswith('.pdf') %}
+                                        <i class="fas fa-file-pdf text-danger me-2"></i>
+                                    {% elif file.name.lower().endswith(('.doc', '.docx')) %}
+                                        <i class="fas fa-file-word text-primary me-2"></i>
+                                    {% elif file.name.lower().endswith('.txt') %}
+                                        <i class="fas fa-file-alt text-info me-2"></i>
+                                    {% else %}
+                                        <i class="fas fa-file text-secondary me-2"></i>
+                                    {% endif %}
+                                    <div>
+                                        <strong>{{ file.name }}</strong>
+                                        <br>
+                                        <small class="text-muted">
+                                            {% if file.name.lower().endswith(('.png', '.jpg', '.jpeg', '.gif')) %}
+                                                Изображение
+                                            {% elif file.name.lower().endswith('.pdf') %}
+                                                PDF документ
+                                            {% elif file.name.lower().endswith(('.doc', '.docx')) %}
+                                                Word документ
+                                            {% elif file.name.lower().endswith('.txt') %}
+                                                Текстовый файл
+                                            {% else %}
+                                                Файл
+                                            {% endif %}
+                                        </small>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="badge bg-light text-dark">
+                                    {% if file.size < 1024 %}
+                                        {{ file.size }} байт
+                                    {% elif file.size < 1048576 %}
+                                        {{ (file.size / 1024)|round|int }} КБ
+                                    {% else %}
+                                        {{ (file.size / 1048576)|round(1) }} МБ
+                                    {% endif %}
+                                </span>
+                            </td>
+                            <td>
+                                <small class="text-muted">
+                                    {{ format_datetime(file.upload_time) }}
+                                </small>
+                            </td>
+                            <td>
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a href="{{ url_for('download_dance_file', dance_id=dance.id, filename=file.name) }}" 
+                                       class="btn btn-outline-success" 
+                                       title="Скачать файл"
+                                       target="_blank">
+                                        <i class="fas fa-download"></i>
+                                    </a>
+                                    
+                                    {% if file.name.lower().endswith(('.png', '.jpg', '.jpeg', '.gif')) %}
+                                    <a href="{{ url_for('download_dance_file', dance_id=dance.id, filename=file.name) }}" 
+                                       class="btn btn-outline-info"
+                                       title="Просмотреть изображение"
+                                       target="_blank">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    {% endif %}
+                                </div>
+                                
+                                <!-- Форма удаления отдельно -->
+                                <form method="POST" 
+                                      action="{{ url_for('delete_dance_file', dance_id=dance.id, filename=file.name) }}" 
+                                      class="d-inline mt-1"
+                                      onsubmit="return confirm('Вы уверены, что хотите удалить файл \"{{ file.name }}\"?')">
+                                    <button type="submit" class="btn btn-outline-danger btn-sm" title="Удалить файл">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% else %}
+            <div class="text-center py-5">
+                <div class="text-muted mb-3">
+                    <i class="fas fa-folder-open fa-4x"></i>
+                </div>
+                <h4>Файлы не загружены</h4>
+                <p class="text-muted">Загрузите схемы, сканы или документы для этого танца</p>
+                <p class="text-muted">Используйте форму выше для загрузки первого файла</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Быстрые действия -->
+    <div class="mt-4">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card text-center file-action-card">
+                    <div class="card-body">
+                        <i class="fas fa-upload fa-2x text-primary mb-2"></i>
+                        <h6>Загрузить схему</h6>
+                        <p class="text-muted small">PNG, JPG до 16MB</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center file-action-card">
+                    <div class="card-body">
+                        <i class="fas fa-file-pdf fa-2x text-danger mb-2"></i>
+                        <h6>Загрузить скан</h6>
+                        <p class="text-muted small">PDF документы</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center file-action-card">
+                    <div class="card-body">
+                        <i class="fas fa-sticky-note fa-2x text-success mb-2"></i>
+                        <h6>Загрузить заметки</h6>
+                        <p class="text-muted small">TXT, DOC файлы</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Информация о папке -->
+<div class="mt-4 text-center">
+    <small class="text-muted">
+        <i class="fas fa-info-circle"></i>
+        Файлы хранятся в системной папке приложения
+    </small>
+</div>
+
+<style>
+.file-action-card {
+    transition: transform 0.2s;
+    height: 100%;
+}
+.file-action-card:hover {
+    transform: translateY(-2px);
+}
+.btn-group-sm .btn {
+    padding: 0.25rem 0.5rem;
+}
+</style>
+{% endblock %}
