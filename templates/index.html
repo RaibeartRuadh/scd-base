@@ -76,9 +76,12 @@
                         <td>
                             <input type="checkbox" name="dance_ids" value="{{ dance.id }}" class="dance-checkbox" onchange="updateDeleteButton()">
                         </td>
-                        <td>
-                            <strong>{{ dance.name }}</strong>
-                        </td>
+<td>
+    <a href="{{ url_for('view_dance', dance_id=dance.id) }}" 
+       class="text-decoration-none fw-bold text-dark">
+        {{ dance.name }}
+    </a>
+</td>
                         <td>
                             {% if dance.dance_type_rel %}
                                 <span class="badge 

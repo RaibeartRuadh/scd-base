@@ -194,12 +194,12 @@
                         <tbody>
                             {% for dance in results %}
                             <tr>
-                                <td>
-                                    <strong>{{ dance.name }}</strong>
-                                    {% if dance.published %}
-                                    <br><small class="text-muted">{{ dance.published }}</small>
-                                    {% endif %}
-                                </td>
+<td>
+    <a href="{{ url_for('view_dance', dance_id=dance.id) }}" 
+       class="text-decoration-none fw-bold text-dark">
+        {{ dance.name }}
+    </a>
+</td>
                                 <td>{{ dance.author or '-' }}</td>
                                 <td>
                                     {% if dance.dance_type_rel %}

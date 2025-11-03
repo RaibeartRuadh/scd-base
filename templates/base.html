@@ -28,6 +28,15 @@
             background-color: rgba(255,255,255,0.1);
             border-radius: 0.375rem;
         }
+        .dance-link {
+            color: #212529;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .dance-link:hover {
+            color: #0d6efd;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -45,37 +54,37 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('index') }}">
-                            <i class="fas fa-list me-1"></i> Каталог
+                            <i class="fas fa-list me-1"></i>Каталог
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('advanced_search') }}">
-                            <i class="fas fa-search me-1"></i> Поиск
+                            <i class="fas fa-search me-1"></i>Поиск
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('stats') }}">
-                            <i class="fas fa-chart-bar me-1"></i> Статистика
+                            <i class="fas fa-chart-bar me-1"></i>Статистика
                         </a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            <i class="fas fa-cog me-1"></i> Справочники
+                            <i class="fas fa-cog me-1"></i>Справочники
                         </a>
                         <ul class="dropdown-menu">
                             <li>
                                 <a class="dropdown-item" href="{{ url_for('manage_dance_types') }}">
-                                    <i class="fas fa-music me-2"></i> Типы танцев
+                                    <i class="fas fa-music me-2"></i>Типы танцев
                                 </a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="{{ url_for('manage_set_types') }}">
-                                    <i class="fas fa-th-large me-2"></i> Типы сетов
+                                    <i class="fas fa-th-large me-2"></i>Типы сетов
                                 </a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="{{ url_for('manage_dance_formats') }}">
-                                    <i class="fas fa-ruler-combined me-2"></i> Форматы сетов
+                                    <i class="fas fa-ruler-combined me-2"></i>Форматы сетов
                                 </a>
                             </li>
                         </ul>
