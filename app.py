@@ -1,10 +1,11 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, send_from_directory
-from flask_sqlalchemy import SQLAlchemy
+from models import db, Dance, DanceType, DanceFormat, SetType
 from werkzeug.utils import secure_filename
 import os
 import psycopg2
 from datetime import datetime
 from contextlib import contextmanager
+from sqlalchemy import and_, or_
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-secret-key-change-in-production')
@@ -97,110 +98,8 @@ def setup_database():
 db_type = setup_database()
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-db = SQLAlchemy(app)
-
-# Базовый класс для моделей с общей логикой
-class BaseModel(db.Model):
-    __abstract__ = True
-    
-    id = db.Column(db.Integer, primary_key=True)
-    # Убрали created_at для совместимости с существующей базой
-    
-    @classmethod
-    def get_all(cls):
-        """Получить все записи"""
-        return cls.query.order_by(cls.name).all()
-    
-    @classmethod
-    def get_by_id(cls, id):
-        """Получить запись по ID"""
-        return cls.query.get_or_404(id)
-    
-    @classmethod
-    def get_or_create(cls, **kwargs):
-        """Получить или создать запись"""
-        instance = cls.query.filter_by(**kwargs).first()
-        if instance:
-            return instance, False
-        else:
-            instance = cls(**kwargs)
-            db.session.add(instance)
-            db.session.commit()
-            return instance, True
-
-# Модель для справочника типов сетов
-class SetType(BaseModel):
-    __tablename__ = 'set_type'
-    
-    if db_type == 'postgresql':
-        __table_args__ = {'schema': app.config['DB_SCHEMA']}
-    
-    name = db.Column(db.String(100), nullable=False, unique=True)
-    description = db.Column(db.Text)
-
-# Модель для справочника форматов сетов
-class DanceFormat(BaseModel):
-    __tablename__ = 'dance_format'
-    
-    if db_type == 'postgresql':
-        __table_args__ = {'schema': app.config['DB_SCHEMA']}
-    
-    name = db.Column(db.String(100), nullable=False, unique=True)
-    description = db.Column(db.Text)
-
-# Модель для справочника типов танцев
-class DanceType(BaseModel):
-    __tablename__ = 'dance_type'
-    
-    if db_type == 'postgresql':
-        __table_args__ = {'schema': app.config['DB_SCHEMA']}
-    
-    name = db.Column(db.String(50), nullable=False, unique=True)
-    code = db.Column(db.String(1), nullable=False, unique=True)
-    description = db.Column(db.Text)
-
-# Модель данных для танцев
-# Модель данных для танцев
-class Dance(db.Model):
-    __tablename__ = 'dance'
-    
-    if db_type == 'postgresql':
-        __table_args__ = {'schema': app.config['DB_SCHEMA']}
-    
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(255), nullable=False)
-    author = db.Column(db.String(255))
-    dance_type_id = db.Column(db.Integer, db.ForeignKey(
-        f"{app.config['DB_SCHEMA'] + '.' if db_type == 'postgresql' else ''}dance_type.id"
-    ))
-    size_id = db.Column(db.Integer)
-    count_id = db.Column(db.Integer)
-    dance_format_id = db.Column(db.Integer, db.ForeignKey(
-        f"{app.config['DB_SCHEMA'] + '.' if db_type == 'postgresql' else ''}dance_format.id"
-    ))
-    dance_couple = db.Column(db.String(50))
-    set_type_id = db.Column(db.Integer, db.ForeignKey(
-        f"{app.config['DB_SCHEMA'] + '.' if db_type == 'postgresql' else ''}set_type.id"
-    ))
-    description = db.Column(db.Text)
-    published = db.Column(db.String(255))
-    note = db.Column(db.Text)
-    
-    # Связи
-    set_type_rel = db.relationship('SetType', backref='dances')
-    dance_format_rel = db.relationship('DanceFormat', backref='dances')
-    dance_type_rel = db.relationship('DanceType', backref='dances')
-    
-    # Добавляем методы, которые были в BaseModel
-    @classmethod
-    def get_by_id(cls, id):
-        """Получить запись по ID"""
-        return cls.query.get_or_404(id)
-    
-    @classmethod
-    def get_all(cls):
-        """Получить все записи"""
-        return cls.query.order_by(cls.name).all()
+# Инициализируем базу данных
+db.init_app(app)
 
 @contextmanager
 def db_session():
@@ -211,6 +110,23 @@ def db_session():
     except Exception as e:
         db.session.rollback()
         raise e
+
+def check_existing_tables():
+    """Проверка существования таблиц в схеме scddb"""
+    try:
+        with db.engine.connect() as conn:
+            # Проверяем существование таблиц в схеме scddb
+            result = conn.execute(db.text("""
+                SELECT table_name 
+                FROM information_schema.tables 
+                WHERE table_schema = 'scddb'
+            """))
+            existing_tables = [row[0] for row in result]
+            print(f"📋 Существующие таблицы в схеме scddb: {existing_tables}")
+            return existing_tables
+    except Exception as e:
+        print(f"❌ Ошибка при проверке таблиц: {e}")
+        return []
 
 def init_database():
     """Инициализация базы данных с базовыми данными"""
@@ -224,10 +140,17 @@ def init_database():
                         conn.execute(db.text('CREATE SCHEMA IF NOT EXISTS scddb'))
                         conn.commit()
                     print("✅ Схема scddb создана/проверена")
+                    
+                    # Устанавливаем схему по умолчанию для этой сессии
+                    with db.engine.connect() as conn:
+                        conn.execute(db.text('SET search_path TO scddb'))
+                        conn.commit()
+                        
                 except Exception as e:
                     print(f"ℹ️ Информация о схеме: {e}")
             
             # Создаем только таблицы справочников, основную таблицу dance не трогаем
+            print("🔄 Создание таблиц справочников...")
             db.create_all()
             print("✅ SQLAlchemy метаданные обновлены")
             
@@ -236,50 +159,76 @@ def init_database():
             
     except Exception as e:
         print(f"❌ Ошибка инициализации БД: {e}")
+        import traceback
+        traceback.print_exc()
 
 def init_basic_data():
     """Инициализация базовых данных только для справочников"""
     try:
-        # Базовые типы сетов
-        basic_set_types = [
-            "Longwise set", "Square set", "Triangular set", "Circular set",
-            "2 Couple set", "3 Couple set", "4 Couple set", "5 Couple set"
-        ]
+        # Проверяем существующие таблицы
+        existing_tables = check_existing_tables()
         
-        for set_type_name in basic_set_types:
-            SetType.get_or_create(name=set_type_name)
+        # Базовые типы сетов
+        if 'set_type' in existing_tables:
+            basic_set_types = [
+                "Longwise set", "Square set", "Triangular set", "Circular set",
+                "2 Couple set", "3 Couple set", "4 Couple set", "5 Couple set"
+            ]
+            
+            for set_type_name in basic_set_types:
+                existing = SetType.query.filter_by(name=set_type_name).first()
+                if not existing:
+                    set_type = SetType(name=set_type_name)
+                    db.session.add(set_type)
+                    print(f"✅ Добавлен тип сета: {set_type_name}")
+            
+            db.session.commit()
         
         # Базовые форматы сетов
-        dance_formats = [
-            '12 persons', '16 couples', '1 couple', '1 person', '2 couples',
-            '2 couples (1x)', '2 couples (Glasgow Highl)', '2 persons', '2 trios',
-            '3 couples', '3 couples (1x)', '3 couples (1x,2x)', '3 couples (1x,3x)',
-            '3 couples (2x)', '3 couples (2x,3x)', '3 couples (3x)', '3 persons', '3 trios',
-            '4 couples', '4 couples (1x)', '4 couples (1x,2x)', '4 couples (1x,3x)',
-            '4 couples (1x,4x)', '4 couples (2x,3x)', '4 couples (2x,4x)', '4 couples (3x,4x)',
-            '4 couples (4x)', '4 couples (Glasgow Highl)', '4 persons', '4 trios', '4w+2m',
-            '5 couples', '5 couples (2x,4x)', '5 couples (4x,5x)', '5 persons',
-            '6 couples', '6 couples (2x,4x,6x)', '6 couples (4x,5x,6x)', '6 persons',
-            '7 couples', '7 persons', '8 couples', '8 persons', '9 persons',
-            'any', 'other', 'unknown'
-        ]
-        
-        for format_name in dance_formats:
-            DanceFormat.get_or_create(name=format_name)
+        if 'dance_format' in existing_tables:
+            dance_formats = [
+                '12 persons', '16 couples', '1 couple', '1 person', '2 couples',
+                '2 couples (1x)', '2 couples (Glasgow Highl)', '2 persons', '2 trios',
+                '3 couples', '3 couples (1x)', '3 couples (1x,2x)', '3 couples (1x,3x)',
+                '3 couples (2x)', '3 couples (2x,3x)', '3 couples (3x)', '3 persons', '3 trios',
+                '4 couples', '4 couples (1x)', '4 couples (1x,2x)', '4 couples (1x,3x)',
+                '4 couples (1x,4x)', '4 couples (2x,3x)', '4 couples (2x,4x)', '4 couples (3x,4x)',
+                '4 couples (4x)', '4 couples (Glasgow Highl)', '4 persons', '4 trios', '4w+2m',
+                '5 couples', '5 couples (2x,4x)', '5 couples (4x,5x)', '5 persons',
+                '6 couples', '6 couples (2x,4x,6x)', '6 couples (4x,5x,6x)', '6 persons',
+                '7 couples', '7 persons', '8 couples', '8 persons', '9 persons',
+                'any', 'other', 'unknown'
+            ]
+            
+            for format_name in dance_formats:
+                existing = DanceFormat.query.filter_by(name=format_name).first()
+                if not existing:
+                    dance_format = DanceFormat(name=format_name)
+                    db.session.add(dance_format)
+                    print(f"✅ Добавлен формат сета: {format_name}")
+            
+            db.session.commit()
         
         # Базовые типы танцев
-        dance_types = [
-            ('Reel', 'R'), ('Jig', 'J'), ('Strathspey', 'S'), ('March', 'M'),
-            ('Medley', 'D'), ('Polka', 'P'), ('Waltz', 'W'), ('Hornpipe', 'H'),
-            ('Quadrille', 'Q'), ('Minuet', 'N')
-        ]
+        if 'dance_type' in existing_tables:
+            dance_types = [
+                ('Reel', 'R'), ('Jig', 'J'), ('Strathspey', 'S'), ('March', 'M'),
+                ('Medley', 'D'), ('Polka', 'P'), ('Waltz', 'W'), ('Hornpipe', 'H'),
+                ('Quadrille', 'Q'), ('Minuet', 'N')
+            ]
+            
+            for type_name, type_code in dance_types:
+                existing = DanceType.query.filter_by(name=type_name).first()
+                if not existing:
+                    dance_type = DanceType(name=type_name, code=type_code)
+                    db.session.add(dance_type)
+                    print(f"✅ Добавлен тип танца: {type_name}")
+            
+            db.session.commit()
         
-        for type_name, type_code in dance_types:
-            DanceType.get_or_create(name=type_name, code=type_code)
+        print("✅ Базовые типы сетов, форматы и типы танцев проверены/добавлены")
         
-        print("✅ Базовые типы сетов, форматы и типы танцев добавлены")
-        
-        # Статистика - проверяем только справочники, основную таблицу не трогаем
+        # Статистика - проверяем только справочники
         set_type_count = SetType.query.count()
         dance_format_count = DanceFormat.query.count()
         dance_type_count = DanceType.query.count()
@@ -290,6 +239,8 @@ def init_basic_data():
         
     except Exception as e:
         print(f"❌ Ошибка при инициализации базовых данных: {e}")
+        import traceback
+        traceback.print_exc()
 
 def get_dance_files(dance_id, dance_name):
     """Получение списка файлов для танца"""
@@ -352,6 +303,174 @@ def validate_dance_form(form_data):
         errors.append('Тип танца обязателен для заполнения!')
     
     return errors
+
+# Функции для поиска
+def get_search_filters():
+    """Получение данных для фильтров поиска"""
+    return {
+        'dance_types': DanceType.query.order_by(DanceType.name).all(),
+        'dance_formats': DanceFormat.query.order_by(DanceFormat.name).all(),
+        'set_types': SetType.query.order_by(SetType.name).all(),
+        'dance_couples': db.session.query(Dance.dance_couple).distinct().filter(Dance.dance_couple.isnot(None)).order_by(Dance.dance_couple).all()
+    }
+
+def build_search_query(filters):
+    """Построение запроса поиска с комбинацией условий И/ИЛИ"""
+    query = Dance.query
+    
+    conditions = []
+    
+    # Поиск по имени (ИЛИ для нескольких слов)
+    if filters.get('name'):
+        name_terms = [term.strip() for term in filters['name'].split() if term.strip()]
+        if name_terms:
+            name_conditions = []
+            for term in name_terms:
+                name_conditions.append(Dance.name.ilike(f'%{term}%'))
+            conditions.append(or_(*name_conditions))
+    
+    # Поиск по автору (ИЛИ для нескольких слов)
+    if filters.get('author'):
+        author_terms = [term.strip() for term in filters['author'].split() if term.strip()]
+        if author_terms:
+            author_conditions = []
+            for term in author_terms:
+                author_conditions.append(Dance.author.ilike(f'%{term}%'))
+            conditions.append(or_(*author_conditions))
+    
+    # Поиск по типу танца (И для нескольких типов)
+    if filters.get('dance_types'):
+        dance_type_ids = [int(x) for x in filters['dance_types']]
+        conditions.append(Dance.dance_type_id.in_(dance_type_ids))
+    
+    # Поиск по формату сета (И для нескольких форматов)
+    if filters.get('dance_formats'):
+        format_ids = [int(x) for x in filters['dance_formats']]
+        conditions.append(Dance.dance_format_id.in_(format_ids))
+    
+    # Поиск по типу сета (И для нескольких типов)
+    if filters.get('set_types'):
+        set_type_ids = [int(x) for x in filters['set_types']]
+        conditions.append(Dance.set_type_id.in_(set_type_ids))
+    
+    # Поиск по танцующим парам (И для нескольких значений)
+    if filters.get('dance_couples'):
+        couple_values = filters['dance_couples']
+        conditions.append(Dance.dance_couple.in_(couple_values))
+    
+    # Поиск по публикации (ИЛИ для нескольких слов)
+    if filters.get('published'):
+        published_terms = [term.strip() for term in filters['published'].split() if term.strip()]
+        if published_terms:
+            published_conditions = []
+            for term in published_terms:
+                published_conditions.append(Dance.published.ilike(f'%{term}%'))
+            conditions.append(or_(*published_conditions))
+    
+    # Поиск по повторам
+    if filters.get('count_min'):
+        try:
+            conditions.append(Dance.count_id >= int(filters['count_min']))
+        except (ValueError, TypeError):
+            pass
+    
+    if filters.get('count_max'):
+        try:
+            conditions.append(Dance.count_id <= int(filters['count_max']))
+        except (ValueError, TypeError):
+            pass
+    
+    # Поиск по размеру (тактам)
+    if filters.get('size_min'):
+        try:
+            conditions.append(Dance.size_id >= int(filters['size_min']))
+        except (ValueError, TypeError):
+            pass
+    
+    if filters.get('size_max'):
+        try:
+            conditions.append(Dance.size_id <= int(filters['size_max']))
+        except (ValueError, TypeError):
+            pass
+    
+    # Применяем все условия через И
+    if conditions:
+        query = query.filter(and_(*conditions))
+    
+    return query
+
+# Маршруты для поиска
+@app.route('/search', methods=['GET', 'POST'])
+def advanced_search():
+    """Расширенный поиск танцев"""
+    filters = {}
+    results = []
+    total_count = 0
+    
+    if request.method == 'POST':
+        try:
+            # Собираем фильтры из формы
+            filters = {
+                'name': request.form.get('name', '').strip(),
+                'author': request.form.get('author', '').strip(),
+                'dance_types': request.form.getlist('dance_types'),
+                'dance_formats': request.form.getlist('dance_formats'),
+                'set_types': request.form.getlist('set_types'),
+                'dance_couples': request.form.getlist('dance_couples'),
+                'published': request.form.get('published', '').strip(),
+                'count_min': request.form.get('count_min', '').strip(),
+                'count_max': request.form.get('count_max', '').strip(),
+                'size_min': request.form.get('size_min', '').strip(),
+                'size_max': request.form.get('size_max', '').strip()
+            }
+            
+            # Строим запрос
+            query = build_search_query(filters)
+            
+            # Выполняем поиск
+            results = query.order_by(Dance.name).all()
+            total_count = len(results)
+            
+            if total_count == 0:
+                flash('По вашему запросу ничего не найдено', 'info')
+            else:
+                flash(f'Найдено танцев: {total_count}', 'success')
+                
+        except Exception as e:
+            flash(f'Ошибка при выполнении поиска: {str(e)}', 'danger')
+    
+    # Получаем данные для фильтров
+    search_data = get_search_filters()
+    search_data.update({
+        'filters': filters,
+        'results': results,
+        'total_count': total_count
+    })
+    
+    return render_template('search.html', **search_data)
+
+@app.route('/search/results')
+def search_results():
+    """Быстрый поиск (для использования из других страниц)"""
+    query = request.args.get('q', '')
+    if query:
+        results = Dance.query.filter(
+            or_(
+                Dance.name.ilike(f'%{query}%'),
+                Dance.author.ilike(f'%{query}%'),
+                Dance.published.ilike(f'%{query}%')
+            )
+        ).order_by(Dance.name).all()
+        
+        return render_template('search_results.html', 
+                             results=results, 
+                             query=query, 
+                             total_count=len(results))
+    
+    return redirect(url_for('advanced_search'))
+
+# Остальные маршруты (SetType, DanceFormat, DanceType, файлы, основной функционал)
+# ... [все остальные маршруты из вашего оригинального app.py остаются без изменений]
 
 # Маршруты для SetType
 @app.route('/set-types')
