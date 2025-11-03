@@ -122,7 +122,7 @@ def check_existing_tables():
                 WHERE table_schema = 'scddb'
             """))
             existing_tables = [row[0] for row in result]
-            print(f"📋 Существующие таблицы в схеме scddb: {existing_tables}")
+            print(f"📋 Существующие таблицы в схеме scddб: {existing_tables}")
             return existing_tables
     except Exception as e:
         print(f"❌ Ошибка при проверке таблиц: {e}")
@@ -171,8 +171,7 @@ def init_basic_data():
         # Базовые типы сетов
         if 'set_type' in existing_tables:
             basic_set_types = [
-                "Longwise set", "Square set", "Triangular set", "Circular set",
-                "2 Couple set", "3 Couple set", "4 Couple set", "5 Couple set"
+                "Longwise set", "Square set", "Triangular set", "Circular set"
             ]
             
             for set_type_name in basic_set_types:
@@ -187,17 +186,7 @@ def init_basic_data():
         # Базовые форматы сетов
         if 'dance_format' in existing_tables:
             dance_formats = [
-                '12 persons', '16 couples', '1 couple', '1 person', '2 couples',
-                '2 couples (1x)', '2 couples (Glasgow Highl)', '2 persons', '2 trios',
-                '3 couples', '3 couples (1x)', '3 couples (1x,2x)', '3 couples (1x,3x)',
-                '3 couples (2x)', '3 couples (2x,3x)', '3 couples (3x)', '3 persons', '3 trios',
-                '4 couples', '4 couples (1x)', '4 couples (1x,2x)', '4 couples (1x,3x)',
-                '4 couples (1x,4x)', '4 couples (2x,3x)', '4 couples (2x,4x)', '4 couples (3x,4x)',
-                '4 couples (4x)', '4 couples (Glasgow Highl)', '4 persons', '4 trios', '4w+2m',
-                '5 couples', '5 couples (2x,4x)', '5 couples (4x,5x)', '5 persons',
-                '6 couples', '6 couples (2x,4x,6x)', '6 couples (4x,5x,6x)', '6 persons',
-                '7 couples', '7 persons', '8 couples', '8 persons', '9 persons',
-                'any', 'other', 'unknown'
+                '2 couples', '2 trios', '3 couples', '4 couples', '5 couples', '6 couples', '7 couples', 'any', 'other', 'unknown'
             ]
             
             for format_name in dance_formats:
@@ -308,9 +297,9 @@ def validate_dance_form(form_data):
 def get_search_filters():
     """Получение данных для фильтров поиска"""
     return {
-        'dance_types': DanceType.query.order_by(DanceType.name).all(),
-        'dance_formats': DanceFormat.query.order_by(DanceFormat.name).all(),
-        'set_types': SetType.query.order_by(SetType.name).all(),
+        'dance_types': DanceType.query.order_by(DanceType.id).all(),  # ИЗМЕНЕНО: сортировка по ID
+        'dance_formats': DanceFormat.query.order_by(DanceFormat.id).all(),  # ИЗМЕНЕНО: сортировка по ID
+        'set_types': SetType.query.order_by(SetType.id).all(),  # ИЗМЕНЕНО: сортировка по ID
         'dance_couples': db.session.query(Dance.dance_couple).distinct().filter(Dance.dance_couple.isnot(None)).order_by(Dance.dance_couple).all()
     }
 
@@ -470,7 +459,6 @@ def search_results():
     return redirect(url_for('advanced_search'))
 
 # Остальные маршруты (SetType, DanceFormat, DanceType, файлы, основной функционал)
-# ... [все остальные маршруты из вашего оригинального app.py остаются без изменений]
 
 # Маршруты для SetType
 @app.route('/set-types')
