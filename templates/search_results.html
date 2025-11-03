@@ -5,10 +5,14 @@
 {% block content %}
 <div class="container mt-4">
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1>🔍 Результаты поиска: "{{ query }}"</h1>
+        <h1><i class="fas fa-search me-2"></i>Результаты поиска: "{{ query }}"</h1>
         <div>
-            <a href="{{ url_for('search.advanced_search') }}" class="btn btn-outline-primary me-2">📋 Расширенный поиск</a>
-            <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">← Назад</a>
+            <a href="{{ url_for('search.advanced_search') }}" class="btn btn-outline-primary me-2">
+                <i class="fas fa-list me-1"></i>Расширенный поиск
+            </a>
+            <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">
+                <i class="fas fa-arrow-left me-1"></i>Назад
+            </a>
         </div>
     </div>
 
@@ -17,77 +21,144 @@
         Найдено танцев: <strong>{{ total_count }}</strong> по запросу: "<strong>{{ query }}</strong>"
     </div>
 
-    <div class="table-responsive">
-        <table class="table table-striped table-hover">
-            <thead class="table-dark">
-                <tr>
-                    <th>Название</th>
-                    <th>Автор</th>
-                    <th>Тип</th>
-                    <th>Размер</th>
-                    <th>Формат</th>
-                    <th>Действия</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for dance in results %}
-                <tr>
-                    <td>
-                        <strong>{{ dance.name }}</strong>
-                        {% if dance.published %}
-                        <br><small class="text-muted">{{ dance.published }}</small>
-                        {% endif %}
-                    </td>
-                    <td>{{ dance.author or '-' }}</td>
-                    <td>
-                        {% if dance.dance_type_rel %}
-                        <span class="badge 
-                            {% if dance.dance_type_rel.name == 'Reel' %}bg-primary
-                            {% elif dance.dance_type_rel.name == 'Jig' %}bg-success
-                            {% elif dance.dance_type_rel.name == 'Strathspey' %}bg-warning
-                            {% else %}bg-secondary{% endif %}">
-                            {{ dance.dance_type_rel.name }}
-                        </span>
-                        {% else %}
-                        <span class="badge bg-secondary">-</span>
-                        {% endif %}
-                    </td>
-                    <td>
-                        {% if dance.count_id and dance.size_id %}
-                            {{ dance.count_id }}x{{ dance.size_id }}
-                        {% elif dance.size_id %}
-                            {{ dance.size_id }} тактов
-                        {% else %}
-                            -
-                        {% endif %}
-                    </td>
-                    <td>{{ dance.dance_format_rel.name if dance.dance_format_rel else '-' }}</td>
-                    <td>
-                        <div class="btn-group btn-group-sm">
+    <div class="card border-0 shadow-sm">
+        <div class="table-responsive">
+            <table class="table table-hover mb-0 table-compact">
+                <thead class="table-dark">
+                    <tr>
+                        <th class="px-3">Название</th>
+                        <th class="px-3">Автор</th>
+                        <th class="px-3">Тип</th>
+                        <th class="px-3">Размер</th>
+                        <th class="px-3">Формат</th>
+                        <th class="px-3 text-center">Действия</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for dance in results %}
+                    <tr class="align-middle">
+                        <td class="px-3">
                             <a href="{{ url_for('view_dance', dance_id=dance.id) }}" 
-                               class="btn btn-outline-info" title="Просмотр">
-                                <i class="fas fa-eye"></i>
+                               class="text-decoration-none fw-bold text-primary dance-name">
+                                {{ dance.name }}
                             </a>
-                            <a href="{{ url_for('dance_files', dance_id=dance.id) }}" 
-                               class="btn btn-outline-success" title="Файлы">
-                                <i class="fas fa-folder"></i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+                            {% if dance.published %}
+                            <br><small class="text-muted">{{ dance.published }}</small>
+                            {% endif %}
+                        </td>
+                        <td class="px-3">{{ dance.author or '-' }}</td>
+                        <td class="px-3">
+                            {% if dance.dance_type_rel %}
+                            <span class="badge badge-type 
+                                {% if dance.dance_type_rel.name == 'Reel' %}bg-primary
+                                {% elif dance.dance_type_rel.name == 'Jig' %}bg-success
+                                {% elif dance.dance_type_rel.name == 'Strathspey' %}bg-warning text-dark
+                                {% else %}bg-secondary{% endif %}">
+                                {{ dance.dance_type_rel.name }}
+                            </span>
+                            {% else %}
+                            <span class="badge bg-light text-muted">-</span>
+                            {% endif %}
+                        </td>
+                        <td class="px-3">
+                            {% if dance.count_id and dance.size_id %}
+                                <span class="text-muted small dance-size">{{ dance.count_id }}×{{ dance.size_id }}</span>
+                            {% elif dance.size_id %}
+                                <span class="text-muted small dance-size">{{ dance.size_id }} тактов</span>
+                            {% else %}
+                                <span class="text-muted small dance-size">-</span>
+                            {% endif %}
+                        </td>
+                        <td class="px-3">{{ dance.dance_format_rel.name if dance.dance_format_rel else '-' }}</td>
+                        <td class="px-3 text-center">
+                            <div class="btn-group btn-group-sm" role="group">
+                                <a href="{{ url_for('view_dance', dance_id=dance.id) }}" 
+                                   class="btn btn-outline-info btn-icon" title="Просмотр">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="{{ url_for('dance_files', dance_id=dance.id) }}" 
+                                   class="btn btn-outline-success btn-icon" title="Файлы">
+                                    <i class="fas fa-folder"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
     {% else %}
     <div class="alert alert-warning text-center py-5">
-        <h4>😔 Ничего не найдено</h4>
+        <h4><i class="fas fa-frown me-2"></i>Ничего не найдено</h4>
         <p>По вашему запросу "<strong>{{ query }}</strong>" ничего не найдено.</p>
         <div class="mt-3">
-            <a href="{{ url_for('search.advanced_search') }}" class="btn btn-primary me-2">📋 Попробовать расширенный поиск</a>
-            <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">Вернуться к каталогу</a>
+            <a href="{{ url_for('search.advanced_search') }}" class="btn btn-primary me-2">
+                <i class="fas fa-list me-1"></i>Попробовать расширенный поиск
+            </a>
+            <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">
+                Вернуться к каталогу
+            </a>
         </div>
     </div>
     {% endif %}
 </div>
+
+<style>
+.table-compact td {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+    vertical-align: middle;
+    height: 44px;
+}
+
+.table-compact th {
+    padding: 12px;
+    font-size: 0.8rem;
+    vertical-align: middle;
+}
+
+.dance-name {
+    font-weight: 600 !important;
+    color: #0d6efd !important;
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+
+.dance-name:hover {
+    color: #0a58ca !important;
+    text-decoration: underline !important;
+}
+
+.badge-type {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 1;
+}
+
+.dance-size {
+    font-size: 0.8rem;
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 1.2;
+}
+
+.btn-icon {
+    padding: 0.25rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    transition: all 0.2s ease;
+    vertical-align: middle;
+}
+
+.btn-icon:hover {
+    transform: translateY(-1px);
+}
+
+.table-compact td > * {
+    vertical-align: middle;
+}
+</style>
 {% endblock %}

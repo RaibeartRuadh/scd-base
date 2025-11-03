@@ -5,15 +5,15 @@
 {% block content %}
 <div class="container mt-4">
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1>📊 Статистика базы данных</h1>
+        <h1>Статистика Ru-SCDDB</h1>
         <div>
-            <a href="{{ url_for('index') }}" class="btn btn-outline-secondary me-2">📋 К каталогу</a>
-            <a href="{{ url_for('advanced_search') }}" class="btn btn-outline-primary">🔍 Поиск</a>
+         <!--   <a href="{{ url_for('index') }}" class="btn btn-outline-secondary me-2">📋 К каталогу</a>
+            <a href="{{ url_for('advanced_search') }}" class="btn btn-outline-primary">🔍 Поиск</a> -->
         </div>
     </div>
 
     <!-- Основная статистика -->
-    <div class="row mb-4">
+    <div class="row mb-1">
         <div class="col-md-3">
             <div class="card text-center bg-primary text-white">
                 <div class="card-body">
@@ -201,7 +201,7 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header bg-secondary text-white">
-                    <h5 class="mb-0">💾 Информация о системе</h5>
+                    <h5 class="mb-0">Информация о системе</h5>
                 </div>
                 <div class="card-body">
                     <table class="table table-sm">
@@ -230,29 +230,7 @@
             </div>
         </div>
 
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-header bg-dark text-white">
-                    <h5 class="mb-0">📈 Быстрые действия</h5>
-                </div>
-                <div class="card-body">
-                    <div class="d-grid gap-2">
-                        <a href="{{ url_for('add_dance') }}" class="btn btn-primary">
-                            ➕ Добавить новый танец
-                        </a>
-                        <a href="{{ url_for('advanced_search') }}" class="btn btn-success">
-                            🔍 Расширенный поиск
-                        </a>
-                        <a href="{{ url_for('manage_dance_types') }}" class="btn btn-warning">
-                            🎵 Управление типами танцев
-                        </a>
-                        <a href="{{ url_for('manage_set_types') }}" class="btn btn-info">
-                            ⚙️ Управление типами сетов
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </div>
 
     <!-- Пустая статистика -->
@@ -290,7 +268,7 @@
     margin-bottom: 1rem;
 }
 .display-4 {
-    font-size: 2.5rem;
+    font-size: 1.75rem;
     font-weight: bold;
 }
 </style>
