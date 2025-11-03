@@ -45,7 +45,9 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="{{ url_for('index') }}">
-                <i class="fas fa-music me-2"></i>Ru-SCDDB
+                <img src="{{ url_for('static', filename='img/ru.png') }}" alt="" style="height: 20px; margin-right: 5px;">
+                <img src="{{ url_for('static', filename='img/sct.png') }}" alt="" style="height: 20px; margin-right: 8px;">
+                Ru-SCDDB
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
