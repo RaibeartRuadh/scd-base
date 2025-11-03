@@ -9,9 +9,9 @@
             <div class="card-header d-flex justify-content-between align-items-center">
                 <h2 class="card-title mb-0">✏️ Редактировать танец</h2>
                 <div>
-                    <a href="{{ url_for('view_dance', dance_id=dance.id) }}" class="btn btn-outline-secondary btn-sm me-2">👁️ Просмотр</a>
-                    <a href="{{ url_for('manage_set_types') }}" class="btn btn-outline-secondary btn-sm me-2">⚙️ Типы сетов</a>
-                    <a href="{{ url_for('manage_dance_types') }}" class="btn btn-outline-secondary btn-sm">⚙️ Типы танцев</a>
+                 <!--   <a href="{{ url_for('view_dance', dance_id=dance.id) }}" class="btn btn-outline-secondary btn-sm me-2">👁️ Просмотр</a>  -->
+                 <!--   <a href="{{ url_for('manage_set_types') }}" class="btn btn-outline-secondary btn-sm me-2">⚙️ Типы сетов</a> -->
+                  <!--   <a href="{{ url_for('manage_dance_types') }}" class="btn btn-outline-secondary btn-sm">⚙️ Типы танцев</a> -->
                 </div>
             </div>
             <div class="card-body">
@@ -144,12 +144,6 @@
                 <div class="row">
                     <div class="col-md-6">
                         <p><strong>ID записи:</strong> {{ dance.id }}</p>
-                        <p><strong>Тип танца:</strong> {{ dance.dance_type_rel.name if dance.dance_type_rel else 'Не указан' }}</p>
-                    </div>
-                    <div class="col-md-6">
-                        <p><strong>Формат сета:</strong> {{ dance.dance_format_rel.name if dance.dance_format_rel else 'Не указан' }}</p>
-                        <p><strong>Тип сета:</strong> {{ dance.set_type_rel.name if dance.set_type_rel else 'Не указан' }}</p>
-                    </div>
                 </div>
             </div>
         </div>

@@ -2,10 +2,10 @@
 
 {% block content %}
 <div class="d-flex justify-content-between align-items-center mb-4">
-    <h1>Каталог танцев</h1>
+    <h1>Все танцы</h1>
     <div>
         <span class="badge bg-info me-2">{{ db_type }}</span>
-        <a href="{{ url_for('add_dance') }}" class="btn btn-primary">➕ Добавить танец</a>
+        <a href="{{ url_for('add_dance') }}" class="btn btn-primary">Добавить танец</a>
     </div>
 </div>
 
@@ -26,18 +26,7 @@
             <input type="hidden" name="search" value="{{ search }}">
         </form>
     </div>
-    <div class="col-md-6">
-        <form method="get">
-            <div class="input-group">
-                <input type="text" name="search" class="form-control" placeholder="Поиск по названию или автору..." value="{{ search }}">
-                <input type="hidden" name="per_page" value="{{ per_page }}">
-                <button type="submit" class="btn btn-outline-primary">Поиск</button>
-                {% if search %}
-                <a href="{{ url_for('index', per_page=per_page) }}" class="btn btn-outline-secondary">Сбросить</a>
-                {% endif %}
-            </div>
-        </form>
-    </div>
+
 </div>
 
 <!-- Форма для массового удаления -->
@@ -50,7 +39,7 @@
         </div>
         <div>
             <button type="button" class="btn btn-danger" onclick="confirmDelete()" id="deleteButton" disabled>
-                🗑️ Удалить выбранные
+                Удалить выбранные
             </button>
         </div>
     </div>
@@ -106,24 +95,19 @@
                         </td>
                         <td>
                             <div class="btn-group btn-group-sm" role="group">
-                                <!-- Просмотр - глаз -->
-                                <a href="{{ url_for('view_dance', dance_id=dance.id) }}" 
-                                   class="btn btn-outline-info btn-icon" 
-                                   title="Просмотреть танец">
-                                    <i class="fas fa-eye fa-xs"></i>
-                                </a>
+
                                 
                                 <!-- Файлы - папка -->
                                 <a href="{{ url_for('dance_files', dance_id=dance.id) }}" 
                                    class="btn btn-outline-success btn-icon" 
-                                   title="Управление файлами">
+                                   title="Дополнить/посмотреть материалы к танцу">
                                     <i class="fas fa-folder fa-xs"></i>
                                 </a>
                                 
                                 <!-- Редактировать - карандаш -->
                                 <a href="{{ url_for('edit_dance', dance_id=dance.id) }}" 
                                    class="btn btn-outline-primary btn-icon" 
-                                   title="Редактировать танец">
+                                   title="Редактировать">
                                     <i class="fas fa-edit fa-xs"></i>
                                 </a>
                                 
@@ -131,7 +115,7 @@
                                 <button type="button" 
                                         class="btn btn-outline-danger btn-icon" 
                                         onclick="confirmSingleDelete({{ dance.id }}, '{{ dance.name|replace("'", "\\'") }}')"
-                                        title="Удалить танец">
+                                        title="Удалить">
                                     <i class="fas fa-trash fa-xs"></i>
                                 </button>
                             </div>
@@ -263,10 +247,10 @@ function updateDeleteButton() {
     
     if (checkboxes.length > 0) {
         deleteButton.disabled = false;
-        deleteButton.textContent = `🗑️ Удалить выбранные (${checkboxes.length})`;
+        deleteButton.textContent = `Удалить выбранные (${checkboxes.length})`;
     } else {
         deleteButton.disabled = true;
-        deleteButton.textContent = '🗑️ Удалить выбранные';
+        deleteButton.textContent = 'Удалить выбранные';
     }
 }
 
