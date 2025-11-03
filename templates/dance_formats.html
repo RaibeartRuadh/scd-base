@@ -6,8 +6,8 @@
 <div class="d-flex justify-content-between align-items-center mb-4">
     <h1>📐 Управление форматами сетов</h1>
     <div>
-        <a href="{{ url_for('index') }}" class="btn btn-outline-secondary me-2">← Назад</a>
-        <a href="{{ url_for('add_dance_format') }}" class="btn btn-primary">➕ Добавить формат сета</a>
+        <a href="{{ url_for('index') }}" class="btn btn-outline-secondary me-2"> Назад</a>
+        <a href="{{ url_for('add_dance_format') }}" class="btn btn-primary"> Добавить формат сета</a>
     </div>
 </div>
 
@@ -39,10 +39,10 @@
                         <td>
                             <div class="btn-group btn-group-sm">
                                 <a href="{{ url_for('edit_dance_format', format_id=format.id) }}" 
-                                   class="btn btn-outline-warning">✏️ Редактировать</a>
+                                   class="btn btn-outline-warning"> Редактировать</a>
                                 <form method="POST" action="{{ url_for('delete_dance_format', format_id=format.id) }}" 
                                       class="d-inline" onsubmit="return confirm('Вы уверены, что хотите удалить формат сета «{{ format.name }}»?');">
-                                    <button type="submit" class="btn btn-outline-danger">🗑️ Удалить</button>
+                                    <button type="submit" class="btn btn-outline-danger"> Удалить</button>
                                 </form>
                             </div>
                         </td>
@@ -62,7 +62,7 @@
             </div>
             <h4>Форматы сетов не найдены</h4>
             <p class="text-muted">Добавьте первый формат сета, чтобы начать работу</p>
-            <a href="{{ url_for('add_dance_format') }}" class="btn btn-primary">➕ Добавить формат сета</a>
+            <a href="{{ url_for('add_dance_format') }}" class="btn btn-primary"> Добавить формат сета</a>
         </div>
         {% endif %}
     </div>
