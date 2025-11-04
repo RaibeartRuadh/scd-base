@@ -7,7 +7,7 @@
     <div class="col-md-8 mx-auto">
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center">
-                <h2 class="card-title mb-0"> Редактировать тип танца</h2>
+                <h2 class="card-title mb-0">Редактировать тип танца</h2>
                 <a href="{{ url_for('manage_dance_types') }}" class="btn btn-outline-secondary">← Назад к списку</a>
             </div>
             <div class="card-body">
@@ -41,7 +41,7 @@
                     <div class="mb-4">
                         <div class="card bg-light">
                             <div class="card-body">
-                                <h6 class="card-title"> Информация о типе танца</h6>
+                                <h6 class="card-title">Информация о типе танца</h6>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <small><strong>ID:</strong> {{ dance_type.id }}</small>
@@ -65,13 +65,13 @@
         <!-- Статистика использования -->
         <div class="card mt-4">
             <div class="card-header">
-                <h5 class="card-title mb-0"> Использование типа танца</h5>
+                <h5 class="card-title mb-0">Использование типа танца</h5>
             </div>
             <div class="card-body">
                 {% set dance_count = dance_type.dances|length %}
                 {% if dance_count > 0 %}
                 <div class="alert alert-warning">
-                    <h6>⚠️ Внимание!</h6>
+                    <h6>Внимание!</h6>
                     <p>Этот тип танца используется в <strong>{{ dance_count }}</strong> танцах.</p>
                     <p class="mb-0">Если вы измените название или код, это повлияет на все связанные танцы.</p>
                 </div>
@@ -93,7 +93,7 @@
                 </div>
                 {% else %}
                 <div class="alert alert-success">
-                    <h6>✅ Свободен для удаления</h6>
+                    <h6>Свободен для удаления</h6>
                     <p class="mb-0">Этот тип танца не используется ни в одном танце и может быть безопасно удален.</p>
                 </div>
                 {% endif %}

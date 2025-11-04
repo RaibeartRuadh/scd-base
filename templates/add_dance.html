@@ -8,10 +8,6 @@
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center">
                 <h2 class="card-title mb-0">Добавить новый танец</h2>
-            <!--    <div>
-                    <a href="{{ url_for('manage_set_types') }}" class="btn btn-outline-secondary btn-sm me-2">⚙️ Типы сетов</a>
-                    <a href="{{ url_for('manage_dance_types') }}" class="btn btn-outline-secondary btn-sm">⚙️ Типы танцев</a>
-                </div> -->
             </div>
             <div class="card-body">
                 <form method="POST">
@@ -59,7 +55,7 @@
 
                     <div class="row mb-3">
                         <div class="col-md-3">
-                            <label for="dance_couple" class="form-label">Танцующих пар/танцоров</label>
+                            <label for="dance_couple" class="form-label">Танцующие пары/танцоров</label>
                             <input type="text" class="form-control" id="dance_couple" name="dance_couple" 
                                    placeholder="Укажите число">
                         </div>
@@ -73,28 +69,28 @@
                                     {% endfor %}
                                 {% endif %}
                             </select>
-<div class="form-text">
-    <a href="{{ url_for('manage_dance_formats') }}" class="text-decoration-none">
-        + Добавить/изменить формат сета
-    </a>
-</div>
+                            <div class="form-text">
+                                <a href="{{ url_for('manage_dance_formats') }}" class="text-decoration-none">
+                                    + Добавить/изменить формат сета
+                                </a>
+                            </div>
                         </div>
 
                         <div class="col-md-4">
-                        <label for="set_type" class="form-label">Построение сета</label>
-                        <select class="form-select" id="set_type" name="set_type">
-                            <option value="">Выберите тип сета</option>
-                            {% if set_types %}
-                                {% for set_type in set_types %}
-                                <option value="{{ set_type.id }}">{{ set_type.name }}</option>
-                                {% endfor %}
-                            {% endif %}
-                        </select>
-                        <div class="form-text">
-                            <a href="{{ url_for('manage_set_types') }}" class="text-decoration-none">
-                                + Добавить/изменить тип сета
-                            </a>
-                        </div>
+                            <label for="set_type" class="form-label">Построение сета</label>
+                            <select class="form-select" id="set_type" name="set_type">
+                                <option value="">Выберите тип сета</option>
+                                {% if set_types %}
+                                    {% for set_type in set_types %}
+                                    <option value="{{ set_type.id }}">{{ set_type.name }}</option>
+                                    {% endfor %}
+                                {% endif %}
+                            </select>
+                            <div class="form-text">
+                                <a href="{{ url_for('manage_set_types') }}" class="text-decoration-none">
+                                    + Добавить/изменить тип сета
+                                </a>
+                            </div>
                         </div>
                     </div>
 

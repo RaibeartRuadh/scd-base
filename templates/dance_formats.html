@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="d-flex justify-content-between align-items-center mb-4">
-    <h1><i class="fas fa-ruler-combined me-2"></i>Управление форматами сетов</h1>
+    <h1>Управление форматами сетов</h1>
     <div>
         <a href="{{ url_for('index') }}" class="btn btn-outline-secondary me-2">← Назад</a>
         <a href="{{ url_for('add_dance_format') }}" class="btn btn-primary">
@@ -23,11 +23,11 @@
                         <th>ID</th>
                         <th>Название</th>
                         <th>Описание</th>
-                        <th>Действия</th>
+                        <th class="text-end">Действия</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for format in dance_formats %}
+                    {% for format in dance_formats|sort(attribute='id') %}
                     <tr>
                         <td><strong>{{ format.id }}</strong></td>
                         <td><strong>{{ format.name }}</strong></td>
@@ -38,16 +38,18 @@
                                 <span class="text-muted">—</span>
                             {% endif %}
                         </td>
-                        <td>
-                            <div class="btn-group btn-group-sm">
+                        <td class="text-end">
+                            <div class="btn-group btn-group-sm" role="group">
                                 <a href="{{ url_for('edit_dance_format', format_id=format.id) }}" 
-                                   class="btn btn-outline-warning">
-                                    <i class="fas fa-edit me-1"></i>Редактировать
+                                   class="btn btn-outline-primary btn-icon" 
+                                   title="Редактировать">
+                                    <i class="fas fa-edit"></i>
                                 </a>
                                 <form method="POST" action="{{ url_for('delete_dance_format', format_id=format.id) }}" 
-                                      class="d-inline" onsubmit="return confirm('Вы уверены, что хотите удалить формат сета «{{ format.name }}»?');">
-                                    <button type="submit" class="btn btn-outline-danger">
-                                        <i class="fas fa-trash me-1"></i>Удалить
+                                      class="d-inline"
+                                      onsubmit="return confirm('Вы уверены, что хотите удалить формат сета «{{ format.name }}»?');">
+                                    <button type="submit" class="btn btn-outline-danger btn-icon" title="Удалить">
+                                        <i class="fas fa-trash"></i>
                                     </button>
                                 </form>
                             </div>

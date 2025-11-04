@@ -75,7 +75,7 @@
                             </td>
                             <td class="px-2">
                                 <a href="{{ url_for('view_dance', dance_id=dance.id) }}" 
-                                   class="text-decoration-none fw-bold text-primary dance-name">
+                                   class="text-decoration-none fw-bold dance-name">
                                     {{ dance.name }}
                                 </a>
                             </td>
@@ -94,11 +94,11 @@
                             </td>
                             <td class="px-2">
                                 {% if dance.count_id and dance.size_id %}
-                                    <span class="text-muted small dance-size">{{ dance.count_id }}×{{ dance.size_id }}</span>
+                                    <span class="text-muted dance-size">{{ dance.count_id }}×{{ dance.size_id }}</span>
                                 {% elif dance.size_id %}
-                                    <span class="text-muted small dance-size">{{ dance.size_id }} тактов</span>
+                                    <span class="text-muted dance-size">{{ dance.size_id }} тактов</span>
                                 {% else %}
-                                    <span class="text-muted small dance-size">-</span>
+                                    <span class="text-muted dance-size">-</span>
                                 {% endif %}
                             </td>
                             <td class="px-2 text-center">
@@ -297,132 +297,4 @@ document.addEventListener('DOMContentLoaded', function() {
     updateDeleteButton();
 });
 </script>
-
-<style>
-.card {
-    border-radius: 8px;
-}
-
-.table-compact td {
-    padding: 8px 10px;
-    font-size: 0.85rem;
-    vertical-align: middle;
-    height: 44px; /* Фиксированная высота для выравнивания */
-}
-
-.table-compact th {
-    padding: 10px 12px;
-    font-size: 0.8rem;
-    vertical-align: middle;
-}
-
-.table {
-    margin-bottom: 0;
-}
-
-.table th {
-    border-top: none;
-    font-weight: 600;
-}
-
-.table-hover tbody tr:hover {
-    background-color: rgba(0, 0, 0, 0.02);
-}
-
-/* Стили для названий танцев */
-.dance-name {
-    font-weight: 600 !important;
-    color: #0d6efd !important;
-    font-size: 0.9rem;
-    line-height: 1.2;
-}
-
-.dance-name:hover {
-    color: #0a58ca !important;
-    text-decoration: underline !important;
-}
-
-/* Выравнивание элементов в ячейках */
-.badge-type {
-    font-size: 0.7rem;
-    padding: 0.3rem 0.6rem;
-    vertical-align: middle;
-    display: inline-block;
-    line-height: 1;
-}
-
-.dance-size {
-    font-size: 0.8rem;
-    vertical-align: middle;
-    display: inline-block;
-    line-height: 1.2;
-}
-
-.btn-icon {
-    padding: 0.25rem 0.4rem;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    transition: all 0.2s ease;
-    vertical-align: middle;
-}
-
-.btn-icon:hover {
-    transform: translateY(-1px);
-}
-
-.dance-checkbox {
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
-    vertical-align: middle;
-}
-
-.dance-checkbox:checked {
-    background-color: #0d6efd;
-    border-color: #0d6efd;
-}
-
-.animate-fade-in {
-    animation: fadeIn 0.3s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-5px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.pagination-sm .page-link {
-    padding: 0.25rem 0.5rem;
-    font-size: 0.8rem;
-}
-
-.page-link {
-    border-radius: 4px;
-    margin: 0 2px;
-    border: 1px solid #dee2e6;
-}
-
-.page-item.active .page-link {
-    background-color: #0d6efd;
-    border-color: #0d6efd;
-}
-
-.bg-light {
-    background-color: #f8f9fa !important;
-}
-
-.small {
-    font-size: 0.8rem;
-}
-
-/* Гарантия выравнивания по вертикали */
-.table-compact td > * {
-    vertical-align: middle;
-}
-
-/* Выравнивание чекбоксов */
-.table-compact td:first-child {
-    text-align: center;
-}
-</style>
 {% endblock %}

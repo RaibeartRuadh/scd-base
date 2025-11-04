@@ -4,10 +4,12 @@
 
 {% block content %}
 <div class="d-flex justify-content-between align-items-center mb-4">
-    <h1>🗂️ Управление типами танцев</h1>
+    <h1>Управление типами танцев</h1>
     <div>
         <a href="{{ url_for('index') }}" class="btn btn-outline-secondary me-2">← Назад</a>
-        <a href="{{ url_for('add_dance_type') }}" class="btn btn-primary"> Добавить тип танца</a>
+        <a href="{{ url_for('add_dance_type') }}" class="btn btn-primary">
+            <i class="fas fa-plus me-1"></i>Добавить тип танца
+        </a>
     </div>
 </div>
 
@@ -23,16 +25,14 @@
                         <th>Код</th>
                         <th>Описание</th>
                         <th>Дата создания</th>
-                        <th>Действия</th>
+                        <th class="text-end">Действия</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for dance_type in dance_types %}
+                    {% for dance_type in dance_types|sort(attribute='id') %}
                     <tr>
                         <td><strong>{{ dance_type.id }}</strong></td>
-                        <td>
-                            <strong>{{ dance_type.name }}</strong>
-                        </td>
+                        <td><strong>{{ dance_type.name }}</strong></td>
                         <td>
                             <span class="badge bg-info">{{ dance_type.code }}</span>
                         </td>
@@ -48,13 +48,19 @@
                                 {{ dance_type.created_at.strftime('%d.%m.%Y %H:%M') if dance_type.created_at else '—' }}
                             </small>
                         </td>
-                        <td>
-                            <div class="btn-group btn-group-sm">
+                        <td class="text-end">
+                            <div class="btn-group btn-group-sm" role="group">
                                 <a href="{{ url_for('edit_dance_type', type_id=dance_type.id) }}" 
-                                   class="btn btn-outline-primary"> Редактировать</a>
+                                   class="btn btn-outline-primary btn-icon" 
+                                   title="Редактировать">
+                                    <i class="fas fa-edit"></i>
+                                </a>
                                 <form method="POST" action="{{ url_for('delete_dance_type', type_id=dance_type.id) }}" 
-                                      class="d-inline" onsubmit="return confirm('Вы уверены, что хотите удалить тип танца «{{ dance_type.name }}»?');">
-                                    <button type="submit" class="btn btn-outline-danger"> Удалить</button>
+                                      class="d-inline"
+                                      onsubmit="return confirm('Вы уверены, что хотите удалить тип танца «{{ dance_type.name }}»?');">
+                                    <button type="submit" class="btn btn-outline-danger btn-icon" title="Удалить">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
                                 </form>
                             </div>
                         </td>
@@ -70,11 +76,13 @@
         {% else %}
         <div class="text-center py-5">
             <div class="mb-3">
-                <span style="font-size: 3rem;">🎵</span>
+                <i class="fas fa-music fa-4x text-muted"></i>
             </div>
             <h4>Типы танцев не найдены</h4>
             <p class="text-muted">Добавьте первый тип танца, чтобы начать работу</p>
-            <a href="{{ url_for('add_dance_type') }}" class="btn btn-primary"> Добавить тип танца</a>
+            <a href="{{ url_for('add_dance_type') }}" class="btn btn-primary">
+                <i class="fas fa-plus me-1"></i>Добавить тип танца
+            </a>
         </div>
         {% endif %}
     </div>
@@ -82,7 +90,7 @@
 
 <div class="mt-4">
     <div class="alert alert-info">
-        <h6>💡 Информация о типах танцев:</h6>
+        <h6><i class="fas fa-info-circle me-2"></i>Информация о типах танцев:</h6>
         <ul class="mb-0">
             <li>Типы танцев используются для классификации танцев в базе данных</li>
             <li>Каждый тип имеет уникальное название и код</li>

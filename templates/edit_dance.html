@@ -7,12 +7,7 @@
     <div class="col-md-10 mx-auto">
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center">
-                <h2 class="card-title mb-0">✏️ Редактировать танец</h2>
-                <div>
-                 <!--   <a href="{{ url_for('view_dance', dance_id=dance.id) }}" class="btn btn-outline-secondary btn-sm me-2">👁️ Просмотр</a>  -->
-                 <!--   <a href="{{ url_for('manage_set_types') }}" class="btn btn-outline-secondary btn-sm me-2">⚙️ Типы сетов</a> -->
-                  <!--   <a href="{{ url_for('manage_dance_types') }}" class="btn btn-outline-secondary btn-sm">⚙️ Типы танцев</a> -->
-                </div>
+                <h2 class="card-title mb-0">Редактировать танец</h2>
             </div>
             <div class="card-body">
                 <form method="POST">
@@ -143,12 +138,13 @@
         <!-- Информация о танце -->
         <div class="card mt-4">
             <div class="card-header">
-                <h5 class="card-title mb-0">📊 Информация о записи</h5>
+                <h5 class="card-title mb-0">Информация о записи</h5>
             </div>
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
                         <p><strong>ID записи:</strong> {{ dance.id }}</p>
+                    </div>
                 </div>
             </div>
         </div>

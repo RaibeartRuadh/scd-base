@@ -1,0 +1,259 @@
+/* Основные стили для Ru-SCDDB */
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --info-color: #0dcaf0;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+}
+
+/* Общие стили для карточек */
+.card {
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 1rem;
+}
+
+.card-header {
+    border-radius: 8px 8px 0 0 !important;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Стили для компактных таблиц */
+.table-compact td {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+    vertical-align: middle;
+    height: 44px;
+}
+
+.table-compact th {
+    padding: 10px 12px;
+    font-size: 0.8rem;
+    vertical-align: middle;
+    font-weight: 600;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table th {
+    border-top: none;
+    font-weight: 600;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Стили для названий танцев */
+.dance-name {
+    font-weight: 600 !important;
+    color: var(--primary-color) !important;
+    font-size: 0.9rem;
+    line-height: 1.2;
+    text-decoration: none !important;
+}
+
+.dance-name:hover {
+    color: #0a58ca !important;
+    text-decoration: underline !important;
+}
+
+/* Стили для бейджей типов танцев */
+.badge-type {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 1;
+}
+
+/* Стили для размера танцев */
+.dance-size {
+    font-size: 0.8rem;
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 1.2;
+}
+
+/* Стили для кнопок-иконок */
+.btn-icon {
+    padding: 0.25rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    transition: all 0.2s ease;
+    vertical-align: middle;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-icon:hover {
+    transform: translateY(-1px);
+}
+
+.btn-icon .fa-xs {
+    font-size: 0.75rem;
+}
+
+/* Стили для чекбоксов */
+.dance-checkbox {
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.dance-checkbox:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Анимации */
+.animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Стили для пагинации */
+.pagination-sm .page-link {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+}
+
+.page-link {
+    border-radius: 4px;
+    margin: 0 2px;
+    border: 1px solid #dee2e6;
+}
+
+.page-item.active .page-link {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Стили для форм */
+.form-label {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.form-control, .form-select {
+    border-radius: 6px;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Стили для скролл-областей фильтров */
+.filter-scroll {
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+    padding: 8px;
+    background-color: var(--light-color);
+    font-size: 0.8rem;
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+.form-check {
+    margin-bottom: 0.2rem;
+}
+
+.form-check-label {
+    font-size: 0.8rem;
+}
+
+/* Стили для навигации */
+.navbar-nav .nav-link {
+    padding: 0.5rem 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 0.375rem;
+}
+
+/* Стили для файловых карточек */
+.file-card {
+    transition: transform 0.2s;
+    height: 100%;
+}
+
+.file-card:hover {
+    transform: translateY(-2px);
+}
+
+/* Стили для прогресс-баров */
+.progress {
+    background-color: #e9ecef;
+    border-radius: 0.375rem;
+    height: 20px;
+}
+
+.progress-bar {
+    border-radius: 0.375rem;
+    font-size: 0.75rem;
+    line-height: 20px;
+}
+
+/* Утилитарные классы */
+.bg-light {
+    background-color: var(--light-color) !important;
+}
+
+.small {
+    font-size: 0.8rem;
+}
+
+/* Гарантия выравнивания по вертикали */
+.table-compact td > * {
+    vertical-align: middle;
+}
+
+/* Выравнивание чекбоксов */
+.table-compact td:first-child {
+    text-align: center;
+}
+
+/* Стили для алертов */
+.alert {
+    border-radius: 6px;
+    border: none;
+}
+
+/* Стили для карточек статистики */
+.display-4 {
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .table-compact td,
+    .table-compact th {
+        padding: 6px 8px;
+        font-size: 0.8rem;
+    }
+    
+    .btn-icon {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+}

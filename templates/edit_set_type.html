@@ -6,8 +6,9 @@
 <div class="row">
     <div class="col-md-6 mx-auto">
         <div class="card">
-            <div class="card-header">
-                <h2 class="card-title mb-0">✏️ Редактировать тип сета</h2>
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h2 class="card-title mb-0">Редактировать тип сета</h2>
+                <a href="{{ url_for('manage_set_types') }}" class="btn btn-outline-secondary">← Назад к списку</a>
             </div>
             <div class="card-body">
                 <form method="POST">
@@ -21,12 +22,63 @@
                         <label for="description" class="form-label">Описание</label>
                         <textarea class="form-control" id="description" name="description" rows="3">{{ set_type.description or '' }}</textarea>
                     </div>
+
+                    <div class="mb-4">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h6 class="card-title">Информация о типе сета</h6>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <small><strong>ID:</strong> {{ set_type.id }}</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <a href="{{ url_for('manage_set_types') }}" class="btn btn-secondary me-md-2">Отмена</a>
                         <button type="submit" class="btn btn-primary">Обновить тип сета</button>
                     </div>
                 </form>
+            </div>
+        </div>
+
+        <!-- Статистика использования -->
+        <div class="card mt-4">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Использование типа сета</h5>
+            </div>
+            <div class="card-body">
+                {% set dance_count = set_type.dances|length %}
+                {% if dance_count > 0 %}
+                <div class="alert alert-warning">
+                    <h6>Внимание!</h6>
+                    <p>Этот тип сета используется в <strong>{{ dance_count }}</strong> танцах.</p>
+                    <p class="mb-0">Если вы измените название, это повлияет на все связанные танцы.</p>
+                </div>
+                <div class="mt-3">
+                    <h6>Связанные танцы:</h6>
+                    <ul class="list-group">
+                        {% for dance in set_type.dances[:5] %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            {{ dance.name }}
+                            <a href="{{ url_for('view_dance', dance_id=dance.id) }}" class="btn btn-sm btn-outline-info">Просмотр</a>
+                        </li>
+                        {% endfor %}
+                        {% if dance_count > 5 %}
+                        <li class="list-group-item text-center text-muted">
+                            и еще {{ dance_count - 5 }} танцев...
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+                {% else %}
+                <div class="alert alert-success">
+                    <h6>Свободен для удаления</h6>
+                    <p class="mb-0">Этот тип сета не используется ни в одном танце и может быть безопасно удален.</p>
+                </div>
+                {% endif %}
             </div>
         </div>
     </div>
