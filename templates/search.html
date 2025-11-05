@@ -257,19 +257,17 @@ function clearForm() {
 
 // Обработка отправки формы - удаляем пустые поля
 document.getElementById('searchForm').addEventListener('submit', function(e) {
-    // Находим все числовые поля
-    const numberInputs = document.querySelectorAll('input[type="number"]');
-    
-    numberInputs.forEach(input => {
-        // Если поле пустое, удаляем его имя, чтобы оно не отправлялось
+    // Находим все текстовые поля (включая description)
+    const textInputs = document.querySelectorAll('input[type="text"]');
+    textInputs.forEach(input => {
         if (input.value === '' || input.value === null) {
             input.removeAttribute('name');
         }
     });
     
-    // Также обрабатываем текстовые поля (опционально)
-    const textInputs = document.querySelectorAll('input[type="text"]');
-    textInputs.forEach(input => {
+    // Находим все числовые поля
+    const numberInputs = document.querySelectorAll('input[type="number"]');
+    numberInputs.forEach(input => {
         if (input.value === '' || input.value === null) {
             input.removeAttribute('name');
         }
@@ -280,6 +278,14 @@ document.getElementById('searchForm').addEventListener('submit', function(e) {
     selects.forEach(select => {
         if (select.value === '' || select.value === null) {
             select.removeAttribute('name');
+        }
+    });
+    
+    // Обрабатываем чекбоксы
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+        if (!checkbox.checked) {
+            checkbox.removeAttribute('name');
         }
     });
 });

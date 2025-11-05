@@ -346,7 +346,16 @@ def build_search_query(filters):
     if filters.get('dance_couples'):
         couple_values = filters['dance_couples']
         conditions.append(Dance.dance_couple.in_(couple_values))
-    
+
+    # Поиск по описанию (ИЛИ для нескольких слов)
+    if filters.get('description'):
+        description_terms = [term.strip() for term in filters['description'].split() if term.strip()]
+        if description_terms:
+            description_conditions = []
+            for term in description_terms:
+                description_conditions.append(Dance.description.ilike(f'%{term}%'))
+            conditions.append(or_(*description_conditions))
+
     # Поиск по публикации (ИЛИ для нескольких слов)
     if filters.get('published'):
         published_terms = [term.strip() for term in filters['published'].split() if term.strip()]
@@ -402,6 +411,7 @@ def advanced_search():
             filters = {
                 'name': request.form.get('name', '').strip(),
                 'author': request.form.get('author', '').strip(),
+                'description': request.form.get('description', '').strip(),  # ДОБАВЛЕНО
                 'dance_types': request.form.getlist('dance_types'),
                 'dance_formats': request.form.getlist('dance_formats'),
                 'set_types': request.form.getlist('set_types'),
