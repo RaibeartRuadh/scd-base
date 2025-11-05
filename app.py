@@ -391,6 +391,11 @@ def build_search_query(filters):
         except (ValueError, TypeError):
             pass
     
+    # ДОБАВЛЕНО: Поиск по наличию описания
+    if filters.get('has_description') == 'on':
+        conditions.append(Dance.description.isnot(None))
+        conditions.append(Dance.description != '')
+    
     # Применяем все условия через И
     if conditions:
         query = query.filter(and_(*conditions))
@@ -411,7 +416,7 @@ def advanced_search():
             filters = {
                 'name': request.form.get('name', '').strip(),
                 'author': request.form.get('author', '').strip(),
-                'description': request.form.get('description', '').strip(),  # ДОБАВЛЕНО
+                'description': request.form.get('description', '').strip(),
                 'dance_types': request.form.getlist('dance_types'),
                 'dance_formats': request.form.getlist('dance_formats'),
                 'set_types': request.form.getlist('set_types'),
@@ -420,7 +425,9 @@ def advanced_search():
                 'count_min': request.form.get('count_min', '').strip(),
                 'count_max': request.form.get('count_max', '').strip(),
                 'size_min': request.form.get('size_min', '').strip(),
-                'size_max': request.form.get('size_max', '').strip()
+                'size_max': request.form.get('size_max', '').strip(),
+                'has_description': request.form.get('has_description'),  # ДОБАВЛЕНО
+                'has_files': request.form.get('has_files')  # ДОБАВЛЕНО
             }
             
             # Строим запрос
@@ -428,6 +435,11 @@ def advanced_search():
             
             # Выполняем поиск
             results = query.order_by(Dance.name).all()
+            
+            # Применяем фильтр по наличию файлов (после основного запроса)
+            if filters.get('has_files') == 'on':
+                results = [dance for dance in results if get_dance_files(dance.id, dance.name)]
+            
             total_count = len(results)
             
             if total_count == 0:

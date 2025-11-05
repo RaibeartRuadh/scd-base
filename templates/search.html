@@ -51,6 +51,38 @@
                                        value="{{ filters.dance_couples if filters.dance_couples }}"
                                        min="0" placeholder="Количество пар...">
                             </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-2">
+                                        <label class="form-label small fw-semibold">Наличие материалов</label>
+                                        <div class="filter-scroll" style="max-height: 80px; overflow-y: auto;">
+                                            <!-- Чекбокс для наличия описания -->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" 
+                                                    name="has_description" value="on" 
+                                                    id="has_description"
+                                                    {% if filters.has_description %}checked{% endif %}>
+                                                <label class="form-check-label small" for="has_description">
+                                                    Есть описание
+                                                </label>
+                                            </div>
+                                            
+                                            <!-- Чекбокс для наличия файлов -->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" 
+                                                    name="has_files" value="on" 
+                                                    id="has_files"
+                                                    {% if filters.has_files %}checked{% endif %}>
+                                                <label class="form-check-label small" for="has_files">
+                                                    Есть диаграммы/дополнительная информация
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
 
                         <!-- Правая колонка -->
@@ -303,6 +335,8 @@ document.getElementById('searchForm').addEventListener('submit', function(e) {
             checkbox.removeAttribute('name');
         }
     });
+
+    
 });
 </script>
 
