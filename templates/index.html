@@ -63,6 +63,7 @@
                         <th class="px-2">Название</th>
                         <th class="px-2">Тип</th>
                         <th class="px-2">Размер</th>
+                        <th class="px-2 text-center" width="80"></th>
                         <th width="140" class="px-2 text-center">Действия</th>
                     </tr>
                 </thead>
@@ -102,6 +103,20 @@
                                 {% endif %}
                             </td>
                             <td class="px-2 text-center">
+                                <div class="d-flex justify-content-center gap-2">
+                                    <!-- Иконка описания (газета) -->
+                                    {% if dance.description and dance.description.strip() %}
+                                    <i class="fas fa-newspaper material-icon" title="Есть описание танца"></i>
+                                    {% endif %}
+                                    
+                                    <!-- Иконка файлов (картина) -->
+                                    {% set dance_files = get_dance_files(dance.id, dance.name) %}
+                                    {% if dance_files %}
+                                    <i class="fas fa-image material-icon" title="Есть дополнительные материалы"></i>
+                                    {% endif %}
+                                </div>
+                            </td>
+                            <td class="px-2 text-center">
                                 <div class="btn-group btn-group-sm" role="group">
                                     <!-- Файлы - папка -->
                                     <a href="{{ url_for('dance_files', dance_id=dance.id) }}" 
@@ -130,7 +145,7 @@
                         {% endfor %}
                     {% else %}
                     <tr>
-                        <td colspan="5" class="text-center py-4">
+                        <td colspan="6" class="text-center py-4">
                             <div class="py-3">
                                 {% if search %}
                                     <i class="fas fa-search fa-lg text-muted mb-2"></i>
@@ -297,4 +312,106 @@ document.addEventListener('DOMContentLoaded', function() {
     updateDeleteButton();
 });
 </script>
+
+<style>
+/* Стили для иконок материалов */
+.material-icon {
+    font-size: 0.9rem;
+    cursor: default;
+    transition: all 0.2s ease;
+    opacity: 0.7;
+}
+
+.material-icon:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Гарантия выравнивания по центру */
+.table-compact td.text-center > * {
+    justify-content: center;
+}
+
+/* Компактные отступы для группы иконок */
+.d-flex.gap-2 {
+    gap: 0.5rem !important;
+}
+
+/* Остальные существующие стили */
+.table-compact td {
+    padding: 8px 10px;
+    font-size: 0.82rem;
+    vertical-align: middle;
+    height: 40px;
+}
+
+.table-compact th {
+    padding: 10px;
+    font-size: 0.78rem;
+    vertical-align: middle;
+}
+
+.dance-name {
+    font-weight: 600 !important;
+    color: #0d6efd !important;
+    font-size: 0.85rem;
+    line-height: 1.2;
+}
+
+.dance-name:hover {
+    color: #0a58ca !important;
+    text-decoration: underline !important;
+}
+
+.badge-type {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.5rem;
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 1;
+}
+
+.dance-size {
+    font-size: 0.75rem;
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 1.2;
+}
+
+.btn-icon {
+    padding: 0.2rem 0.35rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    transition: all 0.2s ease;
+    vertical-align: middle;
+}
+
+.btn-icon:hover {
+    transform: translateY(-1px);
+}
+
+.table-compact td > * {
+    vertical-align: middle;
+}
+
+.alert {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.table-compact th.text-start,
+.table-compact td.text-start {
+    text-align: left;
+}
+
+.table-compact th.text-end,
+.table-compact td.text-end {
+    text-align: right;
+}
+
+.btn-group.justify-content-end {
+    width: auto;
+    margin-left: auto;
+}
+</style>
 {% endblock %}

@@ -257,3 +257,32 @@
         padding: 1rem;
     }
 }
+
+/* Стили для бейджей материалов */
+.material-badge {
+    font-size: 0.65rem;
+    padding: 0.3rem 0.4rem;
+    border-radius: 4px;
+    cursor: default;
+    transition: all 0.2s ease;
+}
+
+.material-badge:hover {
+    transform: scale(1.1);
+}
+
+/* Убедитесь, что иконки в бейджах выровнены правильно */
+.material-badge i {
+    font-size: 0.7rem;
+    vertical-align: middle;
+}
+
+/* Гарантия выравнивания по центру */
+.table-compact td.text-center > * {
+    justify-content: center;
+}
+
+/* Компактные отступы для группы иконок */
+.d-flex.gap-1 {
+    gap: 0.25rem !important;
+}
