@@ -225,6 +225,10 @@ def batch_import():
             # Импорт по диапазону ID
             for dance_id in range(start_id, end_id + 1):
                 try:
+                    # Создаем новую сессию для каждого танца чтобы избежать проблем с транзакциями
+                    from sqlalchemy import create_engine
+                    from sqlalchemy.orm import sessionmaker
+                    
                     # Проверяем существование танца если включена опция пропуска
                     if skip_existing:
                         existing_dance = Dance.query.filter_by(
@@ -264,33 +268,46 @@ def batch_import():
                         })
                         continue
                     
-                    # Сохраняем в базу
-                    dance = save_dance_to_db(dance_data)
-                    
-                    # Загружаем изображения если выбрана опция
-                    downloaded_files = []
-                    if download_images and dance_data.get('images'):
-                        downloaded_files = download_dance_images(dance_data, dance.id, dance.name)
-                        if downloaded_files:
-                            update_dance_note_with_images(dance, downloaded_files)
-                    
-                    results['successful'] += 1
-                    results['details'].append({
-                        'id': dance_id,
-                        'status': 'Успешно',
-                        'message': f"Танец '{dance.name}' импортирован",
-                        'url': dance_data['source_url'],
-                        'images_count': len(downloaded_files),
-                        'extrainfo_length': len(dance_data.get('note', ''))
-                    })
-                    
-                    print(f"✅ Успешно импортирован ID {dance_id}: {dance.name}")
+                    # Сохраняем в базу в отдельной транзакции
+                    try:
+                        dance = save_dance_to_db(dance_data)
+                        
+                        # Загружаем изображения если выбрана опция
+                        downloaded_files = []
+                        if download_images and dance_data.get('images'):
+                            downloaded_files = download_dance_images(dance_data, dance.id, dance.name)
+                            if downloaded_files:
+                                update_dance_note_with_images(dance, downloaded_files)
+                        
+                        results['successful'] += 1
+                        results['details'].append({
+                            'id': dance_id,
+                            'status': 'Успешно',
+                            'message': f"Танец '{dance.name}' импортирован",
+                            'url': dance_data['source_url'],
+                            'images_count': len(downloaded_files),
+                            'extrainfo_length': len(dance_data.get('note', ''))
+                        })
+                        
+                        print(f"✅ Успешно импортирован ID {dance_id}: {dance.name}")
+                        
+                    except Exception as e:
+                        # Откатываем транзакцию для этого танца
+                        db.session.rollback()
+                        results['errors'] += 1
+                        results['details'].append({
+                            'id': dance_id,
+                            'status': 'Ошибка БД',
+                            'message': f'Ошибка сохранения: {str(e)}',
+                            'url': f'https://my.strathspey.org/dd/dance/{dance_id}/'
+                        })
+                        print(f"❌ Ошибка БД для ID {dance_id}: {e}")
                     
                 except requests.RequestException as e:
                     results['errors'] += 1
                     results['details'].append({
                         'id': dance_id,
-                        'status': 'Ошибка',
+                        'status': 'Ошибка сети',
                         'message': f'Ошибка сети: {str(e)}',
                         'url': f'https://my.strathspey.org/dd/dance/{dance_id}/'
                     })
@@ -300,7 +317,7 @@ def batch_import():
                     results['errors'] += 1
                     results['details'].append({
                         'id': dance_id,
-                        'status': 'Ошибка',
+                        'status': 'Ошибка импорта',
                         'message': f'Ошибка импорта: {str(e)}',
                         'url': f'https://my.strathspey.org/dd/dance/{dance_id}/'
                     })
@@ -455,7 +472,7 @@ def save_dance_to_db(dance_data):
             description=dance_data.get('description'),
             published=', '.join(dance_data.get('published_in', [])) if dance_data.get('published_in') else None,
             note=note,
-            source_url=dance_data.get('source_url')
+            source_url=dance_data.get('source_url', '')  # Используем значение по умолчанию
         )
         
         db.session.add(dance)
@@ -1530,17 +1547,16 @@ def init_database():
                         conn.commit()
                     print("✅ Схема scddb создана/проверена")
                     
-                    with db.engine.connect() as conn:
-                        conn.execute(db.text('SET search_path TO scddb'))
-                        conn.commit()
-                        
                 except Exception as e:
                     print(f"ℹ️ Информация о схеме: {e}")
             
-            # Создаем таблицы
-            print("🔄 Создание таблиц...")
+            # УДАЛЯЕМ СУЩЕСТВУЮЩИЕ ТАБЛИЦЫ И СОЗДАЕМ ЗАНОВО
+            print("🔄 Удаление старых таблиц...")
+            db.drop_all()
+            
+            print("🔄 Создание новых таблиц...")
             db.create_all()
-            print("✅ SQLAlchemy метаданные обновлены")
+            print("✅ Таблицы созданы заново")
             
             # Добавляем базовые данные
             init_basic_data()

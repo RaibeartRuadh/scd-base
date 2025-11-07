@@ -55,6 +55,7 @@ class DanceType(BaseModel):
     name = db.Column(db.String(50), nullable=False, unique=True)
     code = db.Column(db.String(1), nullable=False, unique=True)
     description = db.Column(db.Text)
+
 #########################################################
 # Модель данных для танцев
 class Dance(db.Model):
@@ -66,19 +67,19 @@ class Dance(db.Model):
     author = db.Column(db.String(255))
     dance_type_id = db.Column(db.Integer, db.ForeignKey('scddb.dance_type.id'))
     size_id = db.Column(db.Integer)
-    count_id = db.Column(db.Integer)  # Для хранения повторений
+    count_id = db.Column(db.Integer)
     dance_format_id = db.Column(db.Integer, db.ForeignKey('scddb.dance_format.id'))
     dance_couple = db.Column(db.String(50))
     set_type_id = db.Column(db.Integer, db.ForeignKey('scddb.set_type.id'))
-    description = db.Column(db.String(5000))  # Увеличили до 5000
+    description = db.Column(db.String(5000))
     published = db.Column(db.String(255))
-    note = db.Column(db.String(10000))  # Увеличили до 5000
-
-
+    note = db.Column(db.String(10000))
+    source_url = db.Column(db.String(500))  # Убедитесь, что это поле есть
+    
     # Связи
-    set_type_rel = db.relationship('SetType', backref='dances')
-    dance_format_rel = db.relationship('DanceFormat', backref='dances')
-    dance_type_rel = db.relationship('DanceType', backref='dances')
+    set_type = db.relationship('SetType', backref='dances')
+    dance_format = db.relationship('DanceFormat', backref='dances')
+    dance_type = db.relationship('DanceType', backref='dances')
     
     @classmethod
     def get_by_id(cls, id):
