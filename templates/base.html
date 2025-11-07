@@ -40,6 +40,29 @@
             color: #0d6efd;
             text-decoration: underline;
         }
+        /* Стили для массового импорта */
+        .batch-import-progress {
+            height: 25px;
+            margin-bottom: 10px;
+        }
+        .batch-import-status {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        .import-log {
+            max-height: 300px;
+            overflow-y: auto;
+            font-family: monospace;
+            font-size: 0.85rem;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 0.375rem;
+            padding: 10px;
+        }
+        .log-success { color: #198754; }
+        .log-warning { color: #ffc107; }
+        .log-error { color: #dc3545; }
+        .log-info { color: #0dcaf0; }
     </style>
 </head>
 <body>
@@ -93,11 +116,16 @@
                                 </a>
                             </li>
                             <li>
-                            <a class="dropdown-item" href="{{ url_for('import_dance') }}">
-                                <i class="fas fa-file-import me-2"></i>Импорт танцев
-                            </a>
-                        </li>
-                        <li><hr class="dropdown-divider"></li>
+                                <a class="dropdown-item" href="{{ url_for('import_dance') }}">
+                                    <i class="fas fa-file-import me-2"></i>Импорт танцев
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ url_for('batch_import') }}">
+                                    <i class="fas fa-file-import me-2"></i>Массовый импорт
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
                         </ul>
                     </li>
                 </ul>
@@ -149,6 +177,47 @@
                 });
             }, 5000);
         });
+
+        // Функции для массового импорта
+        function updateProgress(progress, status) {
+            const progressBar = document.getElementById('importProgress');
+            const progressText = document.getElementById('progressText');
+            const statusElement = document.getElementById('importStatus');
+            
+            if (progressBar) {
+                progressBar.style.width = progress + '%';
+                progressBar.setAttribute('aria-valuenow', progress);
+            }
+            if (progressText) {
+                progressText.textContent = progress + '%';
+            }
+            if (statusElement && status) {
+                statusElement.textContent = status;
+            }
+        }
+
+        function addLogMessage(message, type = 'info') {
+            const logContainer = document.getElementById('importLog');
+            if (!logContainer) return;
+            
+            const logEntry = document.createElement('div');
+            logEntry.className = `log-${type}`;
+            logEntry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            logContainer.appendChild(logEntry);
+            logContainer.scrollTop = logContainer.scrollHeight;
+        }
+
+        function clearLog() {
+            const logContainer = document.getElementById('importLog');
+            if (logContainer) {
+                logContainer.innerHTML = '';
+            }
+        }
+
+        function resetProgress() {
+            updateProgress(0, 'Готов к импорту');
+            clearLog();
+        }
     </script>
 </body>
 </html>

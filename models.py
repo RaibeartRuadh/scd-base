@@ -70,10 +70,11 @@ class Dance(db.Model):
     dance_format_id = db.Column(db.Integer, db.ForeignKey('scddb.dance_format.id'))
     dance_couple = db.Column(db.String(50))
     set_type_id = db.Column(db.Integer, db.ForeignKey('scddb.set_type.id'))
-    description = db.Column(db.Text)
+    description = db.Column(db.String(5000))  # Увеличили до 5000
     published = db.Column(db.String(255))
-    note = db.Column(db.Text)
-    
+    note = db.Column(db.String(10000))  # Увеличили до 5000
+
+
     # Связи
     set_type_rel = db.relationship('SetType', backref='dances')
     dance_format_rel = db.relationship('DanceFormat', backref='dances')

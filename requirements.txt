@@ -4,14 +4,5 @@ Werkzeug==2.3.7
 WTForms==3.1.0
 python-dotenv==1.0.0
 pg8000==1.30.4
-
-
-Flask==2.3.3
-Flask-SQLAlchemy==3.1.1
-Werkzeug==2.3.7
-WTForms==3.1.0
-python-dotenv==1.0.0
-pg8000==1.30.4
 requests==2.31.0
-filetype==1.2.0
-Pillow==10.0.1
+chardet==5.1.0

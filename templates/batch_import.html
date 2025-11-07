@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+
+{% block title %}Массовый импорт танцев - База данных танцев{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1 class="h3 mb-0">Массовый импорт танцев</h1>
+            <a href="{{ url_for('index') }}" class="btn btn-outline-secondary btn-sm">← Назад</a>
+        </div>
+
+        <div class="card">
+            <div class="card-header bg-warning text-dark py-2">
+                <h5 class="mb-0"><i class="fas fa-bolt me-2"></i>Массовый импорт с my.strathspey.org</h5>
+            </div>
+            <div class="card-body">
+                <form method="POST" id="batchImportForm">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="start_id" class="form-label fw-semibold">Начальный ID</label>
+                                <input type="number" class="form-control" id="start_id" name="start_id" 
+                                       value="1" min="1" max="50000" required>
+                                <div class="form-text">Первый ID в диапазоне</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="end_id" class="form-label fw-semibold">Конечный ID</label>
+                                <input type="number" class="form-control" id="end_id" name="end_id" 
+                                       value="100" min="1" max="50000" required>
+                                <div class="form-text">Последний ID в диапазоне</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="delay" class="form-label fw-semibold">Задержка между запросами (секунды)</label>
+                                <input type="number" class="form-control" id="delay" name="delay" 
+                                       value="1.0" step="0.1" min="0.5" max="10" required>
+                                <div class="form-text">Рекомендуется 1-2 секунды чтобы не перегружать сервер</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Опции импорта</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="download_images" id="download_images" checked>
+                                    <label class="form-check-label" for="download_images">
+                                        Загружать изображения
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="skip_existing" id="skip_existing" checked>
+                                    <label class="form-check-label" for="skip_existing">
+                                        Пропускать существующие танцы
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-warning">
+                        <h6 class="alert-heading"><i class="fas fa-exclamation-triangle me-2"></i>Внимание!</h6>
+                        <ul class="mb-0">
+                            <li>Импорт большого количества танцев может занять длительное время</li>
+                            <li>Не все ID могут содержать валидные танцы</li>
+                            <li>Рекомендуется начинать с небольших диапазонов (50-100 танцев)</li>
+                            <li>Будьте вежливы - используйте задержку между запросами</li>
+                        </ul>
+                    </div>
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button type="button" class="btn btn-outline-secondary me-md-2" onclick="history.back()">
+                            <i class="fas fa-times me-1"></i>Отмена
+                        </button>
+                        <button type="submit" class="btn btn-warning" id="importButton">
+                            <i class="fas fa-bolt me-1"></i>Начать массовый импорт
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Результаты импорта -->
+        {% if results %}
+        <div class="card mt-4">
+            <div class="card-header {% if results.errors == 0 %}bg-success{% else %}bg-warning{% endif %} text-white py-2">
+                <h6 class="mb-0">
+                    <i class="fas fa-chart-bar me-2"></i>Результаты импорта
+                    <span class="badge bg-light text-dark ms-2">
+                        Всего: {{ results.total }}, Успешно: {{ results.successful }}, Пропущено: {{ results.skipped }}, Ошибки: {{ results.errors }}
+                    </span>
+                </h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive" style="max-height: 400px;">
+                    <table class="table table-sm table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Статус</th>
+                                <th>Сообщение</th>
+                                <th>URL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for detail in results.details %}
+                            <tr class="{% if detail.status == 'Успешно' %}table-success{% elif detail.status == 'Пропущен' %}table-warning{% else %}table-danger{% endif %}">
+                                <td><strong>{{ detail.id }}</strong></td>
+                                <td>
+                                    {% if detail.status == 'Успешно' %}
+                                        <span class="badge bg-success">Успешно</span>
+                                        {% if detail.images_count %}
+                                        <br><small class="text-muted">+{{ detail.images_count }} изображ.</small>
+                                        {% endif %}
+                                    {% elif detail.status == 'Пропущен' %}
+                                        <span class="badge bg-warning">Пропущен</span>
+                                    {% else %}
+                                        <span class="badge bg-danger">Ошибка</span>
+                                    {% endif %}
+                                </td>
+                                <td>{{ detail.message }}</td>
+                                <td>
+                                    <a href="{{ detail.url }}" target="_blank" class="text-decoration-none">
+                                        <small>{{ detail.url }}</small>
+                                    </a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+    </div>
+</div>
+
+<script>
+document.getElementById('batchImportForm').addEventListener('submit', function(e) {
+    const startId = parseInt(document.getElementById('start_id').value);
+    const endId = parseInt(document.getElementById('end_id').value);
+    const importButton = document.getElementById('importButton');
+    
+    if (startId > endId) {
+        alert('Начальный ID не может быть больше конечного');
+        e.preventDefault();
+        return;
+    }
+    
+    if (endId - startId > 1000) {
+        if (!confirm('Вы выбрали диапазон более 1000 танцев. Это может занять очень много времени. Продолжить?')) {
+            e.preventDefault();
+            return;
+        }
+    }
+    
+    // Блокируем кнопку на время импорта
+    importButton.disabled = true;
+    importButton.innerHTML = '<i class="fas fa-spinner fa-spin me-1"></i>Импорт...';
+    
+    // Показываем уведомление о начале импорта
+    alert(`Начинается импорт танцев с ID ${startId} по ${endId}. Это может занять несколько минут.`);
+});
+</script>
+{% endblock %}
