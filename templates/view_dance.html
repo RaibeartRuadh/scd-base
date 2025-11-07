@@ -66,51 +66,55 @@
     <div class="card-header d-flex justify-content-between align-items-center">
         <h5 class="mb-0">
             <i class="fas fa-folder"></i> Дополнительная информация
-            {% if files %}
-                <span class="badge bg-primary ms-2">{{ files|length }}</span>
+            {% if files or images %}
+                <span class="badge bg-primary ms-2">{{ (files|length) + (images|length) }}</span>
             {% endif %}
         </h5>
     </div>
     <div class="card-body">
-        {% if files %}
+        {% if files or images %}
             <!-- Отдельный блок для изображений -->
-            {% set image_files = [] %}
-            {% set other_files = [] %}
-            
-            {% for file in files %}
-                {% if file.name.lower().endswith(('.png', '.jpg', '.jpeg', '.gif')) %}
-                    {% set _ = image_files.append(file) %}
-                {% else %}
-                    {% set _ = other_files.append(file) %}
-                {% endif %}
-            {% endfor %}
-            
-            {% if image_files %}
+            {% if images %}
             <div class="mb-4">
+                <h6 class="border-bottom pb-2">🖼️ Изображения</h6>
                 <div class="row">
-                    {% for file in image_files %}
+                    {% for image in images %}
                     <div class="col-12 mb-4">
                         <div class="card">
                             <div class="card-body text-center p-0">
-                                <!-- ВЫВОД РЕАЛЬНОЙ КАРТИНКИ -->
-                                <img src="{{ url_for('download_dance_file', dance_id=dance.id, filename=file.name) }}" 
-                                     class="img-fluid" 
-                                     alt="{{ file.name }}"
-                                     style="max-width: 900px; width: 100%; height: auto; display: block; margin: 0 auto; background-color: #f8f9fa; padding: 10px;">
-                                <div class="p-3">
-                                    <div class="btn-group btn-group-sm">
-                                        <a href="{{ url_for('download_dance_file', dance_id=dance.id, filename=file.name) }}"  
-                                           class="btn btn-outline-primary" 
-                                           target="_blank"
-                                           title="Открыть в полном размере">
-                                            <i class="fas fa-expand"></i> Полный размер
+                                <!-- Основное изображение -->
+                                <div class="p-3" style="background-color: #f8f9fa;">
+                                    <img src="{{ url_for('serve_dance_image', dance_id=dance.id, filename=image.filename) }}" 
+                                         class="img-fluid" 
+                                         alt="{{ image.filename }}"
+                                         style="max-width: 100%; max-height: 600px; height: auto; display: block; margin: 0 auto;"
+                                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                    <div style="display: none; padding: 20px; color: #6c757d;">
+                                        <i class="fas fa-image fa-3x mb-2"></i>
+                                        <p>Изображение не может быть загружено</p>
+                                        <a href="{{ url_for('serve_dance_image', dance_id=dance.id, filename=image.filename) }}" 
+                                           class="btn btn-sm btn-outline-primary">
+                                            <i class="fas fa-download"></i> Скачать файл
                                         </a>
-                                        <a href="{{ url_for('download_dance_file', dance_id=dance.id, filename=file.name) }}" 
-                                           class="btn btn-outline-success"
-                                           download="{{ file.name }}"
-                                           title="Скачать">
-                                            <i class="fas fa-download"></i> Скачать
-                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-3 border-top">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="text-muted small">{{ image.filename }}</span>
+                                        <div class="btn-group btn-group-sm">
+                                            <a href="{{ url_for('serve_dance_image', dance_id=dance.id, filename=image.filename) }}"  
+                                               class="btn btn-outline-primary" 
+                                               target="_blank"
+                                               title="Открыть в полном размере">
+                                                <i class="fas fa-expand"></i> Полный размер
+                                            </a>
+                                            <a href="{{ url_for('serve_dance_image', dance_id=dance.id, filename=image.filename) }}" 
+                                               class="btn btn-outline-success"
+                                               download="{{ image.filename }}"
+                                               title="Скачать">
+                                                <i class="fas fa-download"></i> Скачать
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -122,11 +126,11 @@
             {% endif %}
 
             <!-- Блок для остальных файлов (не изображений) -->
-            {% if other_files %}
+            {% if files %}
             <div>
                 <h6 class="border-bottom pb-2">📄 Документы и другие файлы</h6>
                 <div class="row">
-                    {% for file in other_files %}
+                    {% for file in files %}
                     <div class="col-md-4 mb-3">
                         <div class="card file-card h-100">
                             <div class="card-body text-center">
@@ -134,8 +138,12 @@
                                     <i class="fas fa-file-pdf fa-2x text-danger mb-2"></i>
                                 {% elif file.name.lower().endswith(('.doc', '.docx')) %}
                                     <i class="fas fa-file-word fa-2x text-primary mb-2"></i>
+                                {% elif file.name.lower().endswith(('.xls', '.xlsx')) %}
+                                    <i class="fas fa-file-excel fa-2x text-success mb-2"></i>
                                 {% elif file.name.lower().endswith('.txt') %}
                                     <i class="fas fa-file-alt fa-2x text-info mb-2"></i>
+                                {% elif file.name.lower().endswith(('.zip', '.rar')) %}
+                                    <i class="fas fa-file-archive fa-2x text-warning mb-2"></i>
                                 {% else %}
                                     <i class="fas fa-file fa-2x text-secondary mb-2"></i>
                                 {% endif %}
@@ -158,7 +166,7 @@
                                        title="Скачать">
                                         <i class="fas fa-download"></i>
                                     </a>
-                                    {% if file.name.lower().endswith('.pdf') %}
+                                    {% if file.name.lower().endswith(('.pdf', '.txt', '.doc', '.docx')) %}
                                     <a href="{{ url_for('download_dance_file', dance_id=dance.id, filename=file.name) }}" 
                                        class="btn btn-outline-info"
                                        target="_blank"
@@ -175,10 +183,10 @@
             </div>
             {% endif %}
 
-            {% if files|length > 6 %}
+            {% if (files|length + images|length) > 6 %}
                 <div class="text-center mt-3">
                     <a href="{{ url_for('dance_files', dance_id=dance.id) }}" class="btn btn-sm btn-outline-info">
-                        <i class="fas fa-list"></i> Показать все {{ files|length }} файлов
+                        <i class="fas fa-list"></i> Показать все {{ (files|length + images|length) }} файлов
                     </a>
                 </div>
             {% endif %}

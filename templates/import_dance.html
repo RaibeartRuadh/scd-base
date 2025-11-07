@@ -1,0 +1,95 @@
+<!-- templates/import_dance.html -->
+{% extends "base.html" %}
+
+{% block title %}Импорт танца - Ru-SCDDB{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ url_for('index') }}">Главная</a></li>
+                    <li class="breadcrumb-item active">Импорт танца</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <h2 class="mb-4">
+                <i class="fas fa-file-import text-primary me-2"></i>
+                Импорт танца из HTML
+            </h2>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-upload me-2"></i>
+                        Загрузка данных танца
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        <div class="mb-4">
+                            <label for="url" class="form-label fw-bold">
+                                <i class="fas fa-link me-2"></i>URL страницы танца
+                            </label>
+                            <input type="url" class="form-control form-control-lg" id="url" name="url" 
+                                   placeholder=""
+                                   value="{{ request.form.url if request.form.url }}">
+                            <div class="form-text">
+                                Введите полный URL
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mb-4">
+                            <span class="text-muted">ИЛИ</span>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="html_content" class="form-label fw-bold">
+                                <i class="fas fa-code me-2"></i>HTML код страницы
+                            </label>
+                            <textarea class="form-control" id="html_content" name="html_content" 
+                                      rows="12" placeholder="&lt;!DOCTYPE html&gt;&lt;html&gt;...&lt;/html&gt;"
+                                      style="font-family: 'Courier New', monospace; font-size: 0.9rem;">{{ request.form.html_content if request.form.html_content }}</textarea>
+                            <div class="form-text">
+                                Вставьте полный HTML код страницы танца
+                            </div>
+                        </div>
+
+                        <!-- Новая опция загрузки изображений -->
+                        <div class="mb-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="download_images" name="download_images" checked>
+                                <label class="form-check-label fw-bold" for="download_images">
+                                    <i class="fas fa-images me-2"></i>Загрузить изображения и диаграммы
+                                </label>
+                                <div class="form-text">
+                                    Будут загружены все изображения из вкладки "Cribs/Diagrams"
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a href="{{ url_for('index') }}" class="btn btn-secondary me-md-2">
+                                <i class="fas fa-times me-2"></i>Отмена
+                            </a>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-file-import me-2"></i>Импортировать танец
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

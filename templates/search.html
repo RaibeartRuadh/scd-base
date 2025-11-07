@@ -44,41 +44,44 @@
                                        placeholder="Текст из описания...">
                             </div>
 
-                            <!-- Танцующие пары -->
+                            <!-- Публикация -->
                             <div class="mb-2">
-                                <label for="dance_couples" class="form-label small fw-semibold">Танцующие пары</label>
-                                <input type="number" class="form-control form-control-sm" id="dance_couples" name="dance_couples" 
-                                       value="{{ filters.dance_couples if filters.dance_couples }}"
-                                       min="0" placeholder="Количество пар...">
+                                <label for="published" class="form-label small fw-semibold">Публикация</label>
+                                <input type="text" class="form-control form-control-sm" id="published" name="published" 
+                                       value="{{ filters.published if filters.published }}"
+                                       placeholder="Название публикации...">
                             </div>
 
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="mb-2">
-                                        <label class="form-label small fw-semibold">Наличие материалов</label>
-                                        <div class="filter-scroll" style="max-height: 80px; overflow-y: auto;">
-                                            <!-- Чекбокс для наличия описания -->
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" 
-                                                    name="has_description" value="on" 
-                                                    id="has_description"
-                                                    {% if filters.has_description %}checked{% endif %}>
-                                                <label class="form-check-label small" for="has_description">
-                                                    Есть описание
-                                                </label>
-                                            </div>
-                                            
-                                            <!-- Чекбокс для наличия файлов -->
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" 
-                                                    name="has_files" value="on" 
-                                                    id="has_files"
-                                                    {% if filters.has_files %}checked{% endif %}>
-                                                <label class="form-check-label small" for="has_files">
-                                                    Есть диаграммы/дополнительная информация
-                                                </label>
-                                            </div>
-                                        </div>
+                            <!-- Диапазон тактов -->
+                            <div class="mb-2">
+                                <label class="form-label small fw-semibold">Количество тактов</label>
+                                <div class="row g-2">
+                                    <div class="col-6">
+                                        <input type="number" class="form-control form-control-sm" 
+                                               name="size_min" placeholder="Мин"
+                                               value="{{ filters.size_min if filters.size_min }}">
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="number" class="form-control form-control-sm" 
+                                               name="size_max" placeholder="Макс"
+                                               value="{{ filters.size_max if filters.size_max }}">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Диапазон повторений -->
+                            <div class="mb-2">
+                                <label class="form-label small fw-semibold">Количество повторений</label>
+                                <div class="row g-2">
+                                    <div class="col-6">
+                                        <input type="number" class="form-control form-control-sm" 
+                                               name="count_min" placeholder="Мин"
+                                               value="{{ filters.count_min if filters.count_min }}">
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="number" class="form-control form-control-sm" 
+                                               name="count_max" placeholder="Макс"
+                                               value="{{ filters.count_max if filters.count_max }}">
                                     </div>
                                 </div>
                             </div>
@@ -96,7 +99,7 @@
                                         <input class="form-check-input" type="checkbox" 
                                                name="dance_types" value="{{ dance_type.id }}" 
                                                id="type_{{ dance_type.id }}"
-                                               {% if dance_type.id|string in filters.dance_types %}checked{% endif %}>
+                                               {% if filters.dance_types and dance_type.id|string in filters.dance_types %}checked{% endif %}>
                                         <label class="form-check-label small" for="type_{{ dance_type.id }}">
                                             {{ dance_type.name }} ({{ dance_type.code }})
                                         </label>
@@ -107,46 +110,84 @@
 
                             <!-- Форматы сетов -->
                             <div class="mb-2">
-                                <label for="dance_formats" class="form-label small fw-semibold">Формат сета</label>
-                                <select class="form-select form-select-sm" id="dance_formats" name="dance_formats">
-                                    <option value="">Все форматы</option>
+                                <label class="form-label small fw-semibold">Формат сета</label>
+                                <div class="filter-scroll" style="max-height: 120px; overflow-y: auto;">
                                     {% for format in dance_formats %}
-                                    <option value="{{ format.id }}" 
-                                            {% if format.id|string == filters.dance_formats %}selected{% endif %}>
-                                        {{ format.name }}
-                                    </option>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" 
+                                               name="dance_formats" value="{{ format.id }}" 
+                                               id="format_{{ format.id }}"
+                                               {% if filters.dance_formats and format.id|string in filters.dance_formats %}checked{% endif %}>
+                                        <label class="form-check-label small" for="format_{{ format.id }}">
+                                            {{ format.name }}
+                                        </label>
+                                    </div>
                                     {% endfor %}
-                                </select>
+                                </div>
                             </div>
 
                             <!-- Типы сетов -->
                             <div class="mb-2">
-                                <label for="set_types" class="form-label small fw-semibold">Тип сета</label>
-                                <select class="form-select form-select-sm" id="set_types" name="set_types">
-                                    <option value="">Все типы сетов</option>
+                                <label class="form-label small fw-semibold">Тип сета</label>
+                                <div class="filter-scroll" style="max-height: 120px; overflow-y: auto;">
                                     {% for set_type in set_types %}
-                                    <option value="{{ set_type.id }}" 
-                                            {% if set_type.id|string == filters.set_types %}selected{% endif %}>
-                                        {{ set_type.name }}
-                                    </option>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" 
+                                               name="set_types" value="{{ set_type.id }}" 
+                                               id="set_type_{{ set_type.id }}"
+                                               {% if filters.set_types and set_type.id|string in filters.set_types %}checked{% endif %}>
+                                        <label class="form-check-label small" for="set_type_{{ set_type.id }}">
+                                            {{ set_type.name }}
+                                        </label>
+                                    </div>
                                     {% endfor %}
-                                </select>
+                                </div>
                             </div>
 
-                            <!-- Количество тактов -->
+                            <!-- Танцующие пары -->
                             <div class="mb-2">
-                                <label for="size" class="form-label small fw-semibold">Количество тактов</label>
-                                <input type="number" class="form-control form-control-sm" id="size" name="size" 
-                                       value="{{ filters.size if filters.size }}"
-                                       min="0" placeholder="Количество тактов...">
+                                <label class="form-label small fw-semibold">Танцующие пары</label>
+                                <div class="filter-scroll" style="max-height: 80px; overflow-y: auto;">
+                                    {% for couple in dance_couples %}
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" 
+                                               name="dance_couples" value="{{ couple[0] }}" 
+                                               id="couple_{{ couple[0] }}"
+                                               {% if filters.dance_couples and couple[0] in filters.dance_couples %}checked{% endif %}>
+                                        <label class="form-check-label small" for="couple_{{ couple[0] }}">
+                                            {{ couple[0] }}
+                                        </label>
+                                    </div>
+                                    {% endfor %}
+                                </div>
                             </div>
 
-                            <!-- Публикация -->
+                            <!-- Наличие материалов -->
                             <div class="mb-2">
-                                <label for="published" class="form-label small fw-semibold">Публикация</label>
-                                <input type="text" class="form-control form-control-sm" id="published" name="published" 
-                                       value="{{ filters.published if filters.published }}"
-                                       placeholder="Название публикации...">
+                                <label class="form-label small fw-semibold">Наличие материалов</label>
+                                <div class="filter-scroll" style="max-height: 80px; overflow-y: auto;">
+                                    <!-- Чекбокс для наличия описания -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" 
+                                            name="has_description" value="on" 
+                                            id="has_description"
+                                            {% if filters.has_description %}checked{% endif %}>
+                                        <label class="form-check-label small" for="has_description">
+                                            Есть описание
+                                        </label>
+                                    </div>
+                                    
+                                    <!-- Чекбокс для наличия файлов -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" 
+                                            name="has_files" value="on" 
+                                            id="has_files"
+                                            {% if filters.has_files %}checked{% endif %}>
+                                        <label class="form-check-label small" for="has_files">
+                                            Есть диаграммы/дополнительная информация
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -248,13 +289,14 @@
                                     <div class="d-flex justify-content-center gap-2">
                                         <!-- Иконка описания (газета) -->
                                         {% if dance.description and dance.description.strip() %}
-                                        <i class="fas fa-newspaper material-icon " title="Есть описание танца"></i>
+                                        <i class="fas fa-newspaper material-icon" title="Есть описание танца"></i>
                                         {% endif %}
                                         
                                         <!-- Иконка файлов (картина) -->
                                         {% set dance_files = get_dance_files(dance.id, dance.name) %}
-                                        {% if dance_files %}
-                                        <i class="fas fa-image material-icon " title="Есть дополнительные материалы"></i>
+                                        {% set dance_images = get_dance_images(dance.id, dance.name) %}
+                                        {% if dance_files or dance_images %}
+                                        <i class="fas fa-image material-icon" title="Есть дополнительные материалы"></i>
                                         {% endif %}
                                     </div>
                                 </td>
@@ -293,18 +335,13 @@ function clearForm() {
         checkbox.checked = false;
     });
     
-    // Сбрасываем выпадающие списки
-    document.querySelectorAll('select').forEach(select => {
-        select.selectedIndex = 0;
-    });
-    
     // Автоматически отправляем форму после очистки
     document.getElementById('searchForm').submit();
 }
 
 // Обработка отправки формы - удаляем пустые поля
 document.getElementById('searchForm').addEventListener('submit', function(e) {
-    // Находим все текстовые поля (включая description)
+    // Находим все текстовые поля
     const textInputs = document.querySelectorAll('input[type="text"]');
     textInputs.forEach(input => {
         if (input.value === '' || input.value === null) {
@@ -320,14 +357,6 @@ document.getElementById('searchForm').addEventListener('submit', function(e) {
         }
     });
     
-    // Обрабатываем выпадающие списки
-    const selects = document.querySelectorAll('select');
-    selects.forEach(select => {
-        if (select.value === '' || select.value === null) {
-            select.removeAttribute('name');
-        }
-    });
-    
     // Обрабатываем чекбоксы
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
     checkboxes.forEach(checkbox => {
@@ -335,8 +364,6 @@ document.getElementById('searchForm').addEventListener('submit', function(e) {
             checkbox.removeAttribute('name');
         }
     });
-
-    
 });
 </script>
 

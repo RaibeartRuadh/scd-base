@@ -111,7 +111,8 @@
                                     
                                     <!-- Иконка файлов (картина) -->
                                     {% set dance_files = get_dance_files(dance.id, dance.name) %}
-                                    {% if dance_files %}
+                                    {% set dance_images = get_dance_images(dance.id, dance.name) %}
+                                    {% if dance_files or dance_images %}
                                     <i class="fas fa-image material-icon" title="Есть дополнительные материалы"></i>
                                     {% endif %}
                                 </div>

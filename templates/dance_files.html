@@ -13,7 +13,6 @@
         <div>
             <a href="{{ url_for('view_dance', dance_id=dance.id) }}" class="btn btn-outline-secondary me-2"> Просмотр танца</a>
             <a href="{{ url_for('edit_dance', dance_id=dance.id) }}" class="btn btn-outline-primary me-2"> Редактировать</a>
-           <!--  <a href="{{ url_for('index') }}" class="btn btn-outline-info"> К каталогу</a>-->
         </div>
     </div>
 
@@ -54,29 +53,29 @@
     </div>
 
     <!-- Форма загрузки -->
-<div class="card mb-4">
-    <div class="card-header bg-primary text-white">
-        <h5 class="mb-0"><i class="fas fa-upload me-2"></i>Загрузить новый файл</h5>
-    </div>
-    <div class="card-body">
-        <form method="POST" action="{{ url_for('upload_dance_file', dance_id=dance.id) }}" enctype="multipart/form-data">
-            <div class="mb-3">
-                <label for="file" class="form-label fw-bold">Выберите файл для загрузки</label>
-                <div class="input-group">
-                    <input type="file" class="form-control" id="file" name="file" required
-                           accept=".png,.jpg,.jpeg,.gif,.pdf,.txt,.doc,.docx">
-                    <button type="submit" class="btn btn-success">
-                        <i class="fas fa-upload me-2"></i>Загрузить
-                    </button>
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0"><i class="fas fa-upload me-2"></i>Загрузить новый файл</h5>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="{{ url_for('upload_dance_file', dance_id=dance.id) }}" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="file" class="form-label fw-bold">Выберите файл для загрузки</label>
+                    <div class="input-group">
+                        <input type="file" class="form-control" id="file" name="file" required
+                               accept=".png,.jpg,.jpeg,.gif,.pdf,.txt,.doc,.docx">
+                        <button type="submit" class="btn btn-success">
+                            <i class="fas fa-upload me-2"></i>Загрузить
+                        </button>
+                    </div>
+                    <div class="form-text mt-2">
+                        <i class="fas fa-info-circle me-1"></i>
+                        Поддерживаемые форматы: изображения (PNG, JPG, GIF), документы (PDF, TXT, DOC, DOCX). Максимальный размер: 16MB
+                    </div>
                 </div>
-                <div class="form-text mt-2">
-                    <i class="fas fa-info-circle me-1"></i>
-                    Поддерживаемые форматы: изображения (PNG, JPG, GIF), документы (PDF, TXT, DOC, DOCX). Максимальный размер: 16MB
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
-</div>
 
     <!-- Список файлов -->
     <div class="card">
@@ -101,28 +100,31 @@
                         <tr>
                             <td>
                                 <div class="d-flex align-items-center">
-                                    {% if file.name.lower().endswith(('.png', '.jpg', '.jpeg', '.gif')) %}
+                                    {% set filename = file.filename if file.filename is defined else file.name %}
+                                    {% set file_extension = filename.lower().split('.')[-1] if filename and '.' in filename else '' %}
+                                    
+                                    {% if file_extension in ['png', 'jpg', 'jpeg', 'gif'] %}
                                         <i class="fas fa-image text-primary me-2"></i>
-                                    {% elif file.name.lower().endswith('.pdf') %}
+                                    {% elif file_extension == 'pdf' %}
                                         <i class="fas fa-file-pdf text-danger me-2"></i>
-                                    {% elif file.name.lower().endswith(('.doc', '.docx')) %}
+                                    {% elif file_extension in ['doc', 'docx'] %}
                                         <i class="fas fa-file-word text-primary me-2"></i>
-                                    {% elif file.name.lower().endswith('.txt') %}
+                                    {% elif file_extension == 'txt' %}
                                         <i class="fas fa-file-alt text-info me-2"></i>
                                     {% else %}
                                         <i class="fas fa-file text-secondary me-2"></i>
                                     {% endif %}
                                     <div>
-                                        <strong>{{ file.name }}</strong>
+                                        <strong>{{ filename }}</strong>
                                         <br>
                                         <small class="text-muted">
-                                            {% if file.name.lower().endswith(('.png', '.jpg', '.jpeg', '.gif')) %}
+                                            {% if file_extension in ['png', 'jpg', 'jpeg', 'gif'] %}
                                                 Изображение
-                                            {% elif file.name.lower().endswith('.pdf') %}
+                                            {% elif file_extension == 'pdf' %}
                                                 PDF документ
-                                            {% elif file.name.lower().endswith(('.doc', '.docx')) %}
+                                            {% elif file_extension in ['doc', 'docx'] %}
                                                 Word документ
-                                            {% elif file.name.lower().endswith('.txt') %}
+                                            {% elif file_extension == 'txt' %}
                                                 Текстовый файл
                                             {% else %}
                                                 Файл
@@ -133,48 +135,55 @@
                             </td>
                             <td>
                                 <span class="badge bg-light text-dark">
-                                    {% if file.size < 1024 %}
-                                        {{ file.size }} байт
-                                    {% elif file.size < 1048576 %}
-                                        {{ (file.size / 1024)|round|int }} КБ
+                                    {% if file.size is defined %}
+                                        {% if file.size < 1024 %}
+                                            {{ file.size }} байт
+                                        {% elif file.size < 1048576 %}
+                                            {{ (file.size / 1024)|round|int }} КБ
+                                        {% else %}
+                                            {{ (file.size / 1048576)|round(1) }} МБ
+                                        {% endif %}
                                     {% else %}
-                                        {{ (file.size / 1048576)|round(1) }} МБ
+                                        Неизвестно
                                     {% endif %}
                                 </span>
                             </td>
                             <td>
                                 <small class="text-muted">
-                                    {{ format_datetime(file.upload_time) }}
+                                    {% if file.upload_time is defined %}
+                                        {{ format_datetime(file.upload_time) }}
+                                    {% else %}
+                                        Импортирован
+                                    {% endif %}
                                 </small>
                             </td>
                             <td>
                                 <div class="btn-group btn-group-sm" role="group">
-                                    <a href="{{ url_for('download_dance_file', dance_id=dance.id, filename=file.name) }}" 
+                                    <a href="{{ url_for('download_dance_file', dance_id=dance.id, filename=filename) }}" 
                                        class="btn btn-outline-success" 
                                        title="Скачать файл"
                                        target="_blank">
                                         <i class="fas fa-download"></i>
                                     </a>
                                     
-                                    {% if file.name.lower().endswith(('.png', '.jpg', '.jpeg', '.gif')) %}
-                                    <a href="{{ url_for('download_dance_file', dance_id=dance.id, filename=file.name) }}" 
+                                    {% if file_extension in ['png', 'jpg', 'jpeg', 'gif'] %}
+                                    <a href="{{ url_for('download_dance_file', dance_id=dance.id, filename=filename) }}" 
                                        class="btn btn-outline-info"
                                        title="Просмотреть изображение"
                                        target="_blank">
                                         <i class="fas fa-eye"></i>
                                     </a>
                                     {% endif %}
+                                    
+                                    <form method="POST" 
+                                          action="{{ url_for('delete_dance_file', dance_id=dance.id, filename=filename) }}" 
+                                          class="d-inline"
+                                          onsubmit="return confirm('Вы уверены, что хотите удалить файл \"{{ filename }}\"?')">
+                                        <button type="submit" class="btn btn-outline-danger btn-sm" title="Удалить файл">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </form>
                                 </div>
-                                
-                                <!-- Форма удаления отдельно -->
-                                <form method="POST" 
-                                      action="{{ url_for('delete_dance_file', dance_id=dance.id, filename=file.name) }}" 
-                                      class="d-inline mt-1"
-                                      onsubmit="return confirm('Вы уверены, что хотите удалить файл \"{{ file.name }}\"?')">
-                                    <button type="submit" class="btn btn-outline-danger btn-sm" title="Удалить файл">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </form>
                             </td>
                         </tr>
                         {% endfor %}

@@ -55,7 +55,7 @@ class DanceType(BaseModel):
     name = db.Column(db.String(50), nullable=False, unique=True)
     code = db.Column(db.String(1), nullable=False, unique=True)
     description = db.Column(db.Text)
-
+#########################################################
 # Модель данных для танцев
 class Dance(db.Model):
     __tablename__ = 'dance'
@@ -66,7 +66,7 @@ class Dance(db.Model):
     author = db.Column(db.String(255))
     dance_type_id = db.Column(db.Integer, db.ForeignKey('scddb.dance_type.id'))
     size_id = db.Column(db.Integer)
-    count_id = db.Column(db.Integer)
+    count_id = db.Column(db.Integer)  # Для хранения повторений
     dance_format_id = db.Column(db.Integer, db.ForeignKey('scddb.dance_format.id'))
     dance_couple = db.Column(db.String(50))
     set_type_id = db.Column(db.Integer, db.ForeignKey('scddb.set_type.id'))
@@ -79,13 +79,10 @@ class Dance(db.Model):
     dance_format_rel = db.relationship('DanceFormat', backref='dances')
     dance_type_rel = db.relationship('DanceType', backref='dances')
     
-    # Добавляем методы, которые были в BaseModel
     @classmethod
     def get_by_id(cls, id):
-        """Получить запись по ID"""
         return cls.query.get_or_404(id)
     
     @classmethod
     def get_all(cls):
-        """Получить все записи"""
         return cls.query.order_by(cls.name).all()
