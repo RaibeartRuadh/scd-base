@@ -8,6 +8,18 @@
     --info-color: #0dcaf0;
     --light-color: #f8f9fa;
     --dark-color: #212529;
+    
+    /* Цвета типов танцев */
+    --reel-color: #dc3545;
+    --jig-color: #ffc107;
+    --strathspey-color: #6f42c1;
+    --medley-color: #198754;
+    --polka-color: #fd7e14;
+    --march-color: #0dcaf0;
+    --waltz-color: #0d6efd;
+    --hornpipe-color: #6c757d;
+    --quadrille-color: #795548;
+    --minuet-color: #e83e8c;
 }
 
 /* Общие стили для карточек */
@@ -71,6 +83,61 @@
     vertical-align: middle;
     display: inline-block;
     line-height: 1;
+    font-weight: 600;
+    min-width: 80px;
+    text-align: center;
+    border-radius: 12px;
+}
+
+/* Цвета для типов танцев */
+.bg-reel {
+    background-color: var(--reel-color) !important;
+    color: white !important;
+}
+
+.bg-jig {
+    background-color: var(--jig-color) !important;
+    color: black !important;
+}
+
+.bg-strathspey {
+    background-color: var(--strathspey-color) !important;
+    color: white !important;
+}
+
+.bg-medley {
+    background-color: var(--medley-color) !important;
+    color: white !important;
+}
+
+.bg-polka {
+    background-color: var(--polka-color) !important;
+    color: white !important;
+}
+
+.bg-march {
+    background-color: var(--march-color) !important;
+    color: black !important;
+}
+
+.bg-waltz {
+    background-color: var(--waltz-color) !important;
+    color: white !important;
+}
+
+.bg-hornpipe {
+    background-color: var(--hornpipe-color) !important;
+    color: white !important;
+}
+
+.bg-quadrille {
+    background-color: var(--quadrille-color) !important;
+    color: white !important;
+}
+
+.bg-minuet {
+    background-color: var(--minuet-color) !important;
+    color: white !important;
 }
 
 /* Стили для размера танцев */
@@ -240,6 +307,17 @@
     font-weight: bold;
 }
 
+/* Стили для легенды типов танцев */
+.type-legend {
+    font-size: 0.75rem;
+}
+
+.type-legend .badge {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.5rem;
+    margin: 0.1rem;
+}
+
 /* Адаптивность */
 @media (max-width: 768px) {
     .table-compact td,
@@ -255,6 +333,12 @@
     
     .card-body {
         padding: 1rem;
+    }
+    
+    .badge-type {
+        min-width: 70px;
+        font-size: 0.65rem;
+        padding: 0.25rem 0.4rem;
     }
 }
 

@@ -8,6 +8,25 @@
     </a>
 </div>
 
+<!-- Легенда типов танцев -->
+<div class="card mb-3 border-0 bg-light">
+    <div class="card-body py-2">
+        <div class="type-legend">
+            <small class="text-muted me-2 fw-bold">Типы танцев:</small>
+            <span class="badge bg-reel">Reel</span>
+            <span class="badge bg-jig">Jig</span>
+            <span class="badge bg-strathspey">Strathspey</span>
+            <span class="badge bg-medley">Medley</span>
+            <span class="badge bg-polka">Polka</span>
+            <span class="badge bg-march">March</span>
+            <span class="badge bg-waltz">Waltz</span>
+            <span class="badge bg-hornpipe">Hornpipe</span>
+            <span class="badge bg-quadrille">Quadrille</span>
+            <span class="badge bg-minuet">Minuet</span>
+        </div>
+    </div>
+</div>
+
 <!-- Фильтры -->
 <div class="row mb-3">
     <div class="col-md-6">
@@ -86,9 +105,16 @@
                             <td class="px-2">
                                 {% if dance.dance_type %}
                                     <span class="badge badge-type 
-                                        {% if dance.dance_type.name == 'Reel' %}bg-primary
-                                        {% elif dance.dance_type.name == 'Jig' %}bg-success
-                                        {% elif dance.dance_type.name == 'Strathspey' %}bg-warning text-dark
+                                        {% if dance.dance_type.name == 'Reel' %}bg-reel
+                                        {% elif dance.dance_type.name == 'Jig' %}bg-jig
+                                        {% elif dance.dance_type.name == 'Strathspey' %}bg-strathspey
+                                        {% elif dance.dance_type.name == 'Medley' %}bg-medley
+                                        {% elif dance.dance_type.name == 'Polka' %}bg-polka
+                                        {% elif dance.dance_type.name == 'March' %}bg-march
+                                        {% elif dance.dance_type.name == 'Waltz' %}bg-waltz
+                                        {% elif dance.dance_type.name == 'Hornpipe' %}bg-hornpipe
+                                        {% elif dance.dance_type.name == 'Quadrille' %}bg-quadrille
+                                        {% elif dance.dance_type.name == 'Minuet' %}bg-minuet
                                         {% else %}bg-secondary{% endif %}">
                                         {{ dance.dance_type.name }}
                                     </span>
