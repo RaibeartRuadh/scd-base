@@ -7,7 +7,7 @@ import requests
 from parsers import DancePageParser
 from datetime import datetime
 from contextlib import contextmanager
-from sqlalchemy import and_, or_
+from sqlalchemy import and_, or_, inspect, text
 from urllib.parse import urljoin
 import filetype
 import pandas as pd
@@ -900,7 +900,6 @@ def manage_set_types():
     set_types = SetType.query.order_by(SetType.name).all()
     return render_template('set_types.html', set_types=set_types)
 
-
 @app.route('/manage/set-types/add', methods=['GET', 'POST'])
 def add_set_type():
     """Добавление типа сета"""
@@ -1532,15 +1531,40 @@ def utility_processor():
     }
 
 #######################################################
-# ИНИЦИАЛИЗАЦИЯ БАЗЫ ДАННЫХ
+# ИНИЦИАЛИЗАЦИЯ БАЗЫ ДАННЫХ (УЛУЧШЕННАЯ)
 #######################################################
 
+def check_tables_exist():
+    """Проверяет существование всех необходимых таблиц"""
+    try:
+        inspector = inspect(db.engine)
+        existing_tables = inspector.get_table_names()
+        
+        required_tables = ['dance', 'dance_type', 'dance_format', 'set_type']
+        
+        # Для PostgreSQL проверяем таблицы в схеме
+        if db_type == 'postgresql':
+            existing_tables = inspector.get_table_names(schema='scddb')
+        
+        missing_tables = [table for table in required_tables if table not in existing_tables]
+        
+        if missing_tables:
+            print(f"📋 Отсутствующие таблицы: {missing_tables}")
+            return False
+        else:
+            print("✅ Все необходимые таблицы существуют")
+            return True
+            
+    except Exception as e:
+        print(f"❌ Ошибка при проверке таблиц: {e}")
+        return False
+
 def init_database():
-    """Инициализация базы данных"""
+    """Инициализация базы данных только если таблицы не существуют"""
     try:
         with app.app_context():
             if db_type == 'postgresql':
-                print("🔧 Инициализация PostgreSQL...")
+                print("🔧 Проверка схемы PostgreSQL...")
                 try:
                     with db.engine.connect() as conn:
                         conn.execute(db.text('CREATE SCHEMA IF NOT EXISTS scddb'))
@@ -1550,13 +1574,23 @@ def init_database():
                 except Exception as e:
                     print(f"ℹ️ Информация о схеме: {e}")
             
-            # УДАЛЯЕМ СУЩЕСТВУЮЩИЕ ТАБЛИЦЫ И СОЗДАЕМ ЗАНОВО
-            print("🔄 Удаление старых таблиц...")
-            db.drop_all()
+            # Проверяем существование таблиц
+            if check_tables_exist():
+                print("🔄 Таблицы уже существуют, пропускаем создание")
+                
+                # Проверяем наличие базовых данных
+                if DanceType.query.count() == 0:
+                    print("📝 Добавляем базовые данные...")
+                    init_basic_data()
+                else:
+                    print("✅ Базовые данные уже существуют")
+                    
+                return
             
-            print("🔄 Создание новых таблиц...")
+            # Создаем таблицы только если они не существуют
+            print("🔄 Создание таблиц...")
             db.create_all()
-            print("✅ Таблицы созданы заново")
+            print("✅ Таблицы созданы")
             
             # Добавляем базовые данные
             init_basic_data()
@@ -1567,15 +1601,16 @@ def init_database():
         traceback.print_exc()
 
 def init_basic_data():
-    """Инициализация базовых данных"""
+    """Инициализация базовых данных только если их нет"""
     try:
-        # Базовые типы сетов
+        # Проверяем и добавляем базовые типы сетов
         basic_set_types = ["Longwise set", "Square set", "Triangular set", "Circular set"]
         for set_type_name in basic_set_types:
             existing = SetType.query.filter_by(name=set_type_name).first()
             if not existing:
                 set_type = SetType(name=set_type_name)
                 db.session.add(set_type)
+                print(f"✅ Добавлен тип сета: {set_type_name}")
         
         # Базовые форматы сетов
         dance_formats = ['2 couples', '3 couples', '4 couples', '5 couples', '6 couples', 'any', 'other']
@@ -1584,6 +1619,7 @@ def init_basic_data():
             if not existing:
                 dance_format = DanceFormat(name=format_name)
                 db.session.add(dance_format)
+                print(f"✅ Добавлен формат танца: {format_name}")
         
         # Базовые типы танцев
         dance_types = [
@@ -1595,6 +1631,7 @@ def init_basic_data():
             if not existing:
                 dance_type = DanceType(name=type_name, code=type_code)
                 db.session.add(dance_type)
+                print(f"✅ Добавлен тип танца: {type_name}")
         
         db.session.commit()
         print("✅ Базовые данные добавлены")
@@ -1619,7 +1656,7 @@ if __name__ == '__main__':
     if not os.path.exists(app.config['BATCH_IMPORT_FOLDER']):
         os.makedirs(app.config['BATCH_IMPORT_FOLDER'])
     
-    # Инициализация базы данных
+    # Инициализация базы данных (только если нужно)
     init_database()
     
     print("🌐 Приложение запущено по адресу: http://localhost:5000")
