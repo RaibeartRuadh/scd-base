@@ -1,3 +1,4 @@
+# app.py
 from flask import Flask, render_template, request, redirect, url_for, flash, send_from_directory, jsonify
 from models import db, Dance, DanceType, DanceFormat, SetType
 from werkzeug.utils import secure_filename
@@ -169,7 +170,11 @@ def parse_dance_with_extrainfo(dance_id):
         # Парсим основные данные
         parser = DancePageParser(response.text)
         dance_data = parser.parse_dance_data()
-        
+        print("🔍 ДАННЫЕ ПЕРЕД СОХРАНЕНИЕМ В БАЗУ:")
+        print(f"   couples_count: {dance_data.get('couples_count')}")
+        print(f"   set_format: {dance_data.get('set_format')}")
+        print(f"   formation: {dance_data.get('formation')}")
+
         if not dance_data:
             return None
         
@@ -434,9 +439,9 @@ def save_dance_to_db(dance_data):
                 db.session.commit()
             dance_type_id = dance_type.id
         
-        # Получаем формат сета
-        if dance_data.get('couples_count'):
-            format_name = f"{dance_data['couples_count']} couples"
+        # Получаем формат сета на основе set_format (общее количество пар)
+        if dance_data.get('set_format'):
+            format_name = f"{dance_data['set_format']} couples"
             dance_format = DanceFormat.query.filter_by(name=format_name).first()
             if not dance_format:
                 dance_format = DanceFormat(name=format_name)
@@ -456,7 +461,7 @@ def save_dance_to_db(dance_data):
         # Используем данные из #extrainfo для поля note (уже очищенные)
         note = dance_data.get('note', '')
         
-        # Создаем танец
+        # Создаем танец (ВРЕМЕННО без set_format и couples_count)
         dance = Dance(
             name=dance_data.get('name', 'Неизвестный танец'),
             author=dance_data.get('author'),
@@ -469,7 +474,10 @@ def save_dance_to_db(dance_data):
             description=dance_data.get('description'),
             published=', '.join(dance_data.get('published_in', [])) if dance_data.get('published_in') else None,
             note=note,
-            source_url=dance_data.get('source_url', '')
+            source_url=dance_data.get('source_url', ''),
+            # ВРЕМЕННО закомментировано до добавления полей в модель:
+            set_format=dance_data.get('set_format'),
+            couples_count=dance_data.get('couples_count')
         )
         
         db.session.add(dance)

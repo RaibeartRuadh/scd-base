@@ -13,14 +13,18 @@ class DancePageParser:
     
     def parse_dance_data(self):
         """Основной метод парсинга данных о танце"""
+        # Сначала парсим основную информационную строку
+        main_info = self._parse_main_info_string()
+        
         return {
             'name': self._parse_name(),
             'dance_type': self._parse_dance_type(),
             'meter': self._parse_meter(),
             'bars': self._parse_bars(),  # код тактов (J48, R32)
             'bars_count': self._parse_bars_count(),  # числовое значение тактов для size_id
-            'formation': self._parse_formation(),
-            'couples_count': self._parse_couples_count(),
+            'formation': main_info.get('formation', self._parse_formation()),
+            'couples_count': main_info.get('couples_count', self._parse_couples_count()),
+            'set_format': main_info.get('set_format', self._parse_couples_count()),  # Используем set_format из main_info
             'progression': self._parse_progression(),
             'repetitions': self._parse_repetitions(),  # числовое значение повторений для count_id
             'author': self._parse_author(),
@@ -36,6 +40,75 @@ class DancePageParser:
             'images': self._parse_images(),
             'source_url': self._parse_source_url()
         }
+    
+    def _parse_main_info_string(self):
+        """Парсинг основной информационной строки типа 'Jig · 32 bars · 3 couples · Longwise - 4'"""
+        result = {
+            'couples_count': None,
+            'set_format': None,
+            'formation': None
+        }
+        
+        first_p = self.soup.find('h1')
+        if first_p:
+            first_p = first_p.find_next('p')
+            if first_p:
+                text = first_p.get_text().strip()
+                print(f"🔍 Основная строка: '{text}'")
+                
+                # Ищем количество пар (3 couples)
+                couples_match = re.search(r'(\d+)\s+couples?', text, re.IGNORECASE)
+                if couples_match:
+                    result['couples_count'] = int(couples_match.group(1))
+                    print(f"✅ Найдено couples_count: {result['couples_count']}")
+                
+                # Ищем формацию и формат сета (Longwise - 4)
+                # Варианты: "Longwise - 4", "Longwise-4", "Square set - 8" и т.д.
+                formation_patterns = [
+                    r'(Longwise|Square|Triangular|Circular)\s*-\s*(\d+)',
+                    r'(Longwise|Square|Triangular|Circular)\s+set\s*-\s*(\d+)'
+                ]
+                
+                for pattern in formation_patterns:
+                    formation_match = re.search(pattern, text, re.IGNORECASE)
+                    if formation_match:
+                        formation_name = formation_match.group(1)
+                        set_format = int(formation_match.group(2))
+                        
+                        # Определяем полное название формации
+                        formation_mapping = {
+                            'Longwise': 'Longwise set',
+                            'Square': 'Square set', 
+                            'Triangular': 'Triangular set',
+                            'Circular': 'Circular set'
+                        }
+                        
+                        result['formation'] = formation_mapping.get(formation_name, 'Longwise set')
+                        result['set_format'] = set_format
+                        print(f"✅ Найдено formation: {result['formation']}, set_format: {result['set_format']}")
+                        break
+                
+                # Если не нашли через тире, ищем просто формацию
+                if not result['formation']:
+                    formation_mapping = {
+                        'Longwise': 'Longwise set',
+                        'Square': 'Square set', 
+                        'Triangular': 'Triangular set',
+                        'Circular': 'Circular set'
+                    }
+                    
+                    for key in formation_mapping:
+                        if key.lower() in text.lower():
+                            result['formation'] = formation_mapping[key]
+                            print(f"✅ Найдено formation (без формата): {result['formation']}")
+                            break
+                
+                # Если нашли формацию, но не нашли set_format, используем couples_count как fallback
+                if result['formation'] and not result['set_format'] and result['couples_count']:
+                    result['set_format'] = result['couples_count']
+                    print(f"⚠️  set_format не найден, используем couples_count: {result['set_format']}")
+        
+        return result
     
     def _parse_name(self):
         """Парсинг названия танца"""
@@ -105,7 +178,7 @@ class DancePageParser:
         return 32  # значение по умолчанию
     
     def _parse_formation(self):
-        """Парсинг формации (типа сета)"""
+        """Парсинг формации (типа сета) - Longwise, Square, Triangular, Circular"""
         formation_mapping = {
             'Longwise': 'Longwise set',
             'Square': 'Square set', 
@@ -113,15 +186,7 @@ class DancePageParser:
             'Circular': 'Circular set'
         }
         
-        first_p = self.soup.find('h1')
-        if first_p:
-            first_p = first_p.find_next('p')
-            if first_p:
-                text = first_p.get_text()
-                for key in formation_mapping:
-                    if key.lower() in text.lower():
-                        return formation_mapping[key]
-        
+        # Дополнительный поиск в структурированных данных
         dt_elements = self.soup.find_all('dt', class_='col-sm-2 text-sm-end')
         for dt in dt_elements:
             if 'Formation' in dt.get_text():
@@ -135,16 +200,8 @@ class DancePageParser:
         return 'Longwise set'  # значение по умолчанию
     
     def _parse_couples_count(self):
-        """Парсинг количества пар"""
-        first_p = self.soup.find('h1')
-        if first_p:
-            first_p = first_p.find_next('p')
-            if first_p:
-                text = first_p.get_text()
-                couples_match = re.search(r'(\d+)\s+couples?', text, re.IGNORECASE)
-                if couples_match:
-                    return int(couples_match.group(1))
-        
+        """Парсинг количества пар (из основной информации) - это минимальное количество пар"""
+        # Дополнительный поиск в структурированных данных
         dt_elements = self.soup.find_all('dt', class_='col-sm-2 text-sm-end')
         for dt in dt_elements:
             if 'Couples' in dt.get_text():
@@ -529,6 +586,48 @@ def validate_dance_data(dance_data):
     
     return errors
 
+################
+### ОТЛАДКА
+def parse_dance_data(self):
+    """Основной метод парсинга данных о танце"""
+    # Сначала парсим основную информационную строку
+    main_info = self._parse_main_info_string()
+    
+    data = {
+        'name': self._parse_name(),
+        'dance_type': self._parse_dance_type(),
+        'meter': self._parse_meter(),
+        'bars': self._parse_bars(),
+        'bars_count': self._parse_bars_count(),
+        'formation': main_info.get('formation', self._parse_formation()),
+        'couples_count': main_info.get('couples_count', self._parse_couples_count()),
+        'set_format': main_info.get('set_format', self._parse_couples_count()),
+        'progression': self._parse_progression(),
+        'repetitions': self._parse_repetitions(),
+        'author': self._parse_author(),
+        'year': self._parse_year(),
+        'description': self._parse_description(),
+        'steps': self._parse_steps(),
+        'published_in': self._parse_publications(),
+        'recommended_music': self._parse_music(),
+        'figures': self._parse_figures(),
+        'extra_info': self._parse_extra_info(),
+        'intensity': self._parse_intensity(),
+        'formations_list': self._parse_formations_list(),
+        'images': self._parse_images(),
+        'source_url': self._parse_source_url()
+    }
+    
+    # ДОБАВИТЬ ЭТОТ ОТЛАДОЧНЫЙ ВЫВОД:
+    print("🎯 РЕЗУЛЬТАТ ПАРСИНГА:")
+    print(f"   Название: {data['name']}")
+    print(f"   couples_count (минимальное): {data['couples_count']}")
+    print(f"   set_format (общее количество пар): {data['set_format']}")
+    print(f"   formation: {data['formation']}")
+    print("---")
+    
+    return data
+################
 
 def format_dance_data_for_display(dance_data):
     """Форматирование данных для отображения"""
@@ -540,8 +639,9 @@ def format_dance_data_for_display(dance_data):
         'Количество тактов': dance_data.get('bars_count', 'Неизвестно'),
         'Автор': dance_data.get('author', 'Неизвестно'),
         'Год': dance_data.get('year', 'Неизвестно'),
-        'Пары': f"{dance_data.get('couples_count', 4)} пары",
-        'Формирование': dance_data.get('formation', 'Longwise'),
+        'Минимальное количество пар': f"{dance_data.get('couples_count', 4)} пары",
+        'Формат сета': f"{dance_data.get('set_format', 4)} couples",  # ИСПРАВЛЕНО: "4 couples"
+        'Тип сета': dance_data.get('formation', 'Longwise'),
         'Прогрессия': dance_data.get('progression', 'Неизвестно'),
         'Повторения': dance_data.get('repetitions', 4),
         'Интенсивность': dance_data.get('intensity', 'Неизвестно'),
