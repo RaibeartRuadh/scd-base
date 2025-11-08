@@ -1242,11 +1242,11 @@ def update_dance_note_with_images(dance, downloaded_files):
 def index():
     try:
         page = request.args.get('page', 1, type=int)
-        per_page = request.args.get('per_page', 25, type=int)
+        per_page = request.args.get('per_page', 12, type=int)
         search = request.args.get('search', '')
         
-        if per_page not in [25, 50, 100]:
-            per_page = 25
+        if per_page not in [12, 50, 100]:
+            per_page = 12
         
         query = Dance.query
         

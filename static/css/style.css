@@ -48,10 +48,10 @@
 
 /* Стили для компактных таблиц */
 .table-compact td {
-    padding: 8px 10px;
+    padding: 6px 6px;
     font-size: 0.85rem;
     vertical-align: middle;
-    height: 44px;
+    height: 0px;
 }
 
 .table-compact th {

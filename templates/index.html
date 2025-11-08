@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="d-flex justify-content-between align-items-center mb-4">
-    <h1 class="mb-0">Все танцы</h1>
+    <h3 class="mb-0">Все танцы</h1>
     <a href="{{ url_for('add_dance') }}" class="btn btn-primary btn-sm">
         <i class="fas fa-plus me-2"></i>Добавить танец
     </a>
@@ -17,7 +17,7 @@
             </div>
             <div class="col-auto">
                 <select class="form-select form-select-sm" id="per_page" name="per_page" onchange="this.form.submit()">
-                    <option value="25" {% if per_page==25 %}selected{% endif %}>25</option>
+                    <option value="25" {% if per_page==12 %}selected{% endif %}>12</option>
                     <option value="50" {% if per_page==50 %}selected{% endif %}>50</option>
                     <option value="100" {% if per_page==100 %}selected{% endif %}>100</option>
                 </select>
@@ -29,7 +29,7 @@
         <!-- Форма быстрого поиска -->
         <form method="get" class="row g-2 align-items-center justify-content-end">
             <div class="col-auto">
-                <label class="col-form-label text-muted small">Поиск:</label>
+                <label class="col-form-label text-muted small">Быстрый поиск:</label>
             </div>
             <div class="col-auto">
                 <input type="text" 
@@ -453,10 +453,10 @@ function resetAllSaturation() {
 
 /* Остальные существующие стили */
 .table-compact td {
-    padding: 8px 10px;
+    padding: 5px 5px;
     font-size: 0.82rem;
     vertical-align: middle;
-    height: 40px;
+    height: 20px;
 }
 
 .table-compact th {
