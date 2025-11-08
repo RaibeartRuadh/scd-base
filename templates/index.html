@@ -62,6 +62,8 @@
                         </th>
                         <th class="px-2">Название</th>
                         <th class="px-2">Тип</th>
+                        <th class="px-2">Формат сета</th>
+                        <th class="px-2">Тип сета</th>
                         <th class="px-2">Размер</th>
                         <th class="px-2 text-center" width="80"></th>
                         <th width="140" class="px-2 text-center">Действия</th>
@@ -80,14 +82,35 @@
                                     {{ dance.name }}
                                 </a>
                             </td>
+                            <!-- Тип танца -->
                             <td class="px-2">
-                                {% if dance.dance_type_rel %}
+                                {% if dance.dance_type %}
                                     <span class="badge badge-type 
-                                        {% if dance.dance_type_rel.name == 'Reel' %}bg-primary
-                                        {% elif dance.dance_type_rel.name == 'Jig' %}bg-success
-                                        {% elif dance.dance_type_rel.name == 'Strathspey' %}bg-warning text-dark
+                                        {% if dance.dance_type.name == 'Reel' %}bg-primary
+                                        {% elif dance.dance_type.name == 'Jig' %}bg-success
+                                        {% elif dance.dance_type.name == 'Strathspey' %}bg-warning text-dark
                                         {% else %}bg-secondary{% endif %}">
-                                        {{ dance.dance_type_rel.name }}
+                                        {{ dance.dance_type.name }}
+                                    </span>
+                                {% else %}
+                                    <span class="badge bg-light text-muted">-</span>
+                                {% endif %}
+                            </td>
+                            <!-- Формат сета -->
+                            <td class="px-2">
+                                {% if dance.dance_format %}
+                                    <span class="badge bg-info text-white">
+                                        {{ dance.dance_format.name }}
+                                    </span>
+                                {% else %}
+                                    <span class="badge bg-light text-muted">-</span>
+                                {% endif %}
+                            </td>
+                            <!-- Тип сета -->
+                            <td class="px-2">
+                                {% if dance.set_type %}
+                                    <span class="badge bg-dark">
+                                        {{ dance.set_type.name }}
                                     </span>
                                 {% else %}
                                     <span class="badge bg-light text-muted">-</span>
@@ -146,7 +169,7 @@
                         {% endfor %}
                     {% else %}
                     <tr>
-                        <td colspan="6" class="text-center py-4">
+                        <td colspan="8" class="text-center py-4">
                             <div class="py-3">
                                 {% if search %}
                                     <i class="fas fa-search fa-lg text-muted mb-2"></i>

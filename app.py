@@ -176,11 +176,8 @@ def parse_dance_with_extrainfo(dance_id):
         # Получаем данные с #extrainfo
         extrainfo_data = get_extrainfo_data(dance_id)
         
-        # Сохраняем только данные из #extrainfo в поле note
-        if extrainfo_data:
-            dance_data['note'] = f"Данные с вкладки #extrainfo:\n\n{extrainfo_data}"
-        else:
-            dance_data['note'] = "Данные с вкладки #extrainfo не найдены"
+        # Сохраняем только данные из #extrainfo в поле note (без префикса)
+        dance_data['note'] = extrainfo_data if extrainfo_data else ""
         
         # Добавляем URL источника
         dance_data['source_url'] = url
@@ -456,7 +453,7 @@ def save_dance_to_db(dance_data):
                 db.session.commit()
             set_type_id = set_type.id
         
-        # Используем данные из #extrainfo для поля note
+        # Используем данные из #extrainfo для поля note (уже очищенные)
         note = dance_data.get('note', '')
         
         # Создаем танец
@@ -472,7 +469,7 @@ def save_dance_to_db(dance_data):
             description=dance_data.get('description'),
             published=', '.join(dance_data.get('published_in', [])) if dance_data.get('published_in') else None,
             note=note,
-            source_url=dance_data.get('source_url', '')  # Используем значение по умолчанию
+            source_url=dance_data.get('source_url', '')
         )
         
         db.session.add(dance)
