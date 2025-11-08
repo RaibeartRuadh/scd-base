@@ -27,7 +27,7 @@ class DancePageParser:
             'couples_count': main_info.get('couples_count', self._parse_couples_count_fallback()),
             'set_format': main_info.get('set_format', main_info.get('couples_count', 4)),
             'progression': self._parse_progression(),
-            'repetitions': self._parse_repetitions(),
+            'repetitions': main_info.get('repetitions', self._parse_repetitions()),
             'author': self._parse_author(),
             'year': self._parse_year(),
             'description': self._parse_description(),
@@ -42,13 +42,22 @@ class DancePageParser:
             'source_url': self._parse_source_url()
         }
         
+        # Формируем размер в формате "повторения×такты" (например "8×32")
+        data['size'] = self._format_size(data.get('repetitions'), data.get('bars_count'))
+        
         # Отладочная информация
         print("🎯 ФИНАЛЬНЫЙ РЕЗУЛЬТАТ ПАРСИНГА:")
-        for key in ['name', 'dance_type', 'meter', 'bars_count', 'couples_count', 'set_format', 'formation']:
+        for key in ['name', 'dance_type', 'size', 'meter', 'bars_count', 'repetitions', 'couples_count', 'set_format', 'formation']:
             print(f"   {key}: {data[key]}")
         print("---")
         
         return data
+    
+    def _format_size(self, repetitions, bars_count):
+        """Форматирование размера в формате 'повторения×такты'"""
+        reps = repetitions or 4  # значение по умолчанию для повторений
+        bars = bars_count or 32  # значение по умолчанию для тактов
+        return f"{reps}×{bars}"
     
     def _parse_main_info_string(self):
         """Парсинг основной информационной строки типа 'Reel · 32 bars · 3 couples · Longwise - 4'"""
@@ -57,7 +66,8 @@ class DancePageParser:
             'set_format': None,
             'formation': None,
             'dance_type': None,
-            'bars_count': None
+            'bars_count': None,
+            'repetitions': None
         }
         
         print("🔍 Начинаем поиск основной информационной строки...")
@@ -84,7 +94,7 @@ class DancePageParser:
         elements = self.soup.find_all(['div', 'p', 'span'])
         for elem in elements:
             text = elem.get_text().strip()
-            if (any(keyword in text for keyword in ['bars', 'couples', 'Longwise', 'Square']) and 
+            if (any(keyword in text for keyword in ['bars', 'couples', 'Longwise', 'Square', 'repetitions']) and 
                 len(text) < 200):  # Ограничиваем длину чтобы не брать большие тексты
                 print(f"✅ Найден подходящий элемент: '{text}'")
                 return self._analyze_info_text(text, result)
@@ -147,7 +157,23 @@ class DancePageParser:
                     print(f"✅ Найдено formation (без формата): {result['formation']}")
                     break
         
-        # 5. Если нашли формацию но не нашли set_format, используем couples_count
+        # 5. Ищем количество повторений (Usual number of repetitions: 8)
+        repetitions_patterns = [
+            r'Usual number of repetitions:\s*(\d+)',
+            r'repetitions:\s*(\d+)',
+            r'Repetitions:\s*(\d+)',
+            r'·\s*(\d+)\s*reps?',
+            r'\((\d+)\s*reps?\)'
+        ]
+        
+        for pattern in repetitions_patterns:
+            rep_match = re.search(pattern, text, re.IGNORECASE)
+            if rep_match:
+                result['repetitions'] = int(rep_match.group(1))
+                print(f"✅ Найдено repetitions: {result['repetitions']}")
+                break
+        
+        # 6. Если нашли формацию но не нашли set_format, используем couples_count
         if result['formation'] and not result['set_format'] and result['couples_count']:
             result['set_format'] = result['couples_count']
             print(f"⚠️  set_format не найден, используем couples_count: {result['set_format']}")
@@ -190,7 +216,7 @@ class DancePageParser:
         return 'Unknown'
     
     def _parse_meter(self):
-        """Парсинг размера (4/4L, 3/4, etc)"""
+        """Парсинг музыкального размера (4/4L, 3/4, etc)"""
         # Ищем в основной информационной строке
         text = self._get_main_info_text()
         if text:
@@ -284,15 +310,25 @@ class DancePageParser:
     
     def _parse_repetitions(self):
         """Парсинг количества повторений"""
-        first_p = self.soup.find('h1')
-        if first_p:
-            first_p = first_p.find_next('p')
-            if first_p:
-                text = first_p.get_text()
-                rep_match = re.search(r'repetitions:\s*(\d+)', text, re.IGNORECASE)
+        # Сначала ищем в основной информационной строке
+        text = self._get_main_info_text()
+        if text:
+            repetitions_patterns = [
+                r'Usual number of repetitions:\s*(\d+)',
+                r'repetitions:\s*(\d+)',
+                r'Repetitions:\s*(\d+)',
+                r'·\s*(\d+)\s*reps?',
+                r'\((\d+)\s*reps?\)'
+            ]
+            
+            for pattern in repetitions_patterns:
+                rep_match = re.search(pattern, text, re.IGNORECASE)
                 if rep_match:
-                    return int(rep_match.group(1))
+                    repetitions = int(rep_match.group(1))
+                    print(f"✅ Найдено repetitions в основной строке: {repetitions}")
+                    return repetitions
         
+        # Затем ищем в структурированных данных
         dt_elements = self.soup.find_all('dt', class_='col-sm-2 text-sm-end')
         for dt in dt_elements:
             if 'repetitions' in dt.get_text().lower():
@@ -301,8 +337,11 @@ class DancePageParser:
                     text = dd.get_text()
                     rep_match = re.search(r'(\d+)', text)
                     if rep_match:
-                        return int(rep_match.group(1))
+                        repetitions = int(rep_match.group(1))
+                        print(f"✅ Найдено repetitions в структуре: {repetitions}")
+                        return repetitions
         
+        print("⚠️  Повторения не найдены, используем значение по умолчанию: 4")
         return 4  # значение по умолчанию
     
     def _parse_author(self):
@@ -649,16 +688,17 @@ def format_dance_data_for_display(dance_data):
     return {
         'Название': dance_data.get('name', 'Неизвестно'),
         'Тип': dance_data.get('dance_type', 'Неизвестно'),
-        'Размер': dance_data.get('meter', 'Неизвестно'),
+        'Размер': dance_data.get('size', 'Неизвестно'),  # Теперь используем поле size
+        'Музыкальный размер': dance_data.get('meter', 'Неизвестно'),
         'Код тактов': dance_data.get('bars', 'Неизвестно'),
         'Количество тактов': dance_data.get('bars_count', 'Неизвестно'),
+        'Повторения': dance_data.get('repetitions', 'Неизвестно'),
         'Автор': dance_data.get('author', 'Неизвестно'),
         'Год': dance_data.get('year', 'Неизвестно'),
         'Минимальное количество пар': f"{dance_data.get('couples_count', 4)} пары",
         'Формат сета': f"{dance_data.get('set_format', 4)} couples",
         'Тип сета': dance_data.get('formation', 'Longwise'),
         'Прогрессия': dance_data.get('progression', 'Неизвестно'),
-        'Повторения': dance_data.get('repetitions', 4),
         'Интенсивность': dance_data.get('intensity', 'Неизвестно'),
         'Шаги': ', '.join(dance_data.get('steps', [])),
         'Публикации': ', '.join(dance_data.get('published_in', [])),
