@@ -4,51 +4,57 @@
 
 {% block content %}
 <div class="d-flex justify-content-between align-items-center mb-4">
-    <h1>Управление форматами сетов</h1>
+    <h1 class="mb-0">Управление форматами сетов</h1>
     <div>
-        <a href="{{ url_for('index') }}" class="btn btn-outline-secondary me-2">← Назад</a>
-        <a href="{{ url_for('add_dance_format') }}" class="btn btn-primary">
-            <i class="fas fa-plus me-1"></i>Добавить формат сета
+        <a href="{{ url_for('index') }}" class="btn btn-outline-secondary btn-sm me-2">
+            <i class="fas fa-arrow-left me-1"></i>Назад
+        </a>
+        <a href="{{ url_for('add_dance_format') }}" class="btn btn-primary btn-sm">
+            <i class="fas fa-plus me-1"></i>Добавить формат
         </a>
     </div>
 </div>
 
-<div class="card">
-    <div class="card-body">
+<div class="card border-0 shadow-sm">
+    <div class="card-body p-0">
         {% if dance_formats %}
         <div class="table-responsive">
-            <table class="table table-striped table-hover">
+            <table class="table table-hover mb-0 table-compact">
                 <thead class="table-dark">
                     <tr>
-                        <th>ID</th>
-                        <th>Название</th>
-                        <th>Описание</th>
-                        <th class="text-end">Действия</th>
+                        <th width="60" class="ps-3">ID</th>
+                        <th class="px-2">Название</th>
+                        <th class="px-2">Описание</th>
+                        <th width="120" class="px-2 text-center">Действия</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for format in dance_formats|sort(attribute='id') %}
-                    <tr>
-                        <td><strong>{{ format.id }}</strong></td>
-                        <td><strong>{{ format.name }}</strong></td>
-                        <td>
+                    <tr class="align-middle">
+                        <td class="ps-3">
+                            <strong class="text-muted">{{ format.id }}</strong>
+                        </td>
+                        <td class="px-2">
+                            <span class="fw-bold text-dark">{{ format.name }}</span>
+                        </td>
+                        <td class="px-2">
                             {% if format.description %}
-                                {{ format.description|truncate(50) }}
+                                <span class="text-muted small">{{ format.description|truncate(50) }}</span>
                             {% else %}
-                                <span class="text-muted">—</span>
+                                <span class="text-muted small">—</span>
                             {% endif %}
                         </td>
-                        <td class="text-end">
+                        <td class="px-2 text-center">
                             <div class="btn-group btn-group-sm" role="group">
                                 <a href="{{ url_for('edit_dance_format', format_id=format.id) }}" 
-                                   class="btn btn-outline-primary btn-icon" 
+                                   class="action-btn action-btn-outline-primary" 
                                    title="Редактировать">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <form method="POST" action="{{ url_for('delete_dance_format', format_id=format.id) }}" 
                                       class="d-inline"
                                       onsubmit="return confirm('Вы уверены, что хотите удалить формат сета «{{ format.name }}»?');">
-                                    <button type="submit" class="btn btn-outline-danger btn-icon" title="Удалить">
+                                    <button type="submit" class="action-btn action-btn-outline-danger" title="Удалить">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>
@@ -60,17 +66,17 @@
             </table>
         </div>
 
-        <div class="mt-3 text-muted">
-            Всего форматов сетов: {{ dance_formats|length }}
+        <div class="mt-3 text-muted text-center">
+            <small>Всего форматов сетов: {{ dance_formats|length }}</small>
         </div>
         {% else %}
         <div class="text-center py-5">
             <div class="mb-3">
-                <i class="fas fa-ruler-combined fa-4x text-muted"></i>
+                <i class="fas fa-ruler-combined fa-3x text-muted mb-3"></i>
             </div>
-            <h4>Форматы сетов не найдены</h4>
-            <p class="text-muted">Добавьте первый формат сета, чтобы начать работу</p>
-            <a href="{{ url_for('add_dance_format') }}" class="btn btn-primary">
+            <h6 class="text-muted mb-2">Форматы сетов не найдены</h6>
+            <p class="text-muted mb-3 small">Добавьте первый формат сета, чтобы начать работу</p>
+            <a href="{{ url_for('add_dance_format') }}" class="btn btn-primary btn-sm">
                 <i class="fas fa-plus me-1"></i>Добавить формат сета
             </a>
         </div>
@@ -79,13 +85,73 @@
 </div>
 
 <div class="mt-4">
-    <div class="alert alert-info">
-        <h6><i class="fas fa-info-circle me-2"></i>Информация о форматах сетов:</h6>
-        <ul class="mb-0">
+    <div class="alert alert-info border-0">
+        <h6 class="mb-2"><i class="fas fa-info-circle me-2"></i>Информация о форматах сетов:</h6>
+        <ul class="mb-0 small">
             <li>Форматы сетов определяют количество и расположение танцующих пар</li>
             <li>Каждый формат имеет уникальное название</li>
             <li>Нельзя удалить формат сета, который используется в существующих танцах</li>
         </ul>
     </div>
 </div>
+
+<style>
+.table-compact td {
+    padding: 8px 10px;
+    font-size: 0.82rem;
+    vertical-align: middle;
+    height: 40px;
+}
+
+.table-compact th {
+    padding: 10px;
+    font-size: 0.78rem;
+    vertical-align: middle;
+}
+
+.action-btn {
+    padding: 0.2rem 0.35rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    transition: all 0.2s ease;
+    vertical-align: middle;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid;
+}
+
+.action-btn-outline-primary {
+    color: #0d6efd;
+    border-color: #0d6efd;
+    background: transparent;
+}
+
+.action-btn-outline-primary:hover {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.action-btn-outline-danger {
+    color: #dc3545;
+    border-color: #dc3545;
+    background: transparent;
+}
+
+.action-btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-icon {
+    padding: 0.2rem 0.35rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    transition: all 0.2s ease;
+    vertical-align: middle;
+}
+
+.btn-icon:hover {
+    transform: translateY(-1px);
+}
+</style>
 {% endblock %}

@@ -8,25 +8,6 @@
     </a>
 </div>
 
-<!-- Легенда типов танцев -->
-<div class="card mb-3 border-0 bg-light">
-    <div class="card-body py-2">
-        <div class="type-legend">
-            <small class="text-muted me-2 fw-bold">Типы танцев:</small>
-            <span class="badge bg-reel">Reel</span>
-            <span class="badge bg-jig">Jig</span>
-            <span class="badge bg-strathspey">Strathspey</span>
-            <span class="badge bg-medley">Medley</span>
-            <span class="badge bg-polka">Polka</span>
-            <span class="badge bg-march">March</span>
-            <span class="badge bg-waltz">Waltz</span>
-            <span class="badge bg-hornpipe">Hornpipe</span>
-            <span class="badge bg-quadrille">Quadrille</span>
-            <span class="badge bg-minuet">Minuet</span>
-        </div>
-    </div>
-</div>
-
 <!-- Фильтры -->
 <div class="row mb-3">
     <div class="col-md-6">
@@ -44,31 +25,60 @@
             <input type="hidden" name="search" value="{{ search }}">
         </form>
     </div>
+    <div class="col-md-6">
+        <!-- Форма быстрого поиска -->
+        <form method="get" class="row g-2 align-items-center justify-content-end">
+            <div class="col-auto">
+                <label class="col-form-label text-muted small">Поиск:</label>
+            </div>
+            <div class="col-auto">
+                <input type="text" 
+                       class="form-control form-control-sm" 
+                       name="search" 
+                       value="{{ search }}" 
+                       placeholder="Название танца..." 
+                       style="min-width: 200px;">
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary btn-sm">
+                    <i class="fas fa-search me-1"></i>Поиск
+                </button>
+            </div>
+            {% if search %}
+            <div class="col-auto">
+                <a href="{{ url_for('index') }}" class="btn btn-outline-secondary btn-sm">
+                    <i class="fas fa-times me-1"></i>Сбросить
+                </a>
+            </div>
+            {% endif %}
+            <input type="hidden" name="per_page" value="{{ per_page }}">
+        </form>
+    </div>
 </div>
 
 <!-- Форма для массового удаления -->
 <form id="deleteForm" method="POST" action="{{ url_for('delete_dances') }}">
-    <!-- Фиксированная панель управления -->
-    <div class="card mb-3 border-0 bg-light">
-        <div class="card-body py-2">
-            <div class="row align-items-center">
-                <div class="col">
-                    <button type="button" class="btn btn-outline-secondary btn-sm" onclick="toggleSelectAll()">
-                        <i class="fas fa-check-square me-2"></i>
-                        <span id="selectAllText">Выбрать все</span>
+<!-- Фиксированная панель управления -->
+<div class="card mb-3 border-0 bg-light">
+    <div class="card-body py-2">
+        <div class="row align-items-center">
+            <div class="col">
+                <button type="button" class="control-btn control-btn-outline-secondary" onclick="toggleSelectAll()">
+                    <i class="fas fa-check-square me-2"></i>
+                    <span id="selectAllText">Выбрать все</span>
+                </button>
+            </div>
+            <div class="col-auto">
+                <div id="deleteButtonContainer" class="d-none animate-fade-in">
+                    <button type="button" class="control-btn control-btn-danger" onclick="confirmDelete()" id="deleteButton">
+                        <i class="fas fa-trash me-2"></i>
+                        <span id="deleteButtonText">Удалить выбранные</span>
                     </button>
-                </div>
-                <div class="col-auto">
-                    <div id="deleteButtonContainer" class="d-none animate-fade-in">
-                        <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete()" id="deleteButton">
-                            <i class="fas fa-trash me-2"></i>
-                            <span id="deleteButtonText">Удалить выбранные</span>
-                        </button>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
     <!-- Таблица танцев -->
     <div class="card border-0 shadow-sm">
@@ -125,21 +135,21 @@
                             <!-- Формат сета -->
                             <td class="px-2">
                                 {% if dance.dance_format %}
-                                    <span class="badge bg-info text-white">
+                                    <span class="dance-format">
                                         {{ dance.dance_format.name }}
                                     </span>
                                 {% else %}
-                                    <span class="badge bg-light text-muted">-</span>
+                                    <span class="dance-format">-</span>
                                 {% endif %}
                             </td>
                             <!-- Тип сета -->
                             <td class="px-2">
                                 {% if dance.set_type %}
-                                    <span class="badge bg-dark">
+                                    <span class="dance-set-type">
                                         {{ dance.set_type.name }}
                                     </span>
                                 {% else %}
-                                    <span class="badge bg-light text-muted">-</span>
+                                    <span class="dance-set-type">-</span>
                                 {% endif %}
                             </td>
                             <td class="px-2">
@@ -170,21 +180,21 @@
                                 <div class="btn-group btn-group-sm" role="group">
                                     <!-- Файлы - папка -->
                                     <a href="{{ url_for('dance_files', dance_id=dance.id) }}" 
-                                       class="btn btn-outline-success btn-icon" 
-                                       title="Материалы к танцу">
+                                    class="action-btn action-btn-outline-success" 
+                                    title="Материалы к танцу">
                                         <i class="fas fa-folder"></i>
                                     </a>
                                     
                                     <!-- Редактировать - карандаш -->
                                     <a href="{{ url_for('edit_dance', dance_id=dance.id) }}" 
-                                       class="btn btn-outline-primary btn-icon" 
-                                       title="Редактировать">
+                                    class="action-btn action-btn-outline-primary" 
+                                    title="Редактировать">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     
                                     <!-- Удалить - корзина -->
                                     <button type="button" 
-                                            class="btn btn-outline-danger btn-icon" 
+                                            class="action-btn action-btn-outline-danger" 
                                             onclick="confirmSingleDelete({{ dance.id }}, '{{ dance.name|replace("'", "\\'") }}')"
                                             title="Удалить">
                                         <i class="fas fa-trash"></i>
@@ -296,7 +306,7 @@
 </div>
 {% endif %}
 
-<!-- JavaScript для управления чекбоксами и удалением -->
+<!-- JavaScript для управления чекбоксами, удалением и насыщенностью -->
 <script>
 let allSelected = false;
 
@@ -357,10 +367,64 @@ function confirmSingleDelete(danceId, danceName) {
     }
 }
 
-// Инициализация при загрузке страницы
+// Управление насыщенностью цветов
+function setSaturation(level) {
+    const root = document.documentElement;
+    const buttons = ['btn-sat-low', 'btn-sat-medium', 'btn-sat-high'];
+    
+    // Убираем активный класс со всех кнопок
+    buttons.forEach(btnId => {
+        document.getElementById(btnId).classList.remove('active');
+    });
+    
+    // Добавляем активный класс к выбранной кнопке
+    document.getElementById(`btn-sat-${level}`).classList.add('active');
+    
+    // Устанавливаем уровень насыщенности
+    switch(level) {
+        case 'low':
+            root.classList.add('saturation-low');
+            root.classList.remove('saturation-medium', 'saturation-high');
+            break;
+        case 'medium':
+            root.classList.add('saturation-medium');
+            root.classList.remove('saturation-low', 'saturation-high');
+            break;
+        case 'high':
+            root.classList.add('saturation-high');
+            root.classList.remove('saturation-low', 'saturation-medium');
+            break;
+    }
+    
+    // Сохраняем настройку в localStorage
+    localStorage.setItem('saturationPreference', level);
+}
+
+// Восстанавливаем настройки насыщенности при загрузке
 document.addEventListener('DOMContentLoaded', function() {
     updateDeleteButton();
+    
+    // Восстанавливаем сохраненные настройки насыщенности
+    const savedSaturation = localStorage.getItem('saturationPreference') || 'medium';
+    setSaturation(savedSaturation);
 });
+
+// Функции для тонкой настройки отдельных типов (для расширения)
+function adjustTypeSaturation(type, saturation) {
+    const root = document.documentElement;
+    root.style.setProperty(`--saturation-${type.toLowerCase()}`, saturation);
+}
+
+function resetAllSaturation() {
+    const root = document.documentElement;
+    const types = ['reel', 'jig', 'strathspey', 'medley', 'polka', 'march', 'waltz', 'hornpipe', 'quadrille', 'minuet'];
+    
+    types.forEach(type => {
+        root.style.removeProperty(`--saturation-${type}`);
+    });
+    
+    setSaturation('medium');
+}
 </script>
 
 <style>

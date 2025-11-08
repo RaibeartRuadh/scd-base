@@ -9,17 +9,29 @@
     --light-color: #f8f9fa;
     --dark-color: #212529;
     
-    /* Цвета типов танцев */
-    --reel-color: #dc3545;
-    --jig-color: #ffc107;
-    --strathspey-color: #6f42c1;
-    --medley-color: #198754;
-    --polka-color: #fd7e14;
-    --march-color: #0dcaf0;
-    --waltz-color: #0d6efd;
-    --hornpipe-color: #6c757d;
-    --quadrille-color: #795548;
-    --minuet-color: #e83e8c;
+    /* Бледные цвета типов танцев */
+    --reel-color: #f8d7da;
+    --jig-color: #fff3cd;
+    --strathspey-color: #e2d9f3;
+    --medley-color: #d1e7dd;
+    --polka-color: #ffe5d0;
+    --march-color: #cff4fc;
+    --waltz-color: #cfe2ff;
+    --hornpipe-color: #e2e3e5;
+    --quadrille-color: #e6d5cb;
+    --minuet-color: #f8d7e6;
+    
+    /* Темные цвета текста для бледных фонов */
+    --reel-text: #721c24;
+    --jig-text: #856404;
+    --strathspey-text: #3d2c5a;
+    --medley-text: #0f5132;
+    --polka-text: #8c4a1a;
+    --march-text: #055160;
+    --waltz-text: #052c65;
+    --hornpipe-text: #383d41;
+    --quadrille-text: #5c3c2a;
+    --minuet-text: #6a1a41;
 }
 
 /* Общие стили для карточек */
@@ -87,57 +99,173 @@
     min-width: 80px;
     text-align: center;
     border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.1);
 }
 
-/* Цвета для типов танцев */
+/* Бледные цвета для типов танцев */
 .bg-reel {
     background-color: var(--reel-color) !important;
-    color: white !important;
+    color: var(--reel-text) !important;
 }
 
 .bg-jig {
     background-color: var(--jig-color) !important;
-    color: black !important;
+    color: var(--jig-text) !important;
 }
 
 .bg-strathspey {
     background-color: var(--strathspey-color) !important;
-    color: white !important;
+    color: var(--strathspey-text) !important;
 }
 
 .bg-medley {
     background-color: var(--medley-color) !important;
-    color: white !important;
+    color: var(--medley-text) !important;
 }
 
 .bg-polka {
     background-color: var(--polka-color) !important;
-    color: white !important;
+    color: var(--polka-text) !important;
 }
 
 .bg-march {
     background-color: var(--march-color) !important;
-    color: black !important;
+    color: var(--march-text) !important;
 }
 
 .bg-waltz {
     background-color: var(--waltz-color) !important;
-    color: white !important;
+    color: var(--waltz-text) !important;
 }
 
 .bg-hornpipe {
     background-color: var(--hornpipe-color) !important;
-    color: white !important;
+    color: var(--hornpipe-text) !important;
 }
 
 .bg-quadrille {
     background-color: var(--quadrille-color) !important;
-    color: white !important;
+    color: var(--quadrille-text) !important;
 }
 
 .bg-minuet {
     background-color: var(--minuet-color) !important;
+    color: var(--minuet-text) !important;
+}
+
+/* Стили для кнопок управления (как у типов танцев) */
+.control-btn {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.8rem;
+    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.1);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.control-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.control-btn-outline-secondary {
+    background-color: #f8f9fa !important;
+    color: #6c757d !important;
+    border-color: #6c757d !important;
+}
+
+.control-btn-outline-secondary:hover {
+    background-color: #6c757d !important;
     color: white !important;
+}
+
+.control-btn-danger {
+    background-color: #f8d7da !important;
+    color: #721c24 !important;
+    border-color: #721c24 !important;
+}
+
+.control-btn-danger:hover {
+    background-color: #dc3545 !important;
+    color: white !important;
+    border-color: #dc3545 !important;
+}
+
+/* Стили для кнопок действий в таблице (как у control-btn) */
+.action-btn {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.5rem;
+    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.1);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+}
+
+.action-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.action-btn-outline-success {
+    background-color: #d1e7dd !important;
+    color: #0f5132 !important;
+    border-color: #0f5132 !important;
+}
+
+.action-btn-outline-success:hover {
+    background-color: #198754 !important;
+    color: white !important;
+    border-color: #198754 !important;
+}
+
+.action-btn-outline-primary {
+    background-color: #cfe2ff !important;
+    color: #052c65 !important;
+    border-color: #052c65 !important;
+}
+
+.action-btn-outline-primary:hover {
+    background-color: #0d6efd !important;
+    color: white !important;
+    border-color: #0d6efd !important;
+}
+
+.action-btn-outline-danger {
+    background-color: #f8d7da !important;
+    color: #721c24 !important;
+    border-color: #721c24 !important;
+}
+
+.action-btn-outline-danger:hover {
+    background-color: #dc3545 !important;
+    color: white !important;
+    border-color: #dc3545 !important;
+}
+
+/* Стили для формата сета и типа сета (как у размера) */
+.dance-format, .dance-set-type {
+    font-size: 0.8rem;
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 1.2;
+    color: #6c757d;
 }
 
 /* Стили для размера танцев */
@@ -146,28 +274,7 @@
     vertical-align: middle;
     display: inline-block;
     line-height: 1.2;
-}
-
-/* Стили для кнопок-иконок */
-.btn-icon {
-    padding: 0.25rem 0.4rem;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    transition: all 0.2s ease;
-    vertical-align: middle;
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.btn-icon:hover {
-    transform: translateY(-1px);
-}
-
-.btn-icon .fa-xs {
-    font-size: 0.75rem;
+    color: #6c757d;
 }
 
 /* Стили для чекбоксов */
@@ -326,11 +433,6 @@
         font-size: 0.8rem;
     }
     
-    .btn-icon {
-        width: 28px;
-        height: 28px;
-    }
-    
     .card-body {
         padding: 1rem;
     }
@@ -339,6 +441,25 @@
         min-width: 70px;
         font-size: 0.65rem;
         padding: 0.25rem 0.4rem;
+    }
+    
+    .control-btn {
+        font-size: 0.65rem;
+        padding: 0.25rem 0.6rem;
+        min-width: auto;
+    }
+    
+    .action-btn {
+        font-size: 0.65rem;
+        padding: 0.25rem 0.4rem;
+        width: 28px;
+        height: 28px;
+    }
+    
+    .dance-format,
+    .dance-set-type,
+    .dance-size {
+        font-size: 0.75rem;
     }
 }
 
