@@ -13,20 +13,21 @@ class DancePageParser:
     
     def parse_dance_data(self):
         """Основной метод парсинга данных о танце"""
+        
         # Сначала парсим основную информационную строку
         main_info = self._parse_main_info_string()
         
-        return {
+        data = {
             'name': self._parse_name(),
-            'dance_type': self._parse_dance_type(),
+            'dance_type': main_info.get('dance_type', self._parse_dance_type_fallback()),
             'meter': self._parse_meter(),
-            'bars': self._parse_bars(),  # код тактов (J48, R32)
-            'bars_count': self._parse_bars_count(),  # числовое значение тактов для size_id
-            'formation': main_info.get('formation', self._parse_formation()),
-            'couples_count': main_info.get('couples_count', self._parse_couples_count()),
-            'set_format': main_info.get('set_format', self._parse_couples_count()),  # Используем set_format из main_info
+            'bars': self._parse_bars(),
+            'bars_count': main_info.get('bars_count', self._parse_bars_count()),
+            'formation': main_info.get('formation', self._parse_formation_fallback()),
+            'couples_count': main_info.get('couples_count', self._parse_couples_count_fallback()),
+            'set_format': main_info.get('set_format', main_info.get('couples_count', 4)),
             'progression': self._parse_progression(),
-            'repetitions': self._parse_repetitions(),  # числовое значение повторений для count_id
+            'repetitions': self._parse_repetitions(),
             'author': self._parse_author(),
             'year': self._parse_year(),
             'description': self._parse_description(),
@@ -40,111 +41,172 @@ class DancePageParser:
             'images': self._parse_images(),
             'source_url': self._parse_source_url()
         }
+        
+        # Отладочная информация
+        print("🎯 ФИНАЛЬНЫЙ РЕЗУЛЬТАТ ПАРСИНГА:")
+        for key in ['name', 'dance_type', 'meter', 'bars_count', 'couples_count', 'set_format', 'formation']:
+            print(f"   {key}: {data[key]}")
+        print("---")
+        
+        return data
     
     def _parse_main_info_string(self):
-        """Парсинг основной информационной строки типа 'Jig · 32 bars · 3 couples · Longwise - 4'"""
+        """Парсинг основной информационной строки типа 'Reel · 32 bars · 3 couples · Longwise - 4'"""
         result = {
             'couples_count': None,
             'set_format': None,
-            'formation': None
+            'formation': None,
+            'dance_type': None,
+            'bars_count': None
         }
         
-        first_p = self.soup.find('h1')
-        if first_p:
-            first_p = first_p.find_next('p')
-            if first_p:
-                text = first_p.get_text().strip()
-                print(f"🔍 Основная строка: '{text}'")
-                
-                # Ищем количество пар (3 couples)
-                couples_match = re.search(r'(\d+)\s+couples?', text, re.IGNORECASE)
-                if couples_match:
-                    result['couples_count'] = int(couples_match.group(1))
-                    print(f"✅ Найдено couples_count: {result['couples_count']}")
-                
-                # Ищем формацию и формат сета (Longwise - 4)
-                # Варианты: "Longwise - 4", "Longwise-4", "Square set - 8" и т.д.
-                formation_patterns = [
-                    r'(Longwise|Square|Triangular|Circular)\s*-\s*(\d+)',
-                    r'(Longwise|Square|Triangular|Circular)\s+set\s*-\s*(\d+)'
-                ]
-                
-                for pattern in formation_patterns:
-                    formation_match = re.search(pattern, text, re.IGNORECASE)
-                    if formation_match:
-                        formation_name = formation_match.group(1)
-                        set_format = int(formation_match.group(2))
-                        
-                        # Определяем полное название формации
-                        formation_mapping = {
-                            'Longwise': 'Longwise set',
-                            'Square': 'Square set', 
-                            'Triangular': 'Triangular set',
-                            'Circular': 'Circular set'
-                        }
-                        
-                        result['formation'] = formation_mapping.get(formation_name, 'Longwise set')
-                        result['set_format'] = set_format
-                        print(f"✅ Найдено formation: {result['formation']}, set_format: {result['set_format']}")
-                        break
-                
-                # Если не нашли через тире, ищем просто формацию
-                if not result['formation']:
+        print("🔍 Начинаем поиск основной информационной строки...")
+        
+        # СПОСОБ 1: Ищем основной информационный блок с классом lead
+        lead_div = self.soup.find('div', class_='lead')
+        if lead_div:
+            text = lead_div.get_text().strip()
+            print(f"✅ Найден div.lead: '{text}'")
+            return self._analyze_info_text(text, result)
+        
+        # СПОСОБ 2: Ищем после заголовка h1
+        h1 = self.soup.find('h1')
+        if h1:
+            # Ищем следующий элемент с классом lead или любой параграф
+            next_elem = h1.find_next_sibling(['div', 'p'])
+            if next_elem:
+                text = next_elem.get_text().strip()
+                if any(keyword in text for keyword in ['bars', 'couples', 'Longwise', 'Square', 'Reel', 'Jig']):
+                    print(f"✅ Найден элемент после h1: '{text}'")
+                    return self._analyze_info_text(text, result)
+        
+        # СПОСОБ 3: Ищем любой элемент с ключевыми словами
+        elements = self.soup.find_all(['div', 'p', 'span'])
+        for elem in elements:
+            text = elem.get_text().strip()
+            if (any(keyword in text for keyword in ['bars', 'couples', 'Longwise', 'Square']) and 
+                len(text) < 200):  # Ограничиваем длину чтобы не брать большие тексты
+                print(f"✅ Найден подходящий элемент: '{text}'")
+                return self._analyze_info_text(text, result)
+        
+        print("❌ Основная информационная строка не найдена")
+        return result
+
+    def _analyze_info_text(self, text, result):
+        """Анализ текста информационной строки"""
+        print(f"🎯 Анализируем строку: '{text}'")
+        
+        # 1. Ищем тип танца (Reel, Jig, etc) - в начале строки
+        dance_types = ['Reel', 'Jig', 'Strathspey', 'March', 'Waltz', 'Polka', 'Hornpipe', 'Medley']
+        for dance_type in dance_types:
+            if dance_type in text:
+                result['dance_type'] = dance_type
+                print(f"✅ Найдено dance_type: {dance_type}")
+                break
+        
+        # 2. Ищем количество тактов (32 bars)
+        bars_match = re.search(r'(\d+)\s*bars?', text, re.IGNORECASE)
+        if bars_match:
+            result['bars_count'] = int(bars_match.group(1))
+            print(f"✅ Найдено bars_count: {result['bars_count']}")
+        
+        # 3. Ищем количество пар (3 couples)
+        couples_match = re.search(r'(\d+)\s+couples?', text, re.IGNORECASE)
+        if couples_match:
+            result['couples_count'] = int(couples_match.group(1))
+            print(f"✅ Найдено couples_count: {result['couples_count']}")
+        
+        # 4. Ищем формацию и формат сета (Longwise - 4)
+        # Сначала ищем полный формат "Longwise - 4"
+        formation_match = re.search(r'(Longwise|Square|Triangular|Circular)\s*[–—\-]\s*(\d+)', text, re.IGNORECASE)
+        if formation_match:
+            formation_name = formation_match.group(1)
+            set_format = int(formation_match.group(2))
+            
+            formation_mapping = {
+                'Longwise': 'Longwise set',
+                'Square': 'Square set', 
+                'Triangular': 'Triangular set',
+                'Circular': 'Circular set'
+            }
+            
+            result['formation'] = formation_mapping.get(formation_name, 'Longwise set')
+            result['set_format'] = set_format
+            print(f"✅ Найдено formation: {result['formation']}, set_format: {result['set_format']}")
+        else:
+            # Если не нашли с форматом, ищем просто формацию
+            for formation in ['Longwise', 'Square', 'Triangular', 'Circular']:
+                if formation.lower() in text.lower():
                     formation_mapping = {
                         'Longwise': 'Longwise set',
                         'Square': 'Square set', 
                         'Triangular': 'Triangular set',
                         'Circular': 'Circular set'
                     }
-                    
-                    for key in formation_mapping:
-                        if key.lower() in text.lower():
-                            result['formation'] = formation_mapping[key]
-                            print(f"✅ Найдено formation (без формата): {result['formation']}")
-                            break
-                
-                # Если нашли формацию, но не нашли set_format, используем couples_count как fallback
-                if result['formation'] and not result['set_format'] and result['couples_count']:
-                    result['set_format'] = result['couples_count']
-                    print(f"⚠️  set_format не найден, используем couples_count: {result['set_format']}")
+                    result['formation'] = formation_mapping.get(formation, 'Longwise set')
+                    print(f"✅ Найдено formation (без формата): {result['formation']}")
+                    break
+        
+        # 5. Если нашли формацию но не нашли set_format, используем couples_count
+        if result['formation'] and not result['set_format'] and result['couples_count']:
+            result['set_format'] = result['couples_count']
+            print(f"⚠️  set_format не найден, используем couples_count: {result['set_format']}")
         
         return result
+
+    def _get_main_info_text(self):
+        """Вспомогательный метод для получения текста основной информационной строки"""
+        # Ищем основной информационный блок
+        lead_div = self.soup.find('div', class_='lead')
+        if lead_div:
+            return lead_div.get_text().strip()
+        
+        # Ищем после h1
+        h1 = self.soup.find('h1')
+        if h1:
+            next_elem = h1.find_next_sibling(['div', 'p'])
+            if next_elem:
+                return next_elem.get_text().strip()
+        
+        return None
     
     def _parse_name(self):
         """Парсинг названия танца"""
         title_element = self.soup.find('span', {'id': 'title'})
         return title_element.get_text().strip() if title_element else 'Неизвестный танец'
     
-    def _parse_dance_type(self):
-        """Парсинг типа танца (Jig, Reel, etc)"""
-        dance_types = {
-            'Jig': 'Jig',
-            'Reel': 'Reel', 
-            'Strathspey': 'Strathspey',
-            'March': 'March',
-            'Waltz': 'Waltz',
-            'Polka': 'Polka'
-        }
-        
-        first_p = self.soup.find('h1')
-        if first_p:
-            first_p = first_p.find_next('p')
-            if first_p:
-                text = first_p.get_text()
-                for key, value in dance_types.items():
-                    if key in text:
-                        return value
+    def _parse_dance_type_fallback(self):
+        """Резервный метод парсинга типа танца"""
+        dt_elements = self.soup.find_all('dt', class_='col-sm-2 text-sm-end')
+        for dt in dt_elements:
+            if 'Dance' in dt.get_text():
+                dd = dt.find_next_sibling('dd')
+                if dd:
+                    dance_text = dd.get_text().strip()
+                    dance_types = ['Reel', 'Jig', 'Strathspey', 'March', 'Waltz', 'Polka']
+                    for dance_type in dance_types:
+                        if dance_type in dance_text:
+                            return dance_type
         return 'Unknown'
     
     def _parse_meter(self):
         """Парсинг размера (4/4L, 3/4, etc)"""
-        first_p = self.soup.find('h1')
-        if first_p:
-            first_p = first_p.find_next('p')
-            if first_p:
-                text = first_p.get_text()
-                meter_match = re.search(r'(\d+/\d+[A-Z]*)', text)
-                return meter_match.group(1) if meter_match else None
+        # Ищем в основной информационной строке
+        text = self._get_main_info_text()
+        if text:
+            meter_match = re.search(r'(\d+/\d+[A-Z]*)', text)
+            if meter_match:
+                return meter_match.group(1)
+        
+        # Ищем в структурированных данных
+        dt_elements = self.soup.find_all('dt', class_='col-sm-2 text-sm-end')
+        for dt in dt_elements:
+            if 'Meter' in dt.get_text():
+                dd = dt.find_next_sibling('dd')
+                if dd:
+                    meter_text = dd.get_text().strip()
+                    meter_match = re.search(r'(\d+/\d+[A-Z]*)', meter_text)
+                    return meter_match.group(1) if meter_match else meter_text
         return None
     
     def _parse_bars(self):
@@ -177,31 +239,27 @@ class DancePageParser:
         
         return 32  # значение по умолчанию
     
-    def _parse_formation(self):
-        """Парсинг формации (типа сета) - Longwise, Square, Triangular, Circular"""
-        formation_mapping = {
-            'Longwise': 'Longwise set',
-            'Square': 'Square set', 
-            'Triangular': 'Triangular set',
-            'Circular': 'Circular set'
-        }
-        
-        # Дополнительный поиск в структурированных данных
+    def _parse_formation_fallback(self):
+        """Резервный метод парсинга формации"""
         dt_elements = self.soup.find_all('dt', class_='col-sm-2 text-sm-end')
         for dt in dt_elements:
             if 'Formation' in dt.get_text():
                 dd = dt.find_next_sibling('dd')
                 if dd:
                     formation_text = dd.get_text().strip()
+                    formation_mapping = {
+                        'Longwise': 'Longwise set',
+                        'Square': 'Square set', 
+                        'Triangular': 'Triangular set',
+                        'Circular': 'Circular set'
+                    }
                     for key in formation_mapping:
                         if key in formation_text:
                             return formation_mapping[key]
-        
-        return 'Longwise set'  # значение по умолчанию
+        return 'Longwise set'
     
-    def _parse_couples_count(self):
-        """Парсинг количества пар (из основной информации) - это минимальное количество пар"""
-        # Дополнительный поиск в структурированных данных
+    def _parse_couples_count_fallback(self):
+        """Резервный метод парсинга количества пар"""
         dt_elements = self.soup.find_all('dt', class_='col-sm-2 text-sm-end')
         for dt in dt_elements:
             if 'Couples' in dt.get_text():
@@ -211,8 +269,7 @@ class DancePageParser:
                     couples_match = re.search(r'(\d+)', couples_text)
                     if couples_match:
                         return int(couples_match.group(1))
-        
-        return 4  # значение по умолчанию
+        return 4
     
     def _parse_progression(self):
         """Парсинг прогрессии"""
@@ -586,48 +643,6 @@ def validate_dance_data(dance_data):
     
     return errors
 
-################
-### ОТЛАДКА
-def parse_dance_data(self):
-    """Основной метод парсинга данных о танце"""
-    # Сначала парсим основную информационную строку
-    main_info = self._parse_main_info_string()
-    
-    data = {
-        'name': self._parse_name(),
-        'dance_type': self._parse_dance_type(),
-        'meter': self._parse_meter(),
-        'bars': self._parse_bars(),
-        'bars_count': self._parse_bars_count(),
-        'formation': main_info.get('formation', self._parse_formation()),
-        'couples_count': main_info.get('couples_count', self._parse_couples_count()),
-        'set_format': main_info.get('set_format', self._parse_couples_count()),
-        'progression': self._parse_progression(),
-        'repetitions': self._parse_repetitions(),
-        'author': self._parse_author(),
-        'year': self._parse_year(),
-        'description': self._parse_description(),
-        'steps': self._parse_steps(),
-        'published_in': self._parse_publications(),
-        'recommended_music': self._parse_music(),
-        'figures': self._parse_figures(),
-        'extra_info': self._parse_extra_info(),
-        'intensity': self._parse_intensity(),
-        'formations_list': self._parse_formations_list(),
-        'images': self._parse_images(),
-        'source_url': self._parse_source_url()
-    }
-    
-    # ДОБАВИТЬ ЭТОТ ОТЛАДОЧНЫЙ ВЫВОД:
-    print("🎯 РЕЗУЛЬТАТ ПАРСИНГА:")
-    print(f"   Название: {data['name']}")
-    print(f"   couples_count (минимальное): {data['couples_count']}")
-    print(f"   set_format (общее количество пар): {data['set_format']}")
-    print(f"   formation: {data['formation']}")
-    print("---")
-    
-    return data
-################
 
 def format_dance_data_for_display(dance_data):
     """Форматирование данных для отображения"""
@@ -640,7 +655,7 @@ def format_dance_data_for_display(dance_data):
         'Автор': dance_data.get('author', 'Неизвестно'),
         'Год': dance_data.get('year', 'Неизвестно'),
         'Минимальное количество пар': f"{dance_data.get('couples_count', 4)} пары",
-        'Формат сета': f"{dance_data.get('set_format', 4)} couples",  # ИСПРАВЛЕНО: "4 couples"
+        'Формат сета': f"{dance_data.get('set_format', 4)} couples",
         'Тип сета': dance_data.get('formation', 'Longwise'),
         'Прогрессия': dance_data.get('progression', 'Неизвестно'),
         'Повторения': dance_data.get('repetitions', 4),
