@@ -461,7 +461,7 @@ def save_dance_to_db(dance_data):
         # Используем данные из #extrainfo для поля note (уже очищенные)
         note = dance_data.get('note', '')
         
-        # Создаем танец (ВРЕМЕННО без set_format и couples_count)
+        # Создаем танец
         dance = Dance(
             name=dance_data.get('name', 'Неизвестный танец'),
             author=dance_data.get('author'),
@@ -472,12 +472,11 @@ def save_dance_to_db(dance_data):
             count_id=dance_data.get('repetitions'),
             size_id=dance_data.get('bars_count'),
             description=dance_data.get('description'),
+            description2='',  # Новое поле - пока пустое
+            rscds=False,      # Новое поле - по умолчанию False
             published=', '.join(dance_data.get('published_in', [])) if dance_data.get('published_in') else None,
             note=note,
             source_url=dance_data.get('source_url', ''),
-            # ВРЕМЕННО закомментировано до добавления полей в модель:
-            set_format=dance_data.get('set_format'),
-            couples_count=dance_data.get('couples_count')
         )
         
         db.session.add(dance)
@@ -508,7 +507,8 @@ def search():
         'set_types': [],
         'dance_couples': [],
         'has_description': '',
-        'has_files': ''
+        'has_files': '',
+        'rscds': ''  # ДОБАВЛЕНО: фильтр по RSCDS
     }
     
     # Переменная для определения, был ли выполнен поиск
@@ -540,7 +540,8 @@ def search():
                 'set_types': request.form.getlist('set_types'),
                 'dance_couples': request.form.getlist('dance_couples'),
                 'has_description': request.form.get('has_description'),
-                'has_files': request.form.get('has_files')
+                'has_files': request.form.get('has_files'),
+                'rscds': request.form.get('rscds')  # ДОБАВЛЕНО: получаем значение чекбокса RSCDS
             }
             
         except Exception as e:
@@ -611,6 +612,10 @@ def search():
                     query = query.filter(Dance.id.in_(dances_with_files))
                 else:
                     query = query.filter(Dance.id.in_([]))  # Пустой результат
+            
+            # ДОБАВЛЕНО: Фильтр по RSCDS
+            if filters.get('rscds') == 'on':
+                query = query.filter(Dance.rscds == True)
             
             # Применяем пагинацию
             pagination = query.order_by(Dance.name).paginate(
@@ -1337,7 +1342,10 @@ def add_dance():
                 dance_format_id=safe_int(request.form.get('dance_format')),
                 dance_couple=request.form.get('dance_couple', '').strip(),
                 set_type_id=safe_int(request.form.get('set_type')),
+                # ДОБАВЛЕНО: новые поля
+                rscds=request.form.get('rscds') == 'true',
                 description=request.form.get('description', '').strip(),
+                description2=request.form.get('description2', '').strip(),
                 published=request.form.get('published', '').strip(),
                 note=request.form.get('note', '').strip()
             )
@@ -1388,7 +1396,10 @@ def edit_dance(dance_id):
             dance.dance_format_id = safe_int(request.form.get('dance_format'))
             dance.dance_couple = request.form.get('dance_couple', '').strip()
             dance.set_type_id = safe_int(request.form.get('set_type'))
+            # ДОБАВЛЕНО: новые поля
+            dance.rscds = request.form.get('rscds') == 'true'
             dance.description = request.form.get('description', '').strip()
+            dance.description2 = request.form.get('description2', '').strip()
             dance.published = request.form.get('published', '').strip()
             dance.note = request.form.get('note', '').strip()
             

@@ -71,11 +71,13 @@ class Dance(db.Model):
     dance_format_id = db.Column(db.Integer, db.ForeignKey('scddb.dance_format.id'))
     dance_couple = db.Column(db.String(50))
     set_type_id = db.Column(db.Integer, db.ForeignKey('scddb.set_type.id'))
-    set_format = db.Column(db.Integer)  # ДОБАВИТЬ ЭТО ПОЛЕ
-    couples_count = db.Column(db.Integer)  # ДОБАВИТЬ ЭТО ПОЛЕ
-    description = db.Column(db.String(5000))
+    set_format = db.Column(db.Integer)
+    couples_count = db.Column(db.Integer)
+    description = db.Column(db.Text)  # ИЗМЕНЕНО: String(5000) -> Text
+    description2 = db.Column(db.Text)  # ДОБАВЛЕНО: новое поле
+    rscds = db.Column(db.Boolean, default=False)  # ДОБАВЛЕНО: новое поле
     published = db.Column(db.String(255))
-    note = db.Column(db.String(10000))
+    note = db.Column(db.Text)  # ИЗМЕНЕНО: String(10000) -> Text
     source_url = db.Column(db.String(500))
 
     # Связи

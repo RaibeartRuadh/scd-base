@@ -28,6 +28,17 @@
                             {% endif %}
                         </td>
                     </tr>
+                    <!-- ДОБАВЛЕНО: RSCDS -->
+                    <tr>
+                        <th>RSCDS:</th>
+                        <td>
+                            {% if dance.rscds %}
+                                <span class="badge bg-success">✓ RSCDS HQ publication</span>
+                            {% else %}
+                                <span class="badge bg-secondary">Не RSCDS</span>
+                            {% endif %}
+                        </td>
+                    </tr>
                     <tr><th>Размер:</th>
                         <td>
                             {% if dance.count_id and dance.size_id %}
@@ -77,6 +88,16 @@
             <h5>Описание фигур</h5>
             <div class="bg-light p-3 rounded">
                 {{ dance.description|replace('\n', '<br>')|safe }}
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- ДОБАВЛЕНО: Дополнительное описание -->
+        {% if dance.description2 %}
+        <div class="mt-4">
+            <h5>Дополнительное описание</h5>
+            <div class="bg-light p-3 rounded">
+                {{ dance.description2|replace('\n', '<br>')|safe }}
             </div>
         </div>
         {% endif %}

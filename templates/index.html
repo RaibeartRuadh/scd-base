@@ -1,5 +1,6 @@
 {% extends "base.html" %}
-
+[file name]: index.html
+[file content begin]
 {% block content %}
 <div class="d-flex justify-content-between align-items-center mb-4">
     <h3 class="mb-0">Все танцы</h1>
@@ -167,6 +168,15 @@
                             </td>
                             <td class="px-2 text-center">
                                 <div class="d-flex justify-content-center gap-2">
+                                    <!-- Иконка короны для RSCDS танцев -->
+                                    {% if dance.rscds %}
+                                    <img src="{{ url_for('static', filename='img/crown.png') }}" 
+                                         alt="RSCDS" 
+                                         class="crown-icon" 
+                                         title="Танец RSCDS"
+                                         style="width: 20px; height: 20px;">
+                                    {% endif %}
+                                    
                                     <!-- Иконка описания (газета) -->
                                     {% if dance.description and dance.description.strip() %}
                                     <i class="fas fa-newspaper material-icon" title="Есть описание танца"></i>
@@ -498,6 +508,20 @@ function resetAllSaturation() {
     transform: scale(1.1);
 }
 
+/* ===== СТИЛИ ДЛЯ ИКОНКИ КОРОНЫ ===== */
+.crown-icon {
+    cursor: default;
+    transition: all 0.2s ease;
+    opacity: 1;
+    filter: brightness(1);
+}
+
+.crown-icon:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
 /* ===== ВЫРАВНИВАНИЕ ПО ЦЕНТРУ ===== */
 .table-compact td.text-center > * {
     justify-content: center;
@@ -594,3 +618,4 @@ function resetAllSaturation() {
 }
 </style>
 {% endblock %}
+[file content end]
