@@ -16,6 +16,7 @@ import chardet
 import json
 from bs4 import BeautifulSoup
 import time
+import re
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-secret-key-change-in-production')
@@ -192,6 +193,37 @@ def parse_dance_with_extrainfo(dance_id):
     except Exception as e:
         print(f"❌ Ошибка парсинга танца {dance_id}: {e}")
         return None
+
+#######################################################
+# ФУНКЦИИ ДЛЯ ОЧИСТКИ ТЕКСТА ОПИСАНИЙ
+#######################################################
+
+def clean_cribs_text(text):
+    """Очистка и форматирование текста описания"""
+    if not text:
+        return None
+    
+    # Убираем лишние пробелы и переносы в начале/конце
+    text = text.strip()
+    
+    # Заменяем переносы после номеров тактов (1-8, 9-16, 1-, 2- и т.д.) на 2 пробела
+    patterns = [
+        r'(\d+\-\d+)\s*\n\s*',  # 1-8\n
+        r'(\d+\-)\s*\n\s*',     # 1-\n
+        r'(\d+\.)\s*\n\s*',     # 1.\n
+        r'(\d+\))\s*\n\s*',     # 1)\n
+    ]
+    
+    for pattern in patterns:
+        text = re.sub(pattern, r'\1  ', text)
+    
+    # Заменяем множественные переносы на одинарные
+    text = re.sub(r'\n\s*\n', '\n\n', text)
+    
+    # Убираем лишние пробелы
+    text = re.sub(r'[ \t]+', ' ', text)
+    
+    return text.strip()
 
 #######################################################
 # МАССОВЫЙ ИМПОРТ С #EXTRAINFO
@@ -461,6 +493,10 @@ def save_dance_to_db(dance_data):
         # Используем данные из #extrainfo для поля note (уже очищенные)
         note = dance_data.get('note', '')
         
+        # Очищаем описания от лишних переносов
+        description = clean_cribs_text(dance_data.get('description'))
+        description2 = clean_cribs_text(dance_data.get('description2'))
+        
         # Создаем танец
         dance = Dance(
             name=dance_data.get('name', 'Неизвестный танец'),
@@ -471,8 +507,8 @@ def save_dance_to_db(dance_data):
             dance_couple=str(dance_data.get('couples_count')) if dance_data.get('couples_count') else None,
             count_id=dance_data.get('repetitions'),
             size_id=dance_data.get('bars_count'),
-            description=dance_data.get('description'),
-            description2='',  # Новое поле - пока пустое
+            description=description,  # MiniCribs (очищенный)
+            description2=description2,  # E-cribs (очищенный)
             rscds=False,      # Новое поле - по умолчанию False
             published=', '.join(dance_data.get('published_in', [])) if dance_data.get('published_in') else None,
             note=note,
