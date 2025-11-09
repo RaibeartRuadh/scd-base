@@ -17,7 +17,7 @@
             </div>
             <div class="col-auto">
                 <select class="form-select form-select-sm" id="per_page" name="per_page" onchange="this.form.submit()">
-                    <option value="25" {% if per_page==12 %}selected{% endif %}>12</option>
+                    <option value="12" {% if per_page==12 %}selected{% endif %}>12</option>
                     <option value="50" {% if per_page==50 %}selected{% endif %}>50</option>
                     <option value="100" {% if per_page==100 %}selected{% endif %}>100</option>
                 </select>
@@ -135,30 +135,34 @@
                             <!-- Формат сета -->
                             <td class="px-2">
                                 {% if dance.dance_format %}
-                                    <span class="dance-format">
+                                    <span class="dance-format" style="font-size: var(--format-font-size, 1rem); font-weight: var(--format-font-weight, 500); color: var(--format-color, hsl(0, 0%, 0%));">
                                         {{ dance.dance_format.name }}
                                     </span>
                                 {% else %}
-                                    <span class="dance-format">-</span>
+                                    <span class="dance-format" style="font-size: var(--format-font-size, 1rem); font-weight: var(--format-font-weight, 500); color: var(--format-color, hsl(0, 0%, 0%));">-</span>
                                 {% endif %}
                             </td>
                             <!-- Тип сета -->
                             <td class="px-2">
                                 {% if dance.set_type %}
-                                    <span class="dance-set-type">
+                                    <span class="dance-set-type" style="font-size: var(--set-type-font-size, 1rem); font-weight: var(--set-type-font-weight, 500); color: var(--set-type-color, hsl(0, 0%, 0%));">
                                         {{ dance.set_type.name }}
                                     </span>
                                 {% else %}
-                                    <span class="dance-set-type">-</span>
+                                    <span class="dance-set-type" style="font-size: var(--set-type-font-size, 1rem); font-weight: var(--set-type-font-weight, 500); color: var(--set-type-color, hsl(0, 0%, 0%));">-</span>
                                 {% endif %}
                             </td>
                             <td class="px-2">
                                 {% if dance.count_id and dance.size_id %}
-                                    <span class="text-muted dance-size">{{ dance.count_id }}×{{ dance.size_id }}</span>
+                                    <span class="dance-size" style="font-size: var(--size-font-size, 1rem); font-weight: var(--size-font-weight, 500); color: var(--size-color, hsl(0, 0%, 0%)); font-family: var(--size-font-family, inherit);">
+                                        {{ dance.count_id }}×{{ dance.size_id }}
+                                    </span>
                                 {% elif dance.size_id %}
-                                    <span class="text-muted dance-size">{{ dance.size_id }} тактов</span>
+                                    <span class="dance-size" style="font-size: var(--size-font-size, 1rem); font-weight: var(--size-font-weight, 500); color: var(--size-color, hsl(0, 0%, 0%)); font-family: var(--size-font-family, inherit);">
+                                        {{ dance.size_id }} тактов
+                                    </span>
                                 {% else %}
-                                    <span class="text-muted dance-size">-</span>
+                                    <span class="dance-size" style="font-size: var(--size-font-size, 1rem); font-weight: var(--size-font-weight, 500); color: var(--size-color, hsl(0, 0%, 0%)); font-family: var(--size-font-family, inherit);">-</span>
                                 {% endif %}
                             </td>
                             <td class="px-2 text-center">
@@ -400,13 +404,66 @@ function setSaturation(level) {
     localStorage.setItem('saturationPreference', level);
 }
 
-// Восстанавливаем настройки насыщенности при загрузке
+// Функции для настройки шрифтов
+function setFormatFontSize(size) {
+    document.documentElement.style.setProperty('--format-font-size', size);
+    localStorage.setItem('formatFontSize', size);
+}
+
+function setFormatFontWeight(weight) {
+    document.documentElement.style.setProperty('--format-font-weight', weight);
+    localStorage.setItem('formatFontWeight', weight);
+}
+
+function setSetTypeFontSize(size) {
+    document.documentElement.style.setProperty('--set-type-font-size', size);
+    localStorage.setItem('setTypeFontSize', size);
+}
+
+function setSetTypeFontWeight(weight) {
+    document.documentElement.style.setProperty('--set-type-font-weight', weight);
+    localStorage.setItem('setTypeFontWeight', weight);
+}
+
+function setSizeFontSize(size) {
+    document.documentElement.style.setProperty('--size-font-size', size);
+    localStorage.setItem('sizeFontSize', size);
+}
+
+function setSizeFontWeight(weight) {
+    document.documentElement.style.setProperty('--size-font-weight', weight);
+    localStorage.setItem('sizeFontWeight', weight);
+}
+
+function setSizeFontFamily(family) {
+    document.documentElement.style.setProperty('--size-font-family', family);
+    localStorage.setItem('sizeFontFamily', family);
+}
+
+// Восстанавливаем настройки при загрузке
 document.addEventListener('DOMContentLoaded', function() {
     updateDeleteButton();
     
     // Восстанавливаем сохраненные настройки насыщенности
     const savedSaturation = localStorage.getItem('saturationPreference') || 'medium';
     setSaturation(savedSaturation);
+    
+    // Восстанавливаем настройки шрифтов
+    const savedFormatFontSize = localStorage.getItem('formatFontSize');
+    const savedFormatFontWeight = localStorage.getItem('formatFontWeight');
+    const savedSetTypeFontSize = localStorage.getItem('setTypeFontSize');
+    const savedSetTypeFontWeight = localStorage.getItem('setTypeFontWeight');
+    const savedSizeFontSize = localStorage.getItem('sizeFontSize');
+    const savedSizeFontWeight = localStorage.getItem('sizeFontWeight');
+    const savedSizeFontFamily = localStorage.getItem('sizeFontFamily');
+    
+    if (savedFormatFontSize) setFormatFontSize(savedFormatFontSize);
+    if (savedFormatFontWeight) setFormatFontWeight(savedFormatFontWeight);
+    if (savedSetTypeFontSize) setSetTypeFontSize(savedSetTypeFontSize);
+    if (savedSetTypeFontWeight) setSetTypeFontWeight(savedSetTypeFontWeight);
+    if (savedSizeFontSize) setSizeFontSize(savedSizeFontSize);
+    if (savedSizeFontWeight) setSizeFontWeight(savedSizeFontWeight);
+    if (savedSizeFontFamily) setSizeFontFamily(savedSizeFontFamily);
 });
 
 // Функции для тонкой настройки отдельных типов (для расширения)
@@ -428,12 +485,12 @@ function resetAllSaturation() {
 </script>
 
 <style>
-/* Стили для иконок материалов */
+/* ===== СТИЛИ ДЛЯ ИКОНОК МАТЕРИАЛОВ ===== */
 .material-icon {
-    font-size: 0.9rem;
+    font-size: 1rem;
     cursor: default;
     transition: all 0.2s ease;
-    opacity: 0.7;
+    opacity: 1;
 }
 
 .material-icon:hover {
@@ -441,61 +498,65 @@ function resetAllSaturation() {
     transform: scale(1.1);
 }
 
-/* Гарантия выравнивания по центру */
+/* ===== ВЫРАВНИВАНИЕ ПО ЦЕНТРУ ===== */
 .table-compact td.text-center > * {
     justify-content: center;
 }
 
-/* Компактные отступы для группы иконок */
+/* ===== КОМПАКТНЫЕ ОТСТУПЫ ДЛЯ ГРУППЫ ИКОНОК ===== */
 .d-flex.gap-2 {
     gap: 0.5rem !important;
 }
 
-/* Остальные существующие стили */
+/* ===== ОСНОВНЫЕ СТИЛИ ТАБЛИЦЫ ===== */
 .table-compact td {
     padding: 5px 5px;
-    font-size: 0.82rem;
+    font-size: 1rem;
     vertical-align: middle;
-    height: 20px;
+    height: 10px;
 }
 
 .table-compact th {
     padding: 10px;
-    font-size: 0.78rem;
+    font-size: 1rem;
     vertical-align: middle;
 }
 
+/* ===== СТИЛИ ДЛЯ НАЗВАНИЯ ТАНЦА ===== */
 .dance-name {
     font-weight: 600 !important;
-    color: #0d6efd !important;
-    font-size: 0.85rem;
+    color: hwb(0 0% 100%) !important;
+    font-size: 1rem;
     line-height: 1.2;
 }
 
 .dance-name:hover {
-    color: #0a58ca !important;
+    color: #0014c5 !important;
     text-decoration: underline !important;
 }
 
+/* ===== СТИЛИ ДЛЯ БЕЙДЖЕЙ ТИПОВ ТАНЦЕВ ===== */
 .badge-type {
-    font-size: 0.65rem;
+    font-size: 1rem;
     padding: 0.25rem 0.5rem;
     vertical-align: middle;
     display: inline-block;
     line-height: 1;
 }
 
+/* ===== СТИЛИ ДЛЯ РАЗМЕРА ТАНЦА ===== */
 .dance-size {
-    font-size: 0.75rem;
+    font-size: 1rem;
     vertical-align: middle;
     display: inline-block;
-    line-height: 1.2;
+    line-height: 1;
 }
 
+/* ===== СТИЛИ ДЛЯ КНОПОК-ИКОНОК ===== */
 .btn-icon {
     padding: 0.2rem 0.35rem;
     border-radius: 4px;
-    font-size: 0.7rem;
+    font-size: 1rem;
     transition: all 0.2s ease;
     vertical-align: middle;
 }
@@ -504,15 +565,18 @@ function resetAllSaturation() {
     transform: translateY(-1px);
 }
 
+/* ===== ВЫРАВНИВАНИЕ ЭЛЕМЕНТОВ В ТАБЛИЦЕ ===== */
 .table-compact td > * {
     vertical-align: middle;
 }
 
+/* ===== СТИЛИ ДЛЯ УВЕДОМЛЕНИЙ ===== */
 .alert {
-    font-size: 0.875rem;
+    font-size: 1rem;
     margin-bottom: 1rem;
 }
 
+/* ===== ВЫРАВНИВАНИЕ ТЕКСТА В ТАБЛИЦЕ ===== */
 .table-compact th.text-start,
 .table-compact td.text-start {
     text-align: left;
@@ -523,6 +587,7 @@ function resetAllSaturation() {
     text-align: right;
 }
 
+/* ===== ВЫРАВНИВАНИЕ ГРУППЫ КНОПОК ===== */
 .btn-group.justify-content-end {
     width: auto;
     margin-left: auto;

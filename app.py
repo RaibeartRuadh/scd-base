@@ -490,22 +490,19 @@ def save_dance_to_db(dance_data):
         raise e
 
 #######################################################
-# РАСШИРЕННЫЙ ПОИСК (ЕДИНЫЙ МАРШРУТ)
+# РАСШИРЕННЫЙ ПОИСК (ЕДИНЫЙ МАРШРУТ) С ПАГИНАЦИЕЙ
 #######################################################
 
 @app.route('/search', methods=['GET', 'POST'])
 def search():
-    """Расширенный поиск танцев с фильтрами - использует search.html"""
+    """Расширенный поиск танцев с фильтрами и пагинацией - использует search.html"""
     # Инициализируем переменные по умолчанию
     filters = {
         'name': '',
         'author': '',
-        'description': '',
-        'published': '',
+        'description_text': '',  # Исправлено: было 'description'
         'size_min': '',
-        'size_max': '',
         'count_min': '',
-        'count_max': '',
         'dance_types': [],
         'dance_formats': [],
         'set_types': [],
@@ -514,18 +511,30 @@ def search():
         'has_files': ''
     }
     
+    # Переменная для определения, был ли выполнен поиск
+    search_performed = False
+    
+    # Параметры пагинации
+    page = request.args.get('page', 1, type=int)
+    per_page = request.args.get('per_page', 20, type=int)
+    
+    # Ограничиваем per_page для безопасности
+    if per_page not in [10, 20, 50, 100]:
+        per_page = 20
+    
     if request.method == 'POST':
         try:
+            search_performed = True  # Поиск выполнен
+            # Сбрасываем страницу на первую при новом поиске
+            page = 1
+            
             # Собираем фильтры из формы
             filters = {
                 'name': request.form.get('name', '').strip(),
                 'author': request.form.get('author', '').strip(),
-                'description': request.form.get('description', '').strip(),
-                'published': request.form.get('published', '').strip(),
+                'description_text': request.form.get('description_text', '').strip(),  # Новое поле для поиска по описанию
                 'size_min': request.form.get('size_min', '').strip(),
-                'size_max': request.form.get('size_max', '').strip(),
                 'count_min': request.form.get('count_min', '').strip(),
-                'count_max': request.form.get('count_max', '').strip(),
                 'dance_types': request.form.getlist('dance_types'),
                 'dance_formats': request.form.getlist('dance_formats'),
                 'set_types': request.form.getlist('set_types'),
@@ -534,7 +543,17 @@ def search():
                 'has_files': request.form.get('has_files')
             }
             
-            # Строим запрос
+        except Exception as e:
+            # Можно оставить только для критических ошибок
+            flash(f'Ошибка при обработке формы поиска: {str(e)}', 'danger')
+    
+    # Строим запрос только если был выполнен поиск (POST) или есть параметры пагинации
+    results = []
+    total_count = 0
+    pagination = None
+    
+    if search_performed or (request.method == 'GET' and page > 1):
+        try:
             query = Dance.query
             
             # Применяем текстовые фильтры
@@ -544,24 +563,22 @@ def search():
             if filters['author']:
                 query = query.filter(Dance.author.ilike(f'%{filters["author"]}%'))
             
-            if filters['description']:
-                query = query.filter(Dance.description.ilike(f'%{filters["description"]}%'))
-            
-            if filters['published']:
-                query = query.filter(Dance.published.ilike(f'%{filters["published"]}%'))
+            # ПОИСК ПО ТЕКСТУ ОПИСАНИЯ - исправлено
+            if filters['description_text']:
+                query = query.filter(Dance.description.ilike(f'%{filters["description_text"]}%'))
             
             # Применяем числовые фильтры
             if filters['size_min']:
-                query = query.filter(Dance.size_id >= int(filters['size_min']))
-            
-            if filters['size_max']:
-                query = query.filter(Dance.size_id <= int(filters['size_max']))
+                try:
+                    query = query.filter(Dance.size_id >= int(filters['size_min']))
+                except (ValueError, TypeError):
+                    pass
             
             if filters['count_min']:
-                query = query.filter(Dance.count_id >= int(filters['count_min']))
-            
-            if filters['count_max']:
-                query = query.filter(Dance.count_id <= int(filters['count_max']))
+                try:
+                    query = query.filter(Dance.count_id >= int(filters['count_min']))
+                except (ValueError, TypeError):
+                    pass
             
             # Применяем фильтры по категориям
             if filters['dance_types']:
@@ -595,24 +612,36 @@ def search():
                 else:
                     query = query.filter(Dance.id.in_([]))  # Пустой результат
             
-            results = query.order_by(Dance.name).all()
-            total_count = len(results)
+            # Применяем пагинацию
+            pagination = query.order_by(Dance.name).paginate(
+                page=page, per_page=per_page, error_out=False
+            )
             
-            search_filters = get_search_filters()
-            return render_template('search.html', 
-                                 results=results, 
-                                 filters=filters,
-                                 total_count=total_count,
-                                 **search_filters)
+            results = pagination.items
+            total_count = pagination.total
             
+            # УБРАЛИ FLASH-УВЕДОМЛЕНИЯ - они теперь не нужны
+            # Информация о количестве результатов отображается в шаблоне
+                
         except Exception as e:
+            # Оставляем только для критических ошибок
             flash(f'Ошибка при выполнении поиска: {str(e)}', 'danger')
-            search_filters = get_search_filters()
-            return render_template('search.html', filters=filters, **search_filters)
+            results = []
+            total_count = 0
+            pagination = None
     
-    # GET запрос - показать пустую форму поиска
+    # Получаем данные для фильтров
     search_filters = get_search_filters()
-    return render_template('search.html', filters=filters, **search_filters)
+    
+    return render_template('search.html', 
+                         results=results, 
+                         filters=filters,
+                         total_count=total_count,
+                         pagination=pagination,
+                         page=page,
+                         per_page=per_page,
+                         search_performed=search_performed,  # Добавляем эту переменную!
+                         **search_filters)
 
 @app.route('/advanced_search')
 def advanced_search():

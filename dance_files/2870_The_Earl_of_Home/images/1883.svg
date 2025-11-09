@@ -1,0 +1,77 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       THE EARL OF HOME
+       8x32 S                        
+                                                                                              RSCDS Book 12.11                                                                                    
+       Dancedata ID:  1883 
+
+
+       SVG crib 2896  created by Keith Rose  11.05.23   12:01:23           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  87.23' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   THE EARL OF HOME    -    8x32 S                           </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='85.23' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >THE EARL OF HOME</text>
+<text  x='168.87' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >                                                                 </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >8x32 S</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<rect x='0' y='45' width='270' height='13.5' fill='white' />
+<text   x='12.40' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S</text>  
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 45.00 0.00  L 45.00 45.00' />
+<text   x='55.15' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 90.00 0.00  L 90.00 45.00' />
+<polyline fill='none' stroke='rgb(0,0,0)' points='101.25,20.25 119.25,20.25 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 117.106  19.262  l  0.744  0.988 -1.489  1.976  3.239 -1.976 -3.239 -1.976  0.744  0.988 '  />
+<polyline fill='none' stroke='rgb(0,0,0)' points='119.25,24.75 101.25,24.75 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 103.394  25.738  l -0.744 -0.988  1.489 -1.976 -3.239  1.976  3.239  1.976 -0.744 -0.988 '  />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 130.50 0.00  L 130.50 45.00' />
+<text   x='142.10' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1</text>  
+<text   x='140.40' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >A</text>  
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 177.75 0.00  L 177.75 45.00' />
+<text   x='192.40' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S</text>  
+<line   stroke='rgb(0,0,0)' x1='197.55' y1='15.30'  x2='202.95' y2='15.30'  />
+<line   stroke='rgb(0,0,0)' x1='202.95' y1='15.30'  x2='202.95' y2='20.70'  />
+<line   stroke='rgb(0,0,0)' x1='188.55' y1='15.30'  x2='193.95' y2='15.30'  />
+<line   stroke='rgb(0,0,0)' x1='188.55' y1='15.30'  x2='188.55' y2='20.70'  />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 213.75 0.00  L 213.75 45.00' />
+<circle cx='238.5' cy='13.50002' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='229.5' cy='13.49998' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='226.32' y1='16.68'  x2='229.50' y2='19.86'  />
+<circle cx='229.5' cy='31.49999' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='238.5' cy='31.50001' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='241.68' y1='28.32'  x2='238.50' y2='25.14'  />
+<circle cx='234.00' cy='4.50' r='1.69' fill='none'
+stroke='rgb(0,0,0)' />
+<circle cx='234.00' cy='4.50' r='0.51' fill='rgb(0,0,0)' stroke='rgb(0,0,0)' />
+<text   x='250.61' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >X</text>  
+<text   x='257.30' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<text   x='70.87' y='54.00'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >Repeat from 2nd place with all 4 couples dancing bars 1 - 8</text>  
+<text   x='12.06' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1 2 3 4</text>  
+<text   x='52.26' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1</text>  
+<text   x='56.05' y='9.00'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >x</text>  
+<text   x='60.35' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >2</text>  
+<text   x='64.15' y='9.00'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >x</text>  
+<text   x='68.45' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >3</text>  
+<text   x='72.25' y='9.00'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >x</text>  
+<text   x='76.54' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >4</text>  
+<text   x='80.34' y='9.00'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >x</text>  
+<polyline fill='none' stroke='rgb(0,0,0)' points='24.75,29.25 24.75,18.00 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  23.762  20.144  l  0.988 -0.744  1.976  1.489 -1.976 -3.239 -1.976  3.239  0.988 -0.744 '  />
+<polyline fill='none'  style='stroke-dasharray: 2, 1.3;' stroke='rgb(0,0,0)' points='29.25,18.00 29.25,29.25 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  30.238  27.106  l -0.988  0.744 -1.976 -1.489  1.976  3.239  1.976 -3.239 -0.988  0.744 '  />
+<polyline fill='none'  style='stroke-dasharray: 2, 1.3;' stroke='rgb(0,0,0)' points='69.75,29.25 69.75,18.00 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  68.762  20.144  l  0.988 -0.744  1.976  1.489 -1.976 -3.239 -1.976  3.239  0.988 -0.744 '  />
+<polyline fill='none' stroke='rgb(0,0,0)' points='74.25,18.00 74.25,29.25 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  75.238  27.106  l -0.988  0.744 -1.976 -1.489  1.976  3.239  1.976 -3.239 -0.988  0.744 '  />
+<polyline fill='none' stroke='rgb(0,0,0)' points='162.00,27.00 166.50,20.25 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 164.488  21.486  l  1.235 -0.071  0.819  2.335  0.152 -3.791 -3.441  1.599  1.235 -0.071 '  />
+<polyline fill='none'  style='stroke-dasharray: 2, 1.3;' stroke='rgb(0,0,0)' points='159.75,22.50 155.25,29.25 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 157.262  28.014  l -1.235  0.071 -0.819 -2.335 -0.152  3.791  3.441 -1.599 -1.235  0.071 '  />
+<text  x='0.00' y='65.50'   font-size='5' stroke-width='0.001'  >RSCDS Book 12.11</text>
+<text  xml:space='preserve'  x='270.00' y='65.50'   font-size='5' stroke-width='0.001'   text-anchor='end' >4C/4C longwise set.</text>
+  </g> </svg>
