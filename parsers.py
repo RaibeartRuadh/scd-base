@@ -371,10 +371,56 @@ class DancePageParser:
                     return int(year_match.group(1)) if year_match else None
         return None
     
+    def _debug_cribs_content(self):
+        """Детальная отладка содержимого вкладки Cribs"""
+        cribs_tab = self.soup.find('div', {'id': 'cribs'})
+        if not cribs_tab:
+            print("❌ Вкладка Cribs не найдена")
+            return
+        
+        print("🔍 ДЕТАЛЬНАЯ ОТЛАДКА CRIBS:")
+        
+        # Ищем все карточки
+        cards = cribs_tab.find_all('div', class_='card')
+        print(f"📋 Найдено карточек: {len(cards)}")
+        
+        for i, card in enumerate(cards):
+            print(f"\n🎴 КАРТОЧКА {i+1}:")
+            
+            # Анализируем структуру карточки
+            card_header = card.find('div', class_='card-header')
+            card_body = card.find('div', class_='card-body')
+            card_footer = card.find('div', class_='card-footer')
+            
+            if card_header:
+                header_text = card_header.get_text().strip()
+                print(f"   📌 Header: {header_text}")
+            
+            if card_body:
+                body_text = card_body.get_text().strip()
+                preview = body_text[:100] + "..." if len(body_text) > 100 else body_text
+                print(f"   📝 Body: {preview}")
+                print(f"   📏 Длина body: {len(body_text)} символов")
+            
+            if card_footer:
+                footer_text = card_footer.get_text().strip()
+                print(f"   🏷️  Footer: {footer_text}")
+                
+                # Определяем тип по footer
+                if 'mini' in footer_text.lower():
+                    print("   ⭐ ТИП: MINICRIBS")
+                elif 'e-crib' in footer_text.lower() or 'ecrib' in footer_text.lower():
+                    print("   ⭐ ТИП: E-CRIBS")
+                else:
+                    print("   ❓ ТИП: НЕОПРЕДЕЛЕН")
+        
+        # Также показываем все элементы для полноты информации
+        print(f"\n🔍 Всего элементов в cribs: {len(cribs_tab.find_all(recursive=True))}")
+    
     def _parse_description(self):
         """Парсинг описания - MiniCribs в description, E-cribs в description2"""
-        description = None  # MiniCribs (краткое)
-        description2 = None  # E-cribs (полное)
+        description = None
+        description2 = None
         
         print("🔍 Начинаем поиск описаний...")
         
@@ -382,191 +428,158 @@ class DancePageParser:
         if cribs_tab:
             print("✅ Найдена вкладка Cribs")
             
-            # СПОСОБ 1: Ищем MiniCribs для description (только настоящие мини-описания)
-            mini_cribs = cribs_tab.find('div', class_='minicribs')
-            if mini_cribs:
-                description_text = self._clean_minicribs_text(mini_cribs.get_text())
-                # Проверяем, что это действительно MiniCribs (короткое описание)
-                if description_text and self._is_minicribs_text(description_text):
-                    print("✅ Найдено описание в MiniCribs")
-                    description = description_text
-                    preview = description_text[:100] + "..." if len(description_text) > 100 else description_text
-                    print(f"📝 MiniCribs preview: {preview}")
-                else:
-                    print("❌ Текст в MiniCribs не соответствует формату MiniCribs")
-                    # Если в блоке minicribs находится E-cribs, используем его для description2
-                    if description_text and not description2:
+            # Детальная отладка структуры
+            self._debug_cribs_content()
+            
+            # НОВЫЙ СПОСОБ: Ищем все карточки с описаниями и анализируем их footer
+            cards = cribs_tab.find_all('div', class_='card')
+            print(f"🔍 Найдено карточек: {len(cards)}")
+            
+            for i, card in enumerate(cards):
+                # Ищем тело карточки с текстом описания
+                card_body = card.find('div', class_='card-body')
+                if not card_body:
+                    continue
+                    
+                # Ищем footer карточки для определения типа
+                card_footer = card.find('div', class_='card-footer')
+                footer_text = card_footer.get_text().strip() if card_footer else ""
+                
+                # Получаем текст описания
+                description_text = self._clean_cribs_text(card_body.get_text())
+                if not description_text:
+                    continue
+                
+                print(f"📋 Карточка {i+1}:")
+                print(f"   Footer: '{footer_text}'")
+                print(f"   Длина текста: {len(description_text)} символов")
+                
+                # Определяем тип описания по footer
+                if 'mini' in footer_text.lower():
+                    print("   ⭐ ОПРЕДЕЛЕН КАК MINICRIBS")
+                    if not description:  # Берем первый найденный MiniCribs
+                        description = description_text
+                        preview = description_text[:150] + "..." if len(description_text) > 150 else description_text
+                        print(f"   📝 MiniCribs preview: {preview}")
+                
+                elif 'e-crib' in footer_text.lower() or 'ecrib' in footer_text.lower():
+                    print("   ⭐ ОПРЕДЕЛЕН КАК E-CRIBS")
+                    if not description2:  # Берем первый найденный E-Cribs
                         description2 = description_text
-                        print("✅ Используем текст из MiniCribs как E-cribs")
+                        preview = description_text[:150] + "..." if len(description_text) > 150 else description_text
+                        print(f"   📝 E-Cribs preview: {preview}")
+                
+                else:
+                    print("   ❓ Тип не определен по footer, анализируем по содержанию...")
+                    # Резервный анализ по содержанию текста
+                    if self._is_minicribs_text(description_text) and not description:
+                        print("   ⭐ ОПРЕДЕЛЕН КАК MINICRIBS (по содержанию)")
+                        description = description_text
+                    elif self._is_ecribs_text(description_text) and not description2:
+                        print("   ⭐ ОПРЕДЕЛЕН КАК E-CRIBS (по содержанию)")
+                        description2 = description_text
             
-            # СПОСОБ 2: Ищем E-cribs для description2 (всегда парсим, если есть)
-            e_cribs = cribs_tab.find('div', class_='cribtext')
-            if e_cribs:
-                description2_text = self._clean_cribs_text(e_cribs.get_text())
-                if description2_text:
-                    print("✅ Найдено описание в E-cribs")
-                    description2 = description2_text
-                    preview = description2_text[:100] + "..." if len(description2_text) > 100 else description2_text
-                    print(f"📝 E-cribs preview: {preview}")
-            
-            # Если E-cribs не нашли в cribtext, но нашли в другом месте
-            if not description2:
-                # Ищем любой полный текст описания в вкладке cribs
-                crib_text_elements = cribs_tab.find_all(['div', 'p'])
-                for elem in crib_text_elements:
-                    # Пропускаем уже обработанные элементы
-                    if 'minicribs' in elem.get('class', []) or 'cribtext' in elem.get('class', []):
-                        continue
-                        
-                    text = elem.get_text().strip()
-                    if text and len(text) > 50:  # E-cribs обычно длиннее
-                        # Проверяем, что это не MiniCribs
-                        if not self._is_minicribs_text(text):
-                            description2_text = self._clean_cribs_text(text)
-                            if description2_text and not description2:
-                                print("✅ Найдено альтернативное описание E-cribs")
-                                description2 = description2_text
-                                break
-        
-        else:
-            print("❌ Вкладка Cribs не найдена, ищем описания в основном контенте")
-        
-        # СПОСОБ 3: Расширенный поиск MiniCribs (только настоящие)
-        if not description:
-            print("🔄 Расширенный поиск MiniCribs по всей странице...")
-            all_minicribs = self.soup.find_all(class_='minicribs')
-            for minicrib in all_minicribs:
-                description_text = self._clean_minicribs_text(minicrib.get_text())
-                if description_text and self._is_minicribs_text(description_text):
-                    print("✅ Найдено описание в расширенном поиске MiniCribs")
-                    description = description_text
-                    break
-        
-        # СПОСОБ 4: Поиск E-cribs по всей странице
-        if not description2:
-            print("🔄 Расширенный поиск E-cribs по всей странице...")
-            # Ищем элементы с длинным текстом, содержащим описание фигур
-            potential_cribs = self.soup.find_all(['div', 'p'])
-            for elem in potential_cribs:
-                text = elem.get_text().strip()
-                if text and len(text) > 100 and not self._is_minicribs_text(text):
-                    # Проверяем, что это описание танца (содержит номера тактов и описания)
-                    if any(marker in text for marker in ['1-8', '1–8', '1—8', '9-16', 'Bars 1-8', 'Bars 1–8']):
-                        description2_text = self._clean_cribs_text(text)
-                        if description2_text and not description2:
-                            print("✅ Найдено E-cribs по текстовым маркерам")
+            # РЕЗЕРВНЫЙ ПОИСК: Если не нашли через карточки, используем старые методы
+            if not description or not description2:
+                print("🔄 Резервный поиск описаний...")
+                
+                # Поиск E-Cribs
+                if not description2:
+                    e_cribs = cribs_tab.find('div', class_='cribtext')
+                    if e_cribs:
+                        description2_text = self._clean_cribs_text(e_cribs.get_text())
+                        if description2_text:
+                            print("✅ Найден E-Cribs в div.cribtext")
                             description2 = description2_text
-                            break
+                
+                # Поиск MiniCribs
+                if not description:
+                    mini_cribs = cribs_tab.find('div', class_='minicribs')
+                    if mini_cribs:
+                        description_text = self._clean_minicribs_text(mini_cribs.get_text())
+                        if description_text:
+                            print("✅ Найден MiniCribs в div.minicribs")
+                            description = description_text
         
-        # Финальная проверка и логирование результатов
+        # Финальные результаты
         print("📊 РЕЗУЛЬТАТЫ ПОИСКА ОПИСАНИЙ:")
-        print(f"   MiniCribs (description): {'✅ НАЙДЕНО' if description else '❌ НЕ НАЙДЕНО'}")
-        print(f"   E-cribs (description2): {'✅ НАЙДЕНО' if description2 else '❌ НЕ НАЙДЕНО'}")
+        print(f"   MiniCribs: {'✅ НАЙДЕНО' if description else '❌ НЕ НАЙДЕНО'}")
+        print(f"   E-Cribs: {'✅ НАЙДЕНО' if description2 else '❌ НЕ НАЙДЕНО'}")
         
         if description:
             print(f"   Длина MiniCribs: {len(description)} символов")
+            preview = description[:200] + "..." if len(description) > 200 else description
+            print(f"   Preview MiniCribs: {preview}")
         if description2:
-            print(f"   Длина E-cribs: {len(description2)} символов")
+            print(f"   Длина E-Cribs: {len(description2)} символов")
+            preview = description2[:200] + "..." if len(description2) > 200 else description2
+            print(f"   Preview E-Cribs: {preview}")
         
         return {
-            'description': description,  # MiniCribs (может быть None)
-            'description2': description2  # E-cribs (может быть None)
+            'description': description,
+            'description2': description2
         }
 
     def _is_minicribs_text(self, text):
-        """Проверяет, является ли текст MiniCribs (короткое описание)"""
+        """Проверяет, является ли текст MiniCribs (резервный метод)"""
+        if not text or len(text) < 20:
+            return False
+        
+        # MiniCribs обычно компактнее и имеет специфичные паттерны
+        has_compact_format = len(text) < 1000
+        has_minicribs_patterns = (
+            re.search(r'\d+[–—]\s*', text) or  # "1– ", "9– "
+            re.search(r'\d+\s*-\s*[A-Z]', text)  # "1- 1c"
+        )
+        
+        return has_compact_format and has_minicribs_patterns
+
+    def _is_ecribs_text(self, text):
+        """Проверяет, является ли текст E-Cribs (резервный метод)"""
         if not text:
             return False
         
-        # MiniCribs обычно короче и имеет специфичную структуру
-        lines = text.split('\n')
-        non_empty_lines = [line.strip() for line in lines if line.strip()]
-        
-        # Критерии для MiniCribs:
-        # 1. Не слишком длинный (обычно до 500 символов)
-        # 2. Содержит типичные мини-форматы (номера тактов через дефис)
-        # 3. Имеет компактную структуру
-        
-        is_compact = len(non_empty_lines) <= 8  # Не много строк
-        has_minicribs_patterns = any(
-            re.search(r'\d+\s*[\-–—]\s*\d+', line) for line in non_empty_lines
+        # E-Cribs обычно более детальные
+        has_detailed_format = (
+            re.search(r'\d+\s*-\s*\d+\s+[A-Z]', text) or  # "1-8 1s"
+            re.search(r'\[\w+\]', text)  # [C], [R] и т.д.
         )
-        is_short = len(text) < 800  # Не очень длинный
         
-        return is_compact and has_minicribs_patterns and is_short
+        return has_detailed_format
 
     def _clean_minicribs_text(self, text):
         """Очистка и форматирование текста MiniCribs"""
         if not text:
             return None
         
-        # Убираем лишние пробелы и переносы в начале/конце
+        # Убираем лишние пробелы и переносы
         text = text.strip()
         
-        # Если текст слишком длинный для MiniCribs, возвращаем как есть
-        # (возможно это E-cribs в блоке MiniCribs)
-        if len(text) > 800:
-            return text
+        # Заменяем разные типы тире на стандартный
+        text = re.sub(r'[–—]', '-', text)
         
-        # Удаляем название танца (первая строка) и другие лишние элементы
+        # Убираем лишние пробелы вокруг тире в номерах тактов
+        text = re.sub(r'(\d+)\s*-\s*', r'\1- ', text)
+        
+        # Форматируем переносы строк для читаемости
         lines = text.split('\n')
         cleaned_lines = []
         
-        for i, line in enumerate(lines):
+        for line in lines:
             line = line.strip()
             if not line:
                 continue
                 
-            # Пропускаем строки с названием танца (первая строка обычно содержит название)
-            if i == 0 and (any(keyword in line for keyword in ['Lassies', 'Reel', 'Jig', 'Strathspey', 'March']) or
-                           len(line) < 30):  # Короткие строки вероятно заголовки
+            # Пропускаем явно ненужные строки
+            if any(skip in line for skip in ['MiniCribs', 'Submit Comment', 'http://']):
                 continue
                 
-            # Пропускаем строки с музыкальным размером (2/4L · R32)
-            if '·' in line and any(keyword in line for keyword in ['R32', 'R40', 'R48', 'J32', 'J40', 'J48', 'S32', 'S40']):
-                continue
-                
-            # Пропускаем заголовки типа "MiniCribs" и разделители
-            if line in ['MiniCribs', '[-]', 'Submit Comment', 'Mini Crib']:
-                continue
-                
-            # Пропускаем строки, которые явно не являются описанием шагов
-            if line.startswith('http') or 'comment' in line.lower():
-                continue
-                
-            # Пропускаем пустые строки после фильтрации
-            if line:
-                cleaned_lines.append(line)
+            cleaned_lines.append(line)
         
-        # Объединяем обратно
+        # Объединяем обратно, сохраняя структуру
         text = '\n'.join(cleaned_lines)
         
-        # Заменяем переносы после номеров тактов (1-8, 9-16, 1-, 2- и т.д.) на 2 пробела
-        patterns = [
-            r'(\d+\-\d+)\s*\n\s*',  # 1-8\n
-            r'(\d+\-)\s*\n\s*',     # 1-\n
-            r'(\d+\.)\s*\n\s*',     # 1.\n
-            r'(\d+\))\s*\n\s*',     # 1)\n
-            r'(Bars \d+\-\d+)\s*\n\s*',  # Bars 1-8\n
-        ]
-        
-        for pattern in patterns:
-            text = re.sub(pattern, r'\1  ', text)
-        
-        # Заменяем множественные переносы на одинарные
-        text = re.sub(r'\n\s*\n', '\n\n', text)
-        
-        # Убираем лишние пробелы
-        text = re.sub(r'[ \t]+', ' ', text)
-        
-        # Убираем пробелы в начале и конце
-        text = text.strip()
-        
-        # Проверяем, что остался содержательный текст
-        if not text or len(text) < 10:
-            return None
-            
-        return text
+        return text.strip()
 
     def _clean_cribs_text(self, text):
         """Очистка и форматирование текста E-cribs"""
@@ -832,46 +845,6 @@ class DancePageParser:
                 return 'diagram.png'
         
         return filename
-
-    def _debug_cribs_structure(self):
-        """Отладочный метод для анализа структуры вкладки Cribs"""
-        cribs_tab = self.soup.find('div', {'id': 'cribs'})
-        if not cribs_tab:
-            print("❌ Вкладка Cribs не найдена для отладки")
-            return
-        
-        print("🔍 ОТЛАДКА СТРУКТУРЫ CRIBS:")
-        
-        # Находим все дочерние элементы
-        children = list(cribs_tab.children)
-        print(f"   Всего дочерних элементов: {len(children)}")
-        
-        # Ищем все div с классами
-        divs = cribs_tab.find_all('div')
-        print(f"   Всего div элементов: {len(divs)}")
-        
-        for i, div in enumerate(divs):
-            classes = div.get('class', [])
-            text_preview = div.get_text()[:50].replace('\n', ' ') + "..." if div.get_text() else "ПУСТОЙ"
-            print(f"   Div {i}: классы={classes}, текст={text_preview}")
-        
-        # Ищем все элементы с классом minicribs
-        minicribs_elements = cribs_tab.find_all(class_='minicribs')
-        print(f"   Элементов с классом minicribs: {len(minicribs_elements)}")
-        
-        for i, elem in enumerate(minicribs_elements):
-            tag = elem.name
-            text_preview = elem.get_text()[:100].replace('\n', ' ') + "..." if elem.get_text() else "ПУСТОЙ"
-            print(f"   MiniCribs {i} ({tag}): {text_preview}")
-        
-        # Ищем все элементы с классом cribtext
-        cribtext_elements = cribs_tab.find_all(class_='cribtext')
-        print(f"   Элементов с классом cribtext: {len(cribtext_elements)}")
-        
-        for i, elem in enumerate(cribtext_elements):
-            tag = elem.name
-            text_preview = elem.get_text()[:100].replace('\n', ' ') + "..." if elem.get_text() else "ПУСТОЙ"
-            print(f"   Cribtext {i} ({tag}): {text_preview}")
 
 
 class BatchDanceParser:
