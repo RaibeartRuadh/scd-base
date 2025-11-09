@@ -416,7 +416,8 @@ class DancePageParser:
         
         # Также показываем все элементы для полноты информации
         print(f"\n🔍 Всего элементов в cribs: {len(cribs_tab.find_all(recursive=True))}")
-    
+############################################
+
     def _parse_description(self):
         """Парсинг описания - MiniCribs в description, E-cribs в description2"""
         description = None
@@ -434,6 +435,9 @@ class DancePageParser:
             # НОВЫЙ СПОСОБ: Ищем все карточки с описаниями и анализируем их footer
             cards = cribs_tab.find_all('div', class_='card')
             print(f"🔍 Найдено карточек: {len(cards)}")
+            
+            found_minicribs = False
+            found_ecribs = False
             
             for i, card in enumerate(cards):
                 # Ищем тело карточки с текстом описания
@@ -454,71 +458,89 @@ class DancePageParser:
                 print(f"   Footer: '{footer_text}'")
                 print(f"   Длина текста: {len(description_text)} символов")
                 
-                # Определяем тип описания по footer
-                if 'mini' in footer_text.lower():
-                    print("   ⭐ ОПРЕДЕЛЕН КАК MINICRIBS")
-                    if not description:  # Берем первый найденный MiniCribs
+                # СТРОГАЯ ПРОВЕРКА: Определяем тип описания ТОЛЬКО по footer
+                footer_lower = footer_text.lower()
+                
+                if 'mini' in footer_lower and 'crib' in footer_lower:
+                    print("   ⭐ ОПРЕДЕЛЕН КАК MINICRIBS (по footer)")
+                    if not found_minicribs:  # Берем только первый найденный MiniCribs
                         description = description_text
+                        found_minicribs = True
                         preview = description_text[:150] + "..." if len(description_text) > 150 else description_text
                         print(f"   📝 MiniCribs preview: {preview}")
-                
-                elif 'e-crib' in footer_text.lower() or 'ecrib' in footer_text.lower():
-                    print("   ⭐ ОПРЕДЕЛЕН КАК E-CRIBS")
-                    if not description2:  # Берем первый найденный E-Cribs
+                    
+                elif ('e-crib' in footer_lower or 'ecrib' in footer_lower) and 'mini' not in footer_lower:
+                    print("   ⭐ ОПРЕДЕЛЕН КАК E-CRIBS (по footer)")
+                    if not found_ecribs:  # Берем только первый найденный E-Cribs
                         description2 = description_text
+                        found_ecribs = True
                         preview = description_text[:150] + "..." if len(description_text) > 150 else description_text
                         print(f"   📝 E-Cribs preview: {preview}")
-                
+                    
                 else:
-                    print("   ❓ Тип не определен по footer, анализируем по содержанию...")
-                    # Резервный анализ по содержанию текста
-                    if self._is_minicribs_text(description_text) and not description:
-                        print("   ⭐ ОПРЕДЕЛЕН КАК MINICRIBS (по содержанию)")
-                        description = description_text
-                    elif self._is_ecribs_text(description_text) and not description2:
-                        print("   ⭐ ОПРЕДЕЛЕН КАК E-CRIBS (по содержанию)")
-                        description2 = description_text
+                    print("   ❓ Тип не определен по footer - ПРОПУСКАЕМ")
+                    # НЕ используем резервный анализ по содержанию - только строго по footer
+                    continue
             
-            # РЕЗЕРВНЫЙ ПОИСК: Если не нашли через карточки, используем старые методы
-            if not description or not description2:
-                print("🔄 Резервный поиск описаний...")
+            # ОТЛАДКА: Проверяем что именно нашли
+            print(f"🔍 РЕЗУЛЬТАТЫ ПОСЛЕ АНАЛИЗА КАРТОЧЕК:")
+            print(f"   Найдено MiniCribs: {found_minicribs}")
+            print(f"   Найдено E-Cribs: {found_ecribs}")
+            
+            # РЕЗЕРВНЫЙ ПОИСК ТОЛЬКО ЕСЛИ НИЧЕГО НЕ НАШЛИ В КАРТОЧКАХ
+            if not found_minicribs and not found_ecribs:
+                print("🔄 Резервный поиск описаний (старая структура)...")
                 
                 # Поиск E-Cribs
-                if not description2:
-                    e_cribs = cribs_tab.find('div', class_='cribtext')
-                    if e_cribs:
-                        description2_text = self._clean_cribs_text(e_cribs.get_text())
-                        if description2_text:
-                            print("✅ Найден E-Cribs в div.cribtext")
-                            description2 = description2_text
+                e_cribs = cribs_tab.find('div', class_='cribtext')
+                if e_cribs:
+                    description2_text = self._clean_cribs_text(e_cribs.get_text())
+                    if description2_text:
+                        print("✅ Найден E-Cribs в div.cribtext")
+                        description2 = description2_text
+                        found_ecribs = True
                 
-                # Поиск MiniCribs
-                if not description:
+                # Поиск MiniCribs  
+                if not found_minicribs:
                     mini_cribs = cribs_tab.find('div', class_='minicribs')
                     if mini_cribs:
                         description_text = self._clean_minicribs_text(mini_cribs.get_text())
                         if description_text:
                             print("✅ Найден MiniCribs в div.minicribs")
                             description = description_text
+                            found_minicribs = True
+            
+            # ФИНАЛЬНАЯ ОЧИСТКА: Удаляем поля, которые не должны быть заполнены
+            if not found_minicribs:
+                print("🗑️  MiniCribs не найден - очищаем поле")
+                description = None
+            
+            if not found_ecribs:
+                print("🗑️  E-Cribs не найден - очищаем поле") 
+                description2 = None
         
-        # Финальные результаты
-        print("📊 РЕЗУЛЬТАТЫ ПОИСКА ОПИСАНИЙ:")
+        # Финальные результаты с четким указанием что найдено
+        print("📊 ФИНАЛЬНЫЕ РЕЗУЛЬТАТЫ ПОИСКА ОПИСАНИЙ:")
         print(f"   MiniCribs: {'✅ НАЙДЕНО' if description else '❌ НЕ НАЙДЕНО'}")
         print(f"   E-Cribs: {'✅ НАЙДЕНО' if description2 else '❌ НЕ НАЙДЕНО'}")
         
-        if description:
-            print(f"   Длина MiniCribs: {len(description)} символов")
-            preview = description[:200] + "..." if len(description) > 200 else description
-            print(f"   Preview MiniCribs: {preview}")
-        if description2:
-            print(f"   Длина E-Cribs: {len(description2)} символов")
-            preview = description2[:200] + "..." if len(description2) > 200 else description2
-            print(f"   Preview E-Cribs: {preview}")
+        # ПРАВИЛА ЗАПОЛНЕНИЯ:
+        if description and not description2:
+            print("📝 РЕЖИМ: Только MiniCribs")
+        elif description2 and not description:
+            print("📝 РЕЖИМ: Только E-Cribs")  
+        elif description and description2:
+            print("📝 РЕЖИМ: Оба описания")
+        else:
+            print("📝 РЕЖИМ: Описания не найдены")
         
         return {
             'description': description,
             'description2': description2
         }
+
+#################################################
+
 
     def _is_minicribs_text(self, text):
         """Проверяет, является ли текст MiniCribs (резервный метод)"""

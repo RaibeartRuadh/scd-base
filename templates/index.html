@@ -174,12 +174,12 @@
                                          alt="RSCDS" 
                                          class="crown-icon" 
                                          title="Танец RSCDS"
-                                         style="width: 20px; height: 20px;">
+                                         style="width: 15px; height: 15px;">
                                     {% endif %}
                                     
                                     <!-- Иконка описания (газета) -->
-                                    {% if dance.description and dance.description.strip() %}
-                                    <i class="fas fa-newspaper material-icon" title="Есть описание танца"></i>
+                                    {% if dance.has_any_description %}
+                                    <i class="fas fa-newspaper material-icon" title="Есть описание танца или e-cribs"></i>
                                     {% endif %}
                                     
                                     <!-- Иконка файлов (картина) -->

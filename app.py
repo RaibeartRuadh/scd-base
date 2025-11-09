@@ -661,6 +661,10 @@ def search():
             results = pagination.items
             total_count = pagination.total
             
+            # ДОБАВЛЕНО: вычисляем флаг наличия описания для каждого танца
+            for dance in results:
+                dance.has_any_description = has_any_description(dance)
+            
             # УБРАЛИ FLASH-УВЕДОМЛЕНИЯ - они теперь не нужны
             # Информация о количестве результатов отображается в шаблоне
                 
@@ -1234,6 +1238,37 @@ def has_dance_files(dance_id, dance_name):
         print(f"❌ Ошибка при проверке файлов для танца {dance_id}: {e}")
         return False
 
+##############################
+def has_e_cribs(dance_id, dance_name):
+    """Проверяет, есть ли у танца файлы e-cribs"""
+    try:
+        files = get_dance_files(dance_id, dance_name)
+        # Ищем файлы с ключевыми словами в названии, указывающими на e-cribs
+        e_crib_keywords = ['crib', 'e-crib', 'description', 'описание']
+        for file_info in files:
+            filename_lower = file_info['name'].lower()
+            if any(keyword in filename_lower for keyword in e_crib_keywords):
+                return True
+        return False
+    except Exception as e:
+        print(f"❌ Ошибка при проверке e-cribs для танца {dance_id}: {e}")
+        return False
+
+def has_any_description(dance):
+    """Проверяет наличие любого описания у танца (текст или файлы)"""
+    # Проверяем текстовые описания
+    has_text_description = (
+        (dance.description and dance.description.strip()) or 
+        (dance.description2 and dance.description2.strip()) or
+        (dance.note and dance.note.strip())
+    )
+    
+    # Проверяем файлы e-cribs
+    has_file_description = has_e_cribs(dance.id, dance.name)
+    
+    return has_text_description or has_file_description
+
+##############################
 def has_images(dance_id, dance_name):
     """Проверяет наличие изображений у танца"""
     try:
@@ -1329,6 +1364,10 @@ def index():
         dances = query.order_by(Dance.name).paginate(
             page=page, per_page=per_page, error_out=False
         )
+        
+        # ДОБАВЛЕНО: вычисляем флаг наличия описания для каждого танца
+        for dance in dances.items:
+            dance.has_any_description = has_any_description(dance)
         
         return render_template('index.html', dances=dances, search=search, per_page=per_page)
         
@@ -1602,13 +1641,18 @@ def utility_processor():
         """Проверяет наличие файлов в файловой системе для танца"""
         return has_dance_files(dance_id, dance_name)
     
+    def has_any_description_processor(dance):
+        """Проверяет наличие любого описания у танца"""
+        return has_any_description(dance)
+    
     return {
         'get_dance_files': get_dance_files,
         'get_dance_images': get_dance_images,
         'has_images': has_images_processor,
         'format_datetime': format_datetime,
         'db_type': db_type,
-        'has_dance_files': has_dance_files_processor
+        'has_dance_files': has_dance_files_processor,
+        'has_any_description': has_any_description_processor  # ДОБАВЛЕНО
     }
 
 #######################################################

@@ -252,8 +252,8 @@
                                             {% endif %}
                                             
                                             <!-- Иконка описания (газета) -->
-                                            {% if dance.description and dance.description.strip() %}
-                                            <i class="fas fa-newspaper material-icon" title="Есть описание танца"></i>
+                                            {% if dance.has_any_description %}
+                                            <i class="fas fa-newspaper material-icon" title="Есть описание танца или e-cribs"></i>
                                             {% endif %}
                                             
                                             <!-- Иконка файлов (картина) -->
