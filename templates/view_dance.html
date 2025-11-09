@@ -83,36 +83,40 @@
             </div>
         </div>
 
-        {% if dance.description %}
-        <div class="mt-4">
-            <h5>Описание фигур</h5>
-            <div class="bg-light p-3 rounded">
-                {{ dance.description|replace('\n', '<br>')|safe }}
+        <!-- Блоки описаний в один ряд -->
+        <div class="row mt-4">
+            <!-- Левая колонка: MiniCribs -->
+            <div class="col-md-6">
+                <h6 class="text-muted fw-bold mb-2">MiniCribs</h6>
+                <div class="bg-light p-3 rounded" style="min-height: 150px;">
+                    {% if dance.description %}
+                        {{ dance.description|replace('\n', '<br>')|safe }}
+                    {% else %}
+                        <div class="text-muted text-center py-4">
+                            <i class="fas fa-info-circle"></i> Описание отсутствует
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            
+            <!-- Правая колонка: E-Cribs -->
+            <div class="col-md-6">
+                <h6 class="text-muted fw-bold mb-2">E-Cribs</h6>
+                <div class="bg-light p-3 rounded" style="min-height: 150px;">
+                    {% if dance.description2 %}
+                        {{ dance.description2|replace('\n', '<br>')|safe }}
+                    {% else %}
+                        <div class="text-muted text-center py-4">
+                            <i class="fas fa-info-circle"></i> Описание отсутствует
+                        </div>
+                    {% endif %}
+                </div>
             </div>
         </div>
-        {% endif %}
 
-        <!-- ДОБАВЛЕНО: Дополнительное описание -->
-        {% if dance.description2 %}
-        <div class="mt-4">
-            <h5>Дополнительное описание</h5>
-            <div class="bg-light p-3 rounded">
-                {{ dance.description2|replace('\n', '<br>')|safe }}
-            </div>
-        </div>
-        {% endif %}
-
-        {% if dance.note %}
-        <div class="mt-4">
-            <h5>Заметки</h5>
-            <div class="bg-light p-3 rounded">
-                {{ dance.note }}
-            </div>
-        </div>
-        {% endif %}
-
+        <!-- Добавлен отступ перед ссылкой на источник -->
         {% if dance.source_url %}
-        <div class="mt-3">
+        <div class="mt-4 pt-3 border-top">
             <small class="text-muted">
                 <strong>Источник:</strong> 
                 <a href="{{ dance.source_url }}" target="_blank" class="text-decoration-none">
@@ -126,23 +130,11 @@
 
 <!-- Секция файлов -->
 <div class="card mt-4">
-    <div class="card-header d-flex justify-content-between align-items-center">
-        <h5 class="mb-0">
-            <i class="fas fa-folder"></i> Дополнительная информация
-            {% if files or images %}
-                <span class="badge bg-primary ms-2">{{ (files|length) + (images|length) }}</span>
-            {% endif %}
-        </h5>
-        <a href="{{ url_for('dance_files', dance_id=dance.id) }}" class="btn btn-sm btn-outline-primary">
-            <i class="fas fa-cog"></i> Управление файлами
-        </a>
-    </div>
     <div class="card-body">
         {% if files or images %}
             <!-- Отдельный блок для изображений -->
             {% if images %}
             <div class="mb-4">
-                <h6 class="border-bottom pb-2">🖼️ Изображения</h6>
                 <div class="row">
                     {% for image in images %}
                     <div class="col-12 mb-4">
@@ -194,7 +186,6 @@
             <!-- Блок для остальных файлов (не изображений) -->
             {% if files %}
             <div>
-                <h6 class="border-bottom pb-2">📄 Документы и другие файлы</h6>
                 <div class="row">
                     {% for file in files %}
                     <div class="col-md-4 mb-3">
@@ -267,4 +258,18 @@
         {% endif %}
     </div>
 </div>
+
+<!-- Блок заметок в самом низу -->
+{% if dance.note %}
+<div class="card mt-4">
+    <div class="card-header">
+        <h5 class="mb-0">Заметки</h5>
+    </div>
+    <div class="card-body">
+        <div class="bg-light p-3 rounded">
+            {{ dance.note }}
+        </div>
+    </div>
+</div>
+{% endif %}
 {% endblock %}

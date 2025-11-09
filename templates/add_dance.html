@@ -109,17 +109,37 @@
                         </div>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="description" class="form-label">Описание танца</label>
-                        <textarea class="form-control" id="description" name="description" rows="6" 
-                                  placeholder="Подробное описание танца, последовательность фигур..."></textarea>
-                    </div>
+                    <!-- ОПИСАНИЯ В ДВЕ КОЛОНКИ -->
+                    <div class="row mb-3">
+                        <!-- Левая колонка: MiniCribs -->
+                        <div class="col-md-6">
+                            <label for="description" class="form-label">
+                                <i class="fas fa-file-alt text-primary"></i> MiniCribs
+                            </label>
+                            <textarea class="form-control" id="description" name="description" rows="8" 
+                                      placeholder="Краткое описание в формате MiniCribs:
+1-8 Полный оборот вправо...
+9-16 Променад...
+"></textarea>
+                            <div class="form-text">
+                                Краткое описание шагов по тактам в формате MiniCribs
+                            </div>
+                        </div>
 
-                    <!-- ДОБАВЛЕНО: Поле description2 -->
-                    <div class="mb-3">
-                        <label for="description2" class="form-label">Дополнительное описание</label>
-                        <textarea class="form-control" id="description2" name="description2" rows="4" 
-                                  placeholder="Дополнительная информация о танце..."></textarea>
+                        <!-- Правая колонка: E-Cribs -->
+                        <div class="col-md-6">
+                            <label for="description2" class="form-label">
+                                <i class="fas fa-file-text text-success"></i> E-Cribs
+                            </label>
+                            <textarea class="form-control" id="description2" name="description2" rows="8" 
+                                      placeholder="Подробное описание в формате E-Cribs:
+Bars 1-8: Все танцоры делают полный оборот вправо...
+Bars 9-16: Первая и третья пары идут на променад...
+"></textarea>
+                            <div class="form-text">
+                                Подробное описание с пояснениями в формате E-Cribs
+                            </div>
+                        </div>
                     </div>
 
                     <div class="mb-3">

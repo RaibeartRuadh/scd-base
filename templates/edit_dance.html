@@ -122,17 +122,37 @@
                         </div>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="description" class="form-label">Описание танца</label>
-                        <textarea class="form-control" id="description" name="description" rows="6" 
-                                  placeholder="Подробное описание танца, последовательность фигур...">{{ dance.description or '' }}</textarea>
-                    </div>
+                    <!-- ОПИСАНИЯ В ДВЕ КОЛОНКИ -->
+                    <div class="row mb-3">
+                        <!-- Левая колонка: MiniCribs -->
+                        <div class="col-md-6">
+                            <label for="description" class="form-label">
+                                <i class="fas fa-file-alt text-primary"></i> MiniCribs
+                            </label>
+                            <textarea class="form-control" id="description" name="description" rows="8" 
+                                      placeholder="Краткое описание в формате MiniCribs:
+1-8 Полный оборот вправо...
+9-16 Променад...
+">{{ dance.description or '' }}</textarea>
+                            <div class="form-text">
+                                Краткое описание шагов по тактам в формате MiniCribs
+                            </div>
+                        </div>
 
-                    <!-- ДОБАВЛЕНО: Поле description2 -->
-                    <div class="mb-3">
-                        <label for="description2" class="form-label">Дополнительное описание</label>
-                        <textarea class="form-control" id="description2" name="description2" rows="4" 
-                                  placeholder="Дополнительная информация о танце...">{{ dance.description2 or '' }}</textarea>
+                        <!-- Правая колонка: E-Cribs -->
+                        <div class="col-md-6">
+                            <label for="description2" class="form-label">
+                                <i class="fas fa-file-text text-success"></i> E-Cribs
+                            </label>
+                            <textarea class="form-control" id="description2" name="description2" rows="8" 
+                                      placeholder="Подробное описание в формате E-Cribs:
+Bars 1-8: Все танцоры делают полный оборот вправо...
+Bars 9-16: Первая и третья пары идут на променад...
+">{{ dance.description2 or '' }}</textarea>
+                            <div class="form-text">
+                                Подробное описание с пояснениями в формате E-Cribs
+                            </div>
+                        </div>
                     </div>
 
                     <div class="mb-3">
@@ -165,6 +185,13 @@
                 <div class="row">
                     <div class="col-md-6">
                         <p><strong>ID записи:</strong> {{ dance.id }}</p>
+                        <p><strong>Дата создания:</strong> {{ dance.created_at.strftime('%d.%m.%Y %H:%M') if dance.created_at else 'Не указана' }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong>Дата обновления:</strong> {{ dance.updated_at.strftime('%d.%m.%Y %H:%M') if dance.updated_at else 'Не указана' }}</p>
+                        {% if dance.source_url %}
+                        <p><strong>Источник:</strong> <a href="{{ dance.source_url }}" target="_blank">{{ dance.source_url[:50] }}...</a></p>
+                        {% endif %}
                     </div>
                 </div>
             </div>
