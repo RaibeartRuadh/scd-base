@@ -1,0 +1,79 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       A WEE NOTHIN'
+       8x32 J                        
+       Elaine Brunken                                                                         Moments in Time                                                                                     
+       Dancedata ID:  11629 
+
+
+       SVG crib 2902  created by Keith Rose  11.05.23   12:01:27           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  73.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   A WEE NOTHIN'    -    8x32 J                           </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='71.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >A WEE NOTHIN'</text>
+<text  x='158.03' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >                                                                 </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >8x32 J</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<polyline fill='none'  stroke-width='0.70' stroke='rgb(0,0,0)' points='130.50,13.50 141.75,13.50 '   />
+<polyline fill='none'  style='stroke-dasharray: 2, 1.3;' stroke='rgb(0,0,0)' points='112.50,13.50 99.00,13.50 '   />
+<text   x='15.50' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1 2</text>  
+<text   x='13.06' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >RA</text>  
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 40.50 0.00  L 40.50 45.00' />
+<text   x='56.00' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1 2</text>  
+<text   x='54.11' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >LA</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 81.00 0.00  L 81.00 45.00' />
+<polygon fill='white' stroke='rgb(0,0,0)' points='115.88,10.13 109.13,10.12 109.12,16.87 115.87,16.88 '  />
+<text  xml:space='preserve'  x='112.30' y='16.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<text   x='99.00' y='34.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<text   x='112.50' y='34.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 99.00 13.50   C 92.25 12.15 89.10 15.75 89.55 23.40 ' />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 89.55 23.40   C 90.00 31.05 90.90 37.80 98.55 37.80 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 100.476  20.743  l -0.224 -1.217  2.215 -1.102 -3.781  0.319  2.013  3.216 -0.224 -1.217 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 98.55 37.80   C 106.20 37.80 105.75 20.70 99.00 18.90 ' />
+<polyline fill='none'  style='stroke-dasharray: 2, 1.3;' stroke='rgb(0,0,0)' points='98.55,37.80 112.05,37.80 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 113.976  20.743  l -0.224 -1.217  2.215 -1.102 -3.781  0.319  2.013  3.216 -0.224 -1.217 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 112.05 37.80   C 119.70 37.80 119.25 20.70 112.50 18.90 ' />
+<polygon fill='white' stroke='rgb(0,0,0)' points='102.38,10.13 95.63,10.12 95.62,16.87 102.37,16.88 '  />
+<text  xml:space='preserve'  x='98.80' y='16.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='130.50' y1='13.50'  x2='130.50' y2='18.90'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='133.87,16.88 133.88,10.13 127.13,10.12 127.12,16.87 '  />
+<text  xml:space='preserve'  x='130.30' y='16.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='141.75' y1='13.50'  x2='141.75' y2='18.90'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='145.12,16.88 145.13,10.13 138.38,10.12 138.37,16.87 '  />
+<text  xml:space='preserve'  x='141.55' y='16.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<text   x='133.90' y='31.50'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 155.25 0.00  L 155.25 45.00' />
+<polyline fill='none'  stroke-width='0.70' stroke='rgb(0,0,0)' points='204.75,31.50 216.00,31.50 '   />
+<polyline fill='none' stroke='rgb(0,0,0)' points='186.75,31.50 173.25,31.50 '   />
+<circle cx='186.75' cy='31.50' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='186.55' y='34.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<text   x='173.25' y='16.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<text   x='186.75' y='16.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<path  fill='none' stroke='rgb(0,0,0)' d='M 173.25 31.50   C 166.50 32.85 163.35 29.25 163.80 21.60 ' />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 163.80 21.60   C 164.25 13.95 165.15 7.20 172.80 7.20 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 175.610  26.025  l -1.108 -0.551  0.448 -2.433 -2.013  3.216  3.781  0.319 -1.108 -0.551 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 172.80 7.20   C 180.45 7.20 180.00 24.30 173.25 26.10 ' />
+<polyline fill='none' stroke='rgb(0,0,0)' points='172.80,7.20 186.30,7.20 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 189.110  26.025  l -1.108 -0.551  0.448 -2.433 -2.013  3.216  3.781  0.319 -1.108 -0.551 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 186.30 7.20   C 193.95 7.20 193.50 24.30 186.75 26.10 ' />
+<circle cx='173.25' cy='31.50' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='173.05' y='34.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='204.75' y1='31.50'  x2='204.75' y2='26.10'  />
+<circle cx='204.75' cy='31.50' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='204.55' y='34.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='216.00' y1='31.50'  x2='216.00' y2='26.10'  />
+<circle cx='216.00' cy='31.50' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='215.80' y='34.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<text   x='208.15' y='22.50'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 229.50 0.00  L 229.50 45.00' />
+<text   x='245.00' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >2 1</text>  
+<text   x='243.11' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >RL</text>  
+<text  x='0.00' y='52.00'   font-size='5' stroke-width='0.001'  >Elaine Brunken, Moments in Time</text>
+<text  xml:space='preserve'  x='270.00' y='52.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >2C/4C longwise set.</text>
+  </g> </svg>

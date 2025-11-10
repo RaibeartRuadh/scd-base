@@ -1,0 +1,61 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       JOHNNY GROAT'S HOUSE
+       8x32 R                        
+       Rutherford                                                              1755           RSCDS Book 18.1                                                                                     
+       Dancedata ID:  3339 
+
+
+       SVG crib 2922  created by Keith Rose  11.05.23   12:01:42           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  73.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   JOHNNY GROAT'S HOUSE    -    8x32 R                           </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='71.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >JOHNNY GROAT'S HOUSE</text>
+<text  x='183.10' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >                                                                 </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >8x32 R</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<polyline fill='none' stroke='rgb(0,0,0)' points='31.50,20.25 45.00,20.25 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  42.856  19.262  l  0.744  0.988 -1.489  1.976  3.239 -1.976 -3.239 -1.976  0.744  0.988 '  />
+<polyline fill='none' stroke='rgb(0,0,0)' points='45.00,24.75 31.50,24.75 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  33.644  25.738  l -0.744 -0.988  1.489 -1.976 -3.239  1.976  3.239  1.976 -0.744 -0.988 '  />
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 58.50 0.00  L 58.50 45.00' />
+<text   x='74.58' y='27.90'  font-size='7.5' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >1</text>  
+<path fill='none'   style='stroke:rgb(0,0,0)'
+ d='M 72.00 22.50   c 0 -6.30 9.00 -6.30 9.00  0'  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  81.445  20.181  l -0.781  0.960 -2.276 -0.971  2.696  2.670  1.141 -3.618 -0.781  0.960 '  />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 108.00 0.00  L 108.00 45.00' />
+<polyline fill='none' stroke='rgb(0,0,0)' points='94.50,27.00 94.50,18.00 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  93.512  20.144  l  0.988 -0.744  1.976  1.489 -1.976 -3.239 -1.976  3.239  0.988 -0.744 '  />
+<text   x='122.40' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >R</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 144.00 0.00  L 144.00 45.00' />
+<text   x='156.66' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >2 3 1</text>  
+<circle cx='164.25' cy='22.50' r='6.75' fill='white' 
+ stroke='rgb(0,0,0)' />
+<text   x='162.15' y='25.20'  font-size='7.5' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >6</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 184.50 0.00  L 184.50 45.00' />
+<text   x='200.58' y='22.50'  font-size='7.5' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >2</text>  
+<path  fill='none'   style='stroke:rgb(0,0,0)'
+ d='M 207.00 22.50   c 0 6.30 -9.00 6.30 -9.00  0'  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 197.598  24.827  l  0.763 -0.974  2.293  0.929 -2.745 -2.620 -1.074  3.639  0.763 -0.974 '  />
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 220.50 0.00  L 220.50 45.00' />
+<text   x='235.15' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S</text>  
+<text   x='250.08' y='27.90'  font-size='7.5' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >1</text>  
+<path fill='none'   style='stroke:rgb(0,0,0)'
+ d='M 247.50 22.50   c 0 -6.30 9.00 -6.30 9.00  0'  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 256.945  20.181  l -0.781  0.960 -2.276 -0.971  2.696  2.670  1.141 -3.618 -0.781  0.960 '  />
+<polyline fill='none'  stroke-width='0.70' stroke='rgb(0,0,0)' points='18.00,13.50 15.75,22.50 18.00,31.50 20.25,22.50 18.00,13.50 '   />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='18.00' y1='29.25'  x2='18.00' y2='23.85'  />
+<circle cx='18.00' cy='29.25' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='17.80' y='31.75' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='18.00' y1='15.75'  x2='18.00' y2='21.15'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='21.37,19.13 21.38,12.38 14.63,12.37 14.62,19.12 '  />
+<text  xml:space='preserve'  x='17.80' y='18.25' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<text  x='0.00' y='52.00'   font-size='5' stroke-width='0.001'  >Rutherford, 1755, RSCDS Book 18.1</text>
+<text  xml:space='preserve'  x='270.00' y='52.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >3C/4C longwise set.</text>
+  </g> </svg>

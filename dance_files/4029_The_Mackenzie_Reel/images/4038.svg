@@ -1,0 +1,63 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       THE MACKENZIE REEL
+       8x32 R                        
+       Helen Butler                                                            1993           Another Newcastle Collection                                                                        
+       Dancedata ID:  4038 
+
+
+       SVG crib 487  created by Keith Rose  11.05.23   09:03:30           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  73.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   THE MACKENZIE REEL    -    8x32 R                           </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='71.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >THE MACKENZIE REEL</text>
+<text  x='174.76' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >                                                                 </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >8x32 R</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<text   x='22.25' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1 2</text>  
+<text   x='20.36' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >RL</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 54.00 0.00  L 54.00 45.00' />
+<text   x='66.40' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S</text>  
+<text   x='85.83' y='27.90'  font-size='7.5' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >1</text>  
+<path fill='none'   style='stroke:rgb(0,0,0)'
+ d='M 83.25 22.50   c 0 -6.30 9.00 -6.30 9.00  0'  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  92.695  20.181  l -0.781  0.960 -2.276 -0.971  2.696  2.670  1.141 -3.618 -0.781  0.960 '  />
+<text   x='121.50' y='16.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<path  fill='none' stroke='rgb(0,0,0)' d='M 135.00 31.50   C 128.70 27.00 125.55 24.75 117.00 18.00 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 129.975   8.440  l -0.551  1.108 -2.433 -0.448  3.216  2.013  0.319 -3.781 -0.551  1.108 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 117.00 18.00   C 108.45 11.25 124.20 -2.25 130.05 10.80 ' />
+<text   x='121.50' y='34.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 135.00 13.50   C 128.25 17.55 123.75 20.70 117.00 27.00 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 127.973  35.323  l  1.237 -0.003  0.688  2.377  0.362 -3.777 -3.524  1.405  1.237 -0.003 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 117.00 27.00   C 110.25 33.30 121.50 45.45 130.05 34.20 ' />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 148.50 0.00  L 148.50 45.00' />
+<rect x='161.55' y='15.3' width='9' height='9' stroke='rgb(0,0,0)'  fill='none' />
+<rect x='166.95' y='20.7' width='9' height='9' stroke='rgb(0,0,0)'  fill='none' />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 189.00 0.00  L 189.00 45.00' />
+<text   x='203.65' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S</text>  
+<text   x='218.58' y='27.90'  font-size='7.5' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >1</text>  
+<path  fill='none'   style='stroke:rgb(0,0,0)'
+ d='M 225.00 22.50   c 0 -6.30 -9.00 -6.30 -9.00  0'  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 217.502  20.678  l -1.145  0.468 -1.532 -1.943  1.086  3.635  2.736 -2.628 -1.145  0.468 '  />
+<text   x='232.61' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >X</text>  
+<text   x='239.30' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<text   x='250.08' y='27.90'  font-size='7.5' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >1</text>  
+<path fill='none'   style='stroke:rgb(0,0,0)'
+ d='M 247.50 22.50   c 0 -6.30 9.00 -6.30 9.00  0'  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 256.945  20.181  l -0.781  0.960 -2.276 -0.971  2.696  2.670  1.141 -3.618 -0.781  0.960 '  />
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 103.50 0.00  L 103.50 45.00' />
+<circle cx='135.00' cy='31.50' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='134.80' y='34.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<polygon fill='white' stroke='rgb(0,0,0)' points='138.38,10.13 131.63,10.12 131.62,16.87 138.37,16.88 '  />
+<text  xml:space='preserve'  x='134.80' y='16.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<text   x='162.80' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >2 1</text>  
+<text   x='172.29' y='9.00'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >x</text>  
+<text  x='0.00' y='52.00'   font-size='5' stroke-width='0.001'  >Helen Butler, 1993, Another Newcastle Collection</text>
+<text  xml:space='preserve'  x='270.00' y='52.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >2C/4C longwise set.</text>
+  </g> </svg>

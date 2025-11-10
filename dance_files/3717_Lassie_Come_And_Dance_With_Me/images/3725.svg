@@ -1,0 +1,70 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       LASSIE COME AND DANCE WITH ME
+       8x32 J                        
+       Harry Rhodes                                                                           SDA 163                                                                                             
+       Dancedata ID:  3725 
+
+
+       SVG crib 496  created by Keith Rose  11.05.23   09:03:38           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  73.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   LASSIE COME AND DANCE WITH ME    -    8x32 J                           </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='71.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >LASSIE COME AND DANCE WITH ME</text>
+<text  x='208.43' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >                                                                 </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >8x32 J</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<text   x='14.65' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S</text>  
+<text   x='28.36' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='34.45' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >B</text>  
+<text   x='47.58' y='27.90'  font-size='7.5' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >1</text>  
+<path fill='none'   style='stroke:rgb(0,0,0)'
+ d='M 45.00 22.50   c 0 -6.30 9.00 -6.30 9.00  0'  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  54.445  20.181  l -0.781  0.960 -2.276 -0.971  2.696  2.670  1.141 -3.618 -0.781  0.960 '  />
+<text   x='61.61' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >X</text>  
+<text   x='68.30' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 85.50 0.00  L 85.50 45.00' />
+<circle cx='114.75' cy='13.5' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='105.75' cy='13.5' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='108.93' y1='16.68'  x2='105.75' y2='19.86'  />
+<circle cx='105.75' cy='31.49999' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='114.75' cy='31.50001' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='111.57' y1='28.32'  x2='114.75' y2='25.14'  />
+<circle cx='110.25' cy='4.50' r='1.69' fill='none'
+stroke='rgb(0,0,0)' />
+<circle cx='110.25' cy='4.50' r='0.51' fill='rgb(0,0,0)' stroke='rgb(0,0,0)' />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 135.00 0.00  L 135.00 45.00' />
+<text   x='156.51' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S T</text>  
+<line   stroke='rgb(0,0,0)' x1='149.40' y1='14.40'  x2='156.60' y2='14.40'  />
+<line   stroke='rgb(0,0,0)' x1='149.40' y1='14.40'  x2='149.40' y2='21.60'  />
+<line   stroke='rgb(0,0,0)' x1='171.90' y1='14.40'  x2='179.10' y2='14.40'  />
+<line   stroke='rgb(0,0,0)' x1='179.10' y1='14.40'  x2='179.10' y2='21.60'  />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 193.50 0.00  L 193.50 45.00' />
+<circle cx='213.75' cy='18' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='213.75' cy='27' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='216.93' y1='21.18'  x2='220.11' y2='18.00'  />
+<circle cx='236.25' cy='27' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='236.25' cy='18' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='233.07' y1='23.82'  x2='229.89' y2='27.00'  />
+<circle cx='204.75' cy='22.50' r='1.69' fill='none'
+stroke='rgb(0,0,0)' />
+<circle cx='204.75' cy='22.50' r='0.51' fill='rgb(0,0,0)' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='213.75' y1='6.30'  x2='215.55' y2='4.50'  />
+<line   stroke='rgb(0,0,0)' x1='215.55' y1='4.50'  x2='223.20' y2='4.50'  />
+<line   stroke='rgb(0,0,0)' x1='223.20' y1='4.50'  x2='225.00' y2='2.70'  />
+<line   stroke='rgb(0,0,0)' x1='236.25' y1='6.30'  x2='234.45' y2='4.50'  />
+<line   stroke='rgb(0,0,0)' x1='234.45' y1='4.50'  x2='226.80' y2='4.50'  />
+<line   stroke='rgb(0,0,0)' x1='226.80' y1='4.50'  x2='225.00' y2='2.70'  />
+<polyline fill='none' stroke='rgb(0,0,0)' points='22.50,31.50 22.50,24.75 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  21.512  26.894  l  0.988 -0.744  1.976  1.489 -1.976 -3.239 -1.976  3.239  0.988 -0.744 '  />
+<text   x='250.61' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >X</text>  
+<text   x='257.30' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<text  x='0.00' y='52.00'   font-size='5' stroke-width='0.001'  >Harry Rhodes, SDA 163</text>
+<text  xml:space='preserve'  x='270.00' y='52.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >3C/4C longwise set.</text>
+  </g> </svg>

@@ -1,0 +1,60 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       THE NUT
+       8x24 J                        
+       Boulogne                                                                1827           RSCDS Book 1.4                                                                                      
+       Dancedata ID:  5007 
+
+
+       SVG crib 1520  created by Keith Rose  11.05.23   11:09:41           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  73.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   THE NUT    -    8x24 J                           </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='71.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >THE NUT</text>
+<text  x='141.44' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >                                                                 </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >8x24 J</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<polyline fill='none'  stroke-width='0.70' stroke='rgb(0,0,0)' points='94.50,9.00 94.50,36.00 '   />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 81.00 9.00   C 88.20 15.30 83.70 14.85 95.40 15.30 ' />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='29.25' y1='36.00'  x2='33.07' y2='32.18'  />
+<circle cx='29.25' cy='36.00' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='29.05' y='38.50' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='49.50' y1='9.00'  x2='45.68' y2='12.82'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='49.50,13.77 54.27,9.00 49.50,4.23 44.73,9.00 '  />
+<text  xml:space='preserve'  x='49.30' y='11.50' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<text   x='34.91' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='41.00' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='94.50' y1='22.50'  x2='89.10' y2='22.50'  />
+<circle cx='94.50' cy='22.50' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='94.30' y='25.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='94.50' y1='9.00'  x2='99.90' y2='9.00'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='97.88,5.63 91.13,5.62 91.12,12.37 97.87,12.38 '  />
+<text  xml:space='preserve'  x='94.30' y='11.50' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='94.50' y1='36.00'  x2='99.90' y2='36.00'  />
+<circle cx='94.50' cy='36.00' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='94.30' y='38.50' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<polygon fill='white' stroke='rgb(0,0,0)' points='84.38,5.63 77.63,5.62 77.62,12.37 84.37,12.38 '  />
+<text  xml:space='preserve'  x='80.80' y='11.50' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 95.40 15.30   C 107.10 15.75 106.20 29.25 94.95 29.25 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  85.535  19.268  l  1.225  0.172  0.345  2.450  0.893 -3.688 -3.688  0.893  1.225  0.172 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 94.95 29.25   C 83.70 29.25 81.90 22.50 87.75 18.45 ' />
+<text   x='102.15' y='38.25'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >B</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 130.50 0.00  L 130.50 45.00' />
+<polyline fill='none' stroke='rgb(0,0,0)' points='155.25,20.25 173.25,20.25 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 171.106  19.262  l  0.744  0.988 -1.489  1.976  3.239 -1.976 -3.239 -1.976  0.744  0.988 '  />
+<polyline fill='none' stroke='rgb(0,0,0)' points='173.25,24.75 155.25,24.75 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 157.394  25.738  l -0.744 -0.988  1.489 -1.976 -3.239  1.976  3.239  1.976 -0.744 -0.988 '  />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 198.00 0.00  L 198.00 45.00' />
+<text   x='227.00' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1 2</text>  
+<text   x='228.40' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >P</text>  
+<circle cx='164.25' cy='31.50' r='2.75' fill='white' stroke='white' stroke-width='0.001'  />
+<text   x='162.05' y='33.65'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<text  x='0.00' y='52.00'   font-size='5' stroke-width='0.001'  >Boulogne, 1827, RSCDS Book 1.4</text>
+<text  xml:space='preserve'  x='270.00' y='52.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >2C/4C longwise set.</text>
+  </g> </svg>

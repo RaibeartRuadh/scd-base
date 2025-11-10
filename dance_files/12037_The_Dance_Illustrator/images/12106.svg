@@ -1,0 +1,643 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: fig2dev Version 3.2 Patchlevel 5d -->
+<!-- CreationDate: Sun Oct  6 01:01:16 2013 -->
+<!-- Magnification: 1.050 -->
+<svg	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	viewBox="-23 -23 6140 2502">
+<g style="stroke-width:.025in; fill:none">
+<!-- Text -->
+<text xml:space="preserve" x="6047" y="283" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="end">S4x32</text>
+<!-- Text -->
+<text xml:space="preserve" x="425" y="661" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">all</text>
+<!-- Text -->
+<text xml:space="preserve" x="1322" y="661" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">12 &#38; 34</text>
+<!-- Text -->
+<text xml:space="preserve" x="1322" y="1039" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="227" text-anchor="middle">LA</text>
+<!-- Circle -->
+<circle cx="2740" cy="1039" r="94"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Text -->
+<text xml:space="preserve" x="2740" y="1086" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">2</text>
+<!-- Line: box -->
+<rect x="2645" y="661" width="188" height="188" rx="0" 
+style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Text -->
+<text xml:space="preserve" x="2740" y="803" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">2</text>
+<!-- Circle -->
+<circle cx="2173" cy="1039" r="94"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Text -->
+<text xml:space="preserve" x="2173" y="1086" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">1</text>
+<!-- Line: box -->
+<rect x="2078" y="661" width="188" height="188" rx="0" 
+style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Text -->
+<text xml:space="preserve" x="2173" y="803" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">1</text>
+<!-- Circle -->
+<circle cx="3023" cy="1039" r="94"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Text -->
+<text xml:space="preserve" x="3023" y="1086" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">3</text>
+<!-- Line: box -->
+<rect x="2929" y="661" width="188" height="188" rx="0" 
+style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Text -->
+<text xml:space="preserve" x="3023" y="803" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">3</text>
+<!-- Circle -->
+<circle cx="3590" cy="1039" r="94"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Text -->
+<text xml:space="preserve" x="3590" y="1086" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">4</text>
+<!-- Line: box -->
+<rect x="3496" y="661" width="188" height="188" rx="0" 
+style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Text -->
+<text xml:space="preserve" x="3590" y="803" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">4</text>
+<!-- Line -->
+<polyline points="2267,755
+2314,755
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:round;
+"/>
+<!-- Line -->
+<polyline points="2267,1039
+2314,1039
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:round;
+"/>
+<!-- Line -->
+<polyline points="2173,850
+2173,944
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:round;
+"/>
+<!-- Line -->
+<polyline points="2740,850
+2740,944
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:round;
+"/>
+<!-- Line -->
+<polyline points="2598,755
+2645,755
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:round;
+"/>
+<!-- Line -->
+<polyline points="2598,1039
+2645,1039
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:round;
+"/>
+<!-- Line -->
+<polyline points="3118,1039
+3165,1039
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:round;
+"/>
+<!-- Line -->
+<polyline points="3118,755
+3165,755
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:round;
+"/>
+<!-- Line -->
+<polyline points="3023,850
+3023,944
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:round;
+"/>
+<!-- Line -->
+<polyline points="3448,755
+3496,755
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:round;
+"/>
+<!-- Line -->
+<polyline points="3448,1039
+3496,1039
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:round;
+"/>
+<!-- Line -->
+<polyline points="3590,850
+3590,944
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:round;
+"/>
+<!-- Line -->
+<polyline points="3685,1228
+3683,1230
+3682,1233
+3679,1239
+3675,1247
+3669,1255
+3661,1264
+3652,1271
+3641,1277
+3629,1282
+3613,1287
+3596,1289
+3575,1291
+3551,1291
+3533,1291
+3514,1290
+3493,1290
+3471,1289
+3448,1287
+3423,1286
+3397,1283
+3370,1281
+3341,1279
+3312,1277
+3282,1275
+3254,1273
+3225,1271
+3196,1269
+3169,1267
+3143,1265
+3118,1264
+3095,1261
+3072,1260
+3051,1260
+3033,1259
+3016,1259
+2991,1259
+2970,1261
+2953,1264
+2937,1268
+2924,1273
+2914,1279
+2904,1287
+2897,1295
+2891,1303
+2887,1311
+2883,1317
+2882,1320
+2881,1322
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:bevel; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="2078,1228
+2079,1230
+2080,1233
+2083,1239
+2088,1247
+2094,1255
+2101,1264
+2111,1271
+2121,1277
+2134,1282
+2150,1287
+2166,1289
+2187,1291
+2213,1291
+2229,1291
+2248,1290
+2269,1290
+2291,1289
+2314,1287
+2340,1286
+2366,1283
+2393,1281
+2422,1279
+2451,1277
+2480,1275
+2509,1273
+2538,1271
+2566,1269
+2594,1267
+2620,1265
+2645,1264
+2668,1261
+2690,1260
+2711,1260
+2730,1259
+2748,1259
+2772,1259
+2793,1261
+2810,1264
+2826,1268
+2838,1273
+2849,1279
+2858,1287
+2866,1295
+2872,1303
+2876,1311
+2879,1317
+2880,1320
+2881,1322
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:bevel; stroke-linecap:butt;
+"/>
+<!-- Text -->
+<text xml:space="preserve" x="2456" y="1039" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="227" text-anchor="middle">S</text>
+<!-- Text -->
+<text xml:space="preserve" x="3307" y="1039" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="227" text-anchor="middle">S</text>
+<!-- Text -->
+<text xml:space="preserve" x="5149" y="1086" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="227" text-anchor="middle">Rondel</text>
+<!-- Text -->
+<text xml:space="preserve" x="5149" y="708" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">12 &#38; 34</text>
+<!-- Circle -->
+<circle cx="5030" cy="1701" r="118"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Circle -->
+<circle cx="5267" cy="1701" r="118"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Circle -->
+<circle cx="5503" cy="1701" r="118"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Circle -->
+<circle cx="5030" cy="2174" r="118"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Circle -->
+<circle cx="5267" cy="2174" r="118"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Circle -->
+<circle cx="5503" cy="2174" r="118"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Line -->
+<polyline points="5385,1700
+5338,1889
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:round;
+"/>
+<!-- Line -->
+<polyline points="5385,2173
+5338,1984
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:round;
+"/>
+<!-- Line -->
+<polyline points="5149,2173
+5196,2362
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:round;
+"/>
+<!-- Line -->
+<polyline points="5149,1700
+5196,1511
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:round;
+"/>
+<!-- Text -->
+<text xml:space="preserve" x="3637" y="1748" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="227" text-anchor="middle">T</text>
+<!-- Text -->
+<text xml:space="preserve" x="3779" y="1795" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="152" text-anchor="middle">L</text>
+<!-- Text -->
+<text xml:space="preserve" x="3637" y="2314" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="227" text-anchor="middle">T</text>
+<!-- Text -->
+<text xml:space="preserve" x="3779" y="2362" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="152" text-anchor="middle">R</text>
+<!-- Line: box -->
+<rect x="3874" y="1559" width="188" height="188" rx="0" 
+style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Text -->
+<text xml:space="preserve" x="3968" y="1700" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">1</text>
+<!-- Line: box -->
+<rect x="3307" y="1559" width="188" height="188" rx="0" 
+style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Text -->
+<text xml:space="preserve" x="3401" y="1700" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">4</text>
+<!-- Circle -->
+<circle cx="3401" cy="2220" r="94"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Text -->
+<text xml:space="preserve" x="3401" y="2267" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">4</text>
+<!-- Circle -->
+<circle cx="3968" cy="2220" r="94"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Text -->
+<text xml:space="preserve" x="3968" y="2267" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">1</text>
+<!-- Line -->
+<polyline points="3968,1559
+3968,1511
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:round;
+"/>
+<!-- Line -->
+<polyline points="3968,2362
+3968,2314
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:round;
+"/>
+<!-- Line -->
+<polyline points="3401,1795
+3401,1748
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:round;
+"/>
+<!-- Line -->
+<polyline points="3401,2125
+3401,2078
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:round;
+"/>
+<!-- Text -->
+<text xml:space="preserve" x="1937" y="2267" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">2</text>
+<!-- Text -->
+<text xml:space="preserve" x="1937" y="1700" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">2</text>
+<!-- Text -->
+<text xml:space="preserve" x="2929" y="2267" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">3</text>
+<!-- Text -->
+<text xml:space="preserve" x="2929" y="1700" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">3</text>
+<!-- Line: box -->
+<rect x="2078" y="2125" width="188" height="188" rx="0" 
+style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Text -->
+<text xml:space="preserve" x="2173" y="2267" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">1</text>
+<!-- Circle -->
+<circle cx="2173" cy="1653" r="94"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Text -->
+<text xml:space="preserve" x="2173" y="1700" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">1</text>
+<!-- Line: box -->
+<rect x="2551" y="1559" width="188" height="188" rx="0" 
+style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Text -->
+<text xml:space="preserve" x="2645" y="1700" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">4</text>
+<!-- Circle -->
+<circle cx="2645" cy="2220" r="94"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Text -->
+<text xml:space="preserve" x="2645" y="2267" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">4</text>
+<!-- Line -->
+<polyline points="2503,1653
+2376,1653
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+stroke-dasharray:20 20;"/>
+<!-- Arrowhead on XXXpoint 2503 1653 - 2283 1653-->
+<polygon points="2355 1622
+2292 1653
+2355 1685
+2355 1622
+
+" style="stroke:#000000;stroke-width:8;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Line -->
+<polyline points="2503,2220
+2376,2220
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Arrowhead on XXXpoint 2503 2220 - 2283 2220-->
+<polygon points="2355 2188
+2292 2220
+2355 2251
+2355 2188
+
+" style="stroke:#000000;stroke-width:8;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Line -->
+<polyline points="2314,1795
+2511,2030
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Arrowhead on XXXpoint 2314 1795 - 2571 2102-->
+<polygon points="2499 2067
+2564 2095
+2548 2026
+2499 2067
+
+" style="stroke:#000000;stroke-width:8;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Line -->
+<polyline points="2314,2078
+2511,1842
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+stroke-dasharray:20 20;"/>
+<!-- Arrowhead on XXXpoint 2314 2078 - 2571 1770-->
+<polygon points="2548 1845
+2564 1777
+2499 1805
+2548 1845
+
+" style="stroke:#000000;stroke-width:8;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Line: box -->
+<rect x="566" y="1700" width="188" height="188" rx="0" 
+style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Text -->
+<text xml:space="preserve" x="661" y="1842" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">1</text>
+<!-- Circle -->
+<circle cx="661" cy="2078" r="94"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Text -->
+<text xml:space="preserve" x="661" y="2125" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">1</text>
+<!-- Text -->
+<text xml:space="preserve" x="377" y="2267" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">2</text>
+<!-- Text -->
+<text xml:space="preserve" x="377" y="1700" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">2</text>
+<!-- Text -->
+<text xml:space="preserve" x="1039" y="2267" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">4</text>
+<!-- Text -->
+<text xml:space="preserve" x="1039" y="1700" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">4</text>
+<!-- Text -->
+<text xml:space="preserve" x="1370" y="2267" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">3</text>
+<!-- Text -->
+<text xml:space="preserve" x="1370" y="1700" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">3</text>
+<!-- Line -->
+<polyline points="803,1795
+806,1797
+812,1802
+825,1811
+843,1823
+866,1839
+893,1860
+924,1883
+958,1907
+992,1932
+1025,1959
+1057,1983
+1086,2007
+1112,2029
+1135,2049
+1156,2069
+1174,2087
+1189,2103
+1202,2119
+1212,2135
+1222,2150
+1228,2165
+1233,2180
+1236,2195
+1238,2209
+1239,2224
+1239,2239
+1237,2254
+1234,2268
+1229,2282
+1224,2297
+1216,2310
+1208,2323
+1200,2335
+1189,2346
+1180,2356
+1168,2366
+1156,2374
+1145,2382
+1133,2388
+1122,2393
+1110,2396
+1098,2400
+1086,2402
+1069,2402
+1054,2400
+1036,2394
+1018,2387
+998,2376
+976,2362
+952,2345
+927,2326
+899,2305
+873,2283
+850,2262
+830,2244
+849,2261
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:bevel; stroke-linecap:butt;
+stroke-dasharray:20 20;"/>
+<!-- Arrowhead on XXXpoint 830 2244 - 779 2199-->
+<polygon points="853 2223
+786 2205
+812 2270
+853 2223
+
+" style="stroke:#000000;stroke-width:8;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Line -->
+<polyline points="803,2078
+806,2076
+812,2071
+825,2062
+843,2050
+866,2034
+893,2013
+924,1990
+958,1966
+992,1941
+1025,1914
+1057,1890
+1086,1866
+1112,1844
+1135,1824
+1156,1804
+1174,1786
+1189,1770
+1202,1754
+1212,1738
+1222,1723
+1228,1709
+1233,1693
+1236,1678
+1238,1664
+1239,1649
+1239,1634
+1237,1619
+1234,1605
+1229,1591
+1224,1576
+1216,1563
+1208,1550
+1200,1538
+1189,1527
+1180,1517
+1168,1507
+1156,1499
+1145,1491
+1133,1485
+1122,1480
+1110,1477
+1098,1474
+1086,1472
+1069,1471
+1054,1474
+1036,1479
+1018,1486
+998,1497
+976,1511
+952,1528
+927,1547
+899,1568
+873,1590
+850,1611
+830,1629
+849,1611
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:bevel; stroke-linecap:butt;
+"/>
+<!-- Arrowhead on XXXpoint 830 1629 - 779 1673-->
+<polygon points="813 1602
+786 1667
+854 1649
+813 1602
+
+" style="stroke:#000000;stroke-width:8;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Line -->
+<polyline points="0,377
+6094,377
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="0,1417
+6094,1417
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="4440,1417
+4440,2456
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="4157,377
+4157,1417
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="1606,1417
+1606,2456
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+stroke-dasharray:62 62;"/>
+<!-- Line: box -->
+<rect x="0" y="0" width="6094" height="2456" rx="0" 
+style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Text -->
+<text xml:space="preserve" x="94" y="283" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="start">Dance Illustrator</text>
+<!-- Text -->
+<text xml:space="preserve" x="4866" y="283" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="end">Sue Porter</text>
+<!-- Text -->
+<text xml:space="preserve" x="425" y="1039" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="227" text-anchor="middle">S</text>
+</g>
+</svg>

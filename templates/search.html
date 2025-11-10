@@ -1,10 +1,8 @@
-
 {% extends "base.html" %}
-[file name]: search.html
-[file content begin]
+
 {% block content %}
 <div class="d-flex justify-content-between align-items-center mb-4">
-    <h3 class="mb-0">Расширенный поиск</h1>
+    <h3 class="mb-0">Расширенный поиск танцев</h3>
 </div>
 
 <div class="row g-4">
@@ -15,48 +13,45 @@
                 <h5 class="mb-0"><i class="fas fa-filter me-2"></i>Фильтры поиска</h5>
             </div>
             <div class="card-body">
-                <form method="POST" action="{{ url_for('search') }}" id="searchForm">
-                    <!-- Текстовые фильтры -->
+                <form method="GET" action="{{ url_for('advanced_search') }}" id="searchForm">
+                    <!-- Текстовый поиск -->
                     <div class="mb-4">
+                        <h6 class="text-muted mb-3 border-bottom pb-2">Текстовый поиск</h6>
                         <div class="mb-3">
-                            <label class="form-label small text-muted">Название танца</label>
+                            <label class="form-label small">Название танца</label>
                             <input type="text" class="form-control form-control-sm" name="name" value="{{ filters.name }}" 
                                    placeholder="Введите название...">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label small text-muted">Автор</label>
+                            <label class="form-label small">Автор</label>
                             <input type="text" class="form-control form-control-sm" name="author" value="{{ filters.author }}" 
                                    placeholder="Введите автора...">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label small text-muted">Текст в описании</label>
+                            <label class="form-label small">Текст в описании</label>
                             <input type="text" class="form-control form-control-sm" name="description_text" value="{{ filters.description_text }}" 
                                    placeholder="Слово или фраза из описания...">
                         </div>
                     </div>
 
-                    <!-- Числовые фильтры -->
+                    <!-- Параметры танца -->
                     <div class="mb-4">
-                        <h6 class="text-muted mb-3 border-bottom pb-2">Размеры</h6>
-                        <div class="row g-2">
+                        <h6 class="text-muted mb-3 border-bottom pb-2">Параметры танца</h6>
+                        <div class="row g-2 mb-3">
                             <div class="col-6">
-                                <label class="form-label small text-muted">Бар в танце</label>
+                                <label class="form-label small">Тактов в танце</label>
                                 <input type="number" class="form-control form-control-sm" name="size_min" value="{{ filters.size_min }}" 
-                                       placeholder="" min="0">
+                                       placeholder="Мин." min="0">
                             </div>
                             <div class="col-6">
-                                <label class="form-label small text-muted">Повторений</label>
+                                <label class="form-label small">Повторений</label>
                                 <input type="number" class="form-control form-control-sm" name="count_min" value="{{ filters.count_min }}" 
-                                       placeholder="" min="0">
+                                       placeholder="Мин." min="0">
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Категорийные фильтры -->
-                    <div class="mb-4">
-                        <h6 class="text-muted mb-3 border-bottom pb-2">Категории</h6>
+                        
                         <div class="mb-3">
-                            <label class="form-label small text-muted">Тип танца</label>
+                            <label class="form-label small">Тип танца</label>
                             <select class="form-select form-select-sm" name="dance_types" multiple size="3">
                                 {% for dance_type in dance_types %}
                                 <option value="{{ dance_type.id }}" 
@@ -66,8 +61,9 @@
                                 {% endfor %}
                             </select>
                         </div>
+                        
                         <div class="mb-3">
-                            <label class="form-label small text-muted">Формат сета</label>
+                            <label class="form-label small">Формат сета</label>
                             <select class="form-select form-select-sm" name="dance_formats" multiple size="3">
                                 {% for dance_format in dance_formats %}
                                 <option value="{{ dance_format.id }}" 
@@ -77,8 +73,9 @@
                                 {% endfor %}
                             </select>
                         </div>
+                        
                         <div class="mb-3">
-                            <label class="form-label small text-muted">Тип сета</label>
+                            <label class="form-label small">Тип сета</label>
                             <select class="form-select form-select-sm" name="set_types" multiple size="3">
                                 {% for set_type in set_types %}
                                 <option value="{{ set_type.id }}" 
@@ -94,7 +91,7 @@
                     <div class="mb-4">
                         <h6 class="text-muted mb-3 border-bottom pb-2">Дополнительно</h6>
                         <div class="mb-3">
-                            <label class="form-label small text-muted">Танцующие пары</label>
+                            <label class="form-label small">Танцующие пары</label>
                             <select class="form-select form-select-sm" name="dance_couples" multiple size="3">
                                 {% for couple_value, couple_display in dance_couples %}
                                 <option value="{{ couple_value }}" 
@@ -104,27 +101,27 @@
                                 {% endfor %}
                             </select>
                         </div>
+                        
                         <div class="mb-3">
-                            <label class="form-label small text-muted">Наличие материалов</label>
+                            <label class="form-label small">Наличие материалов</label>
                             <div class="ps-2">
                                 <div class="form-check mb-2">
                                     <input class="form-check-input" type="checkbox" name="has_description" 
-                                           id="hasDescription" {% if filters.has_description %}checked{% endif %}>
+                                           id="hasDescription" value="on" {% if filters.has_description %}checked{% endif %}>
                                     <label class="form-check-label small" for="hasDescription">
                                         Есть описание
                                     </label>
                                 </div>
                                 <div class="form-check mb-2">
                                     <input class="form-check-input" type="checkbox" name="has_files" 
-                                           id="hasFiles" {% if filters.has_files %}checked{% endif %}>
+                                           id="hasFiles" value="on" {% if filters.has_files %}checked{% endif %}>
                                     <label class="form-check-label small" for="hasFiles">
                                         Есть диаграммы
                                     </label>
                                 </div>
-                                <!-- ДОБАВЛЕН ЧЕКБОКС ДЛЯ RSCDS -->
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="rscds" 
-                                           id="rscds" {% if filters.rscds %}checked{% endif %}>
+                                           id="rscds" value="on" {% if filters.rscds %}checked{% endif %}>
                                     <label class="form-check-label small" for="rscds">
                                         Публикация RSCDS
                                     </label>
@@ -139,9 +136,9 @@
                             <button type="submit" class="btn btn-primary btn-sm">
                                 <i class="fas fa-search me-2"></i>Найти танцы
                             </button>
-                            <button type="button" class="btn btn-outline-secondary btn-sm" onclick="resetForm()">
+                            <a href="{{ url_for('advanced_search') }}" class="btn btn-outline-secondary btn-sm">
                                 <i class="fas fa-undo me-2"></i>Сбросить фильтры
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </form>
@@ -151,139 +148,149 @@
 
     <!-- Правая колонка - Результаты -->
     <div class="col-lg-9">
-        <!-- Таблица результатов -->
         <div class="card border-0 shadow-sm">
             <div class="card-header bg-dark text-white py-3">
-                <h5 class="mb-0"><i class="fas fa-list me-2"></i>Результаты поиска</h5>
+                <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0"><i class="fas fa-list me-2"></i>Результаты поиска</h5>
+                    {% if results and pagination %}
+                    <span class="badge bg-primary">{{ pagination.total }} найдено</span>
+                    {% endif %}
+                </div>
             </div>
+            
             <div class="table-responsive">
-                <table class="table table-hover mb-0 table-compact">
-                    <thead class="table-light">
+                <table class="table table-hover mb-0 table-compact fixed-columns">
+                    <thead class="table-dark">
                         <tr>
-                            <th width="60" class="ps-3">ID</th>
-                            <th class="px-2">Название</th>
-                            <th class="px-2">Тип танца</th>
-                            <th class="px-2">Формат сета</th>
-                            <th class="px-2">Тип сета</th>
-                            <th class="px-2">Размер</th>
-                            <th class="px-2 text-center" width="80"></th>
+                            <th width="40" class="ps-2">ID</th>
+                            <th width="300">Название и автор</th>
+                            <th width="80">Тип</th>
+                            <th width="80">Формат</th>
+                            <th width="100">Тип сета</th>
+                            <th width="70">Размер</th>
+                            <th width="60" class="text-center">Материалы</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {% if results is defined and results is not none %}
-                            {% if results %}
-                                {% for dance in results %}
-                                <tr class="align-middle">
-                                    <td class="ps-3">
-                                        <span class="text-muted small">{{ dance.id }}</span>
-                                    </td>
-                                    <td class="px-2">
+                        {% if results %}
+                            {% for dance in results %}
+                            <tr class="align-middle">
+                                <td class="ps-2 text-muted small">{{ dance.id }}</td>
+                                <td>
+                                    <div class="d-flex flex-column">
                                         <a href="{{ url_for('view_dance', dance_id=dance.id) }}" 
-                                           class="text-decoration-none fw-bold dance-name">
+                                           class="text-decoration-none fw-bold dance-name text-truncate"
+                                           title="{{ dance.name }}">
                                             {{ dance.name }}
                                         </a>
                                         {% if dance.author %}
-                                        <br><small class="text-muted">{{ dance.author }}</small>
+                                        <small class="text-muted author-text text-truncate" title="{{ dance.author }}">
+                                            {{ dance.author }}
+                                        </small>
                                         {% endif %}
-                                    </td>
-                                    <!-- Тип танца -->
-                                    <td class="px-2">
-                                        {% if dance.dance_type %}
-                                            <span class="badge badge-type 
-                                                {% if dance.dance_type.name == 'Reel' %}bg-reel
-                                                {% elif dance.dance_type.name == 'Jig' %}bg-jig
-                                                {% elif dance.dance_type.name == 'Strathspey' %}bg-strathspey
-                                                {% elif dance.dance_type.name == 'Medley' %}bg-medley
-                                                {% elif dance.dance_type.name == 'Polka' %}bg-polka
-                                                {% elif dance.dance_type.name == 'March' %}bg-march
-                                                {% elif dance.dance_type.name == 'Waltz' %}bg-waltz
-                                                {% elif dance.dance_type.name == 'Hornpipe' %}bg-hornpipe
-                                                {% elif dance.dance_type.name == 'Quadrille' %}bg-quadrille
-                                                {% elif dance.dance_type.name == 'Minuet' %}bg-minuet
-                                                {% else %}bg-secondary{% endif %}">
-                                                {{ dance.dance_type.name }}
-                                            </span>
-                                        {% else %}
-                                            <span class="badge bg-light text-muted">-</span>
+                                    </div>
+                                </td>
+                                <!-- Тип танца -->
+                                <td>
+                                    {% if dance.dance_type %}
+                                        <span class="badge badge-type 
+                                            {% if dance.dance_type.name == 'Reel' %}bg-reel
+                                            {% elif dance.dance_type.name == 'Jig' %}bg-jig
+                                            {% elif dance.dance_type.name == 'Strathspey' %}bg-strathspey
+                                            {% elif dance.dance_type.name == 'Medley' %}bg-medley
+                                            {% elif dance.dance_type.name == 'Polka' %}bg-polka
+                                            {% elif dance.dance_type.name == 'March' %}bg-march
+                                            {% elif dance.dance_type.name == 'Waltz' %}bg-waltz
+                                            {% elif dance.dance_type.name == 'Hornpipe' %}bg-hornpipe
+                                            {% elif dance.dance_type.name == 'Quadrille' %}bg-quadrille
+                                            {% elif dance.dance_type.name == 'Minuet' %}bg-minuet
+                                            {% else %}bg-secondary{% endif %}">
+                                            {{ dance.dance_type.name }}
+                                        </span>
+                                    {% else %}
+                                        <span class="badge bg-light text-muted">-</span>
+                                    {% endif %}
+                                </td>
+                                <!-- Формат сета -->
+                                <td>
+                                    {% if dance.dance_format %}
+                                        <span class="dance-format text-truncate d-block" title="{{ dance.dance_format.name }}">
+                                            {{ dance.dance_format.name }}
+                                        </span>
+                                    {% else %}
+                                        <span class="dance-format">-</span>
+                                    {% endif %}
+                                </td>
+                                <!-- Тип сета -->
+                                <td>
+                                    {% if dance.set_type %}
+                                        <span class="dance-set-type text-truncate d-block" title="{{ dance.set_type.name }}">
+                                            {{ dance.set_type.name }}
+                                        </span>
+                                    {% else %}
+                                        <span class="dance-set-type">-</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if dance.count_id and dance.size_id %}
+                                        <span class="dance-size">
+                                            {{ dance.count_id }}×{{ dance.size_id }}
+                                        </span>
+                                    {% elif dance.size_id %}
+                                        <span class="dance-size">
+                                            {{ dance.size_id }}
+                                        </span>
+                                    {% else %}
+                                        <span class="dance-size">-</span>
+                                    {% endif %}
+                                </td>
+                                <td class="text-center">
+                                    <div class="d-flex justify-content-center gap-1">
+                                        <!-- Иконка короны для RSCDS танцев -->
+                                        {% if dance.rscds %}
+                                        <img src="{{ url_for('static', filename='img/crown.png') }}" 
+                                             alt="RSCDS" 
+                                             class="material-icon" 
+                                             title="Танец RSCDS"
+                                             style="width: 14px; height: 14px; opacity: 0.8;">
                                         {% endif %}
-                                    </td>
-                                    <!-- Формат сета -->
-                                    <td class="px-2">
-                                        {% if dance.dance_format %}
-                                            <span class="dance-format" style="font-size: var(--format-font-size, 1rem); font-weight: var(--format-font-weight, 500); color: var(--format-color, hsl(0, 0%, 0%));">
-                                                {{ dance.dance_format.name }}
-                                            </span>
-                                        {% else %}
-                                            <span class="dance-format" style="font-size: var(--format-font-size, 1rem); font-weight: var(--format-font-weight, 500); color: var(--format-color, hsl(0, 0%, 0%));">-</span>
+                                        
+                                        <!-- Иконка описания (газета) -->
+                                        {% if dance.has_any_description %}
+                                        <img src="{{ url_for('static', filename='img/newspaper.png') }}" 
+                                             alt="Описание" 
+                                             class="material-icon" 
+                                             title="Есть описание танца или e-cribs"
+                                             style="width: 14px; height: 14px; opacity: 0.8;">
                                         {% endif %}
-                                    </td>
-                                    <!-- Тип сета -->
-                                    <td class="px-2">
-                                        {% if dance.set_type %}
-                                            <span class="dance-set-type" style="font-size: var(--set-type-font-size, 1rem); font-weight: var(--set-type-font-weight, 500); color: var(--set-type-color, hsl(0, 0%, 0%));">
-                                                {{ dance.set_type.name }}
-                                            </span>
-                                        {% else %}
-                                            <span class="dance-set-type" style="font-size: var(--set-type-font-size, 1rem); font-weight: var(--set-type-font-weight, 500); color: var(--set-type-color, hsl(0, 0%, 0%));">-</span>
+                                        
+                                        <!-- Иконка файлов (картина) -->
+                                        {% set dance_files = get_dance_files(dance.id, dance.name) %}
+                                        {% set dance_images = get_dance_images(dance.id, dance.name) %}
+                                        {% if dance_files or dance_images %}
+                                        <img src="{{ url_for('static', filename='img/image.png') }}" 
+                                             alt="Файлы" 
+                                             class="material-icon" 
+                                             title="Есть дополнительные материалы"
+                                             style="width: 14px; height: 14px; opacity: 0.8;">
                                         {% endif %}
-                                    </td>
-                                    <td class="px-2">
-                                        {% if dance.count_id and dance.size_id %}
-                                            <span class="dance-size" style="font-size: var(--size-font-size, 1rem); font-weight: var(--size-font-weight, 500); color: var(--size-color, hsl(0, 0%, 0%)); font-family: var(--size-font-family, inherit);">
-                                                {{ dance.count_id }}×{{ dance.size_id }}
-                                            </span>
-                                        {% elif dance.size_id %}
-                                            <span class="dance-size" style="font-size: var(--size-font-size, 1rem); font-weight: var(--size-font-weight, 500); color: var(--size-color, hsl(0, 0%, 0%)); font-family: var(--size-font-family, inherit);">
-                                                {{ dance.size_id }} тактов
-                                            </span>
-                                        {% else %}
-                                            <span class="dance-size" style="font-size: var(--size-font-size, 1rem); font-weight: var(--size-font-weight, 500); color: var(--size-color, hsl(0, 0%, 0%)); font-family: var(--size-font-family, inherit);">-</span>
-                                        {% endif %}
-                                    </td>
-                                    <td class="px-2 text-center">
-                                        <div class="d-flex justify-content-center gap-2">
-                                            <!-- Иконка короны для RSCDS танцев -->
-                                            {% if dance.rscds %}
-                                            <img src="{{ url_for('static', filename='img/crown.png') }}" 
-                                                 alt="RSCDS" 
-                                                 class="crown-icon" 
-                                                 title="Танец RSCDS"
-                                                 style="width: 16px; height: 16px;">
-                                            {% endif %}
-                                            
-                                            <!-- Иконка описания (газета) -->
-                                            {% if dance.has_any_description %}
-                                            <i class="fas fa-newspaper material-icon" title="Есть описание танца или e-cribs"></i>
-                                            {% endif %}
-                                            
-                                            <!-- Иконка файлов (картина) -->
-                                            {% set dance_files = get_dance_files(dance.id, dance.name) %}
-                                            {% set dance_images = get_dance_images(dance.id, dance.name) %}
-                                            {% if dance_files or dance_images %}
-                                            <i class="fas fa-image material-icon" title="Есть дополнительные материалы"></i>
-                                            {% endif %}
-                                        </div>
-                                    </td>
-                                </tr>
-                                {% endfor %}
-                            {% else %}
-                            <tr>
-                                <td colspan="7" class="text-center py-4">
-                                    <div class="py-3">
-                                        <i class="fas fa-search fa-lg text-muted mb-2"></i>
-                                        <h6 class="text-muted mb-1">Танцы по заданным фильтрам не найдены</h6>
-                                        <p class="text-muted mb-0 small">Попробуйте изменить параметры поиска</p>
                                     </div>
                                 </td>
                             </tr>
-                            {% endif %}
+                            {% endfor %}
                         {% else %}
                         <tr>
                             <td colspan="7" class="text-center py-4">
                                 <div class="py-3">
-                                    <i class="fas fa-filter fa-lg text-muted mb-2"></i>
-                                    <h6 class="text-muted mb-1">Задайте параметры поиска</h6>
-                                    <p class="text-muted mb-0 small">Используйте фильтры слева для поиска танцев</p>
+                                    {% if search_performed %}
+                                        <i class="fas fa-search fa-lg text-muted mb-2"></i>
+                                        <h6 class="text-muted mb-1">Танцы по заданным фильтрам не найдены</h6>
+                                        <p class="text-muted mb-0 small">Попробуйте изменить параметры поиска</p>
+                                    {% else %}
+                                        <i class="fas fa-filter fa-lg text-muted mb-2"></i>
+                                        <h6 class="text-muted mb-1">Задайте параметры поиска</h6>
+                                        <p class="text-muted mb-0 small">Используйте фильтры слева для поиска танцев</p>
+                                    {% endif %}
                                 </div>
                             </td>
                         </tr>
@@ -293,218 +300,142 @@
             </div>
         </div>
 
-        <!-- Информация о результате и пагинация -->
-        {% if results is defined and results is not none and results %}
-        <div class="mt-3">
-            <!-- Пагинация -->
-            {% if pagination and pagination.pages > 1 %}
-            <nav aria-label="Page navigation">
-                <ul class="pagination justify-content-center mb-2 pagination-sm">
-                    <!-- Первая страница -->
-                    {% if pagination.page > 1 %}
-                    <li class="page-item">
-                        <a class="page-link" href="{{ url_for('search', page=1, per_page=per_page) }}{% for key, value in filters.items() if value %}&{{ key }}={{ value if value is not iterable else value|join(',') }}{% endfor %}" aria-label="First">
-                            <i class="fas fa-angle-double-left"></i>
-                        </a>
-                    </li>
-                    {% else %}
-                    <li class="page-item disabled">
-                        <span class="page-link"><i class="fas fa-angle-double-left"></i></span>
-                    </li>
-                    {% endif %}
-
-                    <!-- Предыдущая страница -->
+        <!-- Пагинация -->
+        {% if results and pagination and pagination.pages > 1 %}
+        <div class="mt-4">
+            <nav aria-label="Навигация по страницам">
+                <ul class="pagination justify-content-center pagination-sm">
                     {% if pagination.has_prev %}
                     <li class="page-item">
-                        <a class="page-link" href="{{ url_for('search', page=pagination.prev_num, per_page=per_page) }}{% for key, value in filters.items() if value %}&{{ key }}={{ value if value is not iterable else value|join(',') }}{% endfor %}" aria-label="Previous">
-                            <i class="fas fa-angle-left"></i>
+                        <a class="page-link" href="{{ build_pagination_url(pagination.prev_num) }}">
+                            <i class="fas fa-chevron-left"></i>
                         </a>
                     </li>
                     {% else %}
                     <li class="page-item disabled">
-                        <span class="page-link"><i class="fas fa-angle-left"></i></span>
+                        <span class="page-link"><i class="fas fa-chevron-left"></i></span>
                     </li>
                     {% endif %}
 
-                    <!-- Номера страниц -->
-                    {% if pagination.iter_pages %}
-                        {% for page_num in pagination.iter_pages(left_edge=2, left_current=2, right_current=2, right_edge=2) %}
-                            {% if page_num %}
-                                <li class="page-item {% if page_num == pagination.page %}active{% endif %}">
-                                    <a class="page-link" href="{{ url_for('search', page=page_num, per_page=per_page) }}{% for key, value in filters.items() if value %}&{{ key }}={{ value if value is not iterable else value|join(',') }}{% endfor %}">{{ page_num }}</a>
-                                </li>
-                            {% else %}
-                                <li class="page-item disabled"><span class="page-link">...</span></li>
-                            {% endif %}
-                        {% endfor %}
-                    {% endif %}
+                    {% for page_num in pagination.iter_pages(left_edge=1, left_current=2, right_current=2, right_edge=1) %}
+                        {% if page_num %}
+                            <li class="page-item {% if page_num == pagination.page %}active{% endif %}">
+                                <a class="page-link" href="{{ build_pagination_url(page_num) }}">{{ page_num }}</a>
+                            </li>
+                        {% else %}
+                            <li class="page-item disabled"><span class="page-link">...</span></li>
+                        {% endif %}
+                    {% endfor %}
 
-                    <!-- Следующая страница -->
                     {% if pagination.has_next %}
                     <li class="page-item">
-                        <a class="page-link" href="{{ url_for('search', page=pagination.next_num, per_page=per_page) }}{% for key, value in filters.items() if value %}&{{ key }}={{ value if value is not iterable else value|join(',') }}{% endfor %}" aria-label="Next">
-                            <i class="fas fa-angle-right"></i>
+                        <a class="page-link" href="{{ build_pagination_url(pagination.next_num) }}">
+                            <i class="fas fa-chevron-right"></i>
                         </a>
                     </li>
                     {% else %}
                     <li class="page-item disabled">
-                        <span class="page-link"><i class="fas fa-angle-right"></i></span>
-                    </li>
-                    {% endif %}
-
-                    <!-- Последняя страница -->
-                    {% if pagination.page < pagination.pages %}
-                    <li class="page-item">
-                        <a class="page-link" href="{{ url_for('search', page=pagination.pages, per_page=per_page) }}{% for key, value in filters.items() if value %}&{{ key }}={{ value if value is not iterable else value|join(',') }}{% endfor %}" aria-label="Last">
-                            <i class="fas fa-angle-double-right"></i>
-                        </a>
-                    </li>
-                    {% else %}
-                    <li class="page-item disabled">
-                        <span class="page-link"><i class="fas fa-angle-double-right"></i></span>
+                        <span class="page-link"><i class="fas fa-chevron-right"></i></span>
                     </li>
                     {% endif %}
                 </ul>
             </nav>
-            {% endif %}
-
-            <!-- Информация о количестве -->
-            <div class="text-muted text-center">
-                <small>Показано {{ results|length }} из {{ total_count }} танцев {% if pagination and pagination.pages > 1 %}(страница {{ pagination.page }} из {{ pagination.pages }}){% endif %}</small>
+            
+            <div class="text-center text-muted small mt-2">
+                Страница {{ pagination.page }} из {{ pagination.pages }} • 
+                Показано {{ results|length }} из {{ pagination.total }} танцев
             </div>
         </div>
         {% endif %}
     </div>
 </div>
 
-<!-- JavaScript -->
-<script>
-function resetForm() {
-    document.getElementById('searchForm').reset();
-    // Не отправляем форму при сбросе, просто очищаем
-    window.location.href = "{{ url_for('search') }}";
-}
-
-// Управление насыщенностью цветов
-function setSaturation(level) {
-    const root = document.documentElement;
-    const buttons = ['btn-sat-low', 'btn-sat-medium', 'btn-sat-high'];
-    
-    // Убираем активный класс со всех кнопок
-    buttons.forEach(btnId => {
-        document.getElementById(btnId).classList.remove('active');
-    });
-    
-    // Добавляем активный класс к выбранной кнопке
-    document.getElementById(`btn-sat-${level}`).classList.add('active');
-    
-    // Устанавливаем уровень насыщенности
-    switch(level) {
-        case 'low':
-            root.classList.add('saturation-low');
-            root.classList.remove('saturation-medium', 'saturation-high');
-            break;
-        case 'medium':
-            root.classList.add('saturation-medium');
-            root.classList.remove('saturation-low', 'saturation-high');
-            break;
-        case 'high':
-            root.classList.add('saturation-high');
-            root.classList.remove('saturation-low', 'saturation-medium');
-            break;
-    }
-    
-    // Сохраняем настройку в localStorage
-    localStorage.setItem('saturationPreference', level);
-}
-
-// Функции для настройки шрифтов
-function setFormatFontSize(size) {
-    document.documentElement.style.setProperty('--format-font-size', size);
-    localStorage.setItem('formatFontSize', size);
-}
-
-function setFormatFontWeight(weight) {
-    document.documentElement.style.setProperty('--format-font-weight', weight);
-    localStorage.setItem('formatFontWeight', weight);
-}
-
-function setSetTypeFontSize(size) {
-    document.documentElement.style.setProperty('--set-type-font-size', size);
-    localStorage.setItem('setTypeFontSize', size);
-}
-
-function setSetTypeFontWeight(weight) {
-    document.documentElement.style.setProperty('--set-type-font-weight', weight);
-    localStorage.setItem('setTypeFontWeight', weight);
-}
-
-function setSizeFontSize(size) {
-    document.documentElement.style.setProperty('--size-font-size', size);
-    localStorage.setItem('sizeFontSize', size);
-}
-
-function setSizeFontWeight(weight) {
-    document.documentElement.style.setProperty('--size-font-weight', weight);
-    localStorage.setItem('sizeFontWeight', weight);
-}
-
-function setSizeFontFamily(family) {
-    document.documentElement.style.setProperty('--size-font-family', family);
-    localStorage.setItem('sizeFontFamily', family);
-}
-
-// Восстанавливаем настройки при загрузке
-document.addEventListener('DOMContentLoaded', function() {
-    // Восстанавливаем сохраненные настройки насыщенности
-    const savedSaturation = localStorage.getItem('saturationPreference') || 'medium';
-    setSaturation(savedSaturation);
-    
-    // Восстанавливаем настройки шрифтов
-    const savedFormatFontSize = localStorage.getItem('formatFontSize');
-    const savedFormatFontWeight = localStorage.getItem('formatFontWeight');
-    const savedSetTypeFontSize = localStorage.getItem('setTypeFontSize');
-    const savedSetTypeFontWeight = localStorage.getItem('setTypeFontWeight');
-    const savedSizeFontSize = localStorage.getItem('sizeFontSize');
-    const savedSizeFontWeight = localStorage.getItem('sizeFontWeight');
-    const savedSizeFontFamily = localStorage.getItem('sizeFontFamily');
-    
-    if (savedFormatFontSize) setFormatFontSize(savedFormatFontSize);
-    if (savedFormatFontWeight) setFormatFontWeight(savedFormatFontWeight);
-    if (savedSetTypeFontSize) setSetTypeFontSize(savedSetTypeFontSize);
-    if (savedSetTypeFontWeight) setSetTypeFontWeight(savedSetTypeFontWeight);
-    if (savedSizeFontSize) setSizeFontSize(savedSizeFontSize);
-    if (savedSizeFontWeight) setSizeFontWeight(savedSizeFontWeight);
-    if (savedSizeFontFamily) setSizeFontFamily(savedSizeFontFamily);
-});
-</script>
-
 <style>
+/* ===== ФИКСИРОВАННАЯ ШИРИНА СТОЛБЦОВ ===== */
+.table-compact.fixed-columns {
+    table-layout: fixed;
+    width: 100%;
+}
+
+/* Принудительная установка ширины для всех столбцов */
+.table-compact.fixed-columns th:nth-child(1),
+.table-compact.fixed-columns td:nth-child(1) {
+    width: 40px;
+    min-width: 40px;
+    max-width: 40px;
+}
+
+.table-compact.fixed-columns th:nth-child(2),
+.table-compact.fixed-columns td:nth-child(2) {
+    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
+}
+
+.table-compact.fixed-columns th:nth-child(3),
+.table-compact.fixed-columns td:nth-child(3) {
+    width: 80px;
+    min-width: 80px;
+    max-width: 80px;
+}
+
+.table-compact.fixed-columns th:nth-child(4),
+.table-compact.fixed-columns td:nth-child(4) {
+    width: 80px;
+    min-width: 80px;
+    max-width: 80px;
+}
+
+.table-compact.fixed-columns th:nth-child(5),
+.table-compact.fixed-columns td:nth-child(5) {
+    width: 100px;
+    min-width: 100px;
+    max-width: 100px;
+}
+
+.table-compact.fixed-columns th:nth-child(6),
+.table-compact.fixed-columns td:nth-child(6) {
+    width: 70px;
+    min-width: 70px;
+    max-width: 70px;
+}
+
+.table-compact.fixed-columns th:nth-child(7),
+.table-compact.fixed-columns td:nth-child(7) {
+    width: 60px;
+    min-width: 60px;
+    max-width: 60px;
+}
+
+/* Обрезка длинного текста */
+.table-compact.fixed-columns td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Специальные стили для колонки с названием и автором */
+.table-compact.fixed-columns td:nth-child(2) {
+    white-space: normal;
+    overflow: hidden;
+}
+
+.table-compact.fixed-columns td:nth-child(2) .d-flex {
+    min-height: 32px;
+    justify-content: center;
+    flex-direction: column;
+}
+
 /* ===== СТИЛИ ДЛЯ ИКОНОК МАТЕРИАЛОВ ===== */
 .material-icon {
-    font-size: 1rem;
     cursor: default;
     transition: all 0.2s ease;
-    opacity: 1;
+    opacity: 0.8;
 }
 
 .material-icon:hover {
     opacity: 1;
     transform: scale(1.1);
-}
-
-/* ===== СТИЛИ ДЛЯ ИКОНКИ КОРОНЫ ===== */
-.crown-icon {
-    cursor: default;
-    transition: all 0.2s ease;
-    opacity: 1;
-    filter: brightness(1);
-}
-
-.crown-icon:hover {
-    opacity: 1;
-    transform: scale(1.1);
-    filter: brightness(1.1);
 }
 
 /* ===== ВЫРАВНИВАНИЕ ПО ЦЕНТРУ ===== */
@@ -513,69 +444,129 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 /* ===== КОМПАКТНЫЕ ОТСТУПЫ ДЛЯ ГРУППЫ ИКОНОК ===== */
-.d-flex.gap-2 {
-    gap: 0.5rem !important;
+.d-flex.gap-1 {
+    gap: 0.15rem !important;
 }
 
 /* ===== ОСНОВНЫЕ СТИЛИ ТАБЛИЦЫ ===== */
 .table-compact td {
-    padding: 5px 5px;
-    font-size: 1rem;
+    padding: 3px 4px;
+    font-size: 0.75rem;
     vertical-align: middle;
-    height: 10px;
+    height: 28px;
 }
 
 .table-compact th {
-    padding: 10px;
-    font-size: 1rem;
+    padding: 6px 4px;
+    font-size: 0.7rem;
     vertical-align: middle;
+    font-weight: 600;
 }
 
 /* ===== СТИЛИ ДЛЯ НАЗВАНИЯ ТАНЦА ===== */
 .dance-name {
     font-weight: 600 !important;
-    color: hwb(0 0% 100%) !important;
-    font-size: 1rem;
-    line-height: 1.2;
+    color: var(--primary-color) !important;
+    font-size: 0.8rem;
+    line-height: 1.1;
+    margin-bottom: 1px;
 }
 
 .dance-name:hover {
-    color: #0014c5 !important;
+    color: #0a58ca !important;
     text-decoration: underline !important;
+}
+
+.author-text {
+    font-size: 0.7rem;
+    color: #6c757d !important;
+    line-height: 1;
 }
 
 /* ===== СТИЛИ ДЛЯ БЕЙДЖЕЙ ТИПОВ ТАНЦЕВ ===== */
 .badge-type {
-    font-size: 1rem;
-    padding: 0.25rem 0.5rem;
+    font-size: 0.65rem;
+    padding: 0.15rem 0.3rem;
     vertical-align: middle;
     display: inline-block;
     line-height: 1;
+    font-weight: 600;
+    min-width: 60px;
+    text-align: center;
+    border-radius: 6px;
+}
+
+/* Бледные цвета для типов танцев */
+.bg-reel {
+    background-color: var(--reel-color) !important;
+    color: var(--reel-text) !important;
+}
+
+.bg-jig {
+    background-color: var(--jig-color) !important;
+    color: var(--jig-text) !important;
+}
+
+.bg-strathspey {
+    background-color: var(--strathspey-color) !important;
+    color: var(--strathspey-text) !important;
+}
+
+.bg-medley {
+    background-color: var(--medley-color) !important;
+    color: var(--medley-text) !important;
+}
+
+.bg-polka {
+    background-color: var(--polka-color) !important;
+    color: var(--polka-text) !important;
+}
+
+.bg-march {
+    background-color: var(--march-color) !important;
+    color: var(--march-text) !important;
+}
+
+.bg-waltz {
+    background-color: var(--waltz-color) !important;
+    color: var(--waltz-text) !important;
+}
+
+.bg-hornpipe {
+    background-color: var(--hornpipe-color) !important;
+    color: var(--hornpipe-text) !important;
+}
+
+.bg-quadrille {
+    background-color: var(--quadrille-color) !important;
+    color: var(--quadrille-text) !important;
+}
+
+.bg-minuet {
+    background-color: var(--minuet-color) !important;
+    color: var(--minuet-text) !important;
 }
 
 /* ===== СТИЛИ ДЛЯ РАЗМЕРА ТАНЦА ===== */
 .dance-size {
-    font-size: 1rem;
+    font-size: 0.7rem;
     vertical-align: middle;
     display: inline-block;
     line-height: 1;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.dance-format, .dance-set-type {
+    font-size: 0.7rem;
+    color: #6c757d;
+    font-weight: 500;
 }
 
 /* ===== СТИЛИ ДЛЯ ID ТАНЦА ===== */
 .text-muted.small {
-    font-size: 0.875rem;
+    font-size: 0.7rem;
     color: #6c757d !important;
-}
-
-/* ===== СТИЛИ ДЛЯ ВЫПАДАЮЩИХ СПИСКОВ ===== */
-.form-select[multiple] {
-    height: auto;
-    min-height: 60px;
-}
-
-.form-select[multiple] option {
-    padding: 0.25rem 0.5rem;
-    font-size: 0.875rem;
 }
 
 /* ===== ВЫРАВНИВАНИЕ ЭЛЕМЕНТОВ В ТАБЛИЦЕ ===== */
@@ -583,33 +574,61 @@ document.addEventListener('DOMContentLoaded', function() {
     vertical-align: middle;
 }
 
-/* ===== ВЫРАВНИВАНИЕ ТЕКСТА В ТАБЛИЦЕ ===== */
-.table-compact th.text-start,
-.table-compact td.text-start {
-    text-align: left;
-}
-
-.table-compact th.text-end,
-.table-compact td.text-end {
-    text-align: right;
-}
-
-/* ===== СТИЛИ ДЛЯ КАРТОЧЕК ===== */
-.card-header h5 {
-    font-size: 1.1rem;
-}
-
-.mb-4 h6 {
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
 /* ===== АДАПТИВНОСТЬ ===== */
 @media (max-width: 991.98px) {
     .col-lg-3 {
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .table-compact td,
+    .table-compact th {
+        padding: 2px 3px;
+        font-size: 0.7rem;
+    }
+    
+    .dance-name {
+        font-size: 0.75rem;
+    }
+    
+    .author-text {
+        font-size: 0.65rem;
+    }
+    
+    .badge-type {
+        font-size: 0.6rem;
+        padding: 0.1rem 0.25rem;
+        min-width: 55px;
+    }
+
+    .material-icon {
+        width: 12px !important;
+        height: 12px !important;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .form-select[multiple] {
+        min-height: 60px;
     }
 }
 </style>
+
+<script>
+// Автоматическая отправка формы при изменении фильтров
+document.addEventListener('DOMContentLoaded', function() {
+    const autoSubmitElements = document.querySelectorAll('select[multiple], input[type="checkbox"]');
+    
+    autoSubmitElements.forEach(element => {
+        element.addEventListener('change', function() {
+            setTimeout(() => {
+                document.getElementById('searchForm').submit();
+            }, 300);
+        });
+    });
+});
+</script>
 {% endblock %}
-[file content end]

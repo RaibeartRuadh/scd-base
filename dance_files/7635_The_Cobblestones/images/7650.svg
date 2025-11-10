@@ -1,0 +1,71 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       THE COBBLESTONES
+       8x32 R                        
+       Ian Barbour                                                                            Set and Cast Off 3                                                                                  
+       Dancedata ID:  7650 
+
+
+       SVG crib 1213  created by Keith Rose  11.05.23   11:05:32           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  73.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   THE COBBLESTONES    -    8x32 R                           </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='71.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >THE COBBLESTONES</text>
+<text  x='172.06' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >                                                                 </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >8x32 R</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<polyline fill='none' stroke='rgb(0,0,0)' points='18.00,20.25 31.50,20.25 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  29.356  19.262  l  0.744  0.988 -1.489  1.976  3.239 -1.976 -3.239 -1.976  0.744  0.988 '  />
+<polyline fill='none' stroke='rgb(0,0,0)' points='31.50,24.75 18.00,24.75 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  20.144  25.738  l -0.744 -0.988  1.489 -1.976 -3.239  1.976  3.239  1.976 -0.744 -0.988 '  />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 49.50 0.00  L 49.50 45.00' />
+<line   stroke='rgb(0,0,0)' x1='67.50' y1='15.75'  x2='72.00' y2='15.75'  />
+<line   stroke='rgb(0,0,0)' x1='72.00' y1='15.75'  x2='72.00' y2='20.25'  />
+<line   stroke='rgb(0,0,0)' x1='94.50' y1='15.75'  x2='99.00' y2='15.75'  />
+<line   stroke='rgb(0,0,0)' x1='94.50' y1='15.75'  x2='94.50' y2='20.25'  />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 135.00 0.00  L 135.00 45.00' />
+<polyline fill='none'  stroke-width='0.70' stroke='rgb(0,0,0)' points='153.00,13.50 162.00,22.50 153.00,31.50 '   />
+<polyline fill='none'  stroke-width='0.70' stroke='rgb(0,0,0)' points='184.50,13.50 175.50,22.50 184.50,31.50 '   />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='153.00' y1='13.50'  x2='158.40' y2='13.50'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='156.38,10.13 149.63,10.12 149.62,16.87 156.37,16.88 '  />
+<text  xml:space='preserve'  x='152.80' y='16.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='162.00' y1='22.50'  x2='156.60' y2='22.50'  />
+<circle cx='162.00' cy='22.50' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='161.80' y='25.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='153.00' y1='31.50'  x2='158.40' y2='31.50'  />
+<circle cx='153.00' cy='31.50' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='152.80' y='34.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='184.50' y1='13.50'  x2='179.10' y2='13.50'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='181.12,16.87 187.87,16.88 187.88,10.13 181.13,10.12 '  />
+<text  xml:space='preserve'  x='184.30' y='16.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='175.50' y1='22.50'  x2='180.90' y2='22.50'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='178.88,19.13 172.13,19.12 172.12,25.87 178.87,25.88 '  />
+<text  xml:space='preserve'  x='175.30' y='25.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='184.50' y1='31.50'  x2='179.10' y2='31.50'  />
+<circle cx='184.50' cy='31.50' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='184.30' y='34.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<text   x='162.11' y='38.25'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >DT</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 202.50 0.00  L 202.50 45.00' />
+<circle cx='234' cy='13.50002' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='225' cy='13.49998' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='221.82' y1='16.68'  x2='225.00' y2='19.86'  />
+<circle cx='225' cy='31.49999' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='234' cy='31.50001' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='237.18' y1='28.32'  x2='234.00' y2='25.14'  />
+<circle cx='229.50' cy='4.50' r='1.69' fill='none'
+stroke='rgb(0,0,0)' />
+<circle cx='229.50' cy='4.50' r='0.51' fill='rgb(0,0,0)' stroke='rgb(0,0,0)' />
+<text   x='248.65' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >X</text>  
+<text   x='61.90' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S</text>  
+<text   x='79.90' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S</text>  
+<text   x='97.90' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S</text>  
+<text   x='113.65' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S</text>  
+<text  x='0.00' y='52.00'   font-size='5' stroke-width='0.001'  >Ian Barbour, Set and Cast Off 3</text>
+<text  xml:space='preserve'  x='270.00' y='52.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >3C/4C longwise set.</text>
+  </g> </svg>

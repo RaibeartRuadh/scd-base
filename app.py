@@ -525,30 +525,36 @@ def save_dance_to_db(dance_data):
         raise e
 
 #######################################################
-# РАСШИРЕННЫЙ ПОИСК (ЕДИНЫЙ МАРШРУТ) С ПАГИНАЦИЕЙ
+# РАСШИРЕННЫЙ ПОИСК С ПАГИНАЦИЕЙ
 #######################################################
 
-@app.route('/search', methods=['GET', 'POST'])
+@app.route('/search')
 def search():
-    """Расширенный поиск танцев с фильтрами и пагинацией - использует search.html"""
-    # Инициализируем переменные по умолчанию
+    """Основная страница поиска"""
+    return render_search_results()
+
+@app.route('/advanced_search')
+def advanced_search():
+    """Алиас для обратной совместимости"""
+    return render_search_results()
+
+def render_search_results():
+    """Рендеринг результатов поиска с фильтрами"""
+    # Получаем параметры фильтров из GET-запроса
     filters = {
-        'name': '',
-        'author': '',
-        'description_text': '',  # Исправлено: было 'description'
-        'size_min': '',
-        'count_min': '',
-        'dance_types': [],
-        'dance_formats': [],
-        'set_types': [],
-        'dance_couples': [],
-        'has_description': '',
-        'has_files': '',
-        'rscds': ''  # ДОБАВЛЕНО: фильтр по RSCDS
+        'name': request.args.get('name', '').strip(),
+        'author': request.args.get('author', '').strip(),
+        'description_text': request.args.get('description_text', '').strip(),
+        'size_min': request.args.get('size_min', '').strip(),
+        'count_min': request.args.get('count_min', '').strip(),
+        'dance_types': request.args.getlist('dance_types'),
+        'dance_formats': request.args.getlist('dance_formats'),
+        'set_types': request.args.getlist('set_types'),
+        'dance_couples': request.args.getlist('dance_couples'),
+        'has_description': request.args.get('has_description', ''),
+        'has_files': request.args.get('has_files', ''),
+        'rscds': request.args.get('rscds', '')
     }
-    
-    # Переменная для определения, был ли выполнен поиск
-    search_performed = False
     
     # Параметры пагинации
     page = request.args.get('page', 1, type=int)
@@ -558,141 +564,235 @@ def search():
     if per_page not in [10, 20, 50, 100]:
         per_page = 20
     
-    if request.method == 'POST':
-        try:
-            search_performed = True  # Поиск выполнен
-            # Сбрасываем страницу на первую при новом поиске
-            page = 1
-            
-            # Собираем фильтры из формы
-            filters = {
-                'name': request.form.get('name', '').strip(),
-                'author': request.form.get('author', '').strip(),
-                'description_text': request.form.get('description_text', '').strip(),  # Новое поле для поиска по описанию
-                'size_min': request.form.get('size_min', '').strip(),
-                'count_min': request.form.get('count_min', '').strip(),
-                'dance_types': request.form.getlist('dance_types'),
-                'dance_formats': request.form.getlist('dance_formats'),
-                'set_types': request.form.getlist('set_types'),
-                'dance_couples': request.form.getlist('dance_couples'),
-                'has_description': request.form.get('has_description'),
-                'has_files': request.form.get('has_files'),
-                'rscds': request.form.get('rscds')  # ДОБАВЛЕНО: получаем значение чекбокса RSCDS
-            }
-            
-        except Exception as e:
-            # Можно оставить только для критических ошибок
-            flash(f'Ошибка при обработке формы поиска: {str(e)}', 'danger')
+    # Переменная для определения, был ли выполнен поиск
+    search_performed = any(value for key, value in filters.items() if key not in ['page', 'per_page'] and value)
     
-    # Строим запрос только если был выполнен поиск (POST) или есть параметры пагинации
+    # Строим запрос
     results = []
     total_count = 0
     pagination = None
     
-    if search_performed or (request.method == 'GET' and page > 1):
-        try:
-            query = Dance.query
-            
-            # Применяем текстовые фильтры
-            if filters['name']:
-                query = query.filter(Dance.name.ilike(f'%{filters["name"]}%'))
-            
-            if filters['author']:
-                query = query.filter(Dance.author.ilike(f'%{filters["author"]}%'))
-            
-            # ПОИСК ПО ТЕКСТУ ОПИСАНИЯ - исправлено
-            if filters['description_text']:
-                query = query.filter(Dance.description.ilike(f'%{filters["description_text"]}%'))
-            
-            # Применяем числовые фильтры
-            if filters['size_min']:
-                try:
-                    query = query.filter(Dance.size_id >= int(filters['size_min']))
-                except (ValueError, TypeError):
-                    pass
-            
-            if filters['count_min']:
-                try:
-                    query = query.filter(Dance.count_id >= int(filters['count_min']))
-                except (ValueError, TypeError):
-                    pass
-            
-            # Применяем фильтры по категориям
-            if filters['dance_types']:
-                query = query.filter(Dance.dance_type_id.in_([int(x) for x in filters['dance_types']]))
-            
-            if filters['dance_formats']:
-                query = query.filter(Dance.dance_format_id.in_([int(x) for x in filters['dance_formats']]))
-            
-            if filters['set_types']:
-                query = query.filter(Dance.set_type_id.in_([int(x) for x in filters['set_types']]))
-            
-            if filters['dance_couples']:
-                query = query.filter(Dance.dance_couple.in_(filters['dance_couples']))
-            
-            # Фильтр по наличию описания
-            if filters.get('has_description') == 'on':
-                query = query.filter(
-                    Dance.description.isnot(None), 
-                    Dance.description != ''
+    try:
+        query = Dance.query
+        
+        # Применяем текстовые фильтры
+        if filters['name']:
+            query = query.filter(Dance.name.ilike(f'%{filters["name"]}%'))
+        
+        if filters['author']:
+            query = query.filter(Dance.author.ilike(f'%{filters["author"]}%'))
+        
+        # Поиск по тексту описания
+        if filters['description_text']:
+            query = query.filter(
+                or_(
+                    Dance.description.ilike(f'%{filters["description_text"]}%'),
+                    Dance.description2.ilike(f'%{filters["description_text"]}%'),
+                    Dance.note.ilike(f'%{filters["description_text"]}%')
                 )
-            
-            # Фильтр по наличию файлов
-            if filters.get('has_files') == 'on':
-                dances_with_files = []
-                all_dances = Dance.query.all()
-                for dance in all_dances:
-                    if has_dance_files(dance.id, dance.name):
-                        dances_with_files.append(dance.id)
-                if dances_with_files:
-                    query = query.filter(Dance.id.in_(dances_with_files))
-                else:
-                    query = query.filter(Dance.id.in_([]))  # Пустой результат
-            
-            # ДОБАВЛЕНО: Фильтр по RSCDS
-            if filters.get('rscds') == 'on':
-                query = query.filter(Dance.rscds == True)
-            
-            # Применяем пагинацию
-            pagination = query.order_by(Dance.name).paginate(
-                page=page, per_page=per_page, error_out=False
             )
+        
+        # Применяем числовые фильтры
+        if filters['size_min']:
+            try:
+                query = query.filter(Dance.size_id >= int(filters['size_min']))
+            except (ValueError, TypeError):
+                pass
+        
+        if filters['count_min']:
+            try:
+                query = query.filter(Dance.count_id >= int(filters['count_min']))
+            except (ValueError, TypeError):
+                pass
+        
+        # Применяем фильтры по категориям
+        if filters['dance_types']:
+            query = query.filter(Dance.dance_type_id.in_([int(x) for x in filters['dance_types']]))
+        
+        if filters['dance_formats']:
+            query = query.filter(Dance.dance_format_id.in_([int(x) for x in filters['dance_formats']]))
+        
+        if filters['set_types']:
+            query = query.filter(Dance.set_type_id.in_([int(x) for x in filters['set_types']]))
+        
+        if filters['dance_couples']:
+            query = query.filter(Dance.dance_couple.in_(filters['dance_couples']))
+        
+        # Фильтр по наличию описания
+        if filters.get('has_description') == 'on':
+            query = query.filter(
+                or_(
+                    Dance.description.isnot(None), 
+                    Dance.description != '',
+                    Dance.description2.isnot(None),
+                    Dance.description2 != ''
+                )
+            )
+        
+        # Фильтр по наличию файлов
+        if filters.get('has_files') == 'on':
+            dances_with_files = []
+            all_dances = Dance.query.all()
+            for dance in all_dances:
+                if has_dance_files(dance.id, dance.name):
+                    dances_with_files.append(dance.id)
+            if dances_with_files:
+                query = query.filter(Dance.id.in_(dances_with_files))
+            else:
+                query = query.filter(Dance.id.in_([]))  # Пустой результат
+        
+        # Фильтр по RSCDS
+        if filters.get('rscds') == 'on':
+            query = query.filter(Dance.rscds == True)
+        
+        # Применяем пагинацию
+        pagination = query.order_by(Dance.name).paginate(
+            page=page, per_page=per_page, error_out=False
+        )
+        
+        results = pagination.items
+        total_count = pagination.total
+        
+        # Вычисляем флаг наличия описания для каждого танца
+        for dance in results:
+            dance.has_any_description = has_any_description(dance)
             
-            results = pagination.items
-            total_count = pagination.total
-            
-            # ДОБАВЛЕНО: вычисляем флаг наличия описания для каждого танца
-            for dance in results:
-                dance.has_any_description = has_any_description(dance)
-            
-            # УБРАЛИ FLASH-УВЕДОМЛЕНИЯ - они теперь не нужны
-            # Информация о количестве результатов отображается в шаблоне
-                
-        except Exception as e:
-            # Оставляем только для критических ошибок
-            flash(f'Ошибка при выполнении поиска: {str(e)}', 'danger')
-            results = []
-            total_count = 0
-            pagination = None
+    except Exception as e:
+        flash(f'Ошибка при выполнении поиска: {str(e)}', 'danger')
+        results = []
+        total_count = 0
+        pagination = None
     
     # Получаем данные для фильтров
     search_filters = get_search_filters()
     
     return render_template('search.html', 
-                         results=results, 
-                         filters=filters,
-                         total_count=total_count,
-                         pagination=pagination,
-                         page=page,
-                         per_page=per_page,
-                         search_performed=search_performed,  # Добавляем эту переменную!
-                         **search_filters)
+                        results=results, 
+                        filters=filters,
+                        total_count=total_count,
+                        pagination=pagination,
+                        page=page,
+                        per_page=per_page,
+                        search_performed=search_performed,
+                        **search_filters)
 
-@app.route('/advanced_search')
-def advanced_search():
-    """Перенаправление на страницу поиска (для совместимости с base.html)"""
-    return redirect(url_for('search'))
+def get_search_filters():
+    """Получение данных для фильтров поиска"""
+    # Получаем уникальные значения для танцующих пар
+    dance_couples = db.session.query(Dance.dance_couple).distinct().all()
+    dance_couples = [c[0] for c in dance_couples if c[0] is not None]
+    dance_couples.sort()
+    
+    return {
+        'dance_types': DanceType.query.order_by(DanceType.name).all(),
+        'dance_formats': DanceFormat.query.order_by(DanceFormat.name).all(),
+        'set_types': SetType.query.order_by(SetType.name).all(),
+        'dance_couples': [(c, c) for c in dance_couples]  # Преобразуем в формат для шаблона
+    }
 
+
+
+####################################
+@app.context_processor
+def utility_processor():
+    def build_pagination_url(page):
+        """Строит URL для пагинации с сохранением всех параметров фильтров"""
+        args = request.args.copy()
+        args['page'] = page
+        # Строим URL вручную чтобы избежать проблем с url_for
+        params = []
+        for key, values in args.lists():
+            if key == 'page':
+                continue  # Пропускаем старую страницу
+            if isinstance(values, list):
+                for value in values:
+                    if value:  # Пропускаем пустые значения
+                        params.append(f"{key}={value}")
+            else:
+                if values:  # Пропускаем пустые значения
+                    params.append(f"{key}={values}")
+        
+        url = f"/search?page={page}"
+        if params:
+            url += "&" + "&".join(params)
+        return url
+    
+    def get_dance_files(dance_id, dance_name):
+        """Получение списка файлов для танца (кроме изображений)"""
+        dance_path = get_dance_files_path(dance_id, dance_name)
+        files = []
+        
+        if os.path.exists(dance_path):
+            for item in os.listdir(dance_path):
+                item_path = os.path.join(dance_path, item)
+                
+                if item == 'images' or item.lower().endswith(('png', 'jpg', 'jpeg', 'gif', 'webp', 'svg')):
+                    continue
+                    
+                if os.path.isfile(item_path):
+                    files.append({
+                        'name': item,
+                        'size': os.path.getsize(item_path),
+                        'upload_time': os.path.getctime(item_path)
+                    })
+        
+        files.sort(key=lambda x: x['upload_time'], reverse=True)
+        return files
+    
+    def get_dance_images(dance_id, dance_name):
+        """Получение списка изображений для танца"""
+        images_folder = os.path.join(get_dance_files_path(dance_id, dance_name), 'images')
+        images = []
+        
+        if os.path.exists(images_folder):
+            for filename in os.listdir(images_folder):
+                if not filename.startswith('thumb_') and filename.lower().endswith(('png', 'jpg', 'jpeg', 'gif', 'webp', 'svg')):
+                    file_path = os.path.join(images_folder, filename)
+                    thumb_path = os.path.join(images_folder, f"thumb_{filename}")
+                    
+                    if os.path.isfile(file_path):
+                        images.append({
+                            'filename': filename,
+                            'thumbnail': f"thumb_{filename}" if os.path.exists(thumb_path) else filename,
+                            'size': os.path.getsize(file_path),
+                            'upload_time': os.path.getctime(file_path)
+                        })
+        
+        images.sort(key=lambda x: x['upload_time'], reverse=True)
+        return images
+    
+    def format_datetime(timestamp, fmt='%d.%m.%Y %H:%M'):
+        """Форматирование timestamp"""
+        return datetime.fromtimestamp(timestamp).strftime(fmt)
+    
+    def has_images_processor(dance_id, dance_name):
+        """Проверка наличия изображений у танца"""
+        return has_images(dance_id, dance_name)
+    
+    def has_dance_files_processor(dance_id, dance_name):
+        """Проверяет наличие файлов в файловой системе для танца"""
+        return has_dance_files(dance_id, dance_name)
+    
+    def has_any_description_processor(dance):
+        """Проверяет наличие любого описания у танца"""
+        return has_any_description(dance)
+    
+    return {
+        'build_pagination_url': build_pagination_url,  # ДОБАВЛЕНО ЭТО
+        'get_dance_files': get_dance_files,
+        'get_dance_images': get_dance_images,
+        'has_images': has_images_processor,
+        'format_datetime': format_datetime,
+        'db_type': db_type,
+        'has_dance_files': has_dance_files_processor,
+        'has_any_description': has_any_description_processor
+    }
+
+
+
+
+
+########################################################
 def get_search_filters():
     """Получение данных для фильтров поиска"""
     # Получаем уникальные значения для танцующих пар

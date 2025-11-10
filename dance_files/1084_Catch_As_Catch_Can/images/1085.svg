@@ -1,0 +1,45 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       CATCH AS CATCH CAN
+       4x32 R                        
+       Jo Hamilton                                                             1988           Let's All Dance                                                                                     
+       Dancedata ID:  1085 
+
+
+       SVG crib 1471  created by Keith Rose  11.05.23   11:09:02           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  73.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   CATCH AS CATCH CAN    -    4x32 R                           </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='71.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >CATCH AS CATCH CAN</text>
+<text  x='175.71' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >                                                                 </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >4x32 R</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<text   x='26.75' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1 2</text>  
+<circle cx='31.50' cy='24.75' r='6.75' fill='white' 
+ stroke='rgb(0,0,0)' />
+<text   x='29.40' y='27.45'  font-size='7.5' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >4</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 63.00 0.00  L 63.00 45.00' />
+<text   x='89.75' y='11.25'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1 2</text>  
+<text   x='87.31' y='22.50'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >RA</text>  
+<text   x='87.86' y='36.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >LA</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 126.00 0.00  L 126.00 45.00' />
+<polyline fill='none' stroke='rgb(0,0,0)' points='148.50,20.25 166.50,20.25 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 164.356  19.262  l  0.744  0.988 -1.489  1.976  3.239 -1.976 -3.239 -1.976  0.744  0.988 '  />
+<polyline fill='none' stroke='rgb(0,0,0)' points='166.50,24.75 148.50,24.75 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 150.644  25.738  l -0.744 -0.988  1.489 -1.976 -3.239  1.976  3.239  1.976 -0.744 -0.988 '  />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 189.00 0.00  L 189.00 45.00' />
+<text   x='209.58' y='27.90'  font-size='7.5' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >3</text>  
+<path fill='none'   style='stroke:rgb(0,0,0)'
+ d='M 207.00 22.50   c 0 -6.30 9.00 -6.30 9.00  0'  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 216.445  20.181  l -0.781  0.960 -2.276 -0.971  2.696  2.670  1.141 -3.618 -0.781  0.960 '  />
+<text   x='232.91' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='239.00' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<text  x='0.00' y='52.00'   font-size='5' stroke-width='0.001'  >Jo Hamilton, 1988, Let's All Dance</text>
+<text  xml:space='preserve'  x='270.00' y='52.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >4C/4C longwise set.</text>
+  </g> </svg>

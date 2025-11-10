@@ -1,0 +1,161 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: fig2dev Version 3.2 Patchlevel 5d -->
+<!-- CreationDate: Thu Feb 21 11:29:41 2013 -->
+<!-- Magnification: 1.050 -->
+<svg	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	viewBox="-23 -23 6140 1605">
+<g style="stroke-width:.025in; fill:none">
+<!-- Text -->
+<text xml:space="preserve" x="94" y="283" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="start">Wee Bus</text>
+<!-- Line -->
+<polyline points="755,614
+661,614
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Text -->
+<text xml:space="preserve" x="519" y="661" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">1 2</text>
+<!-- Text -->
+<text xml:space="preserve" x="566" y="1086" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="227" text-anchor="middle">P</text>
+<!-- Line -->
+<polyline points="1417,566
+1322,566
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="1795,566
+1700,566
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Text -->
+<text xml:space="preserve" x="1559" y="614" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">2 1</text>
+<!-- Text -->
+<text xml:space="preserve" x="1606" y="1039" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="227" text-anchor="middle">RL</text>
+<!-- Line -->
+<polyline points="2456,566
+2362,566
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="2834,566
+2740,566
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Text -->
+<text xml:space="preserve" x="2598" y="614" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">2 1</text>
+<!-- Text -->
+<text xml:space="preserve" x="2645" y="1039" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="227" text-anchor="middle">RA</text>
+<!-- Line -->
+<polyline points="3307,566
+3212,566
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="3685,566
+3590,566
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Text -->
+<text xml:space="preserve" x="3448" y="614" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">1 3</text>
+<!-- Text -->
+<text xml:space="preserve" x="3496" y="1039" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="227" text-anchor="middle">LA</text>
+<!-- Line -->
+<polyline points="4866,1039
+4455,1039
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Arrowhead on XXXpoint 4866 1039 - 4362 1039-->
+<polygon points="4434 1007
+4371 1039
+4434 1070
+4434 1007
+
+" style="stroke:#000000;stroke-width:8;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Line -->
+<polyline points="4804,803
+4393,803
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Arrowhead on XXXpoint 4393 803 - 4897 803-->
+<polygon points="4825 834
+4888 803
+4825 771
+4825 834
+
+" style="stroke:#000000;stroke-width:8;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Line -->
+<polyline points="4488,566
+4393,566
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="4866,566
+4771,566
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Text -->
+<text xml:space="preserve" x="4629" y="1322" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="126" text-anchor="middle">slip step</text>
+<!-- Text -->
+<text xml:space="preserve" x="4629" y="614" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">1 3</text>
+<!-- Line -->
+<polyline points="0,377
+6094,377
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line: box -->
+<rect x="0" y="0" width="6094" height="1511" rx="0" 
+style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="1039,377
+1039,1511
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="2078,425
+2078,1559
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="3023,377
+3023,1511
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+stroke-dasharray:62 62;"/>
+<!-- Line -->
+<polyline points="3968,377
+3968,1511
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Text -->
+<text xml:space="preserve" x="6047" y="283" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="end">R8x32</text>
+<!-- Text -->
+<text xml:space="preserve" x="4866" y="283" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="end">New Scotland 50th</text>
+<!-- Line -->
+<polyline points="377,614
+283,614
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+</g>
+</svg>

@@ -1,0 +1,69 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       ROUND ABOUT HULLACHAN
+       32 R                          
+                                                                                              RSCDS Book 5.4                                                                                      
+       Dancedata ID:  5708 
+
+
+       SVG crib 2868  created by Keith Rose  11.05.23   12:01:01           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  73.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   ROUND ABOUT HULLACHAN    -    32 R                             </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='71.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >ROUND ABOUT HULLACHAN</text>
+<text  x='194.54' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >Hullachan round the House                                        </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >32 R</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='18.00' y1='29.25'  x2='18.00' y2='23.85'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='14.63,25.87 14.62,32.62 21.37,32.63 21.38,25.88 '  />
+<text  xml:space='preserve'  x='17.80' y='31.75' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='18.00' y1='15.75'  x2='18.00' y2='21.15'  />
+<circle cx='18.00' cy='15.75' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='17.80' y='18.25' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke-width='.7'   stroke='rgb( 127, 127, 127)' x1='20.25' y1='6.75'  x2='22.95' y2='2.07'  />
+<polygon fill='white' stroke='rgb( 127, 127, 127)' points='19.01,2.14 15.64,7.99 21.49,11.36 24.86,5.51 '  />
+<line   stroke-width='.7'   stroke='rgb( 127, 127, 127)' x1='20.25' y1='38.25'  x2='22.95' y2='42.93'  />
+<circle cx='20.25' cy='38.25' r='3.5' fill='white' stroke='rgb( 127, 127, 127)' /> 
+<text   x='39.76' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S</text>  
+<text   x='46.45' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >4</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 67.50 0.00  L 67.50 45.00' />
+<text   x='81.17' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='87.25' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R1</text>  
+<text  style='fill:rgb(0,0,0)'  x='96.15' y='25.80'  font-size='5' stroke-width='0.001'   >1</text>  
+<line  stroke='rgb(0,0,0)'  x1='96.15' y1='26.80'  x2='98.40' y2='26.80' />
+<text  style='fill:rgb(0,0,0)'  x='96.15' y='31.80'  font-size='5' stroke-width='0.001'   >2</text>  
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 112.50 0.00  L 112.50 45.00' />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='135.00' y1='15.75'  x2='135.00' y2='21.15'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='138.37,19.13 138.38,12.38 131.63,12.37 131.62,19.12 '  />
+<text  xml:space='preserve'  x='134.80' y='18.25' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='135.00' y1='29.25'  x2='135.00' y2='23.85'  />
+<circle cx='135.00' cy='29.25' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='134.80' y='31.75' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<text   x='82.20' y='40.50'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >Tulloch</text>  
+<text   x='147.45' y='40.50'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >Tulloch</text>  
+<text   x='148.36' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='154.45' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >L2</text>  
+<text   x='175.07' y='27.00'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >to:</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='200.25' y1='27.00'  x2='201.56' y2='32.24'  />
+<circle cx='200.25' cy='27.00' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='200.05' y='29.50' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='203.85' y1='40.50'  x2='202.54' y2='35.26'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='199.76,38.04 201.39,44.59 207.94,42.96 206.31,36.41 '  />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='200.25' y1='18.00'  x2='201.56' y2='12.76'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='197.79,13.91 196.16,20.46 202.71,22.09 204.34,15.54 '  />
+<text  xml:space='preserve'  x='200.05' y='20.50' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='203.85' y1='4.50'  x2='202.54' y2='9.74'  />
+<circle cx='203.85' cy='4.50' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<path fill='none' stroke='rgb(0,0,0)'   d='M 225.00 0.00  L 225.00 45.00' />
+<text   x='243.90' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >R</text>  
+<text   x='229.74' y='36.00'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >with new partner</text>  
+<text   x='239.45' y='42.75'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >16 bars</text>  
+<text  x='0.00' y='52.00'   font-size='5' stroke-width='0.001'  >RSCDS Book 5.4</text>
+<text  xml:space='preserve'  x='270.00' y='52.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >1C/Any Round the Room.</text>
+  </g> </svg>

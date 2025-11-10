@@ -1,0 +1,61 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       THE HYPERACTIVE REEL
+       8x32 R                        
+       R Stoddard & J Garrett                                                  1990           RSCDS Graded Book 2.23                                                                              
+       Dancedata ID:  8932 
+
+
+       SVG crib 1091  created by Keith Rose  11.05.23   11:03:56           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  73.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   THE HYPERACTIVE REEL    -    8x32 R                           </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='71.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >THE HYPERACTIVE REEL</text>
+<text  x='180.65' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >                                                                 </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >8x32 R</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 63.00 0.00  L 63.00 45.00' />
+<text   x='83.00' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1 2</text>  
+<text   x='84.40' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >P</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 112.50 0.00  L 112.50 45.00' />
+<text   x='129.66' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >2 1 3</text>  
+<text   x='130.61' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >DT</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 162.00 0.00  L 162.00 45.00' />
+<circle cx='234' cy='17.99999' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='243' cy='18.00001' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='245.77' y1='21.55'  x2='249.32' y2='18.78'  />
+<circle cx='243' cy='33.75002' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='234' cy='33.74998' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='231.23' y1='30.20'  x2='227.68' y2='32.97'  />
+<circle cx='189' cy='20.25' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='189' cy='29.25' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='192.18' y1='32.43'  x2='195.36' y2='29.25'  />
+<circle cx='207' cy='29.25' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='207' cy='20.25' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='203.82' y1='17.07'  x2='200.64' y2='20.25'  />
+<circle cx='189.00' cy='40.50' r='1.69' fill='none'
+stroke='rgb(0,0,0)' />
+<circle cx='189.00' cy='40.50' r='0.51' fill='rgb(0,0,0)' stroke='rgb(0,0,0)' />
+<text   x='196.10' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1</text>  
+<text   x='233.75' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >2 3</text>  
+<line   stroke='rgb(0,0,0)' x1='184.50' y1='4.05'  x2='186.30' y2='2.25'  />
+<line   stroke='rgb(0,0,0)' x1='186.30' y1='2.25'  x2='214.20' y2='2.25'  />
+<line   stroke='rgb(0,0,0)' x1='214.20' y1='2.25'  x2='216.00' y2='0.45'  />
+<line   stroke='rgb(0,0,0)' x1='247.50' y1='4.05'  x2='245.70' y2='2.25'  />
+<line   stroke='rgb(0,0,0)' x1='245.70' y1='2.25'  x2='217.80' y2='2.25'  />
+<line   stroke='rgb(0,0,0)' x1='217.80' y1='2.25'  x2='216.00' y2='0.45'  />
+<polyline fill='none' stroke='rgb(0,0,0)' points='22.50,20.25 40.50,20.25 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  38.356  19.262  l  0.744  0.988 -1.489  1.976  3.239 -1.976 -3.239 -1.976  0.744  0.988 '  />
+<polyline fill='none' stroke='rgb(0,0,0)' points='40.50,24.75 22.50,24.75 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  24.644  25.738  l -0.744 -0.988  1.489 -1.976 -3.239  1.976  3.239  1.976 -0.744 -0.988 '  />
+<circle cx='31.50' cy='29.25' r='2.75' fill='white' stroke='white' stroke-width='0.001'  />
+<text   x='29.30' y='31.40'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<text  x='0.00' y='52.00'   font-size='5' stroke-width='0.001'  >R Stoddard &amp; J Garrett, 1990, RSCDS Graded Book 2.23</text>
+<text  xml:space='preserve'  x='270.00' y='52.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >3C/4C longwise set.</text>
+  </g> </svg>

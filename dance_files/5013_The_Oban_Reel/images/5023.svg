@@ -1,0 +1,71 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       THE "OBAN" REEL
+       8x32 R or S                   
+       John S Trew                                                                            Let's All Dance                                                                                     
+       Dancedata ID:  5023 
+
+
+       SVG crib 1469  created by Keith Rose  11.05.23   11:09:00           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  73.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   THE "OBAN" REEL    -    8x32 R or S                      </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='71.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >THE "OBAN" REEL</text>
+<text  x='153.48' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >                                                                 </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >8x32 R or S</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<text   x='40.50' y='16.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<path  fill='none' stroke='rgb(0,0,0)' d='M 22.50 31.50   C 31.05 22.05 45.90 18.90 45.90 13.50 ' />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 45.90 13.50   C 45.90 7.65 36.00 6.75 36.00 13.05 ' />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 36.00 13.05   C 36.00 18.00 49.50 20.70 49.50 31.50 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  31.418  40.915  l  0.172 -1.225  2.450 -0.345 -3.688 -0.893  0.893  3.688  0.172 -1.225 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 49.50 31.50   C 49.95 39.15 37.80 46.80 30.60 38.70 ' />
+<text   x='40.50' y='34.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 22.50 13.50   C 31.05 22.95 45.90 26.10 45.90 31.50 ' />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 45.90 31.50   C 45.90 37.35 36.00 38.25 36.00 31.95 ' />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 36.00 31.95   C 36.00 27.00 49.50 24.30 49.50 13.50 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  32.815   5.482  l -1.225 -0.172 -0.345 -2.450 -0.893  3.688  3.688 -0.893 -1.225 -0.172 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 49.50 13.50   C 49.95 5.85 37.80 -1.80 30.60 6.30 ' />
+<polygon fill='white' stroke='rgb(0,0,0)' points='25.88,10.13 19.13,10.12 19.12,16.87 25.87,16.88 '  />
+<text  xml:space='preserve'  x='22.30' y='16.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<circle cx='22.50' cy='31.50' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='22.30' y='34.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 67.50 0.00  L 67.50 45.00' />
+<text   x='245.00' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >2 1</text>  
+<text   x='94.50' y='16.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<path  fill='none' stroke='rgb(0,0,0)' d='M 112.50 31.50   C 103.95 22.05 89.10 18.90 89.10 13.50 ' />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 89.10 13.50   C 89.10 7.65 99.00 6.75 99.00 13.05 ' />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 99.00 13.05   C 99.00 18.00 85.50 20.70 85.50 31.50 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 102.185  39.518  l  1.225  0.172  0.345  2.450  0.893 -3.688 -3.688  0.893  1.225  0.172 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 85.50 31.50   C 85.05 39.15 97.20 46.80 104.40 38.70 ' />
+<text   x='94.50' y='34.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 112.50 13.50   C 103.95 22.95 89.10 26.10 89.10 31.50 ' />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 89.10 31.50   C 89.10 37.35 99.00 38.25 99.00 31.95 ' />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 99.00 31.95   C 99.00 27.00 85.50 24.30 85.50 13.50 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 103.582   4.085  l -0.172  1.225 -2.450  0.345  3.688  0.893 -0.893 -3.688 -0.172  1.225 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 85.50 13.50   C 85.05 5.85 97.20 -1.80 104.40 6.30 ' />
+<polygon fill='white' stroke='rgb(0,0,0)' points='115.88,10.13 109.13,10.12 109.12,16.87 115.87,16.88 '  />
+<text  xml:space='preserve'  x='112.30' y='16.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<circle cx='112.50' cy='31.50' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='112.30' y='34.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 135.00 0.00  L 135.00 45.00' />
+<text   x='243.11' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >RL</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 227.25 0.00  L 227.25 45.00' />
+<text   x='147.41' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='153.50' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<text   x='166.83' y='30.15'  font-size='7.5' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >1</text>  
+<path fill='none'   style='stroke:rgb(0,0,0)'
+ d='M 164.25 24.75   c 0 -6.30 9.00 -6.30 9.00  0'  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 173.695  22.431  l -0.781  0.960 -2.276 -0.971  2.696  2.670  1.141 -3.618 -0.781  0.960 '  />
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 184.50 0.00  L 184.50 45.00' />
+<text   x='202.01' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='208.10' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >L</text>  
+<text  x='0.00' y='52.00'   font-size='5' stroke-width='0.001'  >John S Trew, Let's All Dance</text>
+<text  xml:space='preserve'  x='270.00' y='52.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >2C/4C longwise set.</text>
+  </g> </svg>

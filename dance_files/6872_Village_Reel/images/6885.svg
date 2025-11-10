@@ -1,0 +1,52 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       VILLAGE REEL
+       8x32 S                        
+       William Campbell                                                        1787           RSCDS Book 20.4                                                                                     
+       Dancedata ID:  6885 
+
+
+       SVG crib 293  created by Keith Rose  11.05.23   09:01:35           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  73.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   VILLAGE REEL    -    8x32 S                           </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='71.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >VILLAGE REEL</text>
+<text  x='155.68' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >                                                                 </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >8x32 S</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<text   x='23.65' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >P</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 54.00 0.00  L 54.00 45.00' />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 146.25 0.00  L 146.25 45.00' />
+<polyline fill='none' stroke='rgb(0,0,0)' points='171.00,18.00 189.00,18.00 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 186.856  17.012  l  0.744  0.988 -1.489  1.976  3.239 -1.976 -3.239 -1.976  0.744  0.988 '  />
+<polyline fill='none' stroke='rgb(0,0,0)' points='189.00,24.75 171.00,24.75 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 173.144  25.738  l -0.744 -0.988  1.489 -1.976 -3.239  1.976  3.239  1.976 -0.744 -0.988 '  />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 213.75 0.00  L 213.75 45.00' />
+<text   x='239.40' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >A</text>  
+<circle cx='180.00' cy='31.50' r='2.75' fill='white' stroke='white' stroke-width='0.001'  />
+<text   x='177.80' y='33.65'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<polyline fill='none'  stroke-width='0.70' stroke='rgb(0,0,0)' points='81.00,15.75 86.73,16.39 88.95,23.70 90.55,25.30 89.91,19.57 82.59,17.34 81.00,15.75 86.73,16.39 88.95,23.70 90.55,25.30 '   />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='81.00' y1='15.75'  x2='84.82' y2='11.93'  />
+<circle cx='81.00' cy='15.75' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='80.80' y='18.25' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='90.45' y1='25.20'  x2='94.27' y2='21.38'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='90.45,20.43 85.68,25.20 90.45,29.97 95.22,25.20 '  />
+<text  xml:space='preserve'  x='90.25' y='27.70' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<path  fill='none' stroke='rgb(0,0,0)' d='M 88.20 18.90   C 105.30 -1.35 121.95 3.60 122.40 13.50 ' />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 122.40 13.50   C 122.85 23.40 105.30 22.05 104.85 31.95 ' />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 104.85 31.95   C 104.40 41.85 121.95 40.50 121.05 32.40 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 102.494  23.488  l -0.744 -0.988  1.489 -1.976 -3.239  1.976  3.239  1.976 -0.744 -0.988 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 121.05 32.40   C 120.15 24.30 109.35 21.15 100.35 22.50 ' />
+<text   x='22.25' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1 2</text>  
+<text   x='238.25' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1 2</text>  
+<text   x='112.50' y='16.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<text   x='112.50' y='34.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<text  x='0.00' y='52.00'   font-size='5' stroke-width='0.001'  >William Campbell, 1787, RSCDS Book 20.4</text>
+<text  xml:space='preserve'  x='270.00' y='52.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >2C/4C longwise set.</text>
+  </g> </svg>

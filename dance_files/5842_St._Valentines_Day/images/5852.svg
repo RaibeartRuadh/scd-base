@@ -1,0 +1,67 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       ST VALENTINE'S DAY
+       8x32 R                        
+       John W Mitchell                                                                        Whetherly Book 10                                                                                   
+       Dancedata ID:  5852 
+
+
+       SVG crib 6449  created by Keith Rose  17.11.23   23:34:44           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  73.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   ST VALENTINE'S DAY    -    8x32 R                           </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='71.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >ST VALENTINE'S DAY</text>
+<text  x='171.71' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >                                                                 </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >8x32 R</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<text   x='16.90' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S</text>  
+<text   x='31.83' y='27.90'  font-size='7.5' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >1</text>  
+<path fill='none'   style='stroke:rgb(0,0,0)'
+ d='M 29.25 22.50   c 0 -6.30 9.00 -6.30 9.00  0'  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  38.695  20.181  l -0.781  0.960 -2.276 -0.971  2.696  2.670  1.141 -3.618 -0.781  0.960 '  />
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 54.00 0.00  L 54.00 45.00' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  79.760   5.325  l -1.108 -0.551  0.448 -2.433 -2.013  3.216  3.781  0.319 -1.108 -0.551 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 72.00 31.50   C 106.65 18.45 90.00 -2.70 77.40 5.40 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  78.876  41.443  l -0.224 -1.217  2.215 -1.102 -3.781  0.319  2.013  3.216 -0.224 -1.217 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 72.00 13.50   C 106.65 26.55 90.00 47.70 77.40 39.60 ' />
+<text   x='85.50' y='16.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<text   x='85.50' y='34.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<polygon fill='white' stroke='rgb(0,0,0)' points='68.62,16.87 75.37,16.88 75.38,10.13 68.63,10.12 '  />
+<text  xml:space='preserve'  x='71.80' y='16.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<circle cx='72.00' cy='31.50' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='71.80' y='34.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 108.00 0.00  L 108.00 45.00' />
+<text   x='124.55' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >2 1</text>  
+<text   x='134.04' y='9.00'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >x</text>  
+<text   x='123.86' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >RL</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 153.00 0.00  L 153.00 45.00' />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='171.00' y1='13.50'  x2='168.30' y2='18.18'  />
+<circle cx='171.00' cy='13.50' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='170.80' y='16.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='171.00' y1='31.50'  x2='174.82' y2='27.68'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='171.00,26.73 166.23,31.50 171.00,36.27 175.77,31.50 '  />
+<text  xml:space='preserve'  x='170.80' y='34.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='202.50' y1='31.50'  x2='205.20' y2='26.82'  />
+<circle cx='202.50' cy='31.50' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='202.30' y='34.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='202.50' y1='13.50'  x2='198.68' y2='17.32'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='202.50,18.27 207.27,13.50 202.50,8.73 197.73,13.50 '  />
+<text  xml:space='preserve'  x='202.30' y='16.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<rect x='179.55' y='20.7' width='9' height='9' stroke='rgb(0,0,0)'  fill='none' />
+<rect x='184.95' y='15.3' width='9' height='9' stroke='rgb(0,0,0)'  fill='none' />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 220.50 0.00  L 220.50 45.00' />
+<line   stroke='rgb(0,0,0)' x1='238.05' y1='22.50'  x2='238.05' y2='29.70'  />
+<line   stroke='rgb(0,0,0)' x1='238.05' y1='29.70'  x2='245.25' y2='29.70'  />
+<line   stroke='rgb(0,0,0)' x1='245.25' y1='15.30'  x2='252.45' y2='15.30'  />
+<line   stroke='rgb(0,0,0)' x1='252.45' y1='15.30'  x2='252.45' y2='22.50'  />
+<line   stroke='rgb(0,0,0)' x1='242.55' y1='22.50'  x2='247.95' y2='22.50'  />
+<line   stroke='rgb(0,0,0)' x1='245.25' y1='25.20'  x2='245.25' y2='19.80'  />
+<text  x='0.00' y='52.00'   font-size='5' stroke-width='0.001'  >John W Mitchell, Whetherly Book 10</text>
+<text  xml:space='preserve'  x='270.00' y='52.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >3C/4C longwise set.</text>
+  </g> </svg>

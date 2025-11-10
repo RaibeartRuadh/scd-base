@@ -1,0 +1,58 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       FIGHT ABOUT THE FIRESIDE
+       8x32 R                        
+       Allan                                                                   c.1880         RSCDS Book 1.10                                                                                     
+       Dancedata ID:  2166 
+
+
+       SVG crib 639  created by Keith Rose  11.05.23   10:42:16           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  73.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   FIGHT ABOUT THE FIRESIDE    -    8x32 R                           </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='71.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >FIGHT ABOUT THE FIRESIDE</text>
+<text  x='188.90' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >                                                                 </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >8x32 R</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 135.00 0.00  L 135.00 45.00' />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 67.50 0.00  L 67.50 45.00' />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 202.50 0.00  L 202.50 45.00' />
+<circle cx='92.25' cy='18' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='92.24999' cy='27' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='95.43' y1='30.18'  x2='98.61' y2='27.00'  />
+<circle cx='112.5' cy='27' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='112.5' cy='18' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='109.32' y1='14.82'  x2='106.14' y2='18.00'  />
+<circle cx='112.50' cy='38.25' r='1.69' fill='none'
+stroke='rgb(0,0,0)' />
+<circle cx='112.50' cy='38.25' r='0.51' fill='rgb(0,0,0)' stroke='rgb(0,0,0)' />
+<text   x='222.01' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S</text>  
+<text   x='228.70' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >2</text>  
+<text   x='230.90' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1</text>  
+<text   x='234.70' y='9.00'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >x</text>  
+<text   x='236.42' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='242.51' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R1</text>  
+<text  style='fill:rgb(0,0,0)'  x='251.40' y='25.80'  font-size='5' stroke-width='0.001'   >1</text>  
+<line  stroke='rgb(0,0,0)'  x1='251.40' y1='26.80'  x2='253.65' y2='26.80' />
+<text  style='fill:rgb(0,0,0)'  x='251.40' y='31.80'  font-size='5' stroke-width='0.001'   >2</text>  
+<polyline fill='none' stroke='rgb(0,0,0)' points='22.50,20.25 40.50,20.25 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  38.356  19.262  l  0.744  0.988 -1.489  1.976  3.239 -1.976 -3.239 -1.976  0.744  0.988 '  />
+<polyline fill='none' stroke='rgb(0,0,0)' points='40.50,24.75 29.25,24.75 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  31.394  25.738  l -0.744 -0.988  1.489 -1.976 -3.239  1.976  3.239  1.976 -0.744 -0.988 '  />
+<circle cx='33.75' cy='29.25' r='2.75' fill='white' stroke='white' stroke-width='0.001'  />
+<text   x='31.55' y='31.40'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<line   stroke='rgb(0,0,0)' x1='154.80' y1='15.30'  x2='160.20' y2='15.30'  />
+<line   stroke='rgb(0,0,0)' x1='154.80' y1='15.30'  x2='154.80' y2='20.70'  />
+<line   stroke='rgb(0,0,0)' x1='175.05' y1='15.30'  x2='180.45' y2='15.30'  />
+<line   stroke='rgb(0,0,0)' x1='180.45' y1='15.30'  x2='180.45' y2='20.70'  />
+<text   x='158.66' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S T</text>  
+<text   x='174.14' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >B</text>  
+<text  x='0.00' y='52.00'   font-size='5' stroke-width='0.001'  >Allan, c.1880, RSCDS Book 1.10</text>
+<text  xml:space='preserve'  x='270.00' y='52.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >3C/4C longwise set.</text>
+  </g> </svg>

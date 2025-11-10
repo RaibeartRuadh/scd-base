@@ -1,6 +1,5 @@
 {% extends "base.html" %}
-[file name]: index.html
-[file content begin]
+
 {% block content %}
 <div class="d-flex justify-content-between align-items-center mb-4">
     <h3 class="mb-0">Все танцы</h1>
@@ -81,22 +80,22 @@
     </div>
 </div>
 
-    <!-- Таблица танцев -->
+    <!-- Таблица танцев с фиксированной шириной столбцов -->
     <div class="card border-0 shadow-sm">
         <div class="table-responsive">
-            <table class="table table-hover mb-0 table-compact">
+            <table class="table table-hover mb-0 table-compact fixed-columns">
                 <thead class="table-dark">
                     <tr>
-                        <th width="40" class="ps-3">
+                        <th width="50" class="ps-3">
                             <input type="checkbox" id="selectAll" onchange="toggleAllCheckboxes()">
                         </th>
-                        <th class="px-2">Название</th>
-                        <th class="px-2">Тип</th>
-                        <th class="px-2">Формат сета</th>
-                        <th class="px-2">Тип сета</th>
-                        <th class="px-2">Размер</th>
-                        <th class="px-2 text-center" width="80"></th>
-                        <th width="140" class="px-2 text-center">Действия</th>
+                        <th width="280">Название</th>
+                        <th width="120">Тип</th>
+                        <th width="130">Формат сета</th>
+                        <th width="130">Тип сета</th>
+                        <th width="100">Размер</th>
+                        <th width="90" class="text-center">Материалы</th>
+                        <th width="140" class="text-center">Действия</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -106,14 +105,15 @@
                             <td class="ps-3">
                                 <input type="checkbox" name="dance_ids" value="{{ dance.id }}" class="dance-checkbox" onchange="updateDeleteButton()">
                             </td>
-                            <td class="px-2">
+                            <td>
                                 <a href="{{ url_for('view_dance', dance_id=dance.id) }}" 
-                                   class="text-decoration-none fw-bold dance-name">
+                                   class="text-decoration-none fw-bold dance-name text-truncate d-block"
+                                   title="{{ dance.name }}">
                                     {{ dance.name }}
                                 </a>
                             </td>
                             <!-- Тип танца -->
-                            <td class="px-2">
+                            <td>
                                 {% if dance.dance_type %}
                                     <span class="badge badge-type 
                                         {% if dance.dance_type.name == 'Reel' %}bg-reel
@@ -134,63 +134,71 @@
                                 {% endif %}
                             </td>
                             <!-- Формат сета -->
-                            <td class="px-2">
+                            <td>
                                 {% if dance.dance_format %}
-                                    <span class="dance-format" style="font-size: var(--format-font-size, 1rem); font-weight: var(--format-font-weight, 500); color: var(--format-color, hsl(0, 0%, 0%));">
+                                    <span class="dance-format text-truncate d-block" title="{{ dance.dance_format.name }}">
                                         {{ dance.dance_format.name }}
                                     </span>
                                 {% else %}
-                                    <span class="dance-format" style="font-size: var(--format-font-size, 1rem); font-weight: var(--format-font-weight, 500); color: var(--format-color, hsl(0, 0%, 0%));">-</span>
+                                    <span class="dance-format">-</span>
                                 {% endif %}
                             </td>
                             <!-- Тип сета -->
-                            <td class="px-2">
+                            <td>
                                 {% if dance.set_type %}
-                                    <span class="dance-set-type" style="font-size: var(--set-type-font-size, 1rem); font-weight: var(--set-type-font-weight, 500); color: var(--set-type-color, hsl(0, 0%, 0%));">
+                                    <span class="dance-set-type text-truncate d-block" title="{{ dance.set_type.name }}">
                                         {{ dance.set_type.name }}
                                     </span>
                                 {% else %}
-                                    <span class="dance-set-type" style="font-size: var(--set-type-font-size, 1rem); font-weight: var(--set-type-font-weight, 500); color: var(--set-type-color, hsl(0, 0%, 0%));">-</span>
+                                    <span class="dance-set-type">-</span>
                                 {% endif %}
                             </td>
-                            <td class="px-2">
+                            <td>
                                 {% if dance.count_id and dance.size_id %}
-                                    <span class="dance-size" style="font-size: var(--size-font-size, 1rem); font-weight: var(--size-font-weight, 500); color: var(--size-color, hsl(0, 0%, 0%)); font-family: var(--size-font-family, inherit);">
+                                    <span class="dance-size">
                                         {{ dance.count_id }}×{{ dance.size_id }}
                                     </span>
                                 {% elif dance.size_id %}
-                                    <span class="dance-size" style="font-size: var(--size-font-size, 1rem); font-weight: var(--size-font-weight, 500); color: var(--size-color, hsl(0, 0%, 0%)); font-family: var(--size-font-family, inherit);">
+                                    <span class="dance-size">
                                         {{ dance.size_id }} тактов
                                     </span>
                                 {% else %}
-                                    <span class="dance-size" style="font-size: var(--size-font-size, 1rem); font-weight: var(--size-font-weight, 500); color: var(--size-color, hsl(0, 0%, 0%)); font-family: var(--size-font-family, inherit);">-</span>
+                                    <span class="dance-size">-</span>
                                 {% endif %}
                             </td>
-                            <td class="px-2 text-center">
-                                <div class="d-flex justify-content-center gap-2">
+                            <td class="text-center">
+                                <div class="d-flex justify-content-center gap-1">
                                     <!-- Иконка короны для RSCDS танцев -->
                                     {% if dance.rscds %}
                                     <img src="{{ url_for('static', filename='img/crown.png') }}" 
                                          alt="RSCDS" 
-                                         class="crown-icon" 
+                                         class="material-icon" 
                                          title="Танец RSCDS"
-                                         style="width: 15px; height: 15px;">
+                                         style="width: 20px; height: 20px; opacity: 0.8;">
                                     {% endif %}
                                     
                                     <!-- Иконка описания (газета) -->
                                     {% if dance.has_any_description %}
-                                    <i class="fas fa-newspaper material-icon" title="Есть описание танца или e-cribs"></i>
+                                    <img src="{{ url_for('static', filename='img/newspaper.png') }}" 
+                                         alt="Описание" 
+                                         class="material-icon" 
+                                         title="Есть описание танца или e-cribs"
+                                         style="width: 20px; height: 20px; opacity: 0.8;">
                                     {% endif %}
                                     
                                     <!-- Иконка файлов (картина) -->
                                     {% set dance_files = get_dance_files(dance.id, dance.name) %}
                                     {% set dance_images = get_dance_images(dance.id, dance.name) %}
                                     {% if dance_files or dance_images %}
-                                    <i class="fas fa-image material-icon" title="Есть дополнительные материалы"></i>
+                                    <img src="{{ url_for('static', filename='img/image.png') }}" 
+                                         alt="Файлы" 
+                                         class="material-icon" 
+                                         title="Есть дополнительные материалы"
+                                         style="width: 23px; height: 20px; opacity: 0.8;">
                                     {% endif %}
                                 </div>
                             </td>
-                            <td class="px-2 text-center">
+                            <td class="text-center">
                                 <div class="btn-group btn-group-sm" role="group">
                                     <!-- Файлы - папка -->
                                     <a href="{{ url_for('dance_files', dance_id=dance.id) }}" 
@@ -495,31 +503,86 @@ function resetAllSaturation() {
 </script>
 
 <style>
+/* ===== ФИКСИРОВАННАЯ ШИРИНА СТОЛБЦОВ ===== */
+.table-compact.fixed-columns {
+    table-layout: fixed;
+    width: 100%;
+}
+
+/* Принудительная установка ширины для всех столбцов */
+.table-compact.fixed-columns th:nth-child(1),
+.table-compact.fixed-columns td:nth-child(1) {
+    width: 50px;
+    min-width: 50px;
+    max-width: 50px;
+}
+
+.table-compact.fixed-columns th:nth-child(2),
+.table-compact.fixed-columns td:nth-child(2) {
+    width: 280px;
+    min-width: 280px;
+    max-width: 280px;
+}
+
+.table-compact.fixed-columns th:nth-child(3),
+.table-compact.fixed-columns td:nth-child(3) {
+    width: 120px;
+    min-width: 120px;
+    max-width: 120px;
+}
+
+.table-compact.fixed-columns th:nth-child(4),
+.table-compact.fixed-columns td:nth-child(4) {
+    width: 130px;
+    min-width: 130px;
+    max-width: 130px;
+}
+
+.table-compact.fixed-columns th:nth-child(5),
+.table-compact.fixed-columns td:nth-child(5) {
+    width: 130px;
+    min-width: 130px;
+    max-width: 130px;
+}
+
+.table-compact.fixed-columns th:nth-child(6),
+.table-compact.fixed-columns td:nth-child(6) {
+    width: 100px;
+    min-width: 100px;
+    max-width: 100px;
+}
+
+.table-compact.fixed-columns th:nth-child(7),
+.table-compact.fixed-columns td:nth-child(7) {
+    width: 90px;
+    min-width: 90px;
+    max-width: 90px;
+}
+
+.table-compact.fixed-columns th:nth-child(8),
+.table-compact.fixed-columns td:nth-child(8) {
+    width: 140px;
+    min-width: 140px;
+    max-width: 140px;
+}
+
+/* Обрезка длинного текста */
+.table-compact.fixed-columns td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 /* ===== СТИЛИ ДЛЯ ИКОНОК МАТЕРИАЛОВ ===== */
 .material-icon {
-    font-size: 1rem;
     cursor: default;
     transition: all 0.2s ease;
-    opacity: 1;
+    opacity: 0.8;
 }
 
 .material-icon:hover {
     opacity: 1;
     transform: scale(1.1);
-}
-
-/* ===== СТИЛИ ДЛЯ ИКОНКИ КОРОНЫ ===== */
-.crown-icon {
-    cursor: default;
-    transition: all 0.2s ease;
-    opacity: 1;
-    filter: brightness(1);
-}
-
-.crown-icon:hover {
-    opacity: 1;
-    transform: scale(1.1);
-    filter: brightness(1.1);
 }
 
 /* ===== ВЫРАВНИВАНИЕ ПО ЦЕНТРУ ===== */
@@ -528,52 +591,116 @@ function resetAllSaturation() {
 }
 
 /* ===== КОМПАКТНЫЕ ОТСТУПЫ ДЛЯ ГРУППЫ ИКОНОК ===== */
-.d-flex.gap-2 {
-    gap: 0.5rem !important;
+.d-flex.gap-1 {
+    gap: 0.2rem !important;
 }
 
 /* ===== ОСНОВНЫЕ СТИЛИ ТАБЛИЦЫ ===== */
 .table-compact td {
-    padding: 5px 5px;
-    font-size: 1rem;
+    padding: 4px 6px;
+    font-size: 0.8rem;
     vertical-align: middle;
-    height: 10px;
+    height: 32px;
 }
 
 .table-compact th {
-    padding: 10px;
-    font-size: 1rem;
+    padding: 8px 6px;
+    font-size: 0.75rem;
     vertical-align: middle;
+    font-weight: 600;
 }
 
 /* ===== СТИЛИ ДЛЯ НАЗВАНИЯ ТАНЦА ===== */
 .dance-name {
     font-weight: 600 !important;
-    color: hwb(0 0% 100%) !important;
-    font-size: 1rem;
+    color: var(--primary-color) !important;
+    font-size: 0.85rem;
     line-height: 1.2;
 }
 
 .dance-name:hover {
-    color: #0014c5 !important;
+    color: #0a58ca !important;
     text-decoration: underline !important;
 }
 
 /* ===== СТИЛИ ДЛЯ БЕЙДЖЕЙ ТИПОВ ТАНЦЕВ ===== */
 .badge-type {
-    font-size: 1rem;
-    padding: 0.25rem 0.5rem;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.4rem;
     vertical-align: middle;
     display: inline-block;
     line-height: 1;
+    font-weight: 600;
+    min-width: 70px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+/* Бледные цвета для типов танцев */
+.bg-reel {
+    background-color: var(--reel-color) !important;
+    color: var(--reel-text) !important;
+}
+
+.bg-jig {
+    background-color: var(--jig-color) !important;
+    color: var(--jig-text) !important;
+}
+
+.bg-strathspey {
+    background-color: var(--strathspey-color) !important;
+    color: var(--strathspey-text) !important;
+}
+
+.bg-medley {
+    background-color: var(--medley-color) !important;
+    color: var(--medley-text) !important;
+}
+
+.bg-polka {
+    background-color: var(--polka-color) !important;
+    color: var(--polka-text) !important;
+}
+
+.bg-march {
+    background-color: var(--march-color) !important;
+    color: var(--march-text) !important;
+}
+
+.bg-waltz {
+    background-color: var(--waltz-color) !important;
+    color: var(--waltz-text) !important;
+}
+
+.bg-hornpipe {
+    background-color: var(--hornpipe-color) !important;
+    color: var(--hornpipe-text) !important;
+}
+
+.bg-quadrille {
+    background-color: var(--quadrille-color) !important;
+    color: var(--quadrille-text) !important;
+}
+
+.bg-minuet {
+    background-color: var(--minuet-color) !important;
+    color: var(--minuet-text) !important;
 }
 
 /* ===== СТИЛИ ДЛЯ РАЗМЕРА ТАНЦА ===== */
 .dance-size {
-    font-size: 1rem;
+    font-size: 0.75rem;
     vertical-align: middle;
     display: inline-block;
     line-height: 1;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.dance-format, .dance-set-type {
+    font-size: 0.75rem;
+    color: #6c757d;
+    font-weight: 500;
 }
 
 /* ===== СТИЛИ ДЛЯ КНОПОК-ИКОНОК ===== */
@@ -616,6 +743,43 @@ function resetAllSaturation() {
     width: auto;
     margin-left: auto;
 }
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 991.98px) {
+    .col-lg-3 {
+        margin-bottom: 1.5rem;
+    }
+    
+    .table-compact td,
+    .table-compact th {
+        padding: 4px 3px;
+        font-size: 0.75rem;
+    }
+    
+    .dance-name {
+        font-size: 0.8rem;
+    }
+    
+    .badge-type {
+        font-size: 0.65rem;
+        padding: 0.15rem 0.3rem;
+        min-width: 65px;
+    }
+
+    .material-icon {
+        width: 12px !important;
+        height: 12px !important;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .form-select[multiple] {
+        min-height: 60px;
+    }
+}
 </style>
 {% endblock %}
-[file content end]

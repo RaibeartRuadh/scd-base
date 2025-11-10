@@ -1,0 +1,58 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       TULLOCH GORM
+       8x32 S                        
+       William Campbell                                                        1790           RSCDS Book 8.1                                                                                      
+       Dancedata ID:  6763 
+
+
+       SVG crib 1531  created by Keith Rose  11.05.23   11:09:50           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  73.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   TULLOCH GORM    -    8x32 S                           </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='71.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >TULLOCH GORM</text>
+<text  x='160.02' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >                                                                 </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >8x32 S</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<circle cx='40.5' cy='13.5' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='31.5' cy='13.5' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='28.73' y1='9.95'  x2='25.18' y2='12.72'  />
+<circle cx='31.5' cy='31.49999' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='40.5' cy='31.50001' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='34.68' y1='28.32'  x2='31.50' y2='25.14'  />
+<circle cx='18.00' cy='13.50' r='1.69' fill='none'
+stroke='rgb(0,0,0)' />
+<circle cx='18.00' cy='13.50' r='0.51' fill='rgb(0,0,0)' stroke='rgb(0,0,0)' />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 96.75 0.00  L 96.75 45.00' />
+<circle cx='135' cy='13.5' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='126' cy='13.5' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='123.23' y1='9.95'  x2='119.68' y2='12.72'  />
+<circle cx='135' cy='31.50002' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='126' cy='31.49998' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='123.23' y1='27.95'  x2='119.68' y2='30.72'  />
+<circle cx='112.50' cy='31.50' r='1.69' fill='none'
+stroke='rgb(0,0,0)' />
+<circle cx='112.50' cy='31.50' r='0.51' fill='rgb(0,0,0)' stroke='rgb(0,0,0)' />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 157.50 0.00  L 157.50 45.00' />
+<polyline fill='none' stroke='rgb(0,0,0)' points='177.75,20.25 195.75,20.25 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 193.606  19.262  l  0.744  0.988 -1.489  1.976  3.239 -1.976 -3.239 -1.976  0.744  0.988 '  />
+<polyline fill='none' stroke='rgb(0,0,0)' points='195.75,24.75 177.75,24.75 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 179.894  25.738  l -0.744 -0.988  1.489 -1.976 -3.239  1.976  3.239  1.976 -0.744 -0.988 '  />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 216.00 0.00  L 216.00 45.00' />
+<text   x='238.25' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1 2</text>  
+<text   x='239.40' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >A</text>  
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  69.194  32.488  l -0.744 -0.988  1.489 -1.976 -3.239  1.976  3.239  1.976 -0.744 -0.988 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 76.05 13.95   C 76.05 25.20 74.70 31.50 67.05 31.50 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  60.707  14.976  l  1.217 -0.224  1.102  2.215 -0.319 -3.781 -3.216  2.013  1.217 -0.224 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 63.00 31.50   C 60.30 27.45 60.30 18.45 62.55 13.50 ' />
+<circle cx='186.75' cy='29.25' r='2.75' fill='white' stroke='white' stroke-width='0.001'  />
+<text   x='184.55' y='31.40'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<text  x='0.00' y='52.00'   font-size='5' stroke-width='0.001'  >William Campbell, 1790, RSCDS Book 8.1</text>
+<text  xml:space='preserve'  x='270.00' y='52.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >3C/4C longwise set.</text>
+  </g> </svg>

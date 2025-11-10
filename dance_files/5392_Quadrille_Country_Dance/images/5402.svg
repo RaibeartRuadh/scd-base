@@ -1,0 +1,59 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       QUADRILLE COUNTRY DANCE
+       8x32 R                        
+                                                                                              RSCDS MMM (67)                                                                                      
+       Dancedata ID:  5402 
+
+
+       SVG crib 367  created by Keith Rose  11.05.23   09:02:17           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  73.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   QUADRILLE COUNTRY DANCE    -    8x32 R                           </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='71.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >QUADRILLE COUNTRY DANCE</text>
+<text  x='193.29' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >                                                                 </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >8x32 R</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<polyline fill='none'  stroke-width='0.70' stroke='rgb(0,0,0)' points='22.50,15.75 22.50,29.25 '   />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='22.50' y1='15.75'  x2='27.90' y2='15.75'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='25.88,12.38 19.13,12.37 19.12,19.12 25.87,19.13 '  />
+<text  xml:space='preserve'  x='22.30' y='18.25' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='22.50' y1='29.25'  x2='27.90' y2='29.25'  />
+<circle cx='22.50' cy='29.25' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='22.30' y='31.75' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<polyline fill='none' stroke='rgb(0,0,0)' points='36.00,20.25 49.50,20.25 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  47.356  19.262  l  0.744  0.988 -1.489  1.976  3.239 -1.976 -3.239 -1.976  0.744  0.988 '  />
+<polyline fill='none' stroke='rgb(0,0,0)' points='49.50,24.75 36.00,24.75 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  38.144  25.738  l -0.744 -0.988  1.489 -1.976 -3.239  1.976  3.239  1.976 -0.744 -0.988 '  />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 67.50 0.00  L 67.50 45.00' />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='90.00' y1='11.25'  x2='95.40' y2='11.25'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='93.38,7.88 86.63,7.87 86.62,14.62 93.37,14.63 '  />
+<text  xml:space='preserve'  x='89.80' y='13.75' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='90.00' y1='33.75'  x2='95.40' y2='33.75'  />
+<circle cx='90.00' cy='33.75' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='89.80' y='36.25' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<text   x='98.25' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S</text>  
+<text   x='104.95' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >2</text>  
+<text   x='111.61' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='117.70' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >B</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='126.00' y1='11.25'  x2='120.60' y2='11.25'  />
+<circle cx='126.00' cy='11.25' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='125.80' y='13.75' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='126.00' y1='33.75'  x2='120.60' y2='33.75'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='122.62,37.12 129.37,37.13 129.38,30.38 122.63,30.37 '  />
+<text  xml:space='preserve'  x='125.80' y='36.25' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 148.50 0.00  L 148.50 45.00' />
+<rect x='172.8' y='15.3' width='9' height='9' stroke='rgb(0,0,0)'  fill='none' />
+<rect x='178.2' y='20.7' width='9' height='9' stroke='rgb(0,0,0)'  fill='none' />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 211.50 0.00  L 211.50 45.00' />
+<text   x='235.15' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >P</text>  
+<text   x='233.75' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1 2</text>  
+<text  x='0.00' y='52.00'   font-size='5' stroke-width='0.001'  >RSCDS MMM (67)</text>
+<text  xml:space='preserve'  x='270.00' y='52.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >2C/4C longwise set.</text>
+  </g> </svg>

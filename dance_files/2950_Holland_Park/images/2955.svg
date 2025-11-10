@@ -1,0 +1,67 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       HOLLAND PARK
+       8x32 J                        
+       Alex Westwood                                                           1981           Let's All Dance                                                                                     
+       Dancedata ID:  2955 
+
+
+       SVG crib 3389  created by Keith Rose  11.05.23   12:55:27           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  73.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   HOLLAND PARK    -    8x32 J                           </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='71.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >HOLLAND PARK</text>
+<text  x='159.73' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >                                                                 </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >8x32 J</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<text   x='17.75' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1 2</text>  
+<circle cx='22.50' cy='24.75' r='6.75' fill='white' 
+ stroke='rgb(0,0,0)' />
+<text   x='20.40' y='27.45'  font-size='7.5' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >4</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 45.00 0.00  L 45.00 45.00' />
+<text   x='62.75' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1 2</text>  
+<text   x='60.31' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >RA</text>  
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 90.00 0.00  L 90.00 45.00' />
+<text   x='107.75' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1 2</text>  
+<text   x='105.86' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >LA</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 135.00 0.00  L 135.00 45.00' />
+<polyline fill='none' stroke='rgb(0,0,0)' points='148.50,20.25 166.50,20.25 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 164.356  19.262  l  0.744  0.988 -1.489  1.976  3.239 -1.976 -3.239 -1.976  0.744  0.988 '  />
+<polyline fill='none' stroke='rgb(0,0,0)' points='166.50,24.75 155.25,24.75 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 157.394  25.738  l -0.744 -0.988  1.489 -1.976 -3.239  1.976  3.239  1.976 -0.744 -0.988 '  />
+<circle cx='157.50' cy='29.25' r='2.75' fill='white' stroke='white' stroke-width='0.001'  />
+<text   x='155.30' y='31.40'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 180.00 0.00  L 180.00 45.00' />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='198.00' y1='22.50'  x2='195.30' y2='27.18'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='199.24,27.11 202.61,21.26 196.76,17.89 193.39,23.74 '  />
+<text  xml:space='preserve'  x='197.80' y='25.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='198.00' y1='9.00'  x2='200.70' y2='13.68'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='202.61,10.24 199.24,4.39 193.39,7.76 196.76,13.61 '  />
+<text  xml:space='preserve'  x='197.80' y='11.50' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='198.00' y1='36.00'  x2='200.70' y2='31.32'  />
+<circle cx='198.00' cy='36.00' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='197.80' y='38.50' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<circle cx='216' cy='18' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='216' cy='27' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='219.18' y1='21.18'  x2='222.36' y2='18.00'  />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='252.00' y1='22.50'  x2='254.70' y2='17.82'  />
+<circle cx='252.00' cy='22.50' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='251.80' y='25.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='252.00' y1='36.00'  x2='249.30' y2='31.32'  />
+<circle cx='252.00' cy='36.00' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='251.80' y='38.50' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='252.00' y1='9.00'  x2='249.30' y2='13.68'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='253.24,13.61 256.61,7.76 250.76,4.39 247.39,10.24 '  />
+<text  xml:space='preserve'  x='251.80' y='11.50' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<circle cx='234' cy='27' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='234' cy='18' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='230.82' y1='23.82'  x2='227.64' y2='27.00'  />
+<text  x='0.00' y='52.00'   font-size='5' stroke-width='0.001'  >Alex Westwood, 1981, Let's All Dance</text>
+<text  xml:space='preserve'  x='270.00' y='52.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >3C/4C longwise set.</text>
+  </g> </svg>

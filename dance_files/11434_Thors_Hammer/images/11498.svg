@@ -1,0 +1,66 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       THOR'S HAMMER
+       8x32 J                        
+       Sue McKinnell                                                           2002           Sue McKinnell's SCD                                                                                 
+       Dancedata ID:  11498 
+
+
+       SVG crib 1477  created by Keith Rose  11.05.23   11:09:07           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  73.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   THOR'S HAMMER    -    8x32 J                           </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='71.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >THOR'S HAMMER</text>
+<text  x='162.47' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >                                                                 </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >8x32 J</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<text   x='27.00' y='34.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<text   x='45.00' y='34.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 27.00 13.50   C 35.55 26.10 40.05 35.55 44.55 36.00 ' />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 44.55 36.00   C 51.75 36.00 51.30 26.55 44.55 27.00 ' />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 44.55 27.00   C 37.80 26.10 37.80 40.50 26.55 40.05 ' />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 117.00 31.50   C 108.45 18.90 103.95 9.45 99.45 9.00 ' />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 99.45 9.00   C 92.25 9.00 92.70 18.45 99.45 18.00 ' />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 99.45 18.00   C 106.20 18.90 106.20 4.50 117.45 4.95 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  19.385  18.368  l  1.225  0.172  0.345  2.450  0.893 -3.688 -3.688  0.893  1.225  0.172 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 26.55 40.05   C 14.40 39.60 11.25 27.45 21.60 17.55 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 124.615  26.632  l -1.225 -0.172 -0.345 -2.450 -0.893  3.688  3.688 -0.893 -1.225 -0.172 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 117.45 4.95   C 129.60 5.40 132.75 17.55 122.40 27.45 ' />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 45.00 13.50   C 36.45 26.10 31.95 35.55 27.45 36.00 ' />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 27.45 36.00   C 20.25 36.00 20.70 26.55 27.45 27.00 ' />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 27.45 27.00   C 34.20 26.10 34.20 40.50 45.45 40.05 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  51.218  19.765  l  0.172 -1.225  2.450 -0.345 -3.688 -0.893  0.893  3.688  0.172 -1.225 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 45.45 40.05   C 57.60 39.60 60.75 27.45 50.40 17.55 ' />
+<text   x='99.00' y='16.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<text   x='117.00' y='16.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<path  fill='none' stroke='rgb(0,0,0)' d='M 99.00 31.50   C 107.55 18.90 112.05 9.45 116.55 9.00 ' />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 116.55 9.00   C 123.75 9.00 123.30 18.45 116.55 18.00 ' />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 116.55 18.00   C 109.80 18.90 109.80 4.50 98.55 4.95 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  92.782  25.235  l -0.172  1.225 -2.450  0.345  3.688  0.893 -0.893 -3.688 -0.172  1.225 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 98.55 4.95   C 86.40 5.40 83.25 17.55 93.60 27.45 ' />
+<polygon fill='white' stroke='rgb(0,0,0)' points='30.38,10.13 23.63,10.12 23.62,16.87 30.37,16.88 '  />
+<text  xml:space='preserve'  x='26.80' y='16.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<polygon fill='white' stroke='rgb(0,0,0)' points='48.38,10.13 41.63,10.12 41.62,16.87 48.37,16.88 '  />
+<text  xml:space='preserve'  x='44.80' y='16.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<circle cx='99.00' cy='31.50' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='98.80' y='34.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<circle cx='117.00' cy='31.50' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='116.80' y='34.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 72.00 0.00  L 72.00 45.00' />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 144.00 0.00  L 144.00 45.00' />
+<polyline fill='none' stroke='rgb(0,0,0)' points='166.50,20.25 184.50,20.25 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 182.356  19.262  l  0.744  0.988 -1.489  1.976  3.239 -1.976 -3.239 -1.976  0.744  0.988 '  />
+<polyline fill='none' stroke='rgb(0,0,0)' points='184.50,24.75 166.50,24.75 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 168.644  25.738  l -0.744 -0.988  1.489 -1.976 -3.239  1.976  3.239  1.976 -0.744 -0.988 '  />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 207.00 0.00  L 207.00 45.00' />
+<text   x='233.75' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1 2</text>  
+<text   x='234.90' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >A</text>  
+<text  x='0.00' y='52.00'   font-size='5' stroke-width='0.001'  >Sue McKinnell, 2002, Sue McKinnell's SCD</text>
+<text  xml:space='preserve'  x='270.00' y='52.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >2C/4C longwise set.</text>
+  </g> </svg>

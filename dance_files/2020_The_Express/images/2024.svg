@@ -1,0 +1,76 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       THE EXPRESS
+       8x40 J                        
+       Button and Whittaker                                                    1814           RSCDS Book 20.11                                                                                    
+       Dancedata ID:  2024 
+
+
+       SVG crib 1644  created by Keith Rose  11.05.23   11:11:23           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  73.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   THE EXPRESS    -    8x40 J                           </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='71.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >THE EXPRESS</text>
+<text  x='154.88' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >                                                                 </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >8x40 J</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<circle cx='29.25' cy='13.5' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='20.25' cy='13.5' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='23.43' y1='16.68'  x2='20.25' y2='19.86'  />
+<circle cx='20.25' cy='31.49999' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='29.25' cy='31.50001' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='23.43' y1='28.32'  x2='20.25' y2='25.14'  />
+<circle cx='24.75' cy='4.50' r='1.69' fill='none'
+stroke='rgb(0,0,0)' />
+<circle cx='24.75' cy='4.50' r='0.51' fill='rgb(0,0,0)' stroke='rgb(0,0,0)' />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 49.50 0.00  L 49.50 45.00' />
+<circle cx='69.75' cy='31.49999' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='78.75' cy='31.50001' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='72.93' y1='28.32'  x2='69.75' y2='25.14'  />
+<circle cx='78.75' cy='13.5' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='69.75' cy='13.5' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='72.93' y1='16.68'  x2='69.75' y2='19.86'  />
+<circle cx='74.25' cy='40.50' r='1.69' fill='none'
+stroke='rgb(0,0,0)' />
+<circle cx='74.25' cy='40.50' r='0.51' fill='rgb(0,0,0)' stroke='rgb(0,0,0)' />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 99.00 0.00  L 99.00 45.00' />
+<polyline fill='none' stroke='rgb(0,0,0)' points='114.75,20.25 132.75,20.25 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 130.606  19.262  l  0.744  0.988 -1.489  1.976  3.239 -1.976 -3.239 -1.976  0.744  0.988 '  />
+<polyline fill='none' stroke='rgb(0,0,0)' points='132.75,24.75 114.75,24.75 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 116.894  25.738  l -0.744 -0.988  1.489 -1.976 -3.239  1.976  3.239  1.976 -0.744 -0.988 '  />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 148.50 0.00  L 148.50 45.00' />
+<text   x='164.00' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1 2</text>  
+<text   x='165.15' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >A</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 189.00 0.00  L 189.00 45.00' />
+<polyline fill='none'  stroke-width='0.70' stroke='rgb(0,0,0)' points='211.50,36.00 220.50,27.00 229.50,36.00 '   />
+<polyline fill='none'  stroke-width='0.70' stroke='rgb(0,0,0)' points='211.50,9.00 220.50,18.00 229.50,9.00 '   />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='211.50' y1='36.00'  x2='211.50' y2='30.60'  />
+<circle cx='211.50' cy='36.00' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='211.30' y='38.50' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='229.50' y1='36.00'  x2='229.50' y2='30.60'  />
+<circle cx='229.50' cy='36.00' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='229.30' y='38.50' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='220.50' y1='27.00'  x2='220.50' y2='32.40'  />
+<circle cx='220.50' cy='27.00' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='220.30' y='29.50' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='211.50' y1='9.00'  x2='211.50' y2='14.40'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='214.87,12.38 214.88,5.63 208.13,5.62 208.12,12.37 '  />
+<text  xml:space='preserve'  x='211.30' y='11.50' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='220.50' y1='18.00'  x2='220.50' y2='12.60'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='217.13,14.62 217.12,21.37 223.87,21.38 223.88,14.63 '  />
+<text  xml:space='preserve'  x='220.30' y='20.50' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='229.50' y1='9.00'  x2='229.50' y2='14.40'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='232.87,12.38 232.88,5.63 226.13,5.62 226.12,12.37 '  />
+<text  xml:space='preserve'  x='229.30' y='11.50' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<text   x='238.61' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >DT</text>  
+<circle cx='123.75' cy='29.25' r='2.75' fill='white' stroke='white' stroke-width='0.001'  />
+<text   x='121.55' y='31.40'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<text  x='0.00' y='52.00'   font-size='5' stroke-width='0.001'  >Button and Whittaker, 1814, RSCDS Book 20.11</text>
+<text  xml:space='preserve'  x='270.00' y='52.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >3C/4C longwise set.</text>
+  </g> </svg>

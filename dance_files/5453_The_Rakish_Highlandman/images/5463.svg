@@ -1,0 +1,56 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       THE RAKISH HIGHLANDMAN
+       8x40 J                        
+       Thomas Wilson                                                           1816           RSCDS Book 19.6                                                                                     
+       Dancedata ID:  5463 
+
+
+       SVG crib 726  created by Keith Rose  11.05.23   10:43:12           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  73.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   THE RAKISH HIGHLANDMAN    -    8x40 J                           </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='71.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >THE RAKISH HIGHLANDMAN</text>
+<text  x='189.35' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >                                                                 </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >8x40 J</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<circle cx='29.25' cy='13.5' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='20.25' cy='13.5' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='17.48' y1='9.95'  x2='13.93' y2='12.72'  />
+<circle cx='29.25' cy='31.5' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='20.25' cy='31.5' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='17.48' y1='27.95'  x2='13.93' y2='30.72'  />
+<circle cx='24.75' cy='40.50' r='1.69' fill='none'
+stroke='rgb(0,0,0)' />
+<circle cx='24.75' cy='40.50' r='0.51' fill='rgb(0,0,0)' stroke='rgb(0,0,0)' />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 49.50 0.00  L 49.50 45.00' />
+<polyline fill='none' stroke='rgb(0,0,0)' points='49.50,36.00 49.50,36.00 '   />
+<polyline fill='none' stroke='rgb(0,0,0)' points='65.25,20.25 83.25,20.25 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  81.106  19.262  l  0.744  0.988 -1.489  1.976  3.239 -1.976 -3.239 -1.976  0.744  0.988 '  />
+<polyline fill='none' stroke='rgb(0,0,0)' points='83.25,27.00 65.25,27.00 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  67.394  27.988  l -0.744 -0.988  1.489 -1.976 -3.239  1.976  3.239  1.976 -0.744 -0.988 '  />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 99.00 0.00  L 99.00 45.00' />
+<text   x='120.15' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >A</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 148.50 0.00  L 148.50 45.00' />
+<line   stroke='rgb(0,0,0)' x1='162.90' y1='22.50'  x2='162.90' y2='30.60'  />
+<line   stroke='rgb(0,0,0)' x1='162.90' y1='30.60'  x2='171.00' y2='30.60'  />
+<line   stroke='rgb(0,0,0)' x1='171.00' y1='14.40'  x2='179.10' y2='14.40'  />
+<line   stroke='rgb(0,0,0)' x1='179.10' y1='14.40'  x2='179.10' y2='22.50'  />
+<line   stroke='rgb(0,0,0)' x1='167.96' y1='22.50'  x2='174.04' y2='22.50'  />
+<line   stroke='rgb(0,0,0)' x1='171.00' y1='25.54'  x2='171.00' y2='19.46'  />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 218.25 0.00  L 218.25 45.00' />
+<text   x='238.61' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >DT</text>  
+<text   x='119.00' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1 2</text>  
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 203.938  27.106  l -0.988  0.744 -1.976 -1.489  1.976  3.239  1.976 -3.239 -0.988  0.744 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 198.45 13.50   C 202.50 16.65 202.95 21.60 202.95 29.25 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 192.062  13.394  l  0.988 -0.744  1.976  1.489 -1.976 -3.239 -1.976  3.239  0.988 -0.744 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 197.55 27.00   C 193.50 23.85 193.05 18.90 193.05 11.25 ' />
+<text  x='0.00' y='52.00'   font-size='5' stroke-width='0.001'  >Thomas Wilson, 1816, RSCDS Book 19.6</text>
+<text  xml:space='preserve'  x='270.00' y='52.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >3C/4C longwise set.</text>
+  </g> </svg>

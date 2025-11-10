@@ -1,0 +1,82 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       THE FERRYBOAT
+       32 J or R                     
+       Carolyn Hunt                                                            1989           Let's All Dance                                                                                     
+       Dancedata ID:  2129 
+
+
+       SVG crib 3654  created by Keith Rose  11.05.23   12:59:21           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  73.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   THE FERRYBOAT    -    32 J or R                        </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='71.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >THE FERRYBOAT</text>
+<text  x='156.53' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >                                                                 </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >32 J or R</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<polyline fill='none'  stroke-width='0.70' stroke='rgb(0,0,0)' points='15.75,5.40 13.50,16.65 '   />
+<polyline fill='none'  stroke-width='0.70' stroke='rgb(0,0,0)' points='15.75,39.15 20.25,43.65 '   />
+<polyline fill='none'  stroke-width='0.70' stroke='rgb(0,0,0)' points='15.75,39.15 13.50,27.90 '   />
+<polyline fill='none'  stroke-width='0.70' stroke='rgb(0,0,0)' points='13.50,16.65 13.50,30.15 '   />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='13.50' y1='16.65'  x2='18.80' y2='17.68'  />
+<circle cx='13.50' cy='16.65' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='13.30' y='19.15' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='13.50' y1='27.90'  x2='18.89' y2='27.52'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='16.63,24.30 9.90,24.77 10.37,31.50 17.10,31.03 '  />
+<text  xml:space='preserve'  x='13.30' y='30.40' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='15.75' y1='39.15'  x2='20.97' y2='37.75'  />
+<circle cx='15.75' cy='39.15' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<polyline fill='none'  stroke-width='0.70' stroke='rgb(0,0,0)' points='15.75,5.40 20.25,0.90 '   />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='15.75' y1='5.40'  x2='20.97' y2='6.80'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='19.88,3.01 13.36,1.27 11.62,7.79 18.14,9.53 '  />
+<circle cx='42.75' cy='9.00' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<line   stroke='rgb(0,0,0)' x1='37.35' y1='24.75'  x2='48.15' y2='24.75'  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  46.006  23.762  l  0.744  0.988 -1.489  1.976  3.239 -1.976 -3.239 -1.976  0.744  0.988 '  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  39.494  25.738  l -0.744 -0.988  1.489 -1.976 -3.239  1.976  3.239  1.976 -0.744 -0.988 '  />
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 58.50 0.00  L 58.50 45.00' />
+<text   x='68.00' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >ALL</text>  
+<circle cx='74.25' cy='24.75' r='6.75' fill='white' 
+ stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='67.50' y1='24.75'  x2='67.50' y2='31.50'  />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 90.00 0.00  L 90.00 45.00' />
+<polygon fill='white' stroke='rgb(0,0,0)' points='109.13,5.63 102.38,5.62 102.37,12.37 109.12,12.38 '  />
+<line   stroke='rgb(0,0,0)' x1='100.35' y1='24.75'  x2='111.15' y2='24.75'  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 109.006  23.762  l  0.744  0.988 -1.489  1.976  3.239 -1.976 -3.239 -1.976  0.744  0.988 '  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 102.494  25.738  l -0.744 -0.988  1.489 -1.976 -3.239  1.976  3.239  1.976 -0.744 -0.988 '  />
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 121.50 0.00  L 121.50 45.00' />
+<text   x='131.01' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >ALL</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 153.00 0.00  L 153.00 45.00' />
+<circle cx='137.25' cy='24.75' r='6.75' fill='white' 
+ stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='144.00' y1='24.75'  x2='144.00' y2='31.50'  />
+<text   x='157.47' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >CHAIN</text>  
+<text   x='161.17' y='40.50'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >2 bars/hand</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 193.50 0.00  L 193.50 45.00' />
+<polyline fill='none'  stroke-width='0.70' stroke='rgb(0,0,0)' points='204.75,13.50 202.50,22.50 204.75,31.50 207.00,22.50 204.75,13.50 '   />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='204.75' y1='29.25'  x2='204.75' y2='23.85'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='201.38,25.87 201.37,32.62 208.12,32.63 208.13,25.88 '  />
+<text  xml:space='preserve'  x='204.55' y='31.75' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >5</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='204.75' y1='15.75'  x2='204.75' y2='21.15'  />
+<circle cx='204.75' cy='15.75' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='204.55' y='18.25' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke='rgb(0,0,0)' x1='212.85' y1='22.50'  x2='223.65' y2='22.50'  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 221.506  21.512  l  0.744  0.988 -1.489  1.976  3.239 -1.976 -3.239 -1.976  0.744  0.988 '  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 214.994  23.488  l -0.744 -0.988  1.489 -1.976 -3.239  1.976  3.239  1.976 -0.744 -0.988 '  />
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 229.50 0.00  L 229.50 45.00' />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='240.75' y1='15.75'  x2='240.75' y2='21.15'  />
+<circle cx='240.75' cy='15.75' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='240.55' y='18.25' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='240.75' y1='29.25'  x2='240.75' y2='23.85'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='237.38,25.87 237.38,32.62 244.12,32.63 244.13,25.88 '  />
+<text  xml:space='preserve'  x='240.55' y='31.75' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >5</text>  
+<text   x='250.91' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='257.00' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<text  x='0.00' y='52.00'   font-size='5' stroke-width='0.001'  >Carolyn Hunt, 1989, Let's All Dance</text>
+<text  xml:space='preserve'  x='270.00' y='52.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >1C/Any Circle.</text>
+  </g> </svg>

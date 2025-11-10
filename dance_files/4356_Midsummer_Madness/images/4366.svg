@@ -1,0 +1,1111 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: fig2dev Version 3.2 Patchlevel 5d -->
+<!-- CreationDate: Thu Feb 21 11:09:47 2013 -->
+<!-- Magnification: 1.050 -->
+<svg	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	viewBox="-23 -23 6140 2313">
+<g style="stroke-width:.025in; fill:none">
+<!-- Text -->
+<text xml:space="preserve" x="4913" y="283" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="end">J. Drewry</text>
+<!-- Text -->
+<text xml:space="preserve" x="1795" y="897" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">1</text>
+<!-- Text -->
+<text xml:space="preserve" x="1889" y="992" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">2</text>
+<!-- Text -->
+<text xml:space="preserve" x="1700" y="992" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="152" text-anchor="middle">R</text>
+<!-- Text -->
+<text xml:space="preserve" x="1606" y="944" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="227" text-anchor="middle">T</text>
+<!-- Line -->
+<polyline points="519,850
+992,850
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:round;
+"/>
+<!-- Text -->
+<text xml:space="preserve" x="283" y="944" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="227" text-anchor="middle">S</text>
+<!-- Text -->
+<text xml:space="preserve" x="755" y="944" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="227" text-anchor="middle">RA</text>
+<!-- Text -->
+<text xml:space="preserve" x="1275" y="944" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="227" text-anchor="middle">S</text>
+<!-- Line -->
+<polyline points="897,519
+188,519
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="1889,519
+1181,519
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Text -->
+<text xml:space="preserve" x="1039" y="566" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">1 2</text>
+<!-- Line: box -->
+<rect x="2267" y="519" width="188" height="188" rx="0" 
+style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Text -->
+<text xml:space="preserve" x="2362" y="661" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">2</text>
+<!-- Line: box -->
+<rect x="2598" y="519" width="188" height="188" rx="0" 
+style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Text -->
+<text xml:space="preserve" x="2692" y="661" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">1</text>
+<!-- Circle -->
+<circle cx="2362" cy="1086" r="94"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Text -->
+<text xml:space="preserve" x="2362" y="1133" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">2</text>
+<!-- Circle -->
+<circle cx="2692" cy="1086" r="94"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Text -->
+<text xml:space="preserve" x="2692" y="1133" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">1</text>
+<!-- Line -->
+<polyline points="2362,992
+2363,991
+2366,983
+2374,970
+2384,953
+2393,939
+2402,928
+2409,919
+2417,913
+2424,909
+2431,906
+2440,903
+2451,901
+2464,899
+2478,898
+2494,897
+2512,897
+2530,897
+2551,897
+2564,897
+2580,897
+2597,897
+2615,897
+2634,897
+2654,897
+2675,897
+2697,897
+2719,897
+2742,897
+2764,897
+2785,897
+2807,897
+2827,897
+2847,897
+2866,897
+2887,897
+2909,897
+2930,896
+2952,896
+2973,894
+2994,892
+3015,890
+3034,886
+3051,881
+3068,875
+3083,869
+3097,861
+3108,852
+3118,843
+3126,830
+3133,817
+3141,803
+3146,786
+3151,768
+3155,748
+3159,728
+3161,708
+3163,688
+3164,668
+3165,649
+3165,630
+3165,614
+3165,598
+3165,583
+3165,569
+3164,554
+3164,540
+3162,528
+3160,515
+3158,503
+3153,492
+3149,482
+3143,474
+3137,466
+3129,459
+3120,453
+3110,449
+3098,444
+3085,440
+3070,437
+3054,435
+3037,433
+3018,433
+2999,433
+2981,435
+2962,437
+2945,440
+2929,446
+2914,451
+2901,457
+2890,465
+2877,474
+2868,486
+2860,500
+2854,518
+2848,540
+2844,564
+2840,592
+2837,618
+2837,598
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:bevel; stroke-linecap:butt;
+"/>
+<!-- Arrowhead on XXXpoint 2837 618 - 2831 691-->
+<polygon points="2806 616
+2832 682
+2869 621
+2806 616
+
+" style="stroke:#000000;stroke-width:8;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Line -->
+<polyline points="2692,992
+2692,991
+2693,983
+2695,970
+2697,953
+2700,939
+2704,928
+2709,919
+2717,913
+2723,909
+2732,906
+2744,903
+2759,901
+2776,900
+2796,898
+2814,898
+2827,897
+2833,897
+2834,897
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:bevel; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="2692,708
+2692,709
+2693,717
+2695,730
+2697,747
+2700,761
+2704,772
+2709,781
+2717,787
+2723,791
+2732,794
+2744,796
+2759,798
+2776,800
+2796,802
+2814,802
+2827,803
+2833,803
+2834,803
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:bevel; stroke-linecap:butt;
+stroke-dasharray:20 20;"/>
+<!-- Line -->
+<polyline points="3165,614
+3165,628
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:bevel; stroke-linecap:butt;
+"/>
+<!-- Arrowhead on XXXpoint 3165 614 - 3165 535-->
+<polygon points="3196 607
+3165 544
+3133 607
+3196 607
+
+" style="stroke:#000000;stroke-width:8;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Line -->
+<polyline points="3165,1086
+3165,1070
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:bevel; stroke-linecap:butt;
+stroke-dasharray:20 20;"/>
+<!-- Arrowhead on XXXpoint 3165 1086 - 3165 1165-->
+<polygon points="3133 1092
+3165 1155
+3196 1092
+3133 1092
+
+" style="stroke:#000000;stroke-width:8;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Line -->
+<polyline points="2362,708
+2363,709
+2366,717
+2374,730
+2384,747
+2393,761
+2402,772
+2409,781
+2417,787
+2424,791
+2431,794
+2440,796
+2451,798
+2464,801
+2478,802
+2494,803
+2512,803
+2530,803
+2551,803
+2564,803
+2580,803
+2597,803
+2615,803
+2634,803
+2654,803
+2675,803
+2697,803
+2719,803
+2742,803
+2764,803
+2785,803
+2807,803
+2827,803
+2847,803
+2866,803
+2887,803
+2909,803
+2930,804
+2952,804
+2973,806
+2994,808
+3015,810
+3034,814
+3051,818
+3068,825
+3083,831
+3097,838
+3108,848
+3118,858
+3126,870
+3133,882
+3141,897
+3146,914
+3151,932
+3155,952
+3159,972
+3161,992
+3163,1012
+3164,1032
+3165,1050
+3165,1069
+3165,1086
+3165,1102
+3165,1117
+3165,1131
+3164,1146
+3164,1160
+3162,1172
+3160,1185
+3158,1196
+3153,1208
+3149,1217
+3143,1226
+3137,1234
+3129,1240
+3120,1247
+3110,1252
+3098,1256
+3085,1259
+3070,1262
+3054,1265
+3037,1267
+3018,1267
+2999,1267
+2981,1265
+2962,1262
+2945,1259
+2929,1254
+2914,1249
+2901,1243
+2890,1236
+2877,1226
+2868,1214
+2860,1200
+2854,1182
+2848,1160
+2844,1135
+2840,1108
+2837,1082
+2837,1101
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:bevel; stroke-linecap:butt;
+stroke-dasharray:20 20;"/>
+<!-- Arrowhead on XXXpoint 2837 1082 - 2831 1007-->
+<polygon points="2868 1077
+2832 1017
+2806 1082
+2868 1077
+
+" style="stroke:#000000;stroke-width:8;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Text -->
+<text xml:space="preserve" x="3023" y="1133" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">3</text>
+<!-- Text -->
+<text xml:space="preserve" x="3023" y="661" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">3</text>
+<!-- Line -->
+<polyline points="3637,1086
+3637,1070
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:bevel; stroke-linecap:butt;
+"/>
+<!-- Arrowhead on XXXpoint 3637 1086 - 3637 1165-->
+<polygon points="3606 1092
+3637 1155
+3669 1092
+3606 1092
+
+" style="stroke:#000000;stroke-width:8;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Line -->
+<polyline points="3637,614
+3637,628
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:bevel; stroke-linecap:butt;
+stroke-dasharray:20 20;"/>
+<!-- Arrowhead on XXXpoint 3637 614 - 3637 535-->
+<polygon points="3669 607
+3637 544
+3606 607
+3669 607
+
+" style="stroke:#000000;stroke-width:8;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Line -->
+<polyline points="4440,1086
+4440,1070
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:bevel; stroke-linecap:butt;
+stroke-dasharray:20 20;"/>
+<!-- Arrowhead on XXXpoint 4440 1086 - 4440 1165-->
+<polygon points="4409 1092
+4440 1155
+4472 1092
+4409 1092
+
+" style="stroke:#000000;stroke-width:8;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Line -->
+<polyline points="4440,614
+4440,613
+4440,607
+4439,597
+4437,579
+4434,558
+4431,537
+4427,517
+4420,499
+4414,486
+4407,474
+4397,465
+4386,456
+4373,450
+4361,446
+4346,441
+4329,437
+4312,435
+4293,433
+4275,432
+4257,432
+4238,433
+4221,435
+4204,437
+4190,440
+4177,444
+4165,449
+4155,453
+4145,459
+4138,466
+4132,473
+4125,481
+4121,491
+4117,501
+4115,512
+4113,523
+4111,535
+4111,546
+4110,558
+4110,570
+4110,582
+4110,597
+4110,613
+4110,629
+4109,646
+4108,664
+4107,681
+4104,699
+4102,714
+4099,729
+4095,742
+4091,753
+4087,764
+4081,770
+4075,776
+4069,783
+4060,787
+4052,791
+4043,794
+4031,797
+4019,800
+4007,801
+3994,802
+3981,803
+3966,803
+3951,803
+3937,803
+3921,803
+3904,803
+3885,804
+3866,804
+3846,806
+3826,808
+3806,810
+3786,814
+3766,818
+3749,825
+3732,831
+3717,838
+3704,848
+3693,858
+3682,870
+3673,882
+3666,897
+3659,914
+3654,932
+3649,952
+3646,972
+3644,992
+3643,1012
+3641,1032
+3641,1050
+3643,1069
+3644,1086
+3646,1102
+3647,1117
+3649,1131
+3651,1146
+3654,1160
+3658,1172
+3662,1185
+3668,1196
+3673,1208
+3680,1217
+3688,1226
+3695,1234
+3704,1240
+3714,1247
+3724,1252
+3735,1256
+3748,1259
+3761,1262
+3777,1265
+3793,1267
+3808,1267
+3825,1267
+3842,1265
+3858,1262
+3872,1259
+3887,1254
+3900,1249
+3911,1243
+3921,1236
+3930,1226
+3939,1214
+3946,1200
+3951,1182
+3956,1160
+3960,1135
+3963,1108
+3965,1082
+3964,1101
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:bevel; stroke-linecap:butt;
+"/>
+<!-- Arrowhead on XXXpoint 3965 1082 - 3970 1007-->
+<polygon points="3995 1081
+3969 1017
+3932 1077
+3995 1081
+
+" style="stroke:#000000;stroke-width:8;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Line -->
+<polyline points="4440,614
+4440,628
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:bevel; stroke-linecap:butt;
+"/>
+<!-- Arrowhead on XXXpoint 4440 614 - 4440 535-->
+<polygon points="4472 607
+4440 544
+4409 607
+4472 607
+
+" style="stroke:#000000;stroke-width:8;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Line -->
+<polyline points="4440,1086
+4440,1087
+4440,1092
+4439,1103
+4437,1121
+4434,1142
+4431,1163
+4427,1183
+4420,1201
+4414,1214
+4407,1226
+4397,1235
+4386,1244
+4373,1250
+4361,1254
+4346,1258
+4329,1262
+4312,1265
+4293,1267
+4275,1268
+4257,1268
+4238,1267
+4221,1265
+4204,1262
+4190,1259
+4177,1256
+4165,1252
+4153,1246
+4143,1238
+4135,1231
+4128,1222
+4122,1210
+4117,1198
+4114,1186
+4112,1173
+4111,1160
+4110,1146
+4110,1132
+4110,1118
+4110,1103
+4110,1087
+4110,1070
+4109,1054
+4108,1036
+4107,1019
+4104,1001
+4102,985
+4099,971
+4095,958
+4091,946
+4087,937
+4081,930
+4075,923
+4069,917
+4060,913
+4052,909
+4043,906
+4031,902
+4019,900
+4007,899
+3994,898
+3981,897
+3966,897
+3951,897
+3937,897
+3921,897
+3904,897
+3885,896
+3866,896
+3846,894
+3826,892
+3806,890
+3786,886
+3766,881
+3749,875
+3732,869
+3717,861
+3704,852
+3693,843
+3682,830
+3673,817
+3666,803
+3659,786
+3654,768
+3649,748
+3646,728
+3644,708
+3643,688
+3641,668
+3641,649
+3643,630
+3644,614
+3646,598
+3647,583
+3649,569
+3651,554
+3654,540
+3658,528
+3662,515
+3668,503
+3673,492
+3680,482
+3688,474
+3695,466
+3704,459
+3714,453
+3724,449
+3735,444
+3748,440
+3761,437
+3777,435
+3793,433
+3808,433
+3825,433
+3842,435
+3858,437
+3872,440
+3887,446
+3900,451
+3911,457
+3921,465
+3930,474
+3939,486
+3946,500
+3951,518
+3956,540
+3960,564
+3963,592
+3965,618
+3964,598
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:bevel; stroke-linecap:butt;
+stroke-dasharray:20 20;"/>
+<!-- Arrowhead on XXXpoint 3965 618 - 3970 691-->
+<polygon points="3932 621
+3969 682
+3995 617
+3932 621
+
+" style="stroke:#000000;stroke-width:8;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Line -->
+<polyline points="4110,1086
+4110,1101
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:bevel; stroke-linecap:butt;
+stroke-dasharray:20 20;"/>
+<!-- Arrowhead on XXXpoint 4110 1086 - 4110 1007-->
+<polygon points="4141 1080
+4110 1017
+4078 1080
+4141 1080
+
+" style="stroke:#000000;stroke-width:8;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Line -->
+<polyline points="4110,614
+4110,598
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:bevel; stroke-linecap:butt;
+"/>
+<!-- Arrowhead on XXXpoint 4110 614 - 4110 692-->
+<polygon points="4078 620
+4110 683
+4141 620
+4078 620
+
+" style="stroke:#000000;stroke-width:8;stroke-miterlimit:8;
+fill:#000000;"/>
+<!-- Text -->
+<text xml:space="preserve" x="4299" y="661" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">3</text>
+<!-- Text -->
+<text xml:space="preserve" x="4299" y="1133" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">3</text>
+<!-- Line -->
+<polyline points="4724,472
+4723,473
+4720,475
+4716,479
+4710,486
+4705,494
+4700,503
+4696,516
+4691,532
+4689,550
+4686,572
+4685,598
+4684,616
+4683,636
+4682,658
+4681,681
+4681,706
+4680,733
+4680,761
+4679,790
+4679,819
+4679,850
+4679,880
+4679,910
+4680,939
+4680,966
+4681,994
+4681,1019
+4682,1042
+4683,1064
+4684,1084
+4685,1102
+4686,1128
+4689,1150
+4691,1168
+4696,1184
+4700,1196
+4705,1206
+4710,1214
+4716,1220
+4720,1225
+4723,1227
+4724,1228
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:bevel; stroke-linecap:round;
+"/>
+<!-- Line -->
+<polyline points="5905,472
+5906,473
+5909,475
+5913,479
+5919,486
+5924,494
+5929,503
+5933,516
+5938,532
+5940,550
+5943,572
+5945,598
+5945,616
+5946,636
+5947,658
+5948,681
+5948,706
+5949,733
+5949,761
+5950,790
+5950,819
+5950,850
+5950,880
+5950,910
+5949,939
+5949,966
+5948,994
+5948,1019
+5947,1042
+5946,1064
+5945,1084
+5945,1102
+5943,1128
+5940,1150
+5938,1168
+5933,1184
+5929,1196
+5924,1206
+5919,1214
+5913,1220
+5909,1225
+5906,1227
+5905,1228
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:bevel; stroke-linecap:round;
+"/>
+<!-- Text -->
+<text xml:space="preserve" x="4818" y="897" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="126" text-anchor="middle">to</text>
+<!-- Line: box -->
+<rect x="4960" y="519" width="188" height="188" rx="0" 
+style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Text -->
+<text xml:space="preserve" x="5055" y="661" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">2</text>
+<!-- Line: box -->
+<rect x="5291" y="519" width="188" height="188" rx="0" 
+style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Text -->
+<text xml:space="preserve" x="5385" y="661" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">1</text>
+<!-- Line: box -->
+<rect x="5622" y="519" width="188" height="188" rx="0" 
+style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Text -->
+<text xml:space="preserve" x="5716" y="661" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">3</text>
+<!-- Circle -->
+<circle cx="5716" cy="1086" r="94"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Text -->
+<text xml:space="preserve" x="5716" y="1133" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">3</text>
+<!-- Circle -->
+<circle cx="5385" cy="1086" r="94"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Text -->
+<text xml:space="preserve" x="5385" y="1133" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">1</text>
+<!-- Circle -->
+<circle cx="5055" cy="1086" r="94"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Text -->
+<text xml:space="preserve" x="5055" y="1133" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="bold" font-size="114" text-anchor="middle">2</text>
+<!-- Circle -->
+<circle cx="803" cy="1677" r="118"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Circle -->
+<circle cx="803" cy="1913" r="117"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Circle -->
+<circle cx="330" cy="1676" r="118"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Circle -->
+<circle cx="330" cy="1913" r="118"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Line -->
+<polyline points="614,1889
+755,1795
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="803,1511
+803,2078
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:round;
+"/>
+<!-- Line -->
+<polyline points="330,2078
+330,1511
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:round;
+"/>
+<!-- Line -->
+<polyline points="519,1700
+377,1795
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Circle -->
+<circle cx="803" cy="1417" r="47"
+ style="stroke:#000000;stroke-width:8;"/>
+<!-- Circle -->
+<circle cx="801" cy="1416" r="18"
+ style="fill:#000000;stroke:#000000;stroke-width:8;"/>
+<!-- Circle -->
+<circle cx="1630" cy="1984" r="118"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Circle -->
+<circle cx="1394" cy="1984" r="118"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Line -->
+<polyline points="1795,1984
+1228,1984
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="1511,2031
+1417,2173
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Circle -->
+<circle cx="1393" cy="1606" r="118"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Circle -->
+<circle cx="1629" cy="1606" r="118"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Line -->
+<polyline points="1228,1606
+1795,1606
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="1511,1559
+1606,1417
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Circle -->
+<circle cx="1889" cy="1606" r="47"
+ style="stroke:#000000;stroke-width:8;"/>
+<!-- Circle -->
+<circle cx="1887" cy="1605" r="18"
+ style="fill:#000000;stroke:#000000;stroke-width:8;"/>
+<!-- Circle -->
+<circle cx="2456" cy="1676" r="118"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Circle -->
+<circle cx="2456" cy="1913" r="118"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Circle -->
+<circle cx="2929" cy="1677" r="118"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Circle -->
+<circle cx="2929" cy="1913" r="117"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Line -->
+<polyline points="2929,1511
+2929,2078
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:round;
+"/>
+<!-- Line -->
+<polyline points="2456,2078
+2456,1511
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:round;
+"/>
+<!-- Line -->
+<polyline points="2645,1700
+2503,1795
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="2740,1889
+2881,1795
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Circle -->
+<circle cx="2456" cy="1417" r="47"
+ style="stroke:#000000;stroke-width:8;"/>
+<!-- Circle -->
+<circle cx="2454" cy="1416" r="18"
+ style="fill:#000000;stroke:#000000;stroke-width:8;"/>
+<!-- Circle -->
+<circle cx="3519" cy="1606" r="118"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Circle -->
+<circle cx="3755" cy="1606" r="118"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Line -->
+<polyline points="3354,1606
+3921,1606
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="3637,1559
+3732,1417
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Circle -->
+<circle cx="3756" cy="1984" r="118"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Circle -->
+<circle cx="3520" cy="1984" r="118"
+ style="stroke:#000000;stroke-width:16;"/>
+<!-- Line -->
+<polyline points="3921,1984
+3354,1984
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="3637,2031
+3543,2173
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Circle -->
+<circle cx="4015" cy="1984" r="47"
+ style="stroke:#000000;stroke-width:8;"/>
+<!-- Circle -->
+<circle cx="4013" cy="1983" r="18"
+ style="fill:#000000;stroke:#000000;stroke-width:8;"/>
+<!-- Line -->
+<polyline points="0,377
+6094,377
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="3401,377
+3401,1322
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+stroke-dasharray:62 62;"/>
+<!-- Line -->
+<polyline points="0,1322
+6094,1322
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="1086,1322
+1086,2267
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+stroke-dasharray:62 62;"/>
+<!-- Line -->
+<polyline points="2125,1322
+2125,2267
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="3212,1322
+3212,2267
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+stroke-dasharray:62 62;"/>
+<!-- Line -->
+<polyline points="4204,1322
+4204,2267
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line: box -->
+<rect x="0" y="0" width="6094" height="2267" rx="0" 
+style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="2078,377
+2078,1322
+" style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Text -->
+<text xml:space="preserve" x="6000" y="283" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="end">J8x32</text>
+<!-- Text -->
+<text xml:space="preserve" x="141" y="283" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="start">Midsummer Madness</text>
+<!-- Line -->
+<polyline points="1795,992
+1889,803
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:round;
+"/>
+</g>
+</svg>

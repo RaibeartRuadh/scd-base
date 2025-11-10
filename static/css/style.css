@@ -1,5 +1,8 @@
-/* Основные стили для Ru-SCDDB */
+/* Единые стили для страницы поиска Ru-SCDDB */
+
+/* Цвета иконок и состояний */
 :root {
+    /* Основные цвета */
     --primary-color: #0d6efd;
     --secondary-color: #6c757d;
     --success-color: #198754;
@@ -32,6 +35,16 @@
     --hornpipe-text: #383d41;
     --quadrille-text: #5c3c2a;
     --minuet-text: #6a1a41;
+    
+    /* Единые цвета для иконок */
+    --icon-primary: #0d6efd;
+    --icon-success: #198754;
+    --icon-warning: #ffc107;
+    --icon-danger: #dc3545;
+    --icon-info: #0dcaf0;
+    --icon-secondary: #6c757d;
+    --icon-light: #f8f9fa;
+    --icon-dark: #212529;
 }
 
 /* Общие стили для карточек */
@@ -39,30 +52,37 @@
     border-radius: 8px;
     border: 1px solid #e0e0e0;
     margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
 }
 
 .card-header {
     border-radius: 8px 8px 0 0 !important;
     border-bottom: 1px solid #e0e0e0;
+    background-color: #f8f9fa;
+    font-weight: 600;
 }
 
 /* Стили для компактных таблиц */
 .table-compact td {
-    padding: 6px 6px;
+    padding: 8px 8px;
     font-size: 0.85rem;
     vertical-align: middle;
-    height: 0px;
+    border-color: #e9ecef;
 }
 
 .table-compact th {
-    padding: 10px 12px;
+    padding: 12px 12px;
     font-size: 0.8rem;
     vertical-align: middle;
     font-weight: 600;
+    background-color: #f8f9fa;
+    border-color: #e9ecef;
+    color: #495057;
 }
 
 .table {
     margin-bottom: 0;
+    border-color: #e9ecef;
 }
 
 .table th {
@@ -71,7 +91,7 @@
 }
 
 .table-hover tbody tr:hover {
-    background-color: rgba(0, 0, 0, 0.02);
+    background-color: rgba(0, 0, 0, 0.03);
 }
 
 /* Стили для названий танцев */
@@ -81,6 +101,7 @@
     font-size: 0.9rem;
     line-height: 1.2;
     text-decoration: none !important;
+    transition: color 0.2s ease;
 }
 
 .dance-name:hover {
@@ -91,7 +112,7 @@
 /* Стили для бейджей типов танцев */
 .badge-type {
     font-size: 0.7rem;
-    padding: 0.3rem 0.6rem;
+    padding: 0.35rem 0.7rem;
     vertical-align: middle;
     display: inline-block;
     line-height: 1;
@@ -100,6 +121,12 @@
     text-align: center;
     border-radius: 12px;
     border: 1px solid rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+}
+
+.badge-type:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 /* Бледные цвета для типов танцев */
@@ -153,55 +180,10 @@
     color: var(--minuet-text) !important;
 }
 
-/* Стили для кнопок управления (как у типов танцев) */
+/* Единые стили для кнопок управления */
 .control-btn {
-    font-size: 0.7rem;
-    padding: 0.3rem 0.8rem;
-    vertical-align: middle;
-    display: inline-flex;
-    align-items: center;
-    line-height: 1;
-    font-weight: 600;
-    text-align: center;
-    border-radius: 12px;
-    border: 1px solid rgba(0,0,0,0.1);
-    text-decoration: none;
-    transition: all 0.2s ease;
-    cursor: pointer;
-}
-
-.control-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.control-btn-outline-secondary {
-    background-color: #f8f9fa !important;
-    color: #6c757d !important;
-    border-color: #6c757d !important;
-}
-
-.control-btn-outline-secondary:hover {
-    background-color: #6c757d !important;
-    color: white !important;
-}
-
-.control-btn-danger {
-    background-color: #f8d7da !important;
-    color: #721c24 !important;
-    border-color: #721c24 !important;
-}
-
-.control-btn-danger:hover {
-    background-color: #dc3545 !important;
-    color: white !important;
-    border-color: #dc3545 !important;
-}
-
-/* Стили для кнопок действий в таблице (как у control-btn) */
-.action-btn {
-    font-size: 0.7rem;
-    padding: 0.3rem 0.5rem;
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
     vertical-align: middle;
     display: inline-flex;
     align-items: center;
@@ -209,8 +191,81 @@
     line-height: 1;
     font-weight: 600;
     text-align: center;
-    border-radius: 12px;
-    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 6px;
+    border: 1px solid;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    gap: 0.3rem;
+}
+
+.control-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.control-btn i {
+    font-size: 0.8rem;
+}
+
+/* Варианты кнопок управления */
+.control-btn-primary {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    border-color: var(--primary-color) !important;
+}
+
+.control-btn-primary:hover {
+    background-color: #0b5ed7 !important;
+    border-color: #0a58ca !important;
+}
+
+.control-btn-outline-secondary {
+    background-color: white !important;
+    color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+}
+
+.control-btn-outline-secondary:hover {
+    background-color: var(--secondary-color) !important;
+    color: white !important;
+}
+
+.control-btn-success {
+    background-color: var(--success-color) !important;
+    color: white !important;
+    border-color: var(--success-color) !important;
+}
+
+.control-btn-success:hover {
+    background-color: #157347 !important;
+    border-color: #146c43 !important;
+}
+
+.control-btn-danger {
+    background-color: var(--danger-color) !important;
+    color: white !important;
+    border-color: var(--danger-color) !important;
+}
+
+.control-btn-danger:hover {
+    background-color: #bb2d3b !important;
+    border-color: #b02a37 !important;
+}
+
+/* Стили для кнопок действий в таблице */
+.action-btn {
+    font-size: 0.7rem;
+    padding: 0.35rem;
+    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 6px;
+    border: 1px solid;
     text-decoration: none;
     transition: all 0.2s ease;
     cursor: pointer;
@@ -223,49 +278,63 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+.action-btn i {
+    font-size: 0.8rem;
+}
+
+/* Варианты кнопок действий */
 .action-btn-outline-success {
-    background-color: #d1e7dd !important;
-    color: #0f5132 !important;
-    border-color: #0f5132 !important;
+    background-color: white !important;
+    color: var(--success-color) !important;
+    border-color: var(--success-color) !important;
 }
 
 .action-btn-outline-success:hover {
-    background-color: #198754 !important;
+    background-color: var(--success-color) !important;
     color: white !important;
-    border-color: #198754 !important;
 }
 
 .action-btn-outline-primary {
-    background-color: #cfe2ff !important;
-    color: #052c65 !important;
-    border-color: #052c65 !important;
+    background-color: white !important;
+    color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
 }
 
 .action-btn-outline-primary:hover {
-    background-color: #0d6efd !important;
+    background-color: var(--primary-color) !important;
     color: white !important;
-    border-color: #0d6efd !important;
 }
 
 .action-btn-outline-danger {
-    background-color: #f8d7da !important;
-    color: #721c24 !important;
-    border-color: #721c24 !important;
+    background-color: white !important;
+    color: var(--danger-color) !important;
+    border-color: var(--danger-color) !important;
 }
 
 .action-btn-outline-danger:hover {
-    background-color: #dc3545 !important;
+    background-color: var(--danger-color) !important;
     color: white !important;
-    border-color: #dc3545 !important;
 }
 
-/* Стили для формата сета и типа сета (как у размера) */
+.action-btn-outline-warning {
+    background-color: white !important;
+    color: var(--warning-color) !important;
+    border-color: var(--warning-color) !important;
+}
+
+.action-btn-outline-warning:hover {
+    background-color: var(--warning-color) !important;
+    color: var(--dark-color) !important;
+}
+
+/* Стили для формата сета и типа сета */
 .dance-format, .dance-set-type {
     font-size: 0.8rem;
     vertical-align: middle;
     display: inline-block;
     line-height: 1.2;
     color: #6c757d;
+    font-weight: 500;
 }
 
 /* Стили для размера танцев */
@@ -275,17 +344,68 @@
     display: inline-block;
     line-height: 1.2;
     color: #6c757d;
+    font-weight: 500;
 }
 
 /* Стили для чекбоксов */
 .dance-checkbox {
     cursor: pointer;
     vertical-align: middle;
+    width: 18px;
+    height: 18px;
 }
 
 .dance-checkbox:checked {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
+}
+
+.dance-checkbox:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Стили для бейджей материалов */
+.material-badge {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.5rem;
+    border-radius: 6px;
+    cursor: default;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(0,0,0,0.1);
+    font-weight: 500;
+}
+
+.material-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.material-badge i {
+    font-size: 0.75rem;
+    vertical-align: middle;
+    margin-right: 0.2rem;
+}
+
+/* Цвета для бейджей материалов */
+.badge-audio {
+    background-color: #e3f2fd !important;
+    color: #1565c0 !important;
+}
+
+.badge-video {
+    background-color: #fce4ec !important;
+    color: #c2185b !important;
+}
+
+.badge-pdf {
+    background-color: #ffebee !important;
+    color: #c62828 !important;
+}
+
+.badge-link {
+    background-color: #e8f5e9 !important;
+    color: #2e7d32 !important;
 }
 
 /* Анимации */
@@ -300,14 +420,21 @@
 
 /* Стили для пагинации */
 .pagination-sm .page-link {
-    padding: 0.25rem 0.5rem;
+    padding: 0.3rem 0.6rem;
     font-size: 0.8rem;
 }
 
 .page-link {
-    border-radius: 4px;
+    border-radius: 6px;
     margin: 0 2px;
     border: 1px solid #dee2e6;
+    color: var(--primary-color);
+}
+
+.page-link:hover {
+    color: #0a58ca;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
 }
 
 .page-item.active .page-link {
@@ -315,14 +442,22 @@
     border-color: var(--primary-color);
 }
 
+.page-item.disabled .page-link {
+    color: #6c757d;
+}
+
 /* Стили для форм */
 .form-label {
     font-weight: 600;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.4rem;
+    color: #495057;
+    font-size: 0.9rem;
 }
 
 .form-control, .form-select {
     border-radius: 6px;
+    font-size: 0.9rem;
+    border: 1px solid #ced4da;
 }
 
 .form-control:focus, .form-select:focus {
@@ -334,40 +469,54 @@
 .filter-scroll {
     border: 1px solid #dee2e6;
     border-radius: 0.375rem;
-    padding: 8px;
+    padding: 10px;
     background-color: var(--light-color);
-    font-size: 0.8rem;
-    max-height: 120px;
+    font-size: 0.85rem;
+    max-height: 150px;
     overflow-y: auto;
 }
 
 .form-check {
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.3rem;
 }
 
 .form-check-label {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
 }
 
 /* Стили для навигации */
 .navbar-nav .nav-link {
     padding: 0.5rem 1rem;
     transition: background-color 0.2s ease;
+    border-radius: 0.375rem;
+    font-weight: 500;
 }
 
 .navbar-nav .nav-link:hover {
     background-color: rgba(255,255,255,0.1);
-    border-radius: 0.375rem;
+}
+
+.navbar-nav .nav-link.active {
+    background-color: rgba(255,255,255,0.15);
+    font-weight: 600;
 }
 
 /* Стили для файловых карточек */
 .file-card {
-    transition: transform 0.2s;
+    transition: all 0.3s ease;
     height: 100%;
+    border: 1px solid #e0e0e0;
 }
 
 .file-card:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 /* Стили для прогресс-баров */
@@ -375,12 +524,14 @@
     background-color: #e9ecef;
     border-radius: 0.375rem;
     height: 20px;
+    overflow: hidden;
 }
 
 .progress-bar {
     border-radius: 0.375rem;
     font-size: 0.75rem;
     line-height: 20px;
+    font-weight: 500;
 }
 
 /* Утилитарные классы */
@@ -390,6 +541,10 @@
 
 .small {
     font-size: 0.8rem;
+}
+
+.text-muted {
+    color: #6c757d !important;
 }
 
 /* Гарантия выравнивания по вертикали */
@@ -406,6 +561,27 @@
 .alert {
     border-radius: 6px;
     border: none;
+    font-size: 0.9rem;
+}
+
+.alert-success {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    color: #664d03;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.alert-info {
+    background-color: #cff4fc;
+    color: #055160;
 }
 
 /* Стили для карточек статистики */
@@ -414,22 +590,31 @@
     font-weight: bold;
 }
 
+.stat-card {
+    transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+}
+
 /* Стили для легенды типов танцев */
 .type-legend {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
 }
 
 .type-legend .badge {
-    font-size: 0.65rem;
-    padding: 0.25rem 0.5rem;
-    margin: 0.1rem;
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+    margin: 0.15rem;
+    cursor: default;
 }
 
 /* Адаптивность */
 @media (max-width: 768px) {
     .table-compact td,
     .table-compact th {
-        padding: 6px 8px;
+        padding: 8px 10px;
         font-size: 0.8rem;
     }
     
@@ -440,20 +625,20 @@
     .badge-type {
         min-width: 70px;
         font-size: 0.65rem;
-        padding: 0.25rem 0.4rem;
+        padding: 0.3rem 0.5rem;
     }
     
     .control-btn {
-        font-size: 0.65rem;
-        padding: 0.25rem 0.6rem;
+        font-size: 0.7rem;
+        padding: 0.35rem 0.7rem;
         min-width: auto;
     }
     
     .action-btn {
         font-size: 0.65rem;
-        padding: 0.25rem 0.4rem;
-        width: 28px;
-        height: 28px;
+        padding: 0.3rem;
+        width: 30px;
+        height: 30px;
     }
     
     .dance-format,
@@ -461,33 +646,50 @@
     .dance-size {
         font-size: 0.75rem;
     }
+    
+    .material-badge {
+        font-size: 0.65rem;
+        padding: 0.3rem 0.4rem;
+    }
 }
 
-/* Стили для бейджей материалов */
-.material-badge {
-    font-size: 0.65rem;
-    padding: 0.3rem 0.4rem;
-    border-radius: 4px;
-    cursor: default;
-    transition: all 0.2s ease;
-}
-
-.material-badge:hover {
-    transform: scale(1.1);
-}
-
-/* Убедитесь, что иконки в бейджах выровнены правильно */
-.material-badge i {
-    font-size: 0.7rem;
-    vertical-align: middle;
-}
-
-/* Гарантия выравнивания по центру */
-.table-compact td.text-center > * {
-    justify-content: center;
-}
-
-/* Компактные отступы для группы иконок */
+/* Дополнительные утилитарные классы для выравнивания */
 .d-flex.gap-1 {
     gap: 0.25rem !important;
+}
+
+.d-flex.gap-2 {
+    gap: 0.5rem !important;
+}
+
+.text-truncate-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Стили для поискового инпута */
+.search-input-group {
+    position: relative;
+}
+
+.search-input-group .form-control {
+    padding-right: 40px;
+}
+
+.search-input-group .search-clear {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #6c757d;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.search-input-group .search-clear:hover {
+    color: var(--danger-color);
 }

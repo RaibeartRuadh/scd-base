@@ -1,0 +1,122 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       MACVICAR'S HORNPIPE
+       8x32 R                        
+       Barry Priddey                                                                          Phantom Piper Set                                                                                   
+       Dancedata ID:  4057 
+
+
+       SVG crib 550  created by Keith Rose  11.05.23   10:41:15           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  118.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   MACVICAR'S HORNPIPE    -    8x32 R                           </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='116.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >MACVICAR'S HORNPIPE</text>
+<text  x='178.11' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >                                                                 </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >8x32 R</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<rect x='0' y='45' width='270' height='45' fill='white' />
+<text   x='21.66' y='11.25'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1 2 3</text>  
+<text   x='25.90' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S</text>  
+<text   x='60.50' y='11.25'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1 2</text>  
+<text   x='58.06' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >RA</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='57.16' y1='23.85'  x2='73.79' y2='23.85'  />
+<text   x='88.10' y='11.25'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >3</text>  
+<text   x='86.36' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >X</text>  
+<text   x='93.05' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 123.75 0.00  L 123.75 45.00' />
+<text   x='149.65' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S</text>  
+<text   x='185.36' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >X</text>  
+<text   x='192.05' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<line   stroke='rgb(0,0,0)' x1='211.95' y1='27.00'  x2='213.75' y2='29.70'  />
+<line   stroke='rgb(0,0,0)' x1='215.55' y1='27.00'  x2='213.75' y2='29.70'  />
+<line   stroke='rgb(0,0,0)' x1='211.95' y1='27.00'  x2='213.75' y2='24.30'  />
+<line   stroke='rgb(0,0,0)' x1='215.55' y1='27.00'  x2='213.75' y2='24.30'  />
+<text   x='206.20' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='225.86' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >X</text>  
+<text   x='232.55' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<circle cx='20.25' cy='67.50' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<circle cx='26.61' cy='61.14' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='13.89' cy='73.86' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='9.11' y1='78.64'  x2='31.39' y2='56.36'  />
+<circle cx='74.25' cy='67.50' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<circle cx='67.89' cy='61.14' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='80.61' cy='73.86' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='85.39' y1='78.64'  x2='63.11' y2='56.36'  />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 114.75 45.00  L 114.75 90.00' />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 222.75 45.00  L 222.75 90.00' />
+<circle cx='243' cy='58.5' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='234' cy='58.5' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='246.18' y1='61.68'  x2='243.00' y2='64.86'  />
+<circle cx='238.50' cy='49.50' r='1.69' fill='none'
+stroke='rgb(0,0,0)' />
+<circle cx='238.50' cy='49.50' r='0.51' fill='rgb(0,0,0)' stroke='rgb(0,0,0)' />
+<circle cx='234' cy='76.49998' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='243' cy='76.50001' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='230.82' y1='73.32'  x2='234.00' y2='70.14'  />
+<text   x='252.86' y='72.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >X</text>  
+<text   x='259.55' y='73.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<text   x='141.81' y='11.25'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >2</text>  
+<text   x='145.60' y='11.25'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >x</text>  
+<text   x='149.90' y='11.25'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1</text>  
+<text   x='153.70' y='11.25'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >x</text>  
+<text   x='158.00' y='11.25'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >3</text>  
+<text   x='161.79' y='11.25'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >x</text>  
+<text   x='188.15' y='11.25'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >2</text>  
+<text   x='191.95' y='11.25'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >x</text>  
+<text   x='206.15' y='11.25'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1</text>  
+<text   x='209.95' y='11.25'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >x</text>  
+<text   x='226.40' y='11.25'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >3</text>  
+<text   x='230.20' y='11.25'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >x</text>  
+<path  fill='none' stroke='rgb(0,0,0)' d='M 56.25 65.25   C 54.45 74.70 47.25 73.80 48.60 70.20 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  55.789  73.730  l -0.778  0.962 -2.278 -0.965  2.703  2.663  1.132 -3.621 -0.778  0.962 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 48.60 70.20   C 49.95 66.60 54.00 69.75 55.35 76.05 ' />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 38.25 74.25   C 40.05 64.80 47.25 65.70 45.90 69.30 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  38.711  65.770  l  0.778 -0.962  2.278  0.965 -2.703 -2.663 -1.132  3.621  0.778 -0.962 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 45.90 69.30   C 44.55 72.90 40.50 69.75 39.15 63.45 ' />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 103.50 76.50   C 94.05 74.70 94.95 67.50 98.55 68.85 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  95.020  76.039  l -0.962 -0.778  0.965 -2.278 -2.663  2.703  3.621  1.132 -0.962 -0.778 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 98.55 68.85   C 102.15 70.20 99.00 74.25 92.70 75.60 ' />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 94.50 58.50   C 103.95 60.30 103.05 67.50 99.45 66.15 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 102.980  58.961  l  0.962  0.778 -0.965  2.278  2.663 -2.703 -3.621 -1.132  0.962  0.778 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 99.45 66.15   C 95.85 64.80 99.00 60.75 105.30 59.40 ' />
+<circle cx='132.75' cy='67.50' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<circle cx='139.11' cy='61.14' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='126.39' cy='73.86' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='121.61' y1='78.64'  x2='143.89' y2='56.36'  />
+<circle cx='186.75' cy='67.50' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<circle cx='180.39' cy='61.14' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='193.11' cy='73.86' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='197.89' y1='78.64'  x2='175.61' y2='56.36'  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 168.75 65.25   C 166.95 74.70 159.75 73.80 161.10 70.20 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 168.289  73.730  l -0.778  0.962 -2.278 -0.965  2.703  2.663  1.132 -3.621 -0.778  0.962 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 161.10 70.20   C 162.45 66.60 166.50 69.75 167.85 76.05 ' />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 150.75 74.25   C 152.55 64.80 159.75 65.70 158.40 69.30 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 151.211  65.770  l  0.778 -0.962  2.278  0.965 -2.703 -2.663 -1.132  3.621  0.778 -0.962 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 158.40 69.30   C 157.05 72.90 153.00 69.75 151.65 63.45 ' />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 216.00 76.50   C 206.55 74.70 207.45 67.50 211.05 68.85 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 207.520  76.039  l -0.962 -0.778  0.965 -2.278 -2.663  2.703  3.621  1.132 -0.962 -0.778 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 211.05 68.85   C 214.65 70.20 211.50 74.25 205.20 75.60 ' />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 207.00 58.50   C 216.45 60.30 215.55 67.50 211.95 66.15 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 215.480  58.961  l  0.962  0.778 -0.965  2.278  2.663 -2.703 -3.621 -1.132  0.962  0.778 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 211.95 66.15   C 208.35 64.80 211.50 60.75 217.80 59.40 ' />
+<line   stroke='rgb(0,0,0)' x1='56.25' y1='4.05'  x2='58.05' y2='2.25'  />
+<line   stroke='rgb(0,0,0)' x1='58.05' y1='2.25'  x2='75.83' y2='2.25'  />
+<line   stroke='rgb(0,0,0)' x1='75.83' y1='2.25'  x2='77.63' y2='0.45'  />
+<line   stroke='rgb(0,0,0)' x1='99.00' y1='4.05'  x2='97.20' y2='2.25'  />
+<line   stroke='rgb(0,0,0)' x1='97.20' y1='2.25'  x2='79.42' y2='2.25'  />
+<line   stroke='rgb(0,0,0)' x1='79.42' y1='2.25'  x2='77.63' y2='0.45'  />
+<line   stroke='rgb(0,0,0)' x1='184.50' y1='4.05'  x2='186.30' y2='2.25'  />
+<line   stroke='rgb(0,0,0)' x1='186.30' y1='2.25'  x2='208.58' y2='2.25'  />
+<line   stroke='rgb(0,0,0)' x1='208.58' y1='2.25'  x2='210.38' y2='0.45'  />
+<line   stroke='rgb(0,0,0)' x1='236.25' y1='4.05'  x2='234.45' y2='2.25'  />
+<line   stroke='rgb(0,0,0)' x1='234.45' y1='2.25'  x2='212.18' y2='2.25'  />
+<line   stroke='rgb(0,0,0)' x1='212.18' y1='2.25'  x2='210.38' y2='0.45'  />
+<text  x='0.00' y='97.00'   font-size='5' stroke-width='0.001'  >Barry Priddey, Phantom Piper Set</text>
+<text  xml:space='preserve'  x='270.00' y='97.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >3C/4C longwise set.</text>
+  </g> </svg>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Creator: fig2dev Version 3.2.8 -->
+<!-- CreationDate: 2021-03-22 22:43:24 -->
+<!-- Magnification: 1.05 -->
+<svg	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	viewBox="-22 -22 5849 1484">
+<g fill="none">
+<!-- Text -->
+<text xml:space="preserve" x="5760" y="270" fill="#000000" font-family="Helvetica" font-style="normal" font-weight="normal" font-size="216" text-anchor="end">J8x32</text>
+<!-- Text -->
+<text xml:space="preserve" x="5175" y="990" fill="#000000" font-family="Helvetica" font-style="normal" font-weight="bold" font-size="216" text-anchor="middle">4</text>
+<!-- Text -->
+<text xml:space="preserve" x="3870" y="1035" fill="#000000" font-family="Helvetica" font-style="normal" font-weight="bold" font-size="144" text-anchor="middle">R1</text>
+<!-- Text -->
+<text xml:space="preserve" x="3735" y="990" fill="#000000" font-family="Helvetica" font-style="normal" font-weight="bold" font-size="216" text-anchor="middle">T</text>
+<!-- Line -->
+<polyline points=" 4005,1035 4095,855"
+	stroke="#000000" stroke-width="8px" stroke-linecap="round"/>
+<!-- Text -->
+<text xml:space="preserve" x="4005" y="945" fill="#000000" font-family="Helvetica" font-style="normal" font-weight="bold" font-size="108" text-anchor="middle">1</text>
+<!-- Text -->
+<text xml:space="preserve" x="4095" y="1035" fill="#000000" font-family="Helvetica" font-style="normal" font-weight="bold" font-size="108" text-anchor="middle">2</text>
+<!-- Line -->
+<defs>
+<clipPath id="cp0">
+	<path clip-rule="evenodd" d="M -22,-22 H 5827 V 1462 H -22 z
+		M 3495,966 3435,966 3455,1046 3476,1046z
+		M 3435,834 3495,834 3476,755 3455,755z"/>
+</clipPath>
+</defs>
+<polyline points=" 3465,765 3465,1035" clip-path="url(#cp0)"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Forward arrow to point 3465,1035 -->
+<polygon points=" 3435,966 3465,1026 3495,966 3435,966"
+	stroke="#000000" stroke-width="8px" stroke-miterlimit="8" fill="#000000"/>
+<!-- Backward arrow to point 3465,765 -->
+<polygon points=" 3495,834 3465,774 3435,834 3495,834"
+	stroke="#000000" stroke-width="8px" stroke-miterlimit="8" fill="#000000"/>
+<!-- Line -->
+<polyline points=" 3645,585 3420,585"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Line -->
+<polyline points=" 4140,585 3915,585"
+	stroke="#000000" stroke-width="8px"/>
+<!-- Text -->
+<text xml:space="preserve" x="3780" y="630" fill="#000000" font-family="Helvetica" font-style="normal" font-weight="bold" font-size="108" text-anchor="middle">2 1</text>
+<!-- Text -->
+<text xml:space="preserve" x="945" y="1035" fill="#000000" font-family="Helvetica" font-style="normal" font-weight="bold" font-size="144" text-anchor="middle">R1</text>
+<!-- Text -->
+<text xml:space="preserve" x="810" y="990" fill="#000000" font-family="Helvetica" font-style="normal" font-weight="bold" font-size="216" text-anchor="middle">T</text>
+<!-- Line -->
+<polyline points=" 1080,1035 1170,855"
+	stroke="#000000" stroke-width="8px" stroke-linecap="round"/>
+<!-- Text -->
+<text xml:space="preserve" x="1080" y="945" fill="#000000" font-family="Helvetica" font-style="normal" font-weight="bold" font-size="108" text-anchor="middle">1</text>
+<!-- Text -->
+<text xml:space="preserve" x="1170" y="1035" fill="#000000" font-family="Helvetica" font-style="normal" font-weight="bold" font-size="108" text-anchor="middle">2</text>
+<!-- Circle -->
+<circle cx="945" cy="1215" r="90"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<polyline points=" 834,1103 879,1148"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="315" y="495" width="180" height="180"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<polyline points=" 540,720 495,675"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<defs>
+<clipPath id="cp1">
+	<path clip-rule="evenodd" d="M -22,-22 H 5827 V 1462 H -22 z
+		M 744,963 698,1001 764,1050 780,1036z
+		M 561,837 607,799 541,750 525,764z"/>
+</clipPath>
+</defs>
+<polyline points=" 540,765 765,1035" clip-path="url(#cp1)"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Forward arrow to point 765,1035 -->
+<polygon points=" 698,1001 759,1028 744,963 698,1001"
+	stroke="#000000" stroke-width="8px" stroke-miterlimit="8" fill="#000000"/>
+<!-- Backward arrow to point 540,765 -->
+<polygon points=" 607,799 546,772 561,837 607,799"
+	stroke="#000000" stroke-width="8px" stroke-miterlimit="8" fill="#000000"/>
+<!-- Text -->
+<text xml:space="preserve" x="945" y="630" fill="#000000" font-family="Helvetica" font-style="normal" font-weight="bold" font-size="108" text-anchor="middle">2</text>
+<!-- Text -->
+<text xml:space="preserve" x="405" y="1260" fill="#000000" font-family="Helvetica" font-style="normal" font-weight="bold" font-size="108" text-anchor="middle">1</text>
+<!-- Text -->
+<text xml:space="preserve" x="945" y="1260" fill="#000000" font-family="Helvetica" font-style="normal" font-weight="bold" font-size="108" text-anchor="middle">2</text>
+<!-- Text -->
+<text xml:space="preserve" x="405" y="630" fill="#000000" font-family="Helvetica" font-style="normal" font-weight="bold" font-size="108" text-anchor="middle">1</text>
+<!-- Text -->
+<text xml:space="preserve" x="2475" y="1035" fill="#000000" font-family="Helvetica" font-style="normal" font-weight="bold" font-size="144" text-anchor="middle">R1</text>
+<!-- Text -->
+<text xml:space="preserve" x="2340" y="990" fill="#000000" font-family="Helvetica" font-style="normal" font-weight="bold" font-size="216" text-anchor="middle">T</text>
+<!-- Line -->
+<polyline points=" 2610,1035 2700,855"
+	stroke="#000000" stroke-width="8px" stroke-linecap="round"/>
+<!-- Text -->
+<text xml:space="preserve" x="2610" y="945" fill="#000000" font-family="Helvetica" font-style="normal" font-weight="bold" font-size="108" text-anchor="middle">1</text>
+<!-- Text -->
+<text xml:space="preserve" x="2700" y="1035" fill="#000000" font-family="Helvetica" font-style="normal" font-weight="bold" font-size="108" text-anchor="middle">2</text>
+<!-- Circle -->
+<circle cx="1890" cy="1215" r="90"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="2340" y="495" width="180" height="180"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<polyline points=" 2340,675 2295,720"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<defs>
+<clipPath id="cp2">
+	<path clip-rule="evenodd" d="M -22,-22 H 5827 V 1462 H -22 z
+		M 2047,1001 2001,963 1965,1036 1981,1050z
+		M 2138,799 2184,837 2220,764 2204,750z"/>
+</clipPath>
+</defs>
+<polyline points=" 2205,765 1980,1035" clip-path="url(#cp2)"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Forward arrow to point 1980,1035 -->
+<polygon points=" 2001,963 1986,1028 2047,1001 2001,963"
+	stroke="#000000" stroke-width="8px" stroke-miterlimit="8" fill="#000000"/>
+<!-- Backward arrow to point 2205,765 -->
+<polygon points=" 2184,837 2199,772 2138,799 2184,837"
+	stroke="#000000" stroke-width="8px" stroke-miterlimit="8" fill="#000000"/>
+<!-- Line -->
+<polyline points=" 1957,1147 2002,1102"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Text -->
+<text xml:space="preserve" x="2430" y="630" fill="#000000" font-family="Helvetica" font-style="normal" font-weight="bold" font-size="108" text-anchor="middle">2</text>
+<!-- Text -->
+<text xml:space="preserve" x="1890" y="1260" fill="#000000" font-family="Helvetica" font-style="normal" font-weight="bold" font-size="108" text-anchor="middle">1</text>
+<!-- Text -->
+<text xml:space="preserve" x="1890" y="630" fill="#000000" font-family="Helvetica" font-style="normal" font-weight="bold" font-size="108" text-anchor="middle">2</text>
+<!-- Text -->
+<text xml:space="preserve" x="2430" y="1260" fill="#000000" font-family="Helvetica" font-style="normal" font-weight="bold" font-size="108" text-anchor="middle">1</text>
+<!-- Line -->
+<polyline points=" 0,360 5805,360"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<rect x="0" y="0" width="5805" height="1440"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<polyline points=" 4545,360 4545,1440"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<polyline points=" 3060,360 3060,1440"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Line -->
+<polyline points=" 1485,360 1485,1440"
+	stroke="#000000" stroke-width="15px"/>
+<!-- Text -->
+<text xml:space="preserve" x="4635" y="270" fill="#000000" font-family="Helvetica" font-style="normal" font-weight="normal" font-size="168" text-anchor="end">Let's All Dance Too</text>
+<!-- Text -->
+<text xml:space="preserve" x="90" y="270" fill="#000000" font-family="Helvetica" font-style="normal" font-weight="normal" font-size="216" text-anchor="start">Jane's Jig</text>
+<!-- Circle -->
+<circle cx="5175" cy="900" r="225"
+	stroke="#000000" stroke-width="15px"/>
+</g>
+</svg>

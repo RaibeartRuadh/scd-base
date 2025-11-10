@@ -1,0 +1,63 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       THE MERRY-GO-ROUND
+       4x32 J                        
+       Anne-Marie Bunyan & Ruth Leeson                                         1993           Another Newcastle Collection                                                                        
+       Dancedata ID:  4339 
+
+
+       SVG crib 519  created by Keith Rose  11.05.23   10:40:56           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  73.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   THE MERRY-GO-ROUND    -    4x32 J                           </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='71.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >THE MERRY-GO-ROUND</text>
+<text  x='181.10' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >                                                                 </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >4x32 J</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 117.00 29.25   C 116.55 22.95 125.55 19.80 125.55 33.75 ' />
+<circle cx='18.00' cy='22.50' r='7.88' fill='white' 
+ stroke='rgb(0,0,0)' />
+<text   x='15.90' y='25.20'  font-size='7.5' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >8</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 36.00 0.00  L 36.00 45.00' />
+<text   x='49.83' y='27.90'  font-size='7.5' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >3</text>  
+<path fill='none'   style='stroke:rgb(0,0,0)'
+ d='M 47.25 22.50   c 0 -6.30 9.00 -6.30 9.00  0'  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  56.695  20.181  l -0.781  0.960 -2.276 -0.971  2.696  2.670  1.141 -3.618 -0.781  0.960 '  />
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 81.00 0.00  L 81.00 45.00' />
+<text   x='91.15' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S</text>  
+<polyline fill='none' stroke='rgb(0,0,0)' points='69.75,27.00 69.75,18.00 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  68.762  20.144  l  0.988 -0.744  1.976  1.489 -1.976 -3.239 -1.976  3.239  0.988 -0.744 '  />
+<circle cx='117.00' cy='29.25' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='116.80' y='31.75' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 135.00 0.00  L 135.00 45.00' />
+<text   x='144.81' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >2 3 4 1</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 175.50 0.00  L 175.50 45.00' />
+<text  xml:space='preserve'  x='208.16' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >2 3   4 1</text>  
+<text   x='186.31' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >RA</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='185.41' y1='23.85'  x2='202.04' y2='23.85'  />
+<text   x='208.15' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S</text>  
+<text   x='227.36' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >LA</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='226.46' y1='23.85'  x2='241.99' y2='23.85'  />
+<text   x='248.65' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S</text>  
+<line   stroke='rgb(0,0,0)' x1='150.75' y1='28.58'  x2='150.75' y2='16.43'  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 149.762  18.569  l  0.988 -0.744  1.976  1.489 -1.976 -3.239 -1.976  3.239  0.988 -0.744 '  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 151.738  26.431  l -0.988  0.744 -1.976 -1.489  1.976  3.239  1.976 -3.239 -0.988  0.744 '  />
+<line   stroke='rgb(0,0,0)' x1='159.75' y1='28.58'  x2='159.75' y2='16.43'  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 158.762  18.569  l  0.988 -0.744  1.976  1.489 -1.976 -3.239 -1.976  3.239  0.988 -0.744 '  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 160.738  26.431  l -0.988  0.744 -1.976 -1.489  1.976  3.239  1.976 -3.239 -0.988  0.744 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 117.00 15.75   C 117.45 22.05 108.45 25.20 108.45 11.25 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 117.088   6.406  l -0.988  0.744 -1.976 -1.489  1.976  3.239  1.976 -3.239 -0.988  0.744 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 108.45 11.25   C 108.45 -2.70 116.55 0.90 116.10 8.55 ' />
+<polygon fill='white' stroke='rgb(0,0,0)' points='120.38,12.38 113.63,12.37 113.62,19.12 120.37,19.13 '  />
+<text  xml:space='preserve'  x='116.80' y='18.25' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 116.912  38.594  l  0.988 -0.744  1.976  1.489 -1.976 -3.239 -1.976  3.239  0.988 -0.744 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 125.55 33.75   C 125.55 47.70 117.45 44.10 117.90 36.45 ' />
+<text  x='0.00' y='52.00'   font-size='5' stroke-width='0.001'  >Anne-Marie Bunyan &amp; Ruth Leeson, 1993, Another Newcastle Collection</text>
+<text  xml:space='preserve'  x='270.00' y='52.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >4C/4C longwise set.</text>
+  </g> </svg>

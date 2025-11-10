@@ -1,0 +1,77 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       SCOTTISH RAMBLE
+       8x32 S                        
+       Caledonian Country Dances                                               c.1754         RSCDS Book 5.7                                                                                      
+       Dancedata ID:  5963 
+
+
+       SVG crib 177  created by Keith Rose  11.05.23   09:00:27           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  73.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   SCOTTISH RAMBLE    -    8x32 S                           </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='71.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >SCOTTISH RAMBLE</text>
+<text  x='167.27' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >                                                                 </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >8x32 S</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<text   x='31.50' y='16.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<text   x='54.00' y='16.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 18.00 13.50   C 18.45 6.75 25.65 4.50 31.95 3.15 ' />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 31.95 3.15   C 38.25 1.80 58.95 0.45 61.65 10.35 ' />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 61.65 10.35   C 64.35 20.25 44.55 22.50 32.40 24.30 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  36.842  35.146  l  1.188  0.344 -0.005  2.474  1.405 -3.524 -3.777  0.362  1.188  0.344 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 32.40 24.30   C 20.25 26.10 23.40 46.80 39.15 34.65 ' />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 76.50 0.00  L 76.50 45.00' />
+<circle cx='96.75' cy='22.50' r='7.88' fill='white' 
+ stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='88.88' y1='22.50'  x2='88.88' y2='30.38'  />
+<text   x='94.65' y='25.20'  font-size='7.5' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >4</text>  
+<text   x='130.61' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >RL</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 157.50 0.00  L 157.50 45.00' />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 209.25 0.00  L 209.25 45.00' />
+<circle cx='240.75' cy='13.50002' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='231.75' cy='13.49998' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='243.93' y1='16.68'  x2='240.75' y2='19.86'  />
+<circle cx='220.50' cy='13.50' r='1.69' fill='none'
+stroke='rgb(0,0,0)' />
+<circle cx='220.50' cy='13.50' r='0.51' fill='rgb(0,0,0)' stroke='rgb(0,0,0)' />
+<circle cx='231.75' cy='31.49999' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='240.75' cy='31.50001' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='228.57' y1='28.32'  x2='231.75' y2='25.14'  />
+<text   x='90.80' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1</text>  
+<text   x='94.60' y='9.00'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >x</text>  
+<text   x='98.90' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >3</text>  
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 117.00 0.00  L 117.00 45.00' />
+<text   x='131.30' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >2 1</text>  
+<text   x='140.79' y='9.00'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >x</text>  
+<polygon fill='white' stroke='rgb(0,0,0)' points='21.38,10.13 14.63,10.12 14.62,16.87 21.37,16.88 '  />
+<text  xml:space='preserve'  x='17.80' y='16.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<text   x='250.61' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >X</text>  
+<text   x='257.30' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<text   x='31.50' y='34.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<text   x='54.00' y='34.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<path  fill='none' stroke='rgb(0,0,0)' d='M 18.00 31.50   C 18.45 38.25 25.65 40.50 31.95 41.85 ' />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 31.95 41.85   C 38.25 43.20 58.95 44.55 61.65 34.65 ' />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 61.65 34.65   C 64.35 24.75 44.55 22.50 32.40 20.70 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  38.027   8.273  l  0.003  1.237 -2.377  0.688  3.777  0.362 -1.405 -3.524  0.003  1.237 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 32.40 20.70   C 20.25 18.90 23.40 -1.80 39.15 10.35 ' />
+<circle cx='18.00' cy='31.50' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='17.80' y='34.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<circle cx='58.50' cy='22.50' r='2.75' fill='white' stroke='white' stroke-width='0.001'  />
+<text   x='56.30' y='24.65'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<text   x='174.41' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S T</text>  
+<text   x='189.89' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >B</text>  
+<line   stroke='rgb(0,0,0)' x1='170.55' y1='15.30'  x2='175.95' y2='15.30'  />
+<line   stroke='rgb(0,0,0)' x1='170.55' y1='15.30'  x2='170.55' y2='20.70'  />
+<line   stroke='rgb(0,0,0)' x1='190.80' y1='15.30'  x2='196.20' y2='15.30'  />
+<line   stroke='rgb(0,0,0)' x1='196.20' y1='15.30'  x2='196.20' y2='20.70'  />
+<text   x='123.97' y='38.25'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1 step / hand</text>  
+<text  x='0.00' y='52.00'   font-size='5' stroke-width='0.001'  >Caledonian Country Dances, c.1754, RSCDS Book 5.7</text>
+<text  xml:space='preserve'  x='270.00' y='52.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >3C/4C longwise set.</text>
+  </g> </svg>

@@ -1,0 +1,54 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       MISS WELSH'S REEL
+       8x32 J                        
+                                                                                              RSCDS Graded Book 1.13                                                                              
+       Dancedata ID:  4595 
+
+
+       SVG crib 324  created by Keith Rose  11.05.23   09:01:51           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  73.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   MISS WELSH'S REEL    -    8x32 J                           </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='71.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >MISS WELSH'S REEL</text>
+<text  x='170.86' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >                                                                 </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >8x32 J</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<text   x='30.35' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1 2</text>  
+<text   x='11.91' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S X</text>  
+<text   x='27.99' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<text   x='38.91' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S X</text>  
+<text   x='54.99' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 72.00 0.00  L 72.00 45.00' />
+<text   x='101.00' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1 2</text>  
+<text   x='87.31' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >RA</text>  
+<text   x='110.36' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >LA</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 139.50 0.00  L 139.50 45.00' />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 202.50 0.00  L 202.50 45.00' />
+<line   stroke='rgb(0,0,0)' x1='229.05' y1='22.50'  x2='229.05' y2='29.70'  />
+<line   stroke='rgb(0,0,0)' x1='229.05' y1='29.70'  x2='236.25' y2='29.70'  />
+<line   stroke='rgb(0,0,0)' x1='236.25' y1='15.30'  x2='243.45' y2='15.30'  />
+<line   stroke='rgb(0,0,0)' x1='243.45' y1='15.30'  x2='243.45' y2='22.50'  />
+<line   stroke='rgb(0,0,0)' x1='233.55' y1='22.50'  x2='238.95' y2='22.50'  />
+<line   stroke='rgb(0,0,0)' x1='236.25' y1='25.20'  x2='236.25' y2='19.80'  />
+<polyline fill='none' stroke='rgb(0,0,0)' points='177.75,24.75 166.50,24.75 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 168.644  25.738  l -0.744 -0.988  1.489 -1.976 -3.239  1.976  3.239  1.976 -0.744 -0.988 '  />
+<circle cx='172.35' cy='29.25' r='2.75' fill='white' stroke='white' stroke-width='0.001'  />
+<text   x='170.15' y='31.40'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<polyline fill='none' stroke='rgb(0,0,0)' points='162.00,20.25 177.75,20.25 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 175.606  19.262  l  0.744  0.988 -1.489  1.976  3.239 -1.976 -3.239 -1.976  0.744  0.988 '  />
+<line   stroke='rgb(0,0,0)' x1='11.25' y1='13.05'  x2='13.05' y2='11.25'  />
+<line   stroke='rgb(0,0,0)' x1='13.05' y1='11.25'  x2='33.08' y2='11.25'  />
+<line   stroke='rgb(0,0,0)' x1='33.08' y1='11.25'  x2='34.88' y2='9.45'  />
+<line   stroke='rgb(0,0,0)' x1='58.50' y1='13.05'  x2='56.70' y2='11.25'  />
+<line   stroke='rgb(0,0,0)' x1='56.70' y1='11.25'  x2='36.68' y2='11.25'  />
+<line   stroke='rgb(0,0,0)' x1='36.68' y1='11.25'  x2='34.88' y2='9.45'  />
+<text  x='0.00' y='52.00'   font-size='5' stroke-width='0.001'  >RSCDS Graded Book 1.13</text>
+<text  xml:space='preserve'  x='270.00' y='52.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >3C/4C longwise set.</text>
+  </g> </svg>

@@ -1,0 +1,55 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       THE THREESOME REEL
+       48 S + 48 R                   
+                                                                                              RSCDS Book 6.6                                                                                      
+       Dancedata ID:  6585 
+
+
+       SVG crib 2876  created by Keith Rose  11.05.23   12:01:07           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  73.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   THE THREESOME REEL    -    48 S + 48 R                      </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='71.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >THE THREESOME REEL</text>
+<text  x='166.47' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >                                                                 </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >48 S + 48 R</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<polyline fill='none'  stroke-width='0.70' stroke='rgb(0,0,0)' points='36.00,27.00 36.00,36.00 '   />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 36.00 6.75   C 58.05 5.85 57.60 42.75 34.65 42.30 ' />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 36.00 26.55   C 42.75 27.45 42.75 18.00 35.10 18.45 ' />
+<path  fill='none'  stroke-width='0.70' stroke='rgb(0,0,0)' d='M 36.00 6.75   C 31.05 10.80 31.05 22.05 35.10 26.55 ' />
+<circle cx='36.00' cy='26.55' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='35.80' y='29.05' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<polygon fill='white' stroke='rgb(0,0,0)' points='39.38,3.38 32.63,3.37 32.62,10.12 39.37,10.13 '  />
+<text  xml:space='preserve'  x='35.80' y='9.25' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  30.139  25.130  l -0.778  0.962 -2.278 -0.965  2.703  2.663  1.132 -3.621 -0.778  0.962 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 35.10 18.45   C 27.45 18.90 27.90 23.85 29.70 27.45 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  25.580   7.211  l  0.962  0.778 -0.965  2.278  2.663 -2.703 -3.621 -1.132  0.962  0.778 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 34.65 42.30   C 11.70 41.85 15.75 8.55 27.90 7.65 ' />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 33.75 35.55   C 50.40 34.65 47.25 13.05 34.65 13.50 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  25.732  29.285  l -0.172  1.225 -2.450  0.345  3.688  0.893 -0.893 -3.688 -0.172  1.225 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 34.65 13.50   C 22.05 13.95 20.70 25.65 26.55 31.50 ' />
+<polygon fill='white' stroke='rgb(0,0,0)' points='32.17,39.82 38.92,39.83 38.93,33.08 32.18,33.07 '  />
+<text  xml:space='preserve'  x='35.35' y='38.95' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 67.50 0.00  L 67.50 45.00' />
+<text   x='95.00' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >ALL</text>  
+<text   x='96.00' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S</text>  
+<text   x='102.70' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >4</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 135.00 0.00  L 135.00 45.00' />
+<text   x='163.26' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >R</text>  
+<text   x='170.45' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >2</text>  
+<text   x='4.17' y='4.50'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >Strathspey</text>  
+<text   x='160.70' y='40.50'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >16 bars</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 202.50 0.00  L 202.50 45.00' />
+<text   x='232.65' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >R</text>  
+<text   x='210.99' y='4.50'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >Reel</text>  
+<text   x='228.20' y='40.50'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >48 bars</text>  
+<text  x='0.00' y='52.00'   font-size='5' stroke-width='0.001'  >RSCDS Book 6.6</text>
+<text  xml:space='preserve'  x='270.00' y='52.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >3P/3P .</text>
+  </g> </svg>
