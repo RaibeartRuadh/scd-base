@@ -1,5 +1,7 @@
-{% extends "base.html" %}
 
+{% extends "base.html" %}
+[file name]: dance_formats.html
+[file content begin]
 {% block title %}Управление форматами сетов - База данных танцев{% endblock %}
 
 {% block content %}
@@ -45,17 +47,20 @@
                             {% endif %}
                         </td>
                         <td class="px-2 text-center">
-                            <div class="btn-group btn-group-sm" role="group">
+                            <div class="d-flex justify-content-center align-items-center gap-2" style="min-height: 40px;">
+                                <!-- Редактировать -->
                                 <a href="{{ url_for('edit_dance_format', format_id=format.id) }}" 
-                                   class="action-btn action-btn-outline-primary" 
+                                   class="material-icon-action" 
                                    title="Редактировать">
-                                    <i class="fas fa-edit"></i>
+                                    <img src="{{ url_for('static', filename='img/edit.png') }}" alt="Редактировать" style="width: 25px; height: 25px;">
                                 </a>
+                                
+                                <!-- Удалить -->
                                 <form method="POST" action="{{ url_for('delete_dance_format', format_id=format.id) }}" 
-                                      class="d-inline"
+                                      class="d-inline m-0"
                                       onsubmit="return confirm('Вы уверены, что хотите удалить формат сета «{{ format.name }}»?');">
-                                    <button type="submit" class="action-btn action-btn-outline-danger" title="Удалить">
-                                        <i class="fas fa-trash"></i>
+                                    <button type="submit" class="material-icon-action btn p-0 border-0 bg-transparent" title="Удалить">
+                                        <img src="{{ url_for('static', filename='img/trash.png') }}" alt="Удалить" style="width: 25px; height: 25px;">
                                     </button>
                                 </form>
                             </div>
@@ -109,49 +114,32 @@
     vertical-align: middle;
 }
 
-.action-btn {
-    padding: 0.2rem 0.35rem;
-    border-radius: 4px;
-    font-size: 0.7rem;
+/* Стили для иконок действий как на index.html */
+.material-icon-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     transition: all 0.2s ease;
-    vertical-align: middle;
-    text-decoration: none;
-    display: inline-block;
-    border: 1px solid;
-}
-
-.action-btn-outline-primary {
-    color: #0d6efd;
-    border-color: #0d6efd;
-    background: transparent;
-}
-
-.action-btn-outline-primary:hover {
-    background-color: #0d6efd;
-    color: white;
-}
-
-.action-btn-outline-danger {
-    color: #dc3545;
-    border-color: #dc3545;
-    background: transparent;
-}
-
-.action-btn-outline-danger:hover {
-    background-color: #dc3545;
-    color: white;
-}
-
-.btn-icon {
-    padding: 0.2rem 0.35rem;
+    opacity: 0.8;
+    padding: 2px;
     border-radius: 4px;
-    font-size: 0.7rem;
-    transition: all 0.2s ease;
-    vertical-align: middle;
 }
 
-.btn-icon:hover {
-    transform: translateY(-1px);
+.material-icon-action:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Выравнивание группы иконок */
+.d-flex.gap-2 {
+    gap: 0.5rem !important;
+}
+
+/* Выравнивание столбца действий */
+.table td:last-child {
+    vertical-align: middle;
 }
 </style>
 {% endblock %}
+[file content end]

@@ -1,10 +1,34 @@
 {% extends "base.html" %}
-
+[file name]: index.html
+[file content begin]
 {% block content %}
 <div class="d-flex justify-content-between align-items-center mb-4">
-    <h3 class="mb-0">Все танцы</h1>
+    <h3 class="mb-0">Все танцы</h3>
+    
+    <!-- Форма быстрого поиска в центре -->
+    <form method="get" class="d-flex align-items-center mx-auto">
+        <div class="input-group" style="max-width: 400px;">
+            <input type="text" 
+                   class="form-control form-control-sm" 
+                   name="search" 
+                   value="{{ search }}" 
+                   placeholder="Быстрый поиск...">
+            <input type="hidden" name="per_page" value="{{ per_page }}">
+            <button type="submit" class="btn btn-outline-secondary btn-sm d-flex align-items-center justify-content-center" 
+                    style="border: 1px solid #ced4da; border-left: none; padding: 0.25rem 0.5rem;">
+                <img src="{{ url_for('static', filename='img/search.png') }}" alt="Поиск" style="width: 25px; height: 25px;">
+            </button>
+            {% if search %}
+            <a href="{{ url_for('index') }}" class="btn btn-outline-secondary btn-sm d-flex align-items-center justify-content-center ms-1"
+               style="padding: 0.25rem 0.5rem;">
+                Сбросить
+            </a>
+            {% endif %}
+        </div>
+    </form>
+    
     <a href="{{ url_for('add_dance') }}" class="btn btn-primary btn-sm">
-        <i class="fas fa-plus me-2"></i>Добавить танец
+        Добавить танец
     </a>
 </div>
 
@@ -17,7 +41,7 @@
             </div>
             <div class="col-auto">
                 <select class="form-select form-select-sm" id="per_page" name="per_page" onchange="this.form.submit()">
-                    <option value="12" {% if per_page==12 %}selected{% endif %}>12</option>
+                    <option value="15" {% if per_page==15 %}selected{% endif %}>15</option>
                     <option value="50" {% if per_page==50 %}selected{% endif %}>50</option>
                     <option value="100" {% if per_page==100 %}selected{% endif %}>100</option>
                 </select>
@@ -26,226 +50,173 @@
         </form>
     </div>
     <div class="col-md-6">
-        <!-- Форма быстрого поиска -->
-        <form method="get" class="row g-2 align-items-center justify-content-end">
-            <div class="col-auto">
-                <label class="col-form-label text-muted small">Быстрый поиск:</label>
-            </div>
-            <div class="col-auto">
-                <input type="text" 
-                       class="form-control form-control-sm" 
-                       name="search" 
-                       value="{{ search }}" 
-                       placeholder="Название танца..." 
-                       style="min-width: 200px;">
-            </div>
-            <div class="col-auto">
-                <button type="submit" class="btn btn-primary btn-sm">
-                    <i class="fas fa-search me-1"></i>Поиск
-                </button>
-            </div>
-            {% if search %}
-            <div class="col-auto">
-                <a href="{{ url_for('index') }}" class="btn btn-outline-secondary btn-sm">
-                    <i class="fas fa-times me-1"></i>Сбросить
-                </a>
-            </div>
-            {% endif %}
-            <input type="hidden" name="per_page" value="{{ per_page }}">
-        </form>
+        <!-- Пустая колонка для балансировки -->
     </div>
 </div>
 
-<!-- Форма для массового удаления -->
-<form id="deleteForm" method="POST" action="{{ url_for('delete_dances') }}">
-<!-- Фиксированная панель управления -->
-<div class="card mb-3 border-0 bg-light">
-    <div class="card-body py-2">
-        <div class="row align-items-center">
-            <div class="col">
-                <button type="button" class="control-btn control-btn-outline-secondary" onclick="toggleSelectAll()">
-                    <i class="fas fa-check-square me-2"></i>
-                    <span id="selectAllText">Выбрать все</span>
-                </button>
-            </div>
-            <div class="col-auto">
-                <div id="deleteButtonContainer" class="d-none animate-fade-in">
-                    <button type="button" class="control-btn control-btn-danger" onclick="confirmDelete()" id="deleteButton">
-                        <i class="fas fa-trash me-2"></i>
-                        <span id="deleteButtonText">Удалить выбранные</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-    <!-- Таблица танцев с фиксированной шириной столбцов -->
-    <div class="card border-0 shadow-sm">
-        <div class="table-responsive">
-            <table class="table table-hover mb-0 table-compact fixed-columns">
-                <thead class="table-dark">
-                    <tr>
-                        <th width="50" class="ps-3">
-                            <input type="checkbox" id="selectAll" onchange="toggleAllCheckboxes()">
-                        </th>
-                        <th width="280">Название</th>
-                        <th width="120">Тип</th>
-                        <th width="130">Формат сета</th>
-                        <th width="130">Тип сета</th>
-                        <th width="100">Размер</th>
-                        <th width="90" class="text-center">Материалы</th>
-                        <th width="140" class="text-center">Действия</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% if dances and dances.items %}
-                        {% for dance in dances.items %}
-                        <tr class="align-middle">
-                            <td class="ps-3">
-                                <input type="checkbox" name="dance_ids" value="{{ dance.id }}" class="dance-checkbox" onchange="updateDeleteButton()">
-                            </td>
-                            <td>
-                                <a href="{{ url_for('view_dance', dance_id=dance.id) }}" 
-                                   class="text-decoration-none fw-bold dance-name text-truncate d-block"
-                                   title="{{ dance.name }}">
-                                    {{ dance.name }}
-                                </a>
-                            </td>
-                            <!-- Тип танца -->
-                            <td>
-                                {% if dance.dance_type %}
-                                    <span class="badge badge-type 
-                                        {% if dance.dance_type.name == 'Reel' %}bg-reel
-                                        {% elif dance.dance_type.name == 'Jig' %}bg-jig
-                                        {% elif dance.dance_type.name == 'Strathspey' %}bg-strathspey
-                                        {% elif dance.dance_type.name == 'Medley' %}bg-medley
-                                        {% elif dance.dance_type.name == 'Polka' %}bg-polka
-                                        {% elif dance.dance_type.name == 'March' %}bg-march
-                                        {% elif dance.dance_type.name == 'Waltz' %}bg-waltz
-                                        {% elif dance.dance_type.name == 'Hornpipe' %}bg-hornpipe
-                                        {% elif dance.dance_type.name == 'Quadrille' %}bg-quadrille
-                                        {% elif dance.dance_type.name == 'Minuet' %}bg-minuet
-                                        {% else %}bg-secondary{% endif %}">
-                                        {{ dance.dance_type.name }}
-                                    </span>
-                                {% else %}
-                                    <span class="badge bg-light text-muted">-</span>
+<!-- Таблица танцев с фиксированной шириной столбцов -->
+<div class="card border-0 shadow-sm">
+    <div class="table-responsive">
+        <table class="table table-hover mb-0 table-compact fixed-columns">
+            <thead class="table-dark">
+                <tr>
+                    <th width="60" class="text-center">ID</th>
+                    <th width="280">Название</th>
+                    <th width="120">Тип</th>
+                    <th width="130">Формат сета</th>
+                    <th width="130">Тип сета</th>
+                    <th width="100">Размер</th>
+                    <th width="90" class="text-center">Материалы</th>
+                    <th width="140" class="text-center">Действия</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if dances and dances.items %}
+                    {% for dance in dances.items %}
+                    <tr class="align-middle">
+                        <td class="text-muted text-center">
+                            {{ dance.id }}
+                        </td>
+                        <td>
+                            <a href="{{ url_for('view_dance', dance_id=dance.id) }}" 
+                               class="text-decoration-none fw-bold dance-name text-truncate d-block"
+                               title="{{ dance.name }}">
+                                {{ dance.name }}
+                            </a>
+                        </td>
+                        <!-- Тип танца -->
+                        <td>
+                            {% if dance.dance_type %}
+                                <span class="badge badge-type 
+                                    {% if dance.dance_type.name == 'Reel' %}bg-reel
+                                    {% elif dance.dance_type.name == 'Jig' %}bg-jig
+                                    {% elif dance.dance_type.name == 'Strathspey' %}bg-strathspey
+                                    {% elif dance.dance_type.name == 'Medley' %}bg-medley
+                                    {% elif dance.dance_type.name == 'Polka' %}bg-polka
+                                    {% elif dance.dance_type.name == 'March' %}bg-march
+                                    {% elif dance.dance_type.name == 'Waltz' %}bg-waltz
+                                    {% elif dance.dance_type.name == 'Hornpipe' %}bg-hornpipe
+                                    {% elif dance.dance_type.name == 'Quadrille' %}bg-quadrille
+                                    {% elif dance.dance_type.name == 'Minuet' %}bg-minuet
+                                    {% else %}bg-secondary{% endif %}">
+                                    {{ dance.dance_type.name }}
+                                </span>
+                            {% else %}
+                                <span class="badge bg-light text-muted">-</span>
+                            {% endif %}
+                        </td>
+                        <!-- Формат сета -->
+                        <td>
+                            {% if dance.dance_format %}
+                                <span class="dance-format text-truncate d-block" title="{{ dance.dance_format.name }}">
+                                    {{ dance.dance_format.name }}
+                                </span>
+                            {% else %}
+                                <span class="dance-format">-</span>
+                            {% endif %}
+                        </td>
+                        <!-- Тип сета -->
+                        <td>
+                            {% if dance.set_type %}
+                                <span class="dance-set-type text-truncate d-block" title="{{ dance.set_type.name }}">
+                                    {{ dance.set_type.name }}
+                                </span>
+                            {% else %}
+                                <span class="dance-set-type">-</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if dance.count_id and dance.size_id %}
+                                <span class="dance-size">
+                                    {{ dance.count_id }}×{{ dance.size_id }}
+                                </span>
+                            {% elif dance.size_id %}
+                                <span class="dance-size">
+                                    {{ dance.size_id }} тактов
+                                </span>
+                            {% else %}
+                                <span class="dance-size">-</span>
+                            {% endif %}
+                        </td>
+                        <td class="text-center">
+                            <div class="d-flex justify-content-center gap-1">
+                                <!-- Иконка короны для RSCDS танцев -->
+                                {% if dance.rscds %}
+                                <img src="{{ url_for('static', filename='img/crown.png') }}" 
+                                     alt="RSCDS" 
+                                     class="material-icon" 
+                                     title="Танец RSCDS"
+                                     style="width: 25px; height: 25px; opacity: 0.8;">
                                 {% endif %}
-                            </td>
-                            <!-- Формат сета -->
-                            <td>
-                                {% if dance.dance_format %}
-                                    <span class="dance-format text-truncate d-block" title="{{ dance.dance_format.name }}">
-                                        {{ dance.dance_format.name }}
-                                    </span>
-                                {% else %}
-                                    <span class="dance-format">-</span>
+                                
+                                <!-- Иконка описания (газета) -->
+                                {% if dance.has_any_description %}
+                                <img src="{{ url_for('static', filename='img/newspaper.png') }}" 
+                                     alt="Описание" 
+                                     class="material-icon" 
+                                     title="Есть описание танца или e-cribs"
+                                     style="width: 25px; height: 25px; opacity: 0.8;">
                                 {% endif %}
-                            </td>
-                            <!-- Тип сета -->
-                            <td>
-                                {% if dance.set_type %}
-                                    <span class="dance-set-type text-truncate d-block" title="{{ dance.set_type.name }}">
-                                        {{ dance.set_type.name }}
-                                    </span>
-                                {% else %}
-                                    <span class="dance-set-type">-</span>
-                                {% endif %}
-                            </td>
-                            <td>
-                                {% if dance.count_id and dance.size_id %}
-                                    <span class="dance-size">
-                                        {{ dance.count_id }}×{{ dance.size_id }}
-                                    </span>
-                                {% elif dance.size_id %}
-                                    <span class="dance-size">
-                                        {{ dance.size_id }} тактов
-                                    </span>
-                                {% else %}
-                                    <span class="dance-size">-</span>
-                                {% endif %}
-                            </td>
-                            <td class="text-center">
-                                <div class="d-flex justify-content-center gap-1">
-                                    <!-- Иконка короны для RSCDS танцев -->
-                                    {% if dance.rscds %}
-                                    <img src="{{ url_for('static', filename='img/crown.png') }}" 
-                                         alt="RSCDS" 
-                                         class="material-icon" 
-                                         title="Танец RSCDS"
-                                         style="width: 20px; height: 20px; opacity: 0.8;">
-                                    {% endif %}
-                                    
-                                    <!-- Иконка описания (газета) -->
-                                    {% if dance.has_any_description %}
-                                    <img src="{{ url_for('static', filename='img/newspaper.png') }}" 
-                                         alt="Описание" 
-                                         class="material-icon" 
-                                         title="Есть описание танца или e-cribs"
-                                         style="width: 20px; height: 20px; opacity: 0.8;">
-                                    {% endif %}
-                                    
-                                    <!-- Иконка файлов (картина) -->
-                                    {% set dance_files = get_dance_files(dance.id, dance.name) %}
-                                    {% set dance_images = get_dance_images(dance.id, dance.name) %}
-                                    {% if dance_files or dance_images %}
-                                    <img src="{{ url_for('static', filename='img/image.png') }}" 
-                                         alt="Файлы" 
-                                         class="material-icon" 
-                                         title="Есть дополнительные материалы"
-                                         style="width: 23px; height: 20px; opacity: 0.8;">
-                                    {% endif %}
-                                </div>
-                            </td>
-                            <td class="text-center">
-                                <div class="btn-group btn-group-sm" role="group">
-                                    <!-- Файлы - папка -->
-                                    <a href="{{ url_for('dance_files', dance_id=dance.id) }}" 
-                                    class="action-btn action-btn-outline-success" 
-                                    title="Материалы к танцу">
-                                        <i class="fas fa-folder"></i>
-                                    </a>
-                                    
-                                    <!-- Редактировать - карандаш -->
-                                    <a href="{{ url_for('edit_dance', dance_id=dance.id) }}" 
-                                    class="action-btn action-btn-outline-primary" 
-                                    title="Редактировать">
-                                        <i class="fas fa-edit"></i>
-                                    </a>
-                                    
-                                    <!-- Удалить - корзина -->
-                                    <button type="button" 
-                                            class="action-btn action-btn-outline-danger" 
-                                            onclick="confirmSingleDelete({{ dance.id }}, '{{ dance.name|replace("'", "\\'") }}')"
-                                            title="Удалить">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        {% endfor %}
-                    {% else %}
-                    <tr>
-                        <td colspan="8" class="text-center py-4">
-                            <div class="py-3">
-                                {% if search %}
-                                    <i class="fas fa-search fa-lg text-muted mb-2"></i>
-                                    <h6 class="text-muted mb-1">Танцы по запросу "{{ search }}" не найдены</h6>
-                                {% else %}
-                                    <i class="fas fa-music fa-lg text-muted mb-2"></i>
-                                    <h6 class="text-muted mb-1">Танцы не найдены</h6>
-                                    <p class="text-muted mb-0 small"><a href="{{ url_for('add_dance') }}" class="text-decoration-none">Добавьте первый танец!</a></p>
+                                
+                                <!-- Иконка файлов (картина) -->
+                                {% set dance_files = get_dance_files(dance.id, dance.name) %}
+                                {% set dance_images = get_dance_images(dance.id, dance.name) %}
+                                {% if dance_files or dance_images %}
+                                <img src="{{ url_for('static', filename='img/image.png') }}" 
+                                     alt="Файлы" 
+                                     class="material-icon" 
+                                     title="Есть дополнительные материалы"
+                                     style="width: 25px; height: 25px; opacity: 0.8;">
                                 {% endif %}
                             </div>
                         </td>
+                        <td class="text-center">
+                            <div class="d-flex justify-content-center gap-2">
+                                <!-- Файлы - папка -->
+                                <a href="{{ url_for('dance_files', dance_id=dance.id) }}" 
+                                class="material-icon-action" 
+                                title="Материалы к танцу">
+                                    <img src="{{ url_for('static', filename='img/folder.png') }}" alt="Материалы" style="width: 25px; height: 25px;">
+                                </a>
+                                
+                                <!-- Редактировать - карандаш -->
+                                <a href="{{ url_for('edit_dance', dance_id=dance.id) }}" 
+                                class="material-icon-action" 
+                                title="Редактировать">
+                                    <img src="{{ url_for('static', filename='img/edit.png') }}" alt="Редактировать" style="width: 25px; height: 25px;">
+                                </a>
+                                
+                                <!-- Удалить - корзина (скрыто) -->
+                                <button type="button" 
+                                        class="material-icon-action btn p-0 border-0 bg-transparent" 
+                                        onclick="confirmSingleDelete({{ dance.id }}, '{{ dance.name|replace("'", "\\'") }}')"
+                                        title="Удалить"
+                                        style="display: none;">
+                                    <img src="{{ url_for('static', filename='img/trash.png') }}" alt="Удалить" style="width: 25px; height: 25px;">
+                                </button>
+                            </div>
+                        </td>
                     </tr>
-                    {% endif %}
-                </tbody>
-            </table>
-        </div>
+                    {% endfor %}
+                {% else %}
+                <tr>
+                    <td colspan="8" class="text-center py-4">
+                        <div class="py-3">
+                            {% if search %}
+                                <h6 class="text-muted mb-1">Танцы по запросу "{{ search }}" не найдены</h6>
+                            {% else %}
+                                <img src="{{ url_for('static', filename='img/music.png') }}" alt="Музыка" class="mb-2" style="width: 24px; height: 24px; opacity: 0.5;">
+                                <h6 class="text-muted mb-1">Танцы не найдены</h6>
+                                <p class="text-muted mb-0 small"><a href="{{ url_for('add_dance') }}" class="text-decoration-none">Добавьте первый танец!</a></p>
+                            {% endif %}
+                        </div>
+                    </td>
+                </tr>
+                {% endif %}
+            </tbody>
+        </table>
     </div>
-</form>
+</div>
 
 <!-- Пагинация -->
 {% if dances and dances.pages > 1 %}
@@ -256,12 +227,12 @@
             {% if dances.page > 1 %}
             <li class="page-item">
                 <a class="page-link" href="{{ url_for('index', page=1, per_page=per_page, search=search) }}" aria-label="First">
-                    <i class="fas fa-angle-double-left"></i>
+                    <img src="{{ url_for('static', filename='img/double-arrow-left.png') }}" alt="Первая" style="width: 25px; height: 25px;">
                 </a>
             </li>
             {% else %}
             <li class="page-item disabled">
-                <span class="page-link"><i class="fas fa-angle-double-left"></i></span>
+                <span class="page-link"><img src="{{ url_for('static', filename='img/double-arrow-left.png') }}" alt="Первая" style="width: 25px; height: 25px; opacity: 0.3;"></span>
             </li>
             {% endif %}
 
@@ -269,12 +240,12 @@
             {% if dances.has_prev %}
             <li class="page-item">
                 <a class="page-link" href="{{ url_for('index', page=dances.prev_num, per_page=per_page, search=search) }}" aria-label="Previous">
-                    <i class="fas fa-angle-left"></i>
+                    <img src="{{ url_for('static', filename='img/arrow-left.png') }}" alt="Предыдущая" style="width: 25px; height: 25px;">
                 </a>
             </li>
             {% else %}
             <li class="page-item disabled">
-                <span class="page-link"><i class="fas fa-angle-left"></i></span>
+                <span class="page-link"><img src="{{ url_for('static', filename='img/arrow-left.png') }}" alt="Предыдущая" style="width: 25px; height: 25px; opacity: 0.3;"></span>
             </li>
             {% endif %}
 
@@ -295,12 +266,12 @@
             {% if dances.has_next %}
             <li class="page-item">
                 <a class="page-link" href="{{ url_for('index', page=dances.next_num, per_page=per_page, search=search) }}" aria-label="Next">
-                    <i class="fas fa-angle-right"></i>
+                    <img src="{{ url_for('static', filename='img/arrow-right.png') }}" alt="Следующая" style="width: 25px; height: 25px;">
                 </a>
             </li>
             {% else %}
             <li class="page-item disabled">
-                <span class="page-link"><i class="fas fa-angle-right"></i></span>
+                <span class="page-link"><img src="{{ url_for('static', filename='img/arrow-right.png') }}" alt="Следующая" style="width: 25px; height: 25px; opacity: 0.3;"></span>
             </li>
             {% endif %}
 
@@ -308,12 +279,12 @@
             {% if dances.page < dances.pages %}
             <li class="page-item">
                 <a class="page-link" href="{{ url_for('index', page=dances.pages, per_page=per_page, search=search) }}" aria-label="Last">
-                    <i class="fas fa-angle-double-right"></i>
+                    <img src="{{ url_for('static', filename='img/double-arrow-right.png') }}" alt="Последняя" style="width: 25px; height: 25px;">
                 </a>
             </li>
             {% else %}
             <li class="page-item disabled">
-                <span class="page-link"><i class="fas fa-angle-double-right"></i></span>
+                <span class="page-link"><img src="{{ url_for('static', filename='img/double-arrow-right.png') }}" alt="Последняя" style="width: 25px; height: 25px; opacity: 0.3;"></span>
             </li>
             {% endif %}
         </ul>
@@ -328,68 +299,10 @@
 </div>
 {% endif %}
 
+
 <!-- JavaScript для управления чекбоксами, удалением и насыщенностью -->
 <script>
-let allSelected = false;
-
-function toggleAllCheckboxes() {
-    const checkboxes = document.querySelectorAll('.dance-checkbox');
-    const selectAll = document.getElementById('selectAll');
-    
-    checkboxes.forEach(checkbox => {
-        checkbox.checked = selectAll.checked;
-    });
-    
-    allSelected = selectAll.checked;
-    document.getElementById('selectAllText').textContent = allSelected ? 'Снять все' : 'Выбрать все';
-    updateDeleteButton();
-}
-
-function toggleSelectAll() {
-    const selectAll = document.getElementById('selectAll');
-    selectAll.checked = !allSelected;
-    toggleAllCheckboxes();
-}
-
-function updateDeleteButton() {
-    const checkboxes = document.querySelectorAll('.dance-checkbox:checked');
-    const deleteButtonContainer = document.getElementById('deleteButtonContainer');
-    const deleteButtonText = document.getElementById('deleteButtonText');
-    
-    if (checkboxes.length > 0) {
-        deleteButtonContainer.classList.remove('d-none');
-        deleteButtonText.textContent = `Удалить (${checkboxes.length})`;
-    } else {
-        deleteButtonContainer.classList.add('d-none');
-        deleteButtonText.textContent = 'Удалить выбранные';
-    }
-}
-
-function confirmDelete() {
-    const checkboxes = document.querySelectorAll('.dance-checkbox:checked');
-    const count = checkboxes.length;
-    
-    if (count === 0) {
-        alert('Выберите танцы для удаления');
-        return;
-    }
-    
-    if (confirm(`Вы уверены, что хотите удалить ${count} танцев?`)) {
-        document.getElementById('deleteForm').submit();
-    }
-}
-
-function confirmSingleDelete(danceId, danceName) {
-    if (confirm(`Вы уверены, что хотите удалить танец "${danceName}"?`)) {
-        const form = document.createElement('form');
-        form.method = 'POST';
-        form.action = "{{ url_for('delete_single_dance', dance_id=0) }}".replace('0', danceId);
-        document.body.appendChild(form);
-        form.submit();
-    }
-}
-
-// Управление насыщенностью цветов
+// Функции для управления насыщенностью цветов
 function setSaturation(level) {
     const root = document.documentElement;
     const buttons = ['btn-sat-low', 'btn-sat-medium', 'btn-sat-high'];
@@ -460,8 +373,6 @@ function setSizeFontFamily(family) {
 
 // Восстанавливаем настройки при загрузке
 document.addEventListener('DOMContentLoaded', function() {
-    updateDeleteButton();
-    
     // Восстанавливаем сохраненные настройки насыщенности
     const savedSaturation = localStorage.getItem('saturationPreference') || 'medium';
     setSaturation(savedSaturation);
@@ -483,23 +394,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (savedSizeFontWeight) setSizeFontWeight(savedSizeFontWeight);
     if (savedSizeFontFamily) setSizeFontFamily(savedSizeFontFamily);
 });
-
-// Функции для тонкой настройки отдельных типов (для расширения)
-function adjustTypeSaturation(type, saturation) {
-    const root = document.documentElement;
-    root.style.setProperty(`--saturation-${type.toLowerCase()}`, saturation);
-}
-
-function resetAllSaturation() {
-    const root = document.documentElement;
-    const types = ['reel', 'jig', 'strathspey', 'medley', 'polka', 'march', 'waltz', 'hornpipe', 'quadrille', 'minuet'];
-    
-    types.forEach(type => {
-        root.style.removeProperty(`--saturation-${type}`);
-    });
-    
-    setSaturation('medium');
-}
 </script>
 
 <style>
@@ -512,9 +406,9 @@ function resetAllSaturation() {
 /* Принудительная установка ширины для всех столбцов */
 .table-compact.fixed-columns th:nth-child(1),
 .table-compact.fixed-columns td:nth-child(1) {
-    width: 50px;
-    min-width: 50px;
-    max-width: 50px;
+    width: 60px;
+    min-width: 60px;
+    max-width: 60px;
 }
 
 .table-compact.fixed-columns th:nth-child(2),
@@ -573,7 +467,7 @@ function resetAllSaturation() {
     white-space: nowrap;
 }
 
-/* ===== СТИЛИ ДЛЯ ИКОНОК МАТЕРИАЛОВ ===== */
+/* ===== СТИЛИ ДЛЯ ИКОНОК МАТЕРИАЛОВ И ДЕЙСТВИЙ ===== */
 .material-icon {
     cursor: default;
     transition: all 0.2s ease;
@@ -583,6 +477,22 @@ function resetAllSaturation() {
 .material-icon:hover {
     opacity: 1;
     transform: scale(1.1);
+}
+
+.material-icon-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    opacity: 0.8;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.material-icon-action:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 /* ===== ВЫРАВНИВАНИЕ ПО ЦЕНТРУ ===== */
@@ -595,26 +505,38 @@ function resetAllSaturation() {
     gap: 0.2rem !important;
 }
 
+.d-flex.gap-2 {
+    gap: 0.5rem !important;
+}
+
 /* ===== ОСНОВНЫЕ СТИЛИ ТАБЛИЦЫ ===== */
 .table-compact td {
     padding: 4px 6px;
-    font-size: 0.8rem;
+    font-size: 0.9rem; 
     vertical-align: middle;
-    height: 32px;
+    height: 20px;
 }
 
 .table-compact th {
     padding: 8px 6px;
-    font-size: 0.75rem;
+    font-size: 0.85rem; 
     vertical-align: middle;
     font-weight: 600;
+}
+
+/* ===== СТИЛИ ДЛЯ ID ТАНЦА ===== */
+.table-compact td:first-child {
+    font-size: 0.85rem;
+    color: #6c757d;
+    font-weight: 500;
+    text-align: center;
 }
 
 /* ===== СТИЛИ ДЛЯ НАЗВАНИЯ ТАНЦА ===== */
 .dance-name {
     font-weight: 600 !important;
     color: var(--primary-color) !important;
-    font-size: 0.85rem;
+    font-size: 1rem;
     line-height: 1.2;
 }
 
@@ -625,7 +547,7 @@ function resetAllSaturation() {
 
 /* ===== СТИЛИ ДЛЯ БЕЙДЖЕЙ ТИПОВ ТАНЦЕВ ===== */
 .badge-type {
-    font-size: 0.7rem;
+    font-size: 1rem;
     padding: 0.2rem 0.4rem;
     vertical-align: middle;
     display: inline-block;
@@ -689,7 +611,7 @@ function resetAllSaturation() {
 
 /* ===== СТИЛИ ДЛЯ РАЗМЕРА ТАНЦА ===== */
 .dance-size {
-    font-size: 0.75rem;
+    font-size: 1rem;
     vertical-align: middle;
     display: inline-block;
     line-height: 1;
@@ -698,7 +620,7 @@ function resetAllSaturation() {
 }
 
 .dance-format, .dance-set-type {
-    font-size: 0.75rem;
+    font-size: 1rem;
     color: #6c757d;
     font-weight: 500;
 }
@@ -770,6 +692,11 @@ function resetAllSaturation() {
         width: 12px !important;
         height: 12px !important;
     }
+    
+    .material-icon-action img {
+        width: 16px !important;
+        height: 16px !important;
+    }
 }
 
 @media (max-width: 767.98px) {
@@ -783,3 +710,4 @@ function resetAllSaturation() {
 }
 </style>
 {% endblock %}
+[file content end]

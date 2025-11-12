@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}RuScoDB{% endblock %}</title>
-        <!-- Favicon -->
+    <!-- Favicon -->
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Локальные стили -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    
     <style>
         .navbar-brand { font-weight: bold; }
         .pagination { justify-content: center; margin-top: 20px; }
@@ -21,14 +23,11 @@
             align-items: center;
             justify-content: center;
         }
-        .btn-icon .fa-xs {
-            font-size: 0.75rem;
-        }
         .navbar-nav .nav-link {
             padding: 0.5rem 1rem;
         }
         .navbar-nav .nav-link:hover {
-            background-color: rgba(255,255,255,0.1);
+            background-color: #9e91911a;
             border-radius: 0.375rem;
         }
         .dance-link {
@@ -40,6 +39,28 @@
             color: #0d6efd;
             text-decoration: underline;
         }
+        
+        /* Стили для иконок-изображений */
+        .nav-icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 8px;
+            opacity: 0.9;
+            vertical-align: middle;
+        }
+        
+        .action-icon {
+            width: 14px;
+            height: 14px;
+            vertical-align: middle;
+        }
+        
+        .pagination-icon {
+            width: 12px;
+            height: 12px;
+            vertical-align: middle;
+        }
+        
         /* Стили для массового импорта */
         .batch-import-progress {
             height: 25px;
@@ -63,11 +84,17 @@
         .log-warning { color: #ffc107; }
         .log-error { color: #dc3545; }
         .log-info { color: #0dcaf0; }
+        
+        /* Широкий контейнер для всего сайта */
+        .wide-container {
+            max-width: 1800px;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-black">
-    <div class="container">
+    <div class="container-fluid wide-container">
         <a class="navbar-brand" href="{{ url_for('index') }}">
             <img src="{{ url_for('static', filename='img/ru.png') }}" alt="" style="height: 20px; margin-right: 5px;">
             <img src="{{ url_for('static', filename='img/sct.png') }}" alt="" style="height: 20px; margin-right: 8px;">
@@ -83,47 +110,56 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('index') }}">
-                        <i class="fas fa-list me-1"></i>Все танцы
+                        <img src="{{ url_for('static', filename='img/list.png') }}" alt="Список" class="nav-icon">
+                        Все танцы
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('advanced_search') }}">
-                        <i class="fas fa-search me-1"></i>Поиск
+                        <img src="{{ url_for('static', filename='img/search.png') }}" alt="Поиск" class="nav-icon">
+                        Поиск
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('stats') }}">
-                        <i class="fas fa-chart-bar me-1"></i>Статистика
+                        <img src="{{ url_for('static', filename='img/chart.png') }}" alt="Статистика" class="nav-icon">
+                        Статистика
                     </a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                        <i class="fas fa-cog me-1"></i>Справочники
+                        <img src="{{ url_for('static', filename='img/settings.png') }}" alt="Настройки" class="nav-icon">
+                        Справочники
                     </a>
                     <ul class="dropdown-menu">
                         <li>
                             <a class="dropdown-item" href="{{ url_for('manage_dance_types') }}">
-                                <i class="fas fa-music me-2"></i>Типы танцев
+                                <img src="{{ url_for('static', filename='img/music.png') }}" alt="Типы танцев" class="nav-icon">
+                                Типы танцев
                             </a>
                         </li>
                         <li>
                             <a class="dropdown-item" href="{{ url_for('manage_set_types') }}">
-                                <i class="fas fa-th-large me-2"></i>Типы сетов
+                                <img src="{{ url_for('static', filename='img/grid.png') }}" alt="Типы сетов" class="nav-icon">
+                                Типы сетов
                             </a>
                         </li>
                         <li>
                             <a class="dropdown-item" href="{{ url_for('manage_dance_formats') }}">
-                                <i class="fas fa-ruler-combined me-2"></i>Форматы сетов
+                                <img src="{{ url_for('static', filename='img/ruler.png') }}" alt="Форматы сетов" class="nav-icon">
+                                Форматы сетов
                             </a>
                         </li>
                         <li>
                             <a class="dropdown-item" href="{{ url_for('import_dance') }}">
-                                <i class="fas fa-file-import me-2"></i>Импорт танцев
+                                <img src="{{ url_for('static', filename='img/import.png') }}" alt="Импорт" class="nav-icon">
+                                Импорт танцев
                             </a>
                         </li>
                         <li>
                             <a class="dropdown-item" href="{{ url_for('batch_import') }}">
-                                <i class="fas fa-file-import me-2"></i>Массовый импорт
+                                <img src="{{ url_for('static', filename='img/batch-import.png') }}" alt="Массовый импорт" class="nav-icon">
+                                Массовый импорт
                             </a>
                         </li>
                         <li><hr class="dropdown-divider"></li>
@@ -134,19 +170,19 @@
     </div>
 </nav>
 
-    <div class="container mt-4">
+    <div class="container-fluid mt-4 wide-container">
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
                 {% for category, message in messages %}
                     <div class="alert alert-{{ 'danger' if category == 'error' else category }} alert-dismissible fade show">
                         {% if category == 'success' %}
-                            <i class="fas fa-check-circle me-2"></i>
+                            <img src="{{ url_for('static', filename='img/success.png') }}" alt="Успех" class="action-icon me-2">
                         {% elif category == 'warning' %}
-                            <i class="fas fa-exclamation-triangle me-2"></i>
+                            <img src="{{ url_for('static', filename='img/warning.png') }}" alt="Предупреждение" class="action-icon me-2">
                         {% elif category == 'error' or category == 'danger' %}
-                            <i class="fas fa-exclamation-circle me-2"></i>
+                            <img src="{{ url_for('static', filename='img/error.png') }}" alt="Ошибка" class="action-icon me-2">
                         {% else %}
-                            <i class="fas fa-info-circle me-2"></i>
+                            <img src="{{ url_for('static', filename='img/info.png') }}" alt="Информация" class="action-icon me-2">
                         {% endif %}
                         {{ message }}
                         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
@@ -158,7 +194,8 @@
         {% block content %}{% endblock %}
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Локальные скрипты -->
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
     
     <!-- Дополнительные скрипты для функциональности -->
     <script>

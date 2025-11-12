@@ -558,11 +558,11 @@ def render_search_results():
     
     # Параметры пагинации
     page = request.args.get('page', 1, type=int)
-    per_page = request.args.get('per_page', 20, type=int)
+    per_page = request.args.get('per_page', 25, type=int)
     
     # Ограничиваем per_page для безопасности
     if per_page not in [10, 20, 50, 100]:
-        per_page = 20
+        per_page = 25
     
     # Переменная для определения, был ли выполнен поиск
     # ИЗМЕНЕНИЕ: поиск считается выполненным только если есть хотя бы один активный фильтр
@@ -1437,11 +1437,11 @@ def update_dance_note_with_images(dance, downloaded_files):
 def index():
     try:
         page = request.args.get('page', 1, type=int)
-        per_page = request.args.get('per_page', 12, type=int)
+        per_page = request.args.get('per_page', 15, type=int)
         search = request.args.get('search', '')
         
-        if per_page not in [12, 50, 100]:
-            per_page = 12
+        if per_page not in [15, 50, 100]:
+            per_page = 15
         
         query = Dance.query
         

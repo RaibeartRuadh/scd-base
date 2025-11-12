@@ -170,19 +170,19 @@
                     <table class="table table-hover mb-0 table-compact fixed-columns">
                         <thead class="table-dark">
                             <tr>
-                                <th width="40" class="ps-2">ID</th>
-                                <th width="300">Название и автор</th>
-                                <th width="80">Тип</th>
-                                <th width="80">Формат</th>
-                                <th width="100">Тип сета</th>
-                                <th width="70">Размер</th>
-                                <th width="60" class="text-center">Материалы</th>
+                                <th width="50" class="text-center">ID</th>
+                                <th width="280">Название и автор</th>
+                                <th width="120">Тип</th>
+                                <th width="130">Формат сета</th>
+                                <th width="130">Тип сета</th>
+                                <th width="100">Размер</th>
+                                <th width="90" class="text-center">Материалы</th>
                             </tr>
                         </thead>
                         <tbody>
                             {% for dance in results %}
                             <tr class="align-middle">
-                                <td class="ps-2 text-muted small">{{ dance.id }}</td>
+                                <td class="ps-3 text-muted small">{{ dance.id }}</td>
                                 <td>
                                     <div class="d-flex flex-column">
                                         <a href="{{ url_for('view_dance', dance_id=dance.id) }}" 
@@ -245,7 +245,7 @@
                                         </span>
                                     {% elif dance.size_id %}
                                         <span class="dance-size">
-                                            {{ dance.size_id }}
+                                            {{ dance.size_id }} тактов
                                         </span>
                                     {% else %}
                                         <span class="dance-size">-</span>
@@ -259,7 +259,7 @@
                                              alt="RSCDS" 
                                              class="material-icon" 
                                              title="Танец RSCDS"
-                                             style="width: 14px; height: 14px; opacity: 0.8;">
+                                             style="width: 25px; height: 25px; opacity: 0.8;">
                                         {% endif %}
                                         
                                         <!-- Иконка описания (газета) -->
@@ -268,7 +268,7 @@
                                              alt="Описание" 
                                              class="material-icon" 
                                              title="Есть описание танца или e-cribs"
-                                             style="width: 14px; height: 14px; opacity: 0.8;">
+                                             style="width: 25px; height: 25px; opacity: 0.8;">
                                         {% endif %}
                                         
                                         <!-- Иконка файлов (картина) -->
@@ -279,7 +279,7 @@
                                              alt="Файлы" 
                                              class="material-icon" 
                                              title="Есть дополнительные материалы"
-                                             style="width: 14px; height: 14px; opacity: 0.8;">
+                                             style="width: 25px; height: 25px; opacity: 0.8;">
                                         {% endif %}
                                     </div>
                                 </td>
@@ -298,52 +298,84 @@
             </div>
         </div>
 
-        <!-- Пагинация -->
+                <!-- Пагинация -->
         {% if results and pagination and pagination.pages > 1 and search_performed %}
         <div class="mt-4">
-            <nav aria-label="Навигация по страницам">
-                <ul class="pagination justify-content-center pagination-sm">
-                    {% if pagination.has_prev %}
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center mb-2 pagination-sm">
+                    <!-- Первая страница -->
+                    {% if pagination.page > 1 %}
                     <li class="page-item">
-                        <a class="page-link" href="{{ build_pagination_url(pagination.prev_num) }}">
-                            <i class="fas fa-chevron-left"></i>
+                        <a class="page-link" href="{{ build_pagination_url(1) }}?per_page=25" aria-label="First">
+                            <img src="{{ url_for('static', filename='img/double-arrow-left.png') }}" alt="Первая" style="width: 25px; height: 25px;">
                         </a>
                     </li>
                     {% else %}
                     <li class="page-item disabled">
-                        <span class="page-link"><i class="fas fa-chevron-left"></i></span>
+                        <span class="page-link"><img src="{{ url_for('static', filename='img/double-arrow-left.png') }}" alt="Первая" style="width: 25px; height: 25px; opacity: 0.3;"></span>
                     </li>
                     {% endif %}
 
-                    {% for page_num in pagination.iter_pages(left_edge=1, left_current=2, right_current=2, right_edge=1) %}
-                        {% if page_num %}
-                            <li class="page-item {% if page_num == pagination.page %}active{% endif %}">
-                                <a class="page-link" href="{{ build_pagination_url(page_num) }}">{{ page_num }}</a>
-                            </li>
-                        {% else %}
-                            <li class="page-item disabled"><span class="page-link">...</span></li>
-                        {% endif %}
-                    {% endfor %}
-
-                    {% if pagination.has_next %}
+                    <!-- Предыдущая страница -->
+                    {% if pagination.has_prev %}
                     <li class="page-item">
-                        <a class="page-link" href="{{ build_pagination_url(pagination.next_num) }}">
-                            <i class="fas fa-chevron-right"></i>
+                        <a class="page-link" href="{{ build_pagination_url(pagination.prev_num) }}?per_page=25" aria-label="Previous">
+                            <img src="{{ url_for('static', filename='img/arrow-left.png') }}" alt="Предыдущая" style="width: 25px; height: 25px;">
                         </a>
                     </li>
                     {% else %}
                     <li class="page-item disabled">
-                        <span class="page-link"><i class="fas fa-chevron-right"></i></span>
+                        <span class="page-link"><img src="{{ url_for('static', filename='img/arrow-left.png') }}" alt="Предыдущая" style="width: 25px; height: 25px; opacity: 0.3;"></span>
+                    </li>
+                    {% endif %}
+
+                    <!-- Номера страниц -->
+                    {% if pagination.iter_pages %}
+                        {% for page_num in pagination.iter_pages(left_edge=2, left_current=2, right_current=2, right_edge=2) %}
+                            {% if page_num %}
+                                <li class="page-item {% if page_num == pagination.page %}active{% endif %}">
+                                    <a class="page-link" href="{{ build_pagination_url(page_num) }}?per_page=25">{{ page_num }}</a>
+                                </li>
+                            {% else %}
+                                <li class="page-item disabled"><span class="page-link">...</span></li>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+
+                    <!-- Следующая страница -->
+                    {% if pagination.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="{{ build_pagination_url(pagination.next_num) }}?per_page=25" aria-label="Next">
+                            <img src="{{ url_for('static', filename='img/arrow-right.png') }}" alt="Следующая" style="width: 25px; height: 25px;">
+                        </a>
+                    </li>
+                    {% else %}
+                    <li class="page-item disabled">
+                        <span class="page-link"><img src="{{ url_for('static', filename='img/arrow-right.png') }}" alt="Следующая" style="width: 25px; height: 25px; opacity: 0.3;"></span>
+                    </li>
+                    {% endif %}
+
+                    <!-- Последняя страница -->
+                    {% if pagination.page < pagination.pages %}
+                    <li class="page-item">
+                        <a class="page-link" href="{{ build_pagination_url(pagination.pages) }}?per_page=25" aria-label="Last">
+                            <img src="{{ url_for('static', filename='img/double-arrow-right.png') }}" alt="Последняя" style="width: 25px; height: 25px;">
+                        </a>
+                    </li>
+                    {% else %}
+                    <li class="page-item disabled">
+                        <span class="page-link"><img src="{{ url_for('static', filename='img/double-arrow-right.png') }}" alt="Последняя" style="width: 25px; height: 25px; opacity: 0.3;"></span>
                     </li>
                     {% endif %}
                 </ul>
             </nav>
             
-            <div class="text-center text-muted small mt-2">
-                Страница {{ pagination.page }} из {{ pagination.pages }} • 
-                Показано {{ results|length }} из {{ pagination.total }} танцев
+            <!-- Информация о пагинации -->
+            <div class="text-muted text-center mt-3">
+                <small>Показано {{ results|length }} из {{ pagination.total }} танцев (страница {{ pagination.page }} из {{ pagination.pages }})</small>
             </div>
         </div>
+
         {% endif %}
     </div>
 </div>
@@ -358,51 +390,51 @@
 /* Принудительная установка ширины для всех столбцов */
 .table-compact.fixed-columns th:nth-child(1),
 .table-compact.fixed-columns td:nth-child(1) {
-    width: 40px;
-    min-width: 40px;
-    max-width: 40px;
+    width: 50px;
+    min-width: 50px;
+    max-width: 50px;
 }
 
 .table-compact.fixed-columns th:nth-child(2),
 .table-compact.fixed-columns td:nth-child(2) {
-    width: 300px;
-    min-width: 300px;
-    max-width: 300px;
+    width: 280px;
+    min-width: 280px;
+    max-width: 280px;
 }
 
 .table-compact.fixed-columns th:nth-child(3),
 .table-compact.fixed-columns td:nth-child(3) {
-    width: 80px;
-    min-width: 80px;
-    max-width: 80px;
+    width: 120px;
+    min-width: 120px;
+    max-width: 120px;
 }
 
 .table-compact.fixed-columns th:nth-child(4),
 .table-compact.fixed-columns td:nth-child(4) {
-    width: 80px;
-    min-width: 80px;
-    max-width: 80px;
+    width: 130px;
+    min-width: 130px;
+    max-width: 130px;
 }
 
 .table-compact.fixed-columns th:nth-child(5),
 .table-compact.fixed-columns td:nth-child(5) {
+    width: 130px;
+    min-width: 130px;
+    max-width: 130px;
+}
+
+.table-compact.fixed-columns th:nth-child(6),
+.table-compact.fixed-columns td:nth-child(6) {
     width: 100px;
     min-width: 100px;
     max-width: 100px;
 }
 
-.table-compact.fixed-columns th:nth-child(6),
-.table-compact.fixed-columns td:nth-child(6) {
-    width: 70px;
-    min-width: 70px;
-    max-width: 70px;
-}
-
 .table-compact.fixed-columns th:nth-child(7),
 .table-compact.fixed-columns td:nth-child(7) {
-    width: 60px;
-    min-width: 60px;
-    max-width: 60px;
+    width: 90px;
+    min-width: 90px;
+    max-width: 90px;
 }
 
 /* Обрезка длинного текста */
@@ -443,20 +475,20 @@
 
 /* ===== КОМПАКТНЫЕ ОТСТУПЫ ДЛЯ ГРУППЫ ИКОНОК ===== */
 .d-flex.gap-1 {
-    gap: 0.15rem !important;
+    gap: 0.2rem !important;
 }
 
 /* ===== ОСНОВНЫЕ СТИЛИ ТАБЛИЦЫ ===== */
 .table-compact td {
-    padding: 3px 4px;
-    font-size: 0.75rem;
+    padding: 4px 6px;
+    font-size: 0.9rem; 
     vertical-align: middle;
-    height: 28px;
+    height: 20px;
 }
 
 .table-compact th {
-    padding: 6px 4px;
-    font-size: 0.7rem;
+    padding: 8px 6px;
+    font-size: 0.85rem; 
     vertical-align: middle;
     font-weight: 600;
 }
@@ -465,9 +497,8 @@
 .dance-name {
     font-weight: 600 !important;
     color: var(--primary-color) !important;
-    font-size: 0.8rem;
-    line-height: 1.1;
-    margin-bottom: 1px;
+    font-size: 1rem;
+    line-height: 1.2;
 }
 
 .dance-name:hover {
@@ -476,22 +507,22 @@
 }
 
 .author-text {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     color: #6c757d !important;
-    line-height: 1;
+    line-height: 1.1;
 }
 
 /* ===== СТИЛИ ДЛЯ БЕЙДЖЕЙ ТИПОВ ТАНЦЕВ ===== */
 .badge-type {
-    font-size: 0.65rem;
-    padding: 0.15rem 0.3rem;
+    font-size: 1rem;
+    padding: 0.2rem 0.4rem;
     vertical-align: middle;
     display: inline-block;
     line-height: 1;
     font-weight: 600;
-    min-width: 60px;
+    min-width: 70px;
     text-align: center;
-    border-radius: 6px;
+    border-radius: 8px;
 }
 
 /* Бледные цвета для типов танцев */
@@ -547,7 +578,7 @@
 
 /* ===== СТИЛИ ДЛЯ РАЗМЕРА ТАНЦА ===== */
 .dance-size {
-    font-size: 0.7rem;
+    font-size: 1rem;
     vertical-align: middle;
     display: inline-block;
     line-height: 1;
@@ -556,14 +587,14 @@
 }
 
 .dance-format, .dance-set-type {
-    font-size: 0.7rem;
+    font-size: 1rem;
     color: #6c757d;
     font-weight: 500;
 }
 
 /* ===== СТИЛИ ДЛЯ ID ТАНЦА ===== */
 .text-muted.small {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     color: #6c757d !important;
 }
 
@@ -580,22 +611,22 @@
     
     .table-compact td,
     .table-compact th {
-        padding: 2px 3px;
-        font-size: 0.7rem;
-    }
-    
-    .dance-name {
+        padding: 4px 3px;
         font-size: 0.75rem;
     }
     
+    .dance-name {
+        font-size: 0.8rem;
+    }
+    
     .author-text {
-        font-size: 0.65rem;
+        font-size: 0.7rem;
     }
     
     .badge-type {
-        font-size: 0.6rem;
-        padding: 0.1rem 0.25rem;
-        min-width: 55px;
+        font-size: 0.65rem;
+        padding: 0.15rem 0.3rem;
+        min-width: 65px;
     }
 
     .material-icon {
