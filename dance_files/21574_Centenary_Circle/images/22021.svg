@@ -1,0 +1,88 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       CENTENARY CIRCLE
+       32 R                          
+       Gary Coull                                                                             The Diack Dances                                                                                    
+       Dancedata ID:  22021 
+
+
+       SVG crib 6653  created by Keith Rose  22.05.24   20:57:11           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  73.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   CENTENARY CIRCLE    -    32 R   </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='71.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >CENTENARY CIRCLE</text>
+<text  x='175.56' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' ></text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >32 R</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<polyline fill='none'  stroke-width='0.70' stroke='rgb(0,0,0)' points='15.75,5.40 13.50,16.65 '   />
+<polyline fill='none'  stroke-width='0.70' stroke='rgb(0,0,0)' points='15.75,39.15 20.25,43.65 '   />
+<polyline fill='none'  stroke-width='0.70' stroke='rgb(0,0,0)' points='15.75,39.15 13.50,27.90 '   />
+<polyline fill='none'  stroke-width='0.70' stroke='rgb(0,0,0)' points='13.50,16.65 13.50,30.15 '   />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='13.50' y1='16.65'  x2='18.80' y2='17.68'  />
+<circle cx='13.50' cy='16.65' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='13.30' y='19.15' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='13.50' y1='27.90'  x2='18.89' y2='27.52'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='16.63,24.30 9.90,24.77 10.37,31.50 17.10,31.03 '  />
+<text  xml:space='preserve'  x='13.30' y='30.40' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='15.75' y1='39.15'  x2='20.97' y2='37.75'  />
+<circle cx='15.75' cy='39.15' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<polyline fill='none'  stroke-width='0.70' stroke='rgb(0,0,0)' points='15.75,5.40 20.25,0.90 '   />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='15.75' y1='5.40'  x2='20.97' y2='6.80'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='19.88,3.01 13.36,1.27 11.62,7.79 18.14,9.53 '  />
+<circle cx='39.60' cy='22.50' r='7.88' fill='white' 
+ stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='31.73' y1='22.50'  x2='31.73' y2='30.38'  />
+<text   x='31.83' y='41.40'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >4 steps</text>  
+<line   stroke='rgb(0,0,0)' x1='58.50' y1='27.90'  x2='58.50' y2='17.10'  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  57.512  19.244  l  0.988 -0.744  1.976  1.489 -1.976 -3.239 -1.976  3.239  0.988 -0.744 '  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  59.488  25.756  l -0.988  0.744 -1.976 -1.489  1.976  3.239  1.976 -3.239 -0.988  0.744 '  />
+<text   x='52.26' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >ALL</text>  
+<text   x='69.63' y='41.40'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >4 steps</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 99.00 0.00  L 99.00 45.00' />
+<circle cx='119.25' cy='16.65' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='119.05' y='19.15' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<circle cx='121.50' cy='39.15' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 119.70 26.10   C 128.70 24.30 126.90 7.65 117.45 9.45 ' />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 117.45 9.45   C 108.00 11.25 110.25 29.25 118.35 31.05 ' />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 118.35 31.05   C 126.45 32.85 130.95 41.85 124.20 44.10 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 114.257  34.326  l  1.217 -0.224  1.102  2.215 -0.319 -3.781 -3.216  2.013  1.217 -0.224 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 124.20 44.10   C 117.45 46.35 112.50 36.90 116.10 32.85 ' />
+<polygon fill='white' stroke='rgb(0,0,0)' points='122.62,29.03 122.63,22.28 115.88,22.27 115.87,29.02 '  />
+<text  xml:space='preserve'  x='119.05' y='28.15' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 139.50 0.00  L 139.50 45.00' />
+<polygon fill='white' stroke='rgb(0,0,0)' points='156.38,24.97 156.37,31.72 163.12,31.73 163.13,24.98 '  />
+<text  xml:space='preserve'  x='159.55' y='30.85' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<polygon fill='white' stroke='rgb(0,0,0)' points='166.13,3.46 159.61,1.72 157.87,8.24 164.39,9.98 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 160.20 18.90   C 169.20 20.70 167.40 37.35 157.95 35.55 ' />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 157.95 35.55   C 148.50 33.75 150.75 15.75 158.85 13.95 ' />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 158.85 13.95   C 166.95 12.15 171.45 3.15 164.70 0.90 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 156.525   9.790  l -0.551  1.108 -2.433 -0.448  3.216  2.013  0.319 -3.781 -0.551  1.108 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 164.70 0.90   C 157.95 -1.35 153.00 8.10 156.60 12.15 ' />
+<circle cx='159.75' cy='19.35' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='159.55' y='21.85' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 180.00 0.00  L 180.00 45.00' />
+<text   x='196.26' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >ALL</text>  
+<text   x='186.72' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >CHAIN</text>  
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 225.00 0.00  L 225.00 45.00' />
+<text   x='189.36' y='41.40'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >2 steps/hand</text>  
+<text   x='240.81' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >ALL</text>  
+<text   x='241.46' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='247.55' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<text   x='243.84' y='41.40'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >birl</text>  
+<text   x='234.44' y='36.00'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >next dancer</text>  
+<line   stroke='rgb(0,0,0)' x1='31.50' y1='13.05'  x2='31.50' y2='11.25'  />
+<line   stroke='rgb(0,0,0)' x1='31.50' y1='11.25'  x2='85.50' y2='11.25'  />
+<line   stroke='rgb(0,0,0)' x1='85.50' y1='11.25'  x2='85.50' y2='13.05'  />
+<circle cx='77.40' cy='22.50' r='7.88' fill='white' 
+ stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='85.28' y1='22.50'  x2='85.28' y2='30.38'  />
+<text   x='193.53' y='36.00'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >2 places</text>  
+<text  x='0.00' y='52.00'   font-size='5' stroke-width='0.001'  >Gary Coull, The Diack Dances</text>
+<text  xml:space='preserve'  x='270.00' y='52.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >1C/Any Circle.</text>
+  </g> </svg>

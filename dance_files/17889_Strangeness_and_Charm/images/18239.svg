@@ -1,0 +1,104 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       STRANGENESS AND CHARM
+       3x32 S                        
+       Murrough Landon                                                         2016           https://my.strathspey.org/u/murrough/StrangenessAndCharm.pdf                                        
+       Dancedata ID:  18239 
+
+
+       SVG crib 4370  created by Keith Rose  11.05.23   14:04:21           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  73.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   STRANGENESS AND CHARM    -    3x32 S                           </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='71.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >STRANGENESS AND CHARM</text>
+<text  x='189.40' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >                                                                 </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >3x32 S</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 76.50 11.25   C 81.90 16.20 83.70 22.95 76.95 24.75 ' />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 76.50 33.75   C 71.55 27.45 71.55 23.40 76.50 21.15 ' />
+<text   x='20.25' y='36.25' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<text   x='33.75' y='36.25' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<path  fill='none' stroke='rgb(0,0,0)' d='M 9.00 33.75   C 12.60 23.85 39.15 22.50 39.60 32.85 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  25.562  34.994  l  0.988 -0.744  1.976  1.489 -1.976 -3.239 -1.976  3.239  0.988 -0.744 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 39.60 32.85   C 40.05 43.20 25.65 40.50 26.55 32.85 ' />
+<circle cx='9.00' cy='33.75' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='8.80' y='36.25' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<text   x='20.25' y='13.75' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<text   x='33.75' y='13.75' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 9.00 11.25   C 12.60 21.15 39.15 22.50 39.60 12.15 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  27.538  10.006  l -0.988  0.744 -1.976 -1.489  1.976  3.239  1.976 -3.239 -0.988  0.744 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 39.60 12.15   C 40.05 1.80 25.65 4.50 26.55 12.15 ' />
+<polygon fill='white' stroke='rgb(0,0,0)' points='12.38,7.88 5.63,7.87 5.62,14.62 12.37,14.63 '  />
+<text  xml:space='preserve'  x='8.80' y='13.75' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 47.25 0.00  L 47.25 45.00' />
+<circle cx='76.50' cy='33.75' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='76.30' y='36.25' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<text   x='65.25' y='36.25' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<path  fill='none' stroke='rgb(0,0,0)' d='M 76.50 21.15   C 81.45 18.90 86.85 36.00 79.65 39.60 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  56.775  35.210  l  0.551 -1.108  2.433  0.448 -3.216 -2.013 -0.319  3.781  0.551 -1.108 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 79.65 39.60   C 72.45 43.20 58.50 40.05 56.70 32.85 ' />
+<text   x='65.25' y='13.75' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<polygon fill='white' stroke='rgb(0,0,0)' points='79.88,7.88 73.13,7.87 73.12,14.62 79.87,14.63 '  />
+<text  xml:space='preserve'  x='76.30' y='13.75' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 76.95 24.75   C 70.20 26.55 73.35 12.15 68.85 6.30 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  57.688   8.656  l -0.988  0.744 -1.976 -1.489  1.976  3.239  1.976 -3.239 -0.988  0.744 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 68.85 6.30   C 64.35 0.45 55.80 6.30 56.70 10.80 ' />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 90.00 0.00  L 90.00 45.00' />
+<circle cx='114.75' cy='13.5' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='105.75' cy='13.5' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='108.93' y1='16.68'  x2='105.75' y2='19.86'  />
+<circle cx='110.25' cy='4.50' r='1.69' fill='none'
+stroke='rgb(0,0,0)' />
+<circle cx='110.25' cy='4.50' r='0.51' fill='rgb(0,0,0)' stroke='rgb(0,0,0)' />
+<circle cx='105.75' cy='29.24999' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='114.75' cy='29.25001' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='108.93' y1='26.07'  x2='105.75' y2='22.89'  />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 130.50 0.00  L 130.50 45.00' />
+<text   x='137.31' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1</text>  
+<text   x='141.10' y='9.00'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >x</text>  
+<text   x='145.40' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >2</text>  
+<text   x='149.20' y='9.00'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >x</text>  
+<text   x='153.50' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >3</text>  
+<text   x='157.29' y='9.00'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >x</text>  
+<text   x='137.91' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S X</text>  
+<text   x='153.99' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 166.50 0.00  L 166.50 45.00' />
+<text   x='173.76' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >ALL</text>  
+<text   x='176.65' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S</text>  
+<text   x='94.64' y='38.25'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >All cross down</text>  
+<text   x='101.35' y='42.75'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >from top</text>  
+<text   x='192.41' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='198.50' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<text   x='196.10' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1</text>  
+<text   x='209.60' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >2</text>  
+<text   x='209.58' y='27.90'  font-size='7.5' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >1</text>  
+<path fill='none'   style='stroke:rgb(0,0,0)'
+ d='M 207.00 22.50   c 0 -6.30 9.00 -6.30 9.00  0'  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 216.445  20.181  l -0.781  0.960 -2.276 -0.971  2.696  2.670  1.141 -3.618 -0.781  0.960 '  />
+<polyline fill='none'  stroke-width='0.70' stroke='rgb(0,0,0)' points='231.75,29.25 227.25,24.30 231.75,18.00 231.75,15.75 227.25,20.70 231.75,27.00 231.75,29.25 227.25,24.30 231.75,18.00 231.75,15.75 '   />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='231.75' y1='29.25'  x2='226.35' y2='29.25'  />
+<circle cx='231.75' cy='29.25' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='231.55' y='31.75' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='231.75' y1='15.75'  x2='226.35' y2='15.75'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='228.37,19.12 235.12,19.13 235.13,12.38 228.38,12.37 '  />
+<text  xml:space='preserve'  x='231.55' y='18.25' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<polyline fill='none' stroke='rgb(0,0,0)' points='228.15,22.50 219.15,22.50 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 221.294  23.488  l -0.744 -0.988  1.489 -1.976 -3.239  1.976  3.239  1.976 -0.744 -0.988 '  />
+<line   stroke='rgb(0,0,0)' x1='193.50' y1='4.05'  x2='195.30' y2='2.25'  />
+<line   stroke='rgb(0,0,0)' x1='195.30' y1='2.25'  x2='211.95' y2='2.25'  />
+<line   stroke='rgb(0,0,0)' x1='211.95' y1='2.25'  x2='213.75' y2='0.45'  />
+<line   stroke='rgb(0,0,0)' x1='234.00' y1='4.05'  x2='232.20' y2='2.25'  />
+<line   stroke='rgb(0,0,0)' x1='232.20' y1='2.25'  x2='215.55' y2='2.25'  />
+<line   stroke='rgb(0,0,0)' x1='215.55' y1='2.25'  x2='213.75' y2='0.45'  />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 243.00 0.00  L 243.00 45.00' />
+<text   x='248.91' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1 3 2</text>  
+<text   x='252.90' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >A</text>  
+<text  x='0.00' y='52.00'   font-size='5' stroke-width='0.001'  >Murrough Landon, 2016, https://my.strathspey.org/u/murrough/StrangenessAndCharm.pdf</text>
+<text  xml:space='preserve'  x='270.00' y='52.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >3C/3C longwise set.</text>
+  </g> </svg>

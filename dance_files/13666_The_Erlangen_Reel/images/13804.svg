@@ -1,0 +1,93 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       THE ERLANGEN REEL
+       8x32 R                        
+       Duncan Brown                                                            2009           8x32                                                                                                
+       Dancedata ID:  13804 
+
+
+       SVG crib 1641  created by Keith Rose  11.05.23   11:11:20           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  73.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   THE ERLANGEN REEL    -    8x32 R                           </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='71.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >THE ERLANGEN REEL</text>
+<text  x='173.11' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >                                                                 </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >8x32 R</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<text   x='7.91' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='14.00' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<text   x='27.33' y='27.90'  font-size='7.5' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >1</text>  
+<path fill='none'   style='stroke:rgb(0,0,0)'
+ d='M 24.75 22.50   c 0 -6.30 9.00 -6.30 9.00  0'  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  34.195  20.181  l -0.781  0.960 -2.276 -0.971  2.696  2.670  1.141 -3.618 -0.781  0.960 '  />
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 40.50 0.00  L 40.50 45.00' />
+<text   x='44.51' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='50.60' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >L</text>  
+<polygon fill='white' stroke='rgb(0,0,0)' points='68.63,1.13 61.88,1.12 61.87,7.87 68.62,7.88 '  />
+<text  xml:space='preserve'  x='65.05' y='7.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<text   x='63.33' y='21.15'  font-size='7.5' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >1</text>  
+<path  fill='none'   style='stroke:rgb(0,0,0)'
+ d='M 69.75 15.75   c 0 -6.30 -9.00 -6.30 -9.00  0'  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  62.252  13.928  l -1.145  0.468 -1.532 -1.943  1.086  3.635  2.736 -2.628 -1.145  0.468 '  />
+<circle cx='65.25' cy='27.00' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='65.05' y='29.50' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<text   x='63.33' y='43.65'  font-size='7.5' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >1</text>  
+<path fill='none'   style='stroke:rgb(0,0,0)'
+ d='M 60.75 38.25   c 0 -6.30 9.00 -6.30 9.00  0'  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  70.195  35.931  l -0.781  0.960 -2.276 -0.971  2.696  2.670  1.141 -3.618 -0.781  0.960 '  />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 78.75 0.00  L 78.75 45.00' />
+<circle cx='89.99998' cy='27' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='90.00002' cy='18' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='86.82' y1='21.18'  x2='83.64' y2='18.00'  />
+<circle cx='105.75' cy='18' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='105.75' cy='27' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='108.93' y1='23.82'  x2='112.11' y2='27.00'  />
+<circle cx='105.75' cy='38.25' r='1.69' fill='none'
+stroke='rgb(0,0,0)' />
+<circle cx='105.75' cy='38.25' r='0.51' fill='rgb(0,0,0)' stroke='rgb(0,0,0)' />
+<text   x='119.66' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='125.76' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >L</text>  
+<text  style='fill:rgb(0,0,0)'  x='129.65' y='25.80'  font-size='5' stroke-width='0.001'   >1</text>  
+<line  stroke='rgb(0,0,0)'  x1='129.65' y1='26.80'  x2='131.90' y2='26.80' />
+<text  style='fill:rgb(0,0,0)'  x='129.65' y='31.80'  font-size='5' stroke-width='0.001'   >2</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 137.25 0.00  L 137.25 45.00' />
+<circle cx='148.5' cy='18' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='148.5' cy='27' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='151.68' y1='30.18'  x2='154.86' y2='27.00'  />
+<circle cx='148.50' cy='38.25' r='1.69' fill='none'
+stroke='rgb(0,0,0)' />
+<circle cx='148.50' cy='38.25' r='0.51' fill='rgb(0,0,0)' stroke='rgb(0,0,0)' />
+<circle cx='164.25' cy='27' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='164.25' cy='18' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='161.07' y1='14.82'  x2='157.89' y2='18.00'  />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 191.25 0.00  L 191.25 45.00' />
+<text   x='173.66' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='179.76' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >L</text>  
+<text  style='fill:rgb(0,0,0)'  x='183.65' y='25.80'  font-size='5' stroke-width='0.001'   >1</text>  
+<line  stroke='rgb(0,0,0)'  x1='183.65' y1='26.80'  x2='185.90' y2='26.80' />
+<text  style='fill:rgb(0,0,0)'  x='183.65' y='31.80'  font-size='5' stroke-width='0.001'   >2</text>  
+<text   x='196.91' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='203.00' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<line   stroke='rgb(0,0,0)' x1='202.05' y1='15.30'  x2='207.45' y2='15.30'  />
+<line   stroke='rgb(0,0,0)' x1='207.45' y1='15.30'  x2='207.45' y2='20.70'  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 214.275  20.360  l  0.551 -1.108  2.433  0.448 -3.216 -2.013 -0.319  3.781  0.551 -1.108 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 227.25 18.00   C 224.10 24.75 217.35 25.20 214.20 18.00 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 227.625  22.840  l -0.551  1.108 -2.433 -0.448  3.216  2.013  0.319 -3.781 -0.551  1.108 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 214.65 25.20   C 217.80 18.45 224.55 18.00 227.70 25.20 ' />
+<text   x='237.41' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='243.50' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<line   stroke='rgb(0,0,0)' x1='233.55' y1='15.30'  x2='238.95' y2='15.30'  />
+<line   stroke='rgb(0,0,0)' x1='233.55' y1='15.30'  x2='233.55' y2='20.70'  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 262.438  29.356  l -0.988  0.744 -1.976 -1.489  1.976  3.239  1.976 -3.239 -0.988  0.744 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 249.75 20.25   C 257.40 20.70 261.45 23.85 261.45 31.50 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 251.912  17.894  l  0.988 -0.744  1.976  1.489 -1.976 -3.239 -1.976  3.239  0.988 -0.744 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 264.60 27.00   C 256.95 26.55 252.90 23.40 252.90 15.75 ' />
+<text  x='0.00' y='52.00'   font-size='5' stroke-width='0.001'  >Duncan Brown, 2009, 8x32</text>
+<text  xml:space='preserve'  x='270.00' y='52.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >3C/4C longwise set.</text>
+  </g> </svg>

@@ -1,0 +1,98 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       UPSY DAISY
+       6x32 R                        
+       Doug Macdonald                                                          2021           https://dances.e-cribs.org/macdonald/Upsy_Daisy.pdf                                                 
+       Dancedata ID:  21902 
+
+
+       SVG crib 5887  created by Keith Rose  12.05.24   22:44:19           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  84.98' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   UPSY DAISY    -    6x32 R   </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='82.98' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >UPSY DAISY</text>
+<text  x='149.34' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3C start on opposite sides</text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >6x32 R</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<rect x='0' y='45' width='270' height='11.25' fill='white' />
+<polyline fill='none' stroke='rgb(0,0,0)' points='11.25,20.25 29.25,20.25 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  27.106  19.262  l  0.744  0.988 -1.489  1.976  3.239 -1.976 -3.239 -1.976  0.744  0.988 '  />
+<polyline fill='none'  stroke-width='0.70' stroke='rgb(0,0,0)' points='121.50,11.25 132.75,11.25 '   />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 56.25 17.10   C 45.45 17.10 36.00 25.20 39.15 36.90 ' />
+<polygon fill='white' stroke='rgb(0,0,0)' points='59.63,13.73 52.88,13.72 52.87,20.47 59.62,20.48 '  />
+<text  xml:space='preserve'  x='56.05' y='19.60' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<text   x='47.25' y='38.50' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<path  fill='none' stroke='rgb(0,0,0)' d='M 56.25 27.90   C 45.45 27.90 36.00 19.80 39.15 8.10 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  56.364   3.388  l  0.071  1.235 -2.335  0.819  3.791  0.152 -1.599 -3.441  0.071  1.235 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 39.15 8.10   C 42.30 0.00 53.55 1.35 57.60 5.40 ' />
+<circle cx='56.25' cy='27.90' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='56.05' y='30.40' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<text   x='47.25' y='11.50' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<polyline fill='none' stroke='rgb(0,0,0)' points='29.25,24.75 15.75,24.75 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  17.894  25.738  l -0.744 -0.988  1.489 -1.976 -3.239  1.976  3.239  1.976 -0.744 -0.988 '  />
+<circle cx='22.50' cy='29.25' r='2.75' fill='white' stroke='white' stroke-width='0.001'  />
+<text   x='20.30' y='31.40'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 72.00 0.00  L 72.00 45.00' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  55.268  39.967  l  1.167  0.409 -0.142  2.470  1.599 -3.441 -3.791  0.152  1.167  0.409 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 39.15 36.90   C 42.30 45.00 53.55 43.65 57.60 39.60 ' />
+<text   x='82.81' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >RA</text>  
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 108.00 0.00  L 108.00 45.00' />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='132.75' y1='11.25'  x2='132.75' y2='5.85'  />
+<circle cx='132.75' cy='11.25' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='132.55' y='13.75' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='121.50' y1='11.25'  x2='121.50' y2='16.65'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='124.87,14.63 124.88,7.88 118.13,7.87 118.12,14.62 '  />
+<text  xml:space='preserve'  x='121.30' y='13.75' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<polyline fill='none'  stroke-width='0.70' stroke='rgb(0,0,0)' points='121.50,36.00 132.75,36.00 '   />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='132.75' y1='36.00'  x2='132.75' y2='30.60'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='129.38,32.62 129.37,39.37 136.12,39.38 136.13,32.63 '  />
+<text  xml:space='preserve'  x='132.55' y='38.50' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='121.50' y1='36.00'  x2='121.50' y2='41.40'  />
+<circle cx='121.50' cy='36.00' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='121.30' y='38.50' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<text   x='123.25' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='129.35' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >L</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 148.50 0.00  L 148.50 45.00' />
+<circle cx='175.5' cy='18' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='166.5' cy='18' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='169.68' y1='21.18'  x2='166.50' y2='24.36'  />
+<circle cx='175.5' cy='33.75' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='166.5' cy='33.75' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='169.68' y1='36.93'  x2='166.50' y2='40.11'  />
+<circle cx='157.50' cy='18.00' r='1.69' fill='none'
+stroke='rgb(0,0,0)' />
+<circle cx='157.50' cy='18.00' r='0.51' fill='rgb(0,0,0)' stroke='rgb(0,0,0)' />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 193.50 0.00  L 193.50 45.00' />
+<line   stroke='rgb(0,0,0)' x1='212.40' y1='27.90'  x2='212.40' y2='17.10'  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 211.412  19.244  l  0.988 -0.744  1.976  1.489 -1.976 -3.239 -1.976  3.239  0.988 -0.744 '  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 213.388  25.756  l -0.988  0.744 -1.976 -1.489  1.976  3.239  1.976 -3.239 -0.988  0.744 '  />
+<text   x='82.85' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1</text>  
+<text   x='86.65' y='9.00'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >x</text>  
+<text   x='90.95' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >3</text>  
+<text   x='94.75' y='9.00'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >x</text>  
+<text   x='161.01' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >2 1</text>  
+<text   x='170.50' y='9.00'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >x</text>  
+<text   x='174.80' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >3</text>  
+<text   x='178.59' y='9.00'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >x</text>  
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 231.75 0.00  L 231.75 45.00' />
+<text   x='202.41' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >2 1</text>  
+<text   x='211.90' y='9.00'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >x</text>  
+<text   x='216.20' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >3</text>  
+<text   x='219.99' y='9.00'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >x</text>  
+<text   x='240.66' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >2 1</text>  
+<text   x='250.15' y='9.00'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >x</text>  
+<text   x='254.45' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >3</text>  
+<text   x='258.24' y='9.00'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >x</text>  
+<text   x='245.06' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='251.15' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<text  xml:space='preserve'  x='238.85' y='40.50'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >to   2 1x 3x</text>  
+<text   x='81.82' y='51.75'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >Repeat with set inverted, ie 3C begin from bottom</text>  
+<text  x='0.00' y='63.25'   font-size='5' stroke-width='0.001'  >Doug Macdonald, 2021, https://dances.e-cribs.org/macdonald/Upsy_Daisy.pdf</text>
+<text  xml:space='preserve'  x='270.00' y='63.25'   font-size='5' stroke-width='0.001'   text-anchor='end' >3C/3C longwise set.</text>
+  </g> </svg>

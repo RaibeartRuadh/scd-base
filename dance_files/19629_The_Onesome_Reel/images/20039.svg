@@ -1,0 +1,87 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       THE ONESOME REEL
+       32 S + 32 R                   
+       Reuben Freemantle                                                       2020           www.scottish-country-dancing-dictionary.com/dance-crib/onesome-reel.html                            
+       Dancedata ID:  20039 
+
+
+       SVG crib 5107  created by Keith Rose  11.05.23   15:11:33           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  93.89' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   THE ONESOME REEL    -    32 S + 32 R                      </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='91.89' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >THE ONESOME REEL</text>
+<text  x='160.37' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >                                                                 </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >32 S + 32 R</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<rect x='0' y='45' width='270' height='11.25' fill='white' />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 8.55 22.50   C 13.95 25.65 18.45 27.00 26.10 23.40 ' />
+<circle cx='8.10' cy='22.50' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='7.90' y='25.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<path  fill='none' stroke='rgb(0,0,0)' d='M 26.10 23.40   C 33.75 19.35 37.80 29.70 33.75 33.75 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  19.875  37.910  l  0.551 -1.108  2.433  0.448 -3.216 -2.013 -0.319  3.781  0.551 -1.108 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 33.75 33.75   C 29.25 37.80 22.05 41.85 19.80 35.55 ' />
+<circle cx='18.90' cy='33.30' r='0.90' fill='black' />
+<circle cx='18.90' cy='11.70' r='0.90' fill='black' />
+<circle cx='29.70' cy='22.50' r='0.90' fill='black' />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 58.95 32.85   C 62.10 27.45 63.45 22.95 59.85 15.30 ' />
+<circle cx='58.95' cy='33.30' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='58.75' y='35.80' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<path  fill='none' stroke='rgb(0,0,0)' d='M 59.85 15.30   C 55.80 7.65 66.15 3.60 70.20 7.65 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  74.360  21.525  l -1.108 -0.551  0.448 -2.433 -2.013  3.216  3.781  0.319 -1.108 -0.551 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 70.20 7.65   C 74.25 12.15 78.30 19.35 72.00 21.60 ' />
+<circle cx='69.75' cy='22.50' r='0.90' fill='black' />
+<circle cx='48.15' cy='22.50' r='0.90' fill='black' />
+<circle cx='58.95' cy='11.70' r='0.90' fill='black' />
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 40.50 0.00  L 40.50 45.00' />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='108.90' y1='22.50'  x2='103.50' y2='22.50'  />
+<circle cx='108.90' cy='22.50' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='108.70' y='25.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<text   x='117.16' y='22.50'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S</text>  
+<text   x='123.85' y='24.30'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >4</text>  
+<text   x='112.83' y='33.30'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >Highland</text>  
+<circle cx='87.30' cy='22.50' r='0.90' fill='black' />
+<circle cx='98.10' cy='11.70' r='0.90' fill='black' />
+<circle cx='98.10' cy='33.30' r='0.90' fill='black' />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 81.00 0.00  L 81.00 45.00' />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 135.00 0.00  L 135.00 45.00' />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 166.95 22.50   C 161.55 19.35 157.05 18.00 149.40 21.60 ' />
+<circle cx='167.40' cy='22.50' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='167.20' y='25.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<path  fill='none' stroke='rgb(0,0,0)' d='M 149.40 21.60   C 141.75 25.65 137.70 15.30 141.75 11.25 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 155.625   7.090  l -0.551  1.108 -2.433 -0.448  3.216  2.013  0.319 -3.781 -0.551  1.108 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 141.75 11.25   C 146.25 7.20 153.45 3.15 155.70 9.45 ' />
+<circle cx='156.60' cy='11.70' r='0.90' fill='black' />
+<circle cx='156.60' cy='33.30' r='0.90' fill='black' />
+<circle cx='145.80' cy='22.50' r='0.90' fill='black' />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 197.55 12.15   C 194.40 17.55 193.05 22.05 196.65 29.70 ' />
+<circle cx='197.55' cy='11.70' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='197.35' y='14.20' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<path  fill='none' stroke='rgb(0,0,0)' d='M 196.65 29.70   C 200.70 37.35 190.35 41.40 186.30 37.35 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 182.140  23.475  l  1.108  0.551 -0.448  2.433  2.013 -3.216 -3.781 -0.319  1.108  0.551 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 186.30 37.35   C 182.25 32.85 178.20 25.65 184.50 23.40 ' />
+<circle cx='186.75' cy='22.50' r='0.90' fill='black' />
+<circle cx='208.35' cy='22.50' r='0.90' fill='black' />
+<circle cx='197.55' cy='33.30' r='0.90' fill='black' />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='224.10' y1='22.50'  x2='229.50' y2='22.50'  />
+<circle cx='224.10' cy='22.50' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='223.90' y='25.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<text   x='252.16' y='22.50'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S</text>  
+<text   x='258.85' y='24.30'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >4</text>  
+<text   x='247.83' y='33.30'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >Highland</text>  
+<circle cx='245.70' cy='22.50' r='0.90' fill='black' />
+<circle cx='234.90' cy='11.70' r='0.90' fill='black' />
+<circle cx='234.90' cy='33.30' r='0.90' fill='black' />
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 175.50 0.00  L 175.50 45.00' />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 216.00 0.00  L 216.00 45.00' />
+<text   x='30.27' y='51.75'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >If available, up to 4 people can dance, starting from 3rd, 2nd and 4th place, all dancing together.</text>  
+<text  x='0.00' y='63.25'   font-size='5' stroke-width='0.001'  >Reuben Freemantle, 2020</text>
+<text  x='0.00' y='70.25'   font-size='5' stroke-width='0.001'  >www.scottish-country-dancing-dictionary.com/dance-crib/onesome-reel.html</text>
+<text  xml:space='preserve'  x='270.00' y='63.25'   font-size='5' stroke-width='0.001'   text-anchor='end' >1-4P/1-4P  square set.</text>
+  </g> </svg>

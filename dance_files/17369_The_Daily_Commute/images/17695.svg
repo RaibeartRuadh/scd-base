@@ -1,0 +1,243 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       THE DAILY COMMUTE
+       4x(32 S + 32 R)               
+       Holger Schuckelt                                                        2015           Borderland Dances                                                                                   
+       Dancedata ID:  17695 
+
+
+       SVG crib 5042  created by Keith Rose  11.05.23   15:10:39           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  118.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   THE DAILY COMMUTE    -    4x(32 S + 32 R)                  </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='116.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >THE DAILY COMMUTE</text>
+<text  x='153.43' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >                                                                 </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >4x(32 S + 32 R)</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<rect x='0' y='45' width='270' height='45' fill='white' />
+<polyline fill='none'  stroke-width='0.70' stroke='rgb(0,0,0)' points='51.75,36.00 65.25,36.00 '   />
+<polyline fill='none'  stroke-width='0.70' stroke='rgb(0,0,0)' points='103.50,15.75 103.50,29.25 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  94.093  30.924  l -1.217  0.224 -1.102 -2.215  0.319  3.781  3.216 -2.013 -1.217  0.224 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 103.50 28.35   C 97.65 27.45 92.70 28.80 92.25 32.40 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 103.511  35.620  l  0.778 -0.962  2.278  0.965 -2.703 -2.663 -1.132  3.621  0.778 -0.962 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 126.00 30.60   C 126.00 44.10 105.75 44.10 103.95 33.30 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  75.193  36.774  l -1.217  0.224 -1.102 -2.215  0.319  3.781  3.216 -2.013 -1.217  0.224 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 58.50 18.00   C 77.85 18.00 76.50 32.40 73.35 38.25 ' />
+<polyline fill='none' stroke='rgb(0,0,0)' points='9.00,22.50 22.50,22.50 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  20.356  21.512  l  0.744  0.988 -1.489  1.976  3.239 -1.976 -3.239 -1.976  0.744  0.988 '  />
+<circle cx='15.75' cy='27.00' r='2.75' fill='white' stroke='white' stroke-width='0.001'  />
+<text   x='13.55' y='29.15'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 83.25 0.00  L 83.25 45.00' />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='51.75' y1='36.45'  x2='51.75' y2='31.05'  />
+<circle cx='51.75' cy='36.45' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='51.55' y='38.95' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<text   x='31.31' y='38.70'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='37.41' y='40.50'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<text  style='fill:rgb(0,0,0)'  x='42.50' y='37.50'  font-size='5' stroke-width='0.001'   >1</text>  
+<line  stroke='rgb(0,0,0)'  x1='42.50' y1='38.50'  x2='44.75' y2='38.50' />
+<text  style='fill:rgb(0,0,0)'  x='42.50' y='43.50'  font-size='5' stroke-width='0.001'   >2</text>  
+<text   x='31.91' y='10.80'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='38.01' y='12.60'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >L</text>  
+<text  style='fill:rgb(0,0,0)'  x='41.90' y='9.60'  font-size='5' stroke-width='0.001'   >1</text>  
+<line  stroke='rgb(0,0,0)'  x1='41.90' y1='10.60'  x2='44.15' y2='10.60' />
+<text  style='fill:rgb(0,0,0)'  x='41.90' y='15.60'  font-size='5' stroke-width='0.001'   >2</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='65.25' y1='36.45'  x2='65.25' y2='41.85'  />
+<circle cx='65.25' cy='36.45' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='65.05' y='38.95' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<polygon fill='white' stroke='rgb(0,0,0)' points='61.88,14.63 55.13,14.62 55.12,21.37 61.87,21.38 '  />
+<text  xml:space='preserve'  x='58.30' y='20.50' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  73.425   9.110  l  0.551 -1.108  2.433  0.448 -3.216 -2.013 -0.319  3.781  0.551 -1.108 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 58.50 27.00   C 77.85 27.00 76.50 12.60 73.35 6.75 ' />
+<circle cx='58.50' cy='27.00' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='58.30' y='29.50' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<circle cx='66.60' cy='22.50' r='2.75' fill='white' stroke='white' stroke-width='0.001'  />
+<text   x='64.40' y='24.65'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<circle cx='103.50' cy='28.35' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='103.30' y='30.85' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<text   x='114.75' y='35.35' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<polygon fill='white' stroke='rgb(0,0,0)' points='129.38,27.23 122.63,27.22 122.62,33.97 129.37,33.98 '  />
+<text  xml:space='preserve'  x='125.80' y='33.10' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  92.325  14.960  l  0.551 -1.108  2.433  0.448 -3.216 -2.013 -0.319  3.781  0.551 -1.108 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 103.50 16.65   C 97.65 17.55 92.70 16.20 92.25 12.60 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 105.429   9.859  l -1.139  0.482 -1.556 -1.924  1.132  3.621  2.703 -2.663 -1.139  0.482 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 126.00 14.40   C 126.00 0.90 105.75 0.90 103.95 11.70 ' />
+<polygon fill='white' stroke='rgb(0,0,0)' points='106.88,13.28 100.13,13.27 100.12,20.02 106.87,20.03 '  />
+<text  xml:space='preserve'  x='103.30' y='19.15' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<text   x='114.75' y='14.65' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<circle cx='126.00' cy='14.40' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='125.80' y='16.90' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<circle cx='96.75' cy='22.50' r='2.75' fill='white' stroke='white' stroke-width='0.001'  />
+<text   x='94.55' y='24.65'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >N</text>  
+<polyline fill='none'  stroke-width='0.70' stroke='rgb(0,0,0)' points='51.75,9.00 65.25,9.00 '   />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='51.75' y1='8.55'  x2='51.75' y2='13.95'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='55.12,11.93 55.13,5.18 48.38,5.17 48.37,11.92 '  />
+<text  xml:space='preserve'  x='51.55' y='11.05' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='65.25' y1='8.55'  x2='65.25' y2='3.15'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='61.88,5.17 61.87,11.92 68.62,11.93 68.63,5.18 '  />
+<text  xml:space='preserve'  x='65.05' y='11.05' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<text   x='140.90' y='11.25'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1</text>  
+<text   x='144.70' y='11.25'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >x</text>  
+<text   x='139.00' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='145.10' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >L</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 155.25 0.00  L 155.25 45.00' />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='234.00' y1='36.00'  x2='237.02' y2='31.52'  />
+<circle cx='234.00' cy='36.00' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='233.80' y='38.50' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='249.75' y1='11.25'  x2='246.58' y2='15.62'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='250.50,15.96 254.46,10.50 249.00,6.54 245.04,12.00 '  />
+<text  xml:space='preserve'  x='249.55' y='13.75' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<text   x='157.85' y='6.75'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >Corners</text>  
+<text   x='161.10' y='12.60'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >Pass</text>  
+<text   x='164.88' y='18.45'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >&amp;</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='213.75' y1='11.25'  x2='209.93' y2='15.07'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='213.75,16.02 218.52,11.25 213.75,6.48 208.98,11.25 '  />
+<text  xml:space='preserve'  x='213.55' y='13.75' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<path  fill='none' stroke='rgb(0,0,0)' d='M 204.75 22.50   C 201.60 2.25 218.70 1.35 221.85 10.80 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 206.620  32.839  l -0.962 -0.778  0.965 -2.278 -2.663  2.703  3.621  1.132 -0.962 -0.778 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 221.85 10.80   C 225.00 20.25 217.80 27.90 204.30 32.40 ' />
+<circle cx='204.75' cy='22.50' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='204.55' y='25.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<text   x='213.75' y='36.25' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='186.75' y1='33.75'  x2='190.57' y2='29.93'  />
+<circle cx='186.75' cy='33.75' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='186.55' y='36.25' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 195.75 22.50   C 198.90 42.75 181.80 43.65 178.65 34.20 ' />
+<polygon fill='white' stroke='rgb(0,0,0)' points='192.37,25.87 199.12,25.88 199.13,19.13 192.38,19.12 '  />
+<text  xml:space='preserve'  x='195.55' y='25.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<text   x='186.75' y='13.75' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<text   x='231.56' y='24.75'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='237.66' y='26.55'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<text  style='fill:rgb(0,0,0)'  x='242.75' y='23.55'  font-size='5' stroke-width='0.001'   >1</text>  
+<line  stroke='rgb(0,0,0)'  x1='242.75' y1='24.55'  x2='245.00' y2='24.55' />
+<text  style='fill:rgb(0,0,0)'  x='242.75' y='29.55'  font-size='5' stroke-width='0.001'   >2</text>  
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 250.258  34.154  l -1.188 -0.344  0.005 -2.474 -1.405  3.524  3.777 -0.362 -1.188 -0.344 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 248.85 27.90   C 251.10 20.70 258.75 27.45 247.95 34.65 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 255.992  14.896  l  1.188  0.344 -0.005  2.474  1.405 -3.524 -3.777  0.362  1.188  0.344 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 257.40 21.15   C 255.15 28.35 247.50 21.60 258.30 14.40 ' />
+<text   x='161.34' y='24.30'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >Twirl</text>  
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 267.75 0.00  L 267.75 45.00' />
+<line   stroke='rgb(0,0,0)' x1='177.75' y1='4.05'  x2='179.55' y2='2.25'  />
+<line   stroke='rgb(0,0,0)' x1='179.55' y1='2.25'  x2='216.45' y2='2.25'  />
+<line   stroke='rgb(0,0,0)' x1='216.45' y1='2.25'  x2='218.25' y2='0.45'  />
+<line   stroke='rgb(0,0,0)' x1='258.75' y1='4.05'  x2='256.95' y2='2.25'  />
+<line   stroke='rgb(0,0,0)' x1='256.95' y1='2.25'  x2='220.05' y2='2.25'  />
+<line   stroke='rgb(0,0,0)' x1='220.05' y1='2.25'  x2='218.25' y2='0.45'  />
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 148.50 45.00  L 148.50 90.00' />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='64.35' y1='55.80'  x2='67.75' y2='60.00'  />
+<circle cx='64.35' cy='55.80' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='64.15' y='58.30' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='95.85' y1='80.55'  x2='92.53' y2='76.29'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='91.11,79.97 95.27,85.29 100.59,81.13 96.43,75.81 '  />
+<text  xml:space='preserve'  x='95.65' y='83.05' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<text   x='95.85' y='58.75' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<text   x='64.35' y='83.05' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<path  fill='none' stroke='rgb(0,0,0)' d='M 86.85 55.35   C 108.00 70.65 108.90 85.05 99.00 87.30 ' />
+<circle cx='85.50' cy='56.25' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='85.30' y='58.75' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  77.271  65.291  l  1.139 -0.482  1.556  1.924 -1.132 -3.621 -2.703  2.663  1.139 -0.482 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 99.00 87.30   C 89.10 89.55 75.15 72.90 78.75 63.45 ' />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='135.00' y1='81.00'  x2='131.18' y2='77.18'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='130.23,81.00 135.00,85.77 139.77,81.00 135.00,76.23 '  />
+<text  xml:space='preserve'  x='134.80' y='83.50' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='114.75' y1='56.25'  x2='118.57' y2='60.07'  />
+<circle cx='114.75' cy='56.25' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='114.55' y='58.75' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<text   x='112.31' y='72.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='118.41' y='73.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<text  style='fill:rgb(0,0,0)'  x='123.50' y='70.80'  font-size='5' stroke-width='0.001'   >1</text>  
+<line  stroke='rgb(0,0,0)'  x1='123.50' y1='71.80'  x2='125.75' y2='71.80' />
+<text  style='fill:rgb(0,0,0)'  x='123.50' y='76.80'  font-size='5' stroke-width='0.001'   >2</text>  
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 142.298  74.654  l -0.823  0.924 -2.230 -1.072  2.573  2.788  1.303 -3.563 -0.823  0.924 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 135.90 73.80   C 130.05 69.30 139.05 64.35 141.75 76.95 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 126.352  62.596  l  0.823 -0.924  2.230  1.072 -2.573 -2.788 -1.303  3.563  0.823 -0.924 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 132.75 63.45   C 138.60 67.95 129.60 72.90 126.90 60.30 ' />
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 2.25 45.00  L 2.25 90.00' />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='11.25' y1='51.75'  x2='16.65' y2='51.75'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='14.63,48.38 7.88,48.37 7.87,55.12 14.62,55.13 '  />
+<text  xml:space='preserve'  x='11.05' y='54.25' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='24.75' y1='51.75'  x2='30.15' y2='51.75'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='28.13,48.38 21.38,48.37 21.37,55.12 28.12,55.13 '  />
+<text  xml:space='preserve'  x='24.55' y='54.25' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='38.25' y1='51.75'  x2='38.25' y2='57.15'  />
+<circle cx='38.25' cy='51.75' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='38.05' y='54.25' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='38.25' y1='83.25'  x2='32.85' y2='83.25'  />
+<circle cx='38.25' cy='83.25' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='38.05' y='85.75' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='24.75' y1='83.25'  x2='19.35' y2='83.25'  />
+<circle cx='24.75' cy='83.25' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='24.55' y='85.75' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='11.25' y1='83.25'  x2='11.25' y2='77.85'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='7.88,79.87 7.87,86.62 14.62,86.63 14.63,79.88 '  />
+<text  xml:space='preserve'  x='11.05' y='85.75' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<circle cx='24.75' cy='67.50' r='6.75' fill='none'  stroke='rgb(0,0,0)' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  31.583  71.120  l -1.237  0.021 -0.722 -2.366 -0.307  3.782  3.503 -1.456 -1.237  0.021 '  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  17.918  63.881  l  1.237 -0.021  0.723  2.366  0.306 -3.782 -3.503  1.458  1.237 -0.021 '  />
+<line   stroke='rgb(0,0,0)' x1='15.30' y1='67.50'  x2='34.20' y2='67.50'  />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 49.50 45.00  L 49.50 90.00' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 193.880  12.161  l  0.962  0.778 -0.965  2.278  2.663 -2.703 -3.621 -1.132  0.962  0.778 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 178.65 34.20   C 175.50 24.75 182.70 17.10 196.20 12.60 ' />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='184.50' y1='83.25'  x2='179.10' y2='83.25'  />
+<circle cx='184.50' cy='83.25' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='184.30' y='85.75' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='171.00' y1='51.75'  x2='176.40' y2='51.75'  />
+<circle cx='171.00' cy='51.75' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='170.80' y='54.25' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='184.50' y1='51.75'  x2='184.50' y2='57.15'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='187.87,55.13 187.88,48.38 181.13,48.37 181.12,55.12 '  />
+<text  xml:space='preserve'  x='184.30' y='54.25' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >2</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='157.50' y1='51.75'  x2='162.90' y2='51.75'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='160.88,48.38 154.13,48.37 154.12,55.12 160.87,55.13 '  />
+<text  xml:space='preserve'  x='157.30' y='54.25' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='171.00' y1='83.25'  x2='165.60' y2='83.25'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='167.62,86.62 174.37,86.63 174.38,79.88 167.63,79.87 '  />
+<text  xml:space='preserve'  x='170.80' y='85.75' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='157.50' y1='83.25'  x2='157.50' y2='77.85'  />
+<circle cx='157.50' cy='83.25' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='157.30' y='85.75' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<circle cx='171.00' cy='67.50' r='6.75' fill='none'  stroke='rgb(0,0,0)' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 177.833  71.120  l -1.237  0.021 -0.722 -2.366 -0.307  3.782  3.503 -1.456 -1.237  0.021 '  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 164.168  63.881  l  1.237 -0.021  0.723  2.366  0.306 -3.782 -3.503  1.458  1.237 -0.021 '  />
+<line   stroke='rgb(0,0,0)' x1='161.55' y1='67.50'  x2='180.45' y2='67.50'  />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 193.50 45.00  L 193.50 90.00' />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 75.15 81.45   C 54.00 66.15 53.10 51.75 63.00 49.50 ' />
+<polygon fill='white' stroke='rgb(0,0,0)' points='73.13,77.17 73.12,83.92 79.87,83.93 79.88,77.18 '  />
+<text  xml:space='preserve'  x='76.30' y='83.05' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  84.729  71.509  l -1.139  0.482 -1.556 -1.924  1.132  3.621  2.703 -2.663 -1.139  0.482 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 63.00 49.50   C 72.90 47.25 86.85 63.90 83.25 73.35 ' />
+<line   stroke='rgb(0,0,0)' x1='56.25' y1='49.05'  x2='58.05' y2='47.25'  />
+<line   stroke='rgb(0,0,0)' x1='58.05' y1='47.25'  x2='96.08' y2='47.25'  />
+<line   stroke='rgb(0,0,0)' x1='96.08' y1='47.25'  x2='97.88' y2='45.45'  />
+<line   stroke='rgb(0,0,0)' x1='139.50' y1='49.05'  x2='137.70' y2='47.25'  />
+<line   stroke='rgb(0,0,0)' x1='137.70' y1='47.25'  x2='99.67' y2='47.25'  />
+<line   stroke='rgb(0,0,0)' x1='99.67' y1='47.25'  x2='97.88' y2='45.45'  />
+<text   x='200.06' y='72.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='206.16' y='73.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<text  style='fill:rgb(0,0,0)'  x='211.25' y='70.80'  font-size='5' stroke-width='0.001'   >1</text>  
+<line  stroke='rgb(0,0,0)'  x1='211.25' y1='71.80'  x2='213.50' y2='71.80' />
+<text  style='fill:rgb(0,0,0)'  x='211.25' y='76.80'  font-size='5' stroke-width='0.001'   >2</text>  
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 225.493  77.724  l -1.217  0.224 -1.102 -2.215  0.319  3.781  3.216 -2.013 -1.217  0.224 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 222.75 74.25   C 216.45 68.85 229.95 66.15 223.65 79.20 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 220.007  59.526  l  1.217 -0.224  1.102  2.215 -0.319 -3.781 -3.216  2.013  1.217 -0.224 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 222.75 63.00   C 229.05 68.40 215.55 71.10 221.85 58.05 ' />
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 234.00 45.00  L 234.00 90.00' />
+<text   x='240.81' y='54.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >2</text>  
+<text   x='244.60' y='54.00'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >x</text>  
+<text   x='248.90' y='54.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1</text>  
+<text   x='252.70' y='54.00'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >x</text>  
+<text   x='257.00' y='54.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >3</text>  
+<text   x='260.79' y='54.00'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >x</text>  
+<text   x='240.37' y='72.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S T</text>  
+<text   x='255.85' y='73.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<text  style='fill:rgb(0,0,0)'  x='260.95' y='70.80'  font-size='5' stroke-width='0.001'   >1</text>  
+<line  stroke='rgb(0,0,0)'  x1='260.95' y1='71.80'  x2='263.20' y2='71.80' />
+<text  style='fill:rgb(0,0,0)'  x='260.95' y='76.80'  font-size='5' stroke-width='0.001'   >2</text>  
+<text  x='0.00' y='97.00'   font-size='5' stroke-width='0.001'  >Holger Schuckelt, 2015, Borderland Dances</text>
+<text  xml:space='preserve'  x='270.00' y='97.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >3C/4C longwise set.</text>
+  </g> </svg>

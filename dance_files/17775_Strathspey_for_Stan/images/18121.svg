@@ -1,0 +1,85 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       STRATHSPEY FOR STAN
+       8x32 S                        
+       John Wilkinson                                                          2017           www.scotchmist.ca                                                                                   
+       Dancedata ID:  18121 
+
+
+       SVG crib 3913  created by Keith Rose  11.05.23   13:03:03           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  73.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   STRATHSPEY FOR STAN    -    8x32 S                           </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='71.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >STRATHSPEY FOR STAN</text>
+<text  x='179.76' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >                                                                 </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >8x32 S</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<text   x='5.65' y='24.75'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S</text>  
+<text   x='18.33' y='27.90'  font-size='7.5' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >1</text>  
+<path fill='none'   style='stroke:rgb(0,0,0)'
+ d='M 15.75 22.50   c 0 -6.30 9.00 -6.30 9.00  0'  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  25.195  20.181  l -0.781  0.960 -2.276 -0.971  2.696  2.670  1.141 -3.618 -0.781  0.960 '  />
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 31.50 0.00  L 31.50 45.00' />
+<text   x='37.16' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='43.25' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 54.00 0.00  L 54.00 45.00' />
+<circle cx='67.5' cy='26.99999' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='76.5' cy='27.00001' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='83.25' y1='27.00'  x2='60.75' y2='27.00'  />
+<line   stroke='rgb(0,0,0)' x1='73.32' y1='23.82'  x2='76.50' y2='20.64'  />
+<circle cx='72.00' cy='38.25' r='1.69' fill='none'
+stroke='rgb(0,0,0)' />
+<circle cx='72.00' cy='38.25' r='0.51' fill='rgb(0,0,0)' stroke='rgb(0,0,0)' />
+<circle cx='76.5' cy='11.25' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='67.5' cy='11.25' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='60.75' y1='11.25'  x2='83.25' y2='11.25'  />
+<line   stroke='rgb(0,0,0)' x1='70.68' y1='14.43'  x2='67.50' y2='17.61'  />
+<text   x='87.25' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='93.35' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >L</text>  
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 101.25 0.00  L 101.25 45.00' />
+<circle cx='123.75' cy='18' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='114.75' cy='18' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='108.00' y1='18.00'  x2='130.50' y2='18.00'  />
+<line   stroke='rgb(0,0,0)' x1='120.57' y1='21.18'  x2='123.75' y2='24.36'  />
+<circle cx='119.25' cy='6.75' r='1.69' fill='none'
+stroke='rgb(0,0,0)' />
+<circle cx='119.25' cy='6.75' r='0.51' fill='rgb(0,0,0)' stroke='rgb(0,0,0)' />
+<circle cx='114.75' cy='33.75001' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='123.75' cy='33.74999' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='130.50' y1='33.75'  x2='108.00' y2='33.75'  />
+<line   stroke='rgb(0,0,0)' x1='117.93' y1='30.57'  x2='114.75' y2='27.39'  />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 137.25 0.00  L 137.25 45.00' />
+<text   x='142.91' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='149.00' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<line   stroke='rgb(0,0,0)' x1='150.30' y1='15.30'  x2='155.70' y2='15.30'  />
+<line   stroke='rgb(0,0,0)' x1='155.70' y1='15.30'  x2='155.70' y2='20.70'  />
+<polyline fill='none' stroke='rgb(0,0,0)' points='173.25,18.00 166.50,27.00 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 168.577  25.877  l -1.237  0.003 -0.688 -2.377 -0.362  3.777  3.524 -1.405 -1.237  0.003 '  />
+<polyline fill='none'  style='stroke-dasharray: 2, 1.3;' stroke='rgb(0,0,0)' points='162.00,24.75 168.75,15.75 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 166.673  16.873  l  1.237 -0.003  0.688  2.377  0.362 -3.777 -3.524  1.405  1.237 -0.003 '  />
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 180.00 0.00  L 180.00 45.00' />
+<text   x='188.51' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='194.60' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >L</text>  
+<polyline fill='none' stroke='rgb(0,0,0)' points='186.75,27.00 186.75,32.40 192.15,32.40 '   />
+<text   x='250.91' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='257.00' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<polyline fill='none' stroke='rgb(0,0,0)' points='265.50,27.00 265.50,32.40 260.10,32.40 '   />
+<line   stroke='rgb(0,0,0)' x1='208.80' y1='15.30'  x2='214.20' y2='15.30'  />
+<line   stroke='rgb(0,0,0)' x1='208.80' y1='15.30'  x2='208.80' y2='20.70'  />
+<text   x='213.25' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='219.35' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >L</text>  
+<polyline fill='none'  style='stroke-dasharray: 2, 1.3;' stroke='rgb(0,0,0)' points='238.50,27.00 231.75,18.00 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 232.246  20.308  l  0.344 -1.188  2.474  0.005 -3.524 -1.405  0.362  3.777  0.344 -1.188 '  />
+<polyline fill='none' stroke='rgb(0,0,0)' points='227.25,20.25 234.00,29.25 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 233.504  26.942  l -0.344  1.188 -2.474 -0.005  3.524  1.405 -0.362 -3.777 -0.344  1.188 '  />
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 245.25 0.00  L 245.25 45.00' />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 204.75 0.00  L 204.75 45.00' />
+<text  x='0.00' y='52.00'   font-size='5' stroke-width='0.001'  >John Wilkinson, 2017, www.scotchmist.ca</text>
+<text  xml:space='preserve'  x='270.00' y='52.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >3C/4C longwise set.</text>
+  </g> </svg>

@@ -1,0 +1,77 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       DANCING WITH INNA
+       3x(32 S + 32 R)               
+       Keith Rose                                                              2024           The Inna Dances                                                                                     
+       Dancedata ID:  22241 
+
+
+       SVG crib 6700  created by Keith Rose  24.08.24   12:10:30           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  73.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   DANCING WITH INNA    -    3x(32 S + 32 R)   </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='71.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >DANCING WITH INNA</text>
+<text  x='150.88' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' ></text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >3x(32 S + 32 R)</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<text   x='14.65' y='22.50'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S</text>  
+<text   x='15.70' y='31.50'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >&amp;</text>  
+<text   x='10.21' y='40.50'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >LINK</text>  
+<text   x='13.25' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1 2</text>  
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 36.00 0.00  L 36.00 45.00' />
+<circle cx='49.5' cy='18' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='49.49999' cy='27' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='49.50' y1='33.75'  x2='49.50' y2='11.25'  />
+<line   stroke='rgb(0,0,0)' x1='52.68' y1='21.18'  x2='55.86' y2='18.00'  />
+<circle cx='67.49998' cy='27' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='67.50002' cy='18' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='67.50' y1='11.25'  x2='67.50' y2='33.75'  />
+<line   stroke='rgb(0,0,0)' x1='64.32' y1='23.82'  x2='61.14' y2='27.00'  />
+<circle cx='67.50' cy='38.25' r='1.69' fill='none'
+stroke='rgb(0,0,0)' />
+<circle cx='67.50' cy='38.25' r='0.51' fill='rgb(0,0,0)' stroke='rgb(0,0,0)' />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 81.00 0.00  L 81.00 45.00' />
+<circle cx='96.75' cy='15.74999' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='105.75' cy='15.75001' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='102.57' y1='12.57'  x2='105.75' y2='9.39'  />
+<circle cx='101.25' cy='6.75' r='1.69' fill='none'
+stroke='rgb(0,0,0)' />
+<circle cx='101.25' cy='6.75' r='0.51' fill='rgb(0,0,0)' stroke='rgb(0,0,0)' />
+<circle cx='105.75' cy='31.5' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='96.75' cy='31.5' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='99.93' y1='34.68'  x2='96.75' y2='37.86'  />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 121.50 0.00  L 121.50 45.00' />
+<circle cx='153' cy='27' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='153' cy='18' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='153.00' y1='11.25'  x2='153.00' y2='33.75'  />
+<line   stroke='rgb(0,0,0)' x1='149.82' y1='23.82'  x2='146.64' y2='27.00'  />
+<circle cx='135' cy='18' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='135' cy='27' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='135.00' y1='33.75'  x2='135.00' y2='11.25'  />
+<line   stroke='rgb(0,0,0)' x1='138.18' y1='21.18'  x2='141.36' y2='18.00'  />
+<circle cx='135.00' cy='6.75' r='1.69' fill='none'
+stroke='rgb(0,0,0)' />
+<circle cx='135.00' cy='6.75' r='0.51' fill='rgb(0,0,0)' stroke='rgb(0,0,0)' />
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 166.50 0.00  L 166.50 45.00' />
+<text   x='178.90' y='22.50'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >S</text>  
+<text   x='179.95' y='31.50'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >&amp;</text>  
+<text   x='174.46' y='40.50'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >LINK</text>  
+<text   x='177.50' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >2 1</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 200.25 0.00  L 200.25 45.00' />
+<text   x='211.25' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1 2</text>  
+<text   x='212.65' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >P</text>  
+<path  fill='none' stroke='rgb(0,0,0)' d='M 234.00 4.50   C 229.50 13.50 229.50 31.50 234.00 40.50 ' />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 261.00 4.50   C 265.50 13.50 265.50 31.50 261.00 40.50 ' />
+<text   x='237.99' y='4.50'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >Reel</text>  
+<text   x='239.91' y='13.50'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1 2 3</text>  
+<text   x='244.15' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >P</text>  
+<text  xml:space='preserve'  x='238.78' y='40.50'  font-size='5' stroke-width='0.001' style='fill:rgb(0,0,0)' >to  2 3 1</text>  
+<text  x='0.00' y='52.00'   font-size='5' stroke-width='0.001'  >Keith Rose, 2024, The Inna Dances</text>
+<text  xml:space='preserve'  x='270.00' y='52.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >3C/3C longwise set.</text>
+  </g> </svg>

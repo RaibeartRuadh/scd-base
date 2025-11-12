@@ -1,0 +1,82 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       PROMENADE ON THE BRÜHL TERRACE
+       4x32 S                        
+       Geraldine Schuckelt                                                     2014           Riverside Dances                                                                                    
+       Dancedata ID:  16673 
+
+
+       SVG crib 2750  created by Keith Rose  11.05.23   11:59:32           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  73.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   PROMENADE ON THE BRÜHL TERRACE    -    4x32 S                           </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='71.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >PROMENADE ON THE BRÜHL TERRACE</text>
+<text  x='213.97' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >                                                                 </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >4x32 S</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<text   x='17.75' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1 2</text>  
+<text   x='15.86' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >RL</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 45.00 0.00  L 45.00 45.00' />
+<text   x='67.25' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >1 2</text>  
+<text   x='55.81' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >RA</text>  
+<text   x='74.36' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >LA</text>  
+<line   stroke='rgb(0,0,0)' x1='56.25' y1='13.05'  x2='56.25' y2='11.25'  />
+<line   stroke='rgb(0,0,0)' x1='56.25' y1='11.25'  x2='87.75' y2='11.25'  />
+<line   stroke='rgb(0,0,0)' x1='87.75' y1='11.25'  x2='87.75' y2='13.05'  />
+<text   x='103.25' y='9.00'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >3 4</text>  
+<text   x='101.36' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >RL</text>  
+<line   stroke='rgb(0,0,0)' x1='58.50' y1='4.05'  x2='60.30' y2='2.25'  />
+<line   stroke='rgb(0,0,0)' x1='60.30' y1='2.25'  x2='84.83' y2='2.25'  />
+<line   stroke='rgb(0,0,0)' x1='84.83' y1='2.25'  x2='86.63' y2='0.45'  />
+<line   stroke='rgb(0,0,0)' x1='114.75' y1='4.05'  x2='112.95' y2='2.25'  />
+<line   stroke='rgb(0,0,0)' x1='112.95' y1='2.25'  x2='88.42' y2='2.25'  />
+<line   stroke='rgb(0,0,0)' x1='88.42' y1='2.25'  x2='86.63' y2='0.45'  />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 126.00 0.00  L 126.00 45.00' />
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 162.00 0.00  L 162.00 45.00' />
+<text   x='174.41' y='27.00'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='180.50' y='28.80'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 198.00 0.00  L 198.00 45.00' />
+<text   x='219.02' y='40.50'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >PROM</text>  
+<polyline fill='none'  stroke-width='0.70' stroke='rgb(0,0,0)' points='243.00,22.50 247.50,17.55 243.00,11.25 243.00,9.00 247.50,13.95 243.00,20.25 243.00,22.50 247.50,17.55 243.00,11.25 243.00,9.00 '   />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='243.00' y1='22.50'  x2='248.40' y2='22.50'  />
+<circle cx='243.00' cy='22.50' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='242.80' y='25.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='243.00' y1='9.00'  x2='248.40' y2='9.00'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='246.38,5.63 239.63,5.62 239.63,12.37 246.37,12.38 '  />
+<text  xml:space='preserve'  x='242.80' y='11.50' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >1</text>  
+<polyline fill='none'  stroke-width='0.70' stroke='rgb(0,0,0)' points='229.50,22.50 234.00,17.55 229.50,11.25 229.50,9.00 234.00,13.95 229.50,20.25 229.50,22.50 234.00,17.55 229.50,11.25 229.50,9.00 '   />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='229.50' y1='22.50'  x2='234.90' y2='22.50'  />
+<circle cx='229.50' cy='22.50' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='229.30' y='25.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >4</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='229.50' y1='9.00'  x2='234.90' y2='9.00'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='232.88,5.63 226.13,5.62 226.12,12.37 232.87,12.38 '  />
+<text  xml:space='preserve'  x='229.30' y='11.50' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >4</text>  
+<polyline fill='none'  stroke-width='0.70' stroke='rgb(0,0,0)' points='216.00,22.50 220.50,17.55 216.00,11.25 216.00,9.00 220.50,13.95 216.00,20.25 216.00,22.50 220.50,17.55 216.00,11.25 216.00,9.00 '   />
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='216.00' y1='22.50'  x2='221.40' y2='22.50'  />
+<circle cx='216.00' cy='22.50' r='3.5' fill='white' stroke='rgb(0,0,0)' /> 
+<text  xml:space='preserve'  x='215.80' y='25.00' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<line   stroke-width='.7'   stroke='rgb(0,0,0)' x1='216.00' y1='9.00'  x2='221.40' y2='9.00'  />
+<polygon fill='white' stroke='rgb(0,0,0)' points='219.38,5.63 212.63,5.62 212.62,12.37 219.37,12.38 '  />
+<text  xml:space='preserve'  x='215.80' y='11.50' stroke='rgb(0,0,0)' fill='rgb(0,0,0)'  font-size='6.5' stroke-width='0.001'  text-anchor='middle' >3</text>  
+<polyline fill='none' stroke='rgb(0,0,0)' points='220.50,15.75 247.50,15.75 '   />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 247.50 15.75   C 258.30 16.20 261.00 1.80 243.90 1.35 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 213.406  28.262  l  0.744  0.988 -1.489  1.976  3.239 -1.976 -3.239 -1.976  0.744  0.988 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 216.90 1.35   C 199.80 0.90 199.35 29.70 215.55 29.25 ' />
+<polyline fill='none' stroke='rgb(0,0,0)' points='215.55,29.25 229.05,29.25 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 226.906  28.262  l  0.744  0.988 -1.489  1.976  3.239 -1.976 -3.239 -1.976  0.744  0.988 '  />
+<polyline fill='none' stroke='rgb(0,0,0)' points='243.90,1.35 216.90,1.35 '   />
+<polyline fill='none' stroke='rgb(0,0,0)' points='229.05,29.25 242.55,29.25 '   />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 240.406  28.262  l  0.744  0.988 -1.489  1.976  3.239 -1.976 -3.239 -1.976  0.744  0.988 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 141.75 22.50   C 141.30 25.65 137.70 25.20 137.70 22.95 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 151.738  19.906  l -0.988  0.744 -1.976 -1.489  1.976  3.239  1.976 -3.239 -0.988  0.744 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 137.70 22.95   C 137.25 13.50 150.75 12.60 150.75 22.05 ' />
+<text   x='144.33' y='29.25'  font-size='7.5' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >3</text>  
+<text  x='0.00' y='52.00'   font-size='5' stroke-width='0.001'  >Geraldine Schuckelt, 2014, Riverside Dances</text>
+<text  xml:space='preserve'  x='270.00' y='52.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >4C/4C longwise set.</text>
+  </g> </svg>

@@ -1,0 +1,79 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<!--
+
+       BETELGEUSE
+       8x32 H                        
+       Robert A. Gregg                                                                        The Arches of MacGregor and other SCD                                                               
+       Dancedata ID:  14510 
+
+
+       SVG crib 1416  created by Keith Rose  11.05.23   11:08:16           Prog V 249 
+       keith@krose.plus.com
+-->
+<svg viewBox='-1 -1  272  73.73' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+<title>   BETELGEUSE    -    8x32 H                           </title >
+<g stroke='black' stroke-width='.4'  font-family='Helvetica'  fill='black' transform='translate(0, 18 )' >
+<rect  x='0.00' y='-18.00'  width='270' height='71.73' stroke ='none' fill='white' />
+<rect  x='0.00' y='-18.00'  width='270' height='18' fill='white' />
+<text  x='5.00' y='-5.00'   font-size='10' stroke-width='0.001'  font-weight='bold' >BETELGEUSE</text>
+<text  x='152.98' y='-5.00'   font-size='6.5' stroke-width='0.001'  text-anchor='middle' >                                                                 </text>
+<text  x='265.00' y='-5.00'  font-size='10' font-weight='bold' stroke-width='0.001' text-anchor='end' >8x32 H</text>
+<rect x='0' y='0' width='270' height='45' fill='white' />
+<text   x='9.86' y='26.10'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >X</text>  
+<text   x='16.55' y='27.90'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<text   x='50.66' y='26.10'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='56.75' y='27.90'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<path fill='none' stroke='rgb(0,0,0)'   d='M 67.50 0.00  L 67.50 45.00' />
+<circle cx='92.25' cy='12.6' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='83.25' cy='12.6' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='86.43' y1='15.78'  x2='83.25' y2='18.96'  />
+<circle cx='83.25' cy='30.59999' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='92.25' cy='30.60001' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='89.07' y1='27.42'  x2='92.25' y2='24.24'  />
+<circle cx='87.75' cy='3.60' r='1.69' fill='none'
+stroke='rgb(0,0,0)' />
+<circle cx='87.75' cy='3.60' r='0.51' fill='rgb(0,0,0)' stroke='rgb(0,0,0)' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 113.359  26.871  l  0.482  1.139 -1.924  1.556  3.621 -1.132 -2.663 -2.703  0.482  1.139 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 105.75 17.10   C 107.10 24.75 109.80 27.00 115.20 28.35 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 111.641  18.579  l -0.482 -1.139  1.924 -1.556 -3.621  1.132  2.663  2.703 -0.482 -1.139 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 119.25 28.35   C 117.90 20.70 115.20 18.45 109.80 17.10 ' />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 128.25 0.00  L 128.25 45.00' />
+<circle cx='153' cy='12.6' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='144' cy='12.6' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='149.82' y1='15.78'  x2='153.00' y2='18.96'  />
+<circle cx='144' cy='30.59999' r='4.50' fill='white'  stroke='rgb(0,0,0)' />
+<circle cx='153' cy='30.60001' r='4.50' fill='white' stroke='rgb(0,0,0)' />
+<line   stroke='rgb(0,0,0)' x1='147.18' y1='27.42'  x2='144.00' y2='24.24'  />
+<circle cx='148.50' cy='39.60' r='1.69' fill='none'
+stroke='rgb(0,0,0)' />
+<circle cx='148.50' cy='39.60' r='0.51' fill='rgb(0,0,0)' stroke='rgb(0,0,0)' />
+<path fill='none' stroke='rgb(0,0,0)'   d='M 186.75 0.00  L 186.75 45.00' />
+<text   x='194.66' y='26.10'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='200.75' y='27.90'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 212.318  21.565  l  0.172 -1.225  2.450 -0.345 -3.688 -0.893  0.893  3.688  0.172 -1.225 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 225.00 19.35   C 221.85 24.75 216.45 24.75 211.50 19.35 ' />
+<line   stroke='rgb(0,0,0)' x1='199.80' y1='14.40'  x2='205.20' y2='14.40'  />
+<line   stroke='rgb(0,0,0)' x1='205.20' y1='14.40'  x2='205.20' y2='19.80'  />
+<text   x='237.41' y='26.10'  font-size='10' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >T</text>  
+<text   x='243.50' y='27.90'  font-size='6.5' stroke-width='0.001' style='fill:rgb(0,0,0)' >R</text>  
+<line   stroke='rgb(0,0,0)' x1='233.55' y1='14.40'  x2='238.95' y2='14.40'  />
+<line   stroke='rgb(0,0,0)' x1='233.55' y1='14.40'  x2='233.55' y2='19.80'  />
+<text   x='27.33' y='29.25'  font-size='7.5' stroke-width='0.001'  font-weight='bold' style='fill:rgb(0,0,0)' >1</text>  
+<path fill='none'   style='stroke:rgb(0,0,0)'
+ d='M 24.75 23.85   c 0 -6.30 9.00 -6.30 9.00  0'  />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M  34.195  21.531  l -0.781  0.960 -2.276 -0.971  2.696  2.670  1.141 -3.618 -0.781  0.960 '  />
+<path fill='none'  style='stroke-dasharray: 3, 2;' stroke='rgb(0,0,0)'   d='M 42.75 0.00  L 42.75 45.00' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 171.380  20.261  l  0.962  0.778 -0.965  2.278  2.663 -2.703 -3.621 -1.132  0.962  0.778 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 166.50 28.35   C 167.85 22.50 170.55 20.70 173.70 20.70 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 175.120  25.189  l -0.962 -0.778  0.965 -2.278 -2.663  2.703  3.621  1.132 -0.962 -0.778 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 180.00 17.10   C 178.65 22.95 175.95 24.75 172.80 24.75 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 225.982  22.535  l -0.172  1.225 -2.450  0.345  3.688  0.893 -0.893 -3.688 -0.172  1.225 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 213.30 24.75   C 216.45 19.35 221.85 19.35 226.80 24.75 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 261.129  27.859  l -1.139  0.482 -1.556 -1.924  1.132  3.621  2.703 -2.663 -1.139  0.482 '  />
+<path  fill='none' stroke='rgb(0,0,0)' d='M 252.90 18.00   C 259.20 18.00 261.90 22.50 259.65 29.70 ' />
+<path  stroke-width='0.001' fill='rgb(0,0,0)' d='M 254.571  16.241  l  1.139 -0.482  1.556  1.924 -1.132 -3.621 -2.703  2.663  1.139 -0.482 '  />
+<path  fill='none'  style='stroke-dasharray: 2, 1.2;' stroke='rgb(0,0,0)' d='M 262.80 26.10   C 256.50 26.10 253.80 21.60 256.05 14.40 ' />
+<text  x='0.00' y='52.00'   font-size='5' stroke-width='0.001'  >Robert A. Gregg, The Arches of MacGregor and other SCD</text>
+<text  xml:space='preserve'  x='270.00' y='52.00'   font-size='5' stroke-width='0.001'   text-anchor='end' >3C/4C longwise set.</text>
+  </g> </svg>
