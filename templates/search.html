@@ -152,27 +152,34 @@
             <div class="card-header bg-dark text-white py-3">
                 <div class="d-flex justify-content-between align-items-center">
                     <h5 class="mb-0"><i class="fas fa-list me-2"></i>Результаты поиска</h5>
-                    {% if results and pagination %}
+                    {% if results and pagination and search_performed %}
                     <span class="badge bg-primary">{{ pagination.total }} найдено</span>
                     {% endif %}
                 </div>
             </div>
             
-            <div class="table-responsive">
-                <table class="table table-hover mb-0 table-compact fixed-columns">
-                    <thead class="table-dark">
-                        <tr>
-                            <th width="40" class="ps-2">ID</th>
-                            <th width="300">Название и автор</th>
-                            <th width="80">Тип</th>
-                            <th width="80">Формат</th>
-                            <th width="100">Тип сета</th>
-                            <th width="70">Размер</th>
-                            <th width="60" class="text-center">Материалы</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% if results %}
+            <div class="card-body">
+                {% if not search_performed %}
+                <div class="text-center py-5">
+                    <i class="fas fa-search fa-3x text-muted mb-3"></i>
+                    <h5 class="text-muted">Задайте параметры поиска</h5>
+                    <p class="text-muted mb-0">Используйте фильтры слева для поиска танцев и нажмите кнопку "Найти танцы"</p>
+                </div>
+                {% elif results %}
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0 table-compact fixed-columns">
+                        <thead class="table-dark">
+                            <tr>
+                                <th width="40" class="ps-2">ID</th>
+                                <th width="300">Название и автор</th>
+                                <th width="80">Тип</th>
+                                <th width="80">Формат</th>
+                                <th width="100">Тип сета</th>
+                                <th width="70">Размер</th>
+                                <th width="60" class="text-center">Материалы</th>
+                            </tr>
+                        </thead>
+                        <tbody>
                             {% for dance in results %}
                             <tr class="align-middle">
                                 <td class="ps-2 text-muted small">{{ dance.id }}</td>
@@ -278,30 +285,21 @@
                                 </td>
                             </tr>
                             {% endfor %}
-                        {% else %}
-                        <tr>
-                            <td colspan="7" class="text-center py-4">
-                                <div class="py-3">
-                                    {% if search_performed %}
-                                        <i class="fas fa-search fa-lg text-muted mb-2"></i>
-                                        <h6 class="text-muted mb-1">Танцы по заданным фильтрам не найдены</h6>
-                                        <p class="text-muted mb-0 small">Попробуйте изменить параметры поиска</p>
-                                    {% else %}
-                                        <i class="fas fa-filter fa-lg text-muted mb-2"></i>
-                                        <h6 class="text-muted mb-1">Задайте параметры поиска</h6>
-                                        <p class="text-muted mb-0 small">Используйте фильтры слева для поиска танцев</p>
-                                    {% endif %}
-                                </div>
-                            </td>
-                        </tr>
-                        {% endif %}
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <div class="text-center py-5">
+                    <i class="fas fa-search fa-3x text-muted mb-3"></i>
+                    <h5 class="text-muted">Танцы не найдены</h5>
+                    <p class="text-muted mb-0">Попробуйте изменить параметры поиска</p>
+                </div>
+                {% endif %}
             </div>
         </div>
 
         <!-- Пагинация -->
-        {% if results and pagination and pagination.pages > 1 %}
+        {% if results and pagination and pagination.pages > 1 and search_performed %}
         <div class="mt-4">
             <nav aria-label="Навигация по страницам">
                 <ul class="pagination justify-content-center pagination-sm">
@@ -616,19 +614,4 @@
     }
 }
 </style>
-
-<script>
-// Автоматическая отправка формы при изменении фильтров
-document.addEventListener('DOMContentLoaded', function() {
-    const autoSubmitElements = document.querySelectorAll('select[multiple], input[type="checkbox"]');
-    
-    autoSubmitElements.forEach(element => {
-        element.addEventListener('change', function() {
-            setTimeout(() => {
-                document.getElementById('searchForm').submit();
-            }, 300);
-        });
-    });
-});
-</script>
 {% endblock %}
