@@ -1719,6 +1719,78 @@ def get_form_data():
 
 @app.context_processor
 def utility_processor():
+    def build_pagination_url(page):
+        """Строит URL для пагинации с сохранением всех параметров фильтров"""
+        args = request.args.copy()
+        args['page'] = page
+        # Удаляем старую страницу если есть
+        if 'page' in args:
+            del args['page']
+        
+        # Строим URL с сохранением всех параметров
+        params = []
+        for key, values in args.lists():
+            if key == 'page':
+                continue
+            if isinstance(values, list):
+                for value in values:
+                    if value:  # Пропускаем пустые значения
+                        params.append(f"{key}={value}")
+            else:
+                if values:  # Пропускаем пустые значения
+                    params.append(f"{key}={values}")
+        
+        url = "/search"
+        if params:
+            url += "?" + "&".join(params) + f"&page={page}"
+        else:
+            url += f"?page={page}"
+        return url
+    
+    def get_dance_files(dance_id, dance_name):
+        """Получение списка файлов для танца (кроме изображений)"""
+        dance_path = get_dance_files_path(dance_id, dance_name)
+        files = []
+        
+        if os.path.exists(dance_path):
+            for item in os.listdir(dance_path):
+                item_path = os.path.join(dance_path, item)
+                
+                if item == 'images' or item.lower().endswith(('png', 'jpg', 'jpeg', 'gif', 'webp', 'svg')):
+                    continue
+                    
+                if os.path.isfile(item_path):
+                    files.append({
+                        'name': item,
+                        'size': os.path.getsize(item_path),
+                        'upload_time': os.path.getctime(item_path)
+                    })
+        
+        files.sort(key=lambda x: x['upload_time'], reverse=True)
+        return files
+    
+    def get_dance_images(dance_id, dance_name):
+        """Получение списка изображений для танца"""
+        images_folder = os.path.join(get_dance_files_path(dance_id, dance_name), 'images')
+        images = []
+        
+        if os.path.exists(images_folder):
+            for filename in os.listdir(images_folder):
+                if not filename.startswith('thumb_') and filename.lower().endswith(('png', 'jpg', 'jpeg', 'gif', 'webp', 'svg')):
+                    file_path = os.path.join(images_folder, filename)
+                    thumb_path = os.path.join(images_folder, f"thumb_{filename}")
+                    
+                    if os.path.isfile(file_path):
+                        images.append({
+                            'filename': filename,
+                            'thumbnail': f"thumb_{filename}" if os.path.exists(thumb_path) else filename,
+                            'size': os.path.getsize(file_path),
+                            'upload_time': os.path.getctime(file_path)
+                        })
+        
+        images.sort(key=lambda x: x['upload_time'], reverse=True)
+        return images
+    
     def format_datetime(timestamp, fmt='%d.%m.%Y %H:%M'):
         """Форматирование timestamp"""
         return datetime.fromtimestamp(timestamp).strftime(fmt)
@@ -1736,13 +1808,14 @@ def utility_processor():
         return has_any_description(dance)
     
     return {
+        'build_pagination_url': build_pagination_url,
         'get_dance_files': get_dance_files,
         'get_dance_images': get_dance_images,
         'has_images': has_images_processor,
         'format_datetime': format_datetime,
         'db_type': db_type,
         'has_dance_files': has_dance_files_processor,
-        'has_any_description': has_any_description_processor  # ДОБАВЛЕНО
+        'has_any_description': has_any_description_processor
     }
 
 #######################################################
