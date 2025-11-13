@@ -593,16 +593,18 @@ def render_search_results():
                     )
                 )
             
-            # Применяем числовые фильтры
+            # Применяем числовые фильтры - ИЗМЕНЕНО: точное совпадение вместо >=
             if filters['size_min']:
                 try:
-                    query = query.filter(Dance.size_id >= int(filters['size_min']))
+                    size_value = int(filters['size_min'])
+                    query = query.filter(Dance.size_id == size_value)
                 except (ValueError, TypeError):
                     pass
             
             if filters['count_min']:
                 try:
-                    query = query.filter(Dance.count_id >= int(filters['count_min']))
+                    count_value = int(filters['count_min'])
+                    query = query.filter(Dance.count_id == count_value)
                 except (ValueError, TypeError):
                     pass
             

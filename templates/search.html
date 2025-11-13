@@ -41,14 +41,14 @@
                         <h6 class="text-muted mb-3 border-bottom pb-2">Параметры танца</h6>
                         <div class="row g-2 mb-3">
                             <div class="col-6">
-                                <label class="form-label small">Тактов в танце</label>
-                                <input type="number" class="form-control form-control-sm" name="size_min" value="{{ filters.size_min }}" 
-                                       placeholder="Мин." min="0">
-                            </div>
-                            <div class="col-6">
                                 <label class="form-label small">Повторений</label>
                                 <input type="number" class="form-control form-control-sm" name="count_min" value="{{ filters.count_min }}" 
-                                       placeholder="Мин." min="0">
+                                       placeholder="Равно" min="0">
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label small">Тактов в танце</label>
+                                <input type="number" class="form-control form-control-sm" name="size_min" value="{{ filters.size_min }}" 
+                                       placeholder="Равно" min="0">
                             </div>
                         </div>
                         
@@ -99,10 +99,12 @@
                             <label class="form-label small">Танцующие пары</label>
                             <select class="form-select form-select-sm search-select" name="dance_couples" multiple size="5">
                                 {% for couple_value, couple_display in dance_couples %}
+                                {% if couple_value != '' %}
                                 <option value="{{ couple_value }}" 
                                         {% if couple_value in filters.dance_couples %}selected{% endif %}>
                                     {{ couple_display }}
                                 </option>
+                                {% endif %}
                                 {% endfor %}
                             </select>
                             <div class="form-text">Для выбора нескольких удерживайте Ctrl</div>
