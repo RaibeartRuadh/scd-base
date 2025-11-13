@@ -1,32 +1,16 @@
 {% extends "base.html" %}
-[file name]: index.html
-[file content begin]
+
 {% block content %}
 <div class="d-flex justify-content-between align-items-center mb-4">
-    <h3 class="mb-0">Все танцы</h3>
+    <h3 class="mb-0">
+        {% if request.args.get('search') %}
+            Результаты поиска: "{{ request.args.get('search') }}"
+        {% else %}
+            Все танцы
+        {% endif %}
+    </h3>
     
-    <!-- Форма быстрого поиска в центре -->
-    <form method="get" class="d-flex align-items-center mx-auto">
-        <div class="input-group" style="max-width: 400px;">
-            <input type="text" 
-                   class="form-control form-control-sm" 
-                   name="search" 
-                   value="{{ search }}" 
-                   placeholder="Быстрый поиск...">
-            <input type="hidden" name="per_page" value="{{ per_page }}">
-            <button type="submit" class="btn btn-outline-secondary btn-sm d-flex align-items-center justify-content-center" 
-                    style="border: 1px solid #ced4da; border-left: none; padding: 0.25rem 0.5rem;">
-                <img src="{{ url_for('static', filename='img/search.png') }}" alt="Поиск" style="width: 25px; height: 25px;">
-            </button>
-            {% if search %}
-            <a href="{{ url_for('index') }}" class="btn btn-outline-secondary btn-sm d-flex align-items-center justify-content-center ms-1"
-               style="padding: 0.25rem 0.5rem;">
-                Сбросить
-            </a>
-            {% endif %}
-        </div>
-    </form>
-    
+    <!-- Кнопка добавления танца справа -->
     <a href="{{ url_for('add_dance') }}" class="btn btn-primary btn-sm">
         Добавить танец
     </a>
@@ -46,11 +30,18 @@
                     <option value="100" {% if per_page==100 %}selected{% endif %}>100</option>
                 </select>
             </div>
-            <input type="hidden" name="search" value="{{ search }}">
+            <!-- Передаем параметр поиска если он есть -->
+            {% if request.args.get('search') %}
+            <input type="hidden" name="search" value="{{ request.args.get('search') }}">
+            {% endif %}
         </form>
     </div>
-    <div class="col-md-6">
-        <!-- Пустая колонка для балансировки -->
+    <div class="col-md-6 text-end">
+        {% if request.args.get('search') %}
+        <a href="{{ url_for('index') }}" class="btn btn-outline-secondary btn-sm">
+            Показать все танцы
+        </a>
+        {% endif %}
     </div>
 </div>
 
@@ -202,8 +193,10 @@
                 <tr>
                     <td colspan="8" class="text-center py-4">
                         <div class="py-3">
-                            {% if search %}
-                                <h6 class="text-muted mb-1">Танцы по запросу "{{ search }}" не найдены</h6>
+                            {% if request.args.get('search') %}
+                                <img src="{{ url_for('static', filename='img/search.png') }}" alt="Поиск" class="mb-2" style="width: 24px; height: 24px; opacity: 0.5;">
+                                <h6 class="text-muted mb-1">Танцы по запросу "{{ request.args.get('search') }}" не найдены</h6>
+                                <p class="text-muted mb-0 small"><a href="{{ url_for('index') }}" class="text-decoration-none">Показать все танцы</a></p>
                             {% else %}
                                 <img src="{{ url_for('static', filename='img/music.png') }}" alt="Музыка" class="mb-2" style="width: 24px; height: 24px; opacity: 0.5;">
                                 <h6 class="text-muted mb-1">Танцы не найдены</h6>
@@ -226,7 +219,7 @@
             <!-- Первая страница -->
             {% if dances.page > 1 %}
             <li class="page-item">
-                <a class="page-link" href="{{ url_for('index', page=1, per_page=per_page, search=search) }}" aria-label="First">
+                <a class="page-link" href="{{ url_for('index', page=1, per_page=per_page, search=request.args.get('search', '')) }}" aria-label="First">
                     <img src="{{ url_for('static', filename='img/double-arrow-left.png') }}" alt="Первая" style="width: 25px; height: 25px;">
                 </a>
             </li>
@@ -239,7 +232,7 @@
             <!-- Предыдущая страница -->
             {% if dances.has_prev %}
             <li class="page-item">
-                <a class="page-link" href="{{ url_for('index', page=dances.prev_num, per_page=per_page, search=search) }}" aria-label="Previous">
+                <a class="page-link" href="{{ url_for('index', page=dances.prev_num, per_page=per_page, search=request.args.get('search', '')) }}" aria-label="Previous">
                     <img src="{{ url_for('static', filename='img/arrow-left.png') }}" alt="Предыдущая" style="width: 25px; height: 25px;">
                 </a>
             </li>
@@ -254,7 +247,7 @@
                 {% for page_num in dances.iter_pages(left_edge=2, left_current=2, right_current=2, right_edge=2) %}
                     {% if page_num %}
                         <li class="page-item {% if page_num == dances.page %}active{% endif %}">
-                            <a class="page-link" href="{{ url_for('index', page=page_num, per_page=per_page, search=search) }}">{{ page_num }}</a>
+                            <a class="page-link" href="{{ url_for('index', page=page_num, per_page=per_page, search=request.args.get('search', '')) }}">{{ page_num }}</a>
                         </li>
                     {% else %}
                         <li class="page-item disabled"><span class="page-link">...</span></li>
@@ -265,7 +258,7 @@
             <!-- Следующая страница -->
             {% if dances.has_next %}
             <li class="page-item">
-                <a class="page-link" href="{{ url_for('index', page=dances.next_num, per_page=per_page, search=search) }}" aria-label="Next">
+                <a class="page-link" href="{{ url_for('index', page=dances.next_num, per_page=per_page, search=request.args.get('search', '')) }}" aria-label="Next">
                     <img src="{{ url_for('static', filename='img/arrow-right.png') }}" alt="Следующая" style="width: 25px; height: 25px;">
                 </a>
             </li>
@@ -278,7 +271,7 @@
             <!-- Последняя страница -->
             {% if dances.page < dances.pages %}
             <li class="page-item">
-                <a class="page-link" href="{{ url_for('index', page=dances.pages, per_page=per_page, search=search) }}" aria-label="Last">
+                <a class="page-link" href="{{ url_for('index', page=dances.pages, per_page=per_page, search=request.args.get('search', '')) }}" aria-label="Last">
                     <img src="{{ url_for('static', filename='img/double-arrow-right.png') }}" alt="Последняя" style="width: 25px; height: 25px;">
                 </a>
             </li>
@@ -295,10 +288,15 @@
 <!-- Информация о пагинации -->
 {% if dances %}
 <div class="text-muted text-center mt-3">
-    <small>Показано {{ dances.items|length }} из {{ dances.total }} танцев (страница {{ dances.page }} из {{ dances.pages }})</small>
+    <small>
+        Показано {{ dances.items|length }} из {{ dances.total }} танцев 
+        {% if request.args.get('search') %}
+            по запросу "{{ request.args.get('search') }}"
+        {% endif %}
+        (страница {{ dances.page }} из {{ dances.pages }})
+    </small>
 </div>
 {% endif %}
-
 
 <!-- JavaScript для управления чекбоксами, удалением и насыщенностью -->
 <script>
@@ -394,6 +392,30 @@ document.addEventListener('DOMContentLoaded', function() {
     if (savedSizeFontWeight) setSizeFontWeight(savedSizeFontWeight);
     if (savedSizeFontFamily) setSizeFontFamily(savedSizeFontFamily);
 });
+
+// Функция подтверждения удаления
+function confirmSingleDelete(danceId, danceName) {
+    if (confirm(`Вы уверены, что хотите удалить танец "${danceName}"?`)) {
+        fetch(`/dance/${danceId}/delete`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                location.reload();
+            } else {
+                alert('Ошибка при удалении танца: ' + data.error);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Ошибка при удалении танца');
+        });
+    }
+}
 </script>
 
 <style>
@@ -710,4 +732,3 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 </style>
 {% endblock %}
-[file content end]

@@ -90,85 +90,201 @@
             max-width: 1800px;
             margin: 0 auto;
         }
+        
+        /* Стили для поиска в навбаре */
+        .navbar-search-form {
+            max-width: 280px;
+            margin: 0 15px;
+        }
+        .navbar-search-input {
+            border-right: 0;
+            border-radius: 0.375rem 0 0 0.375rem;
+        }
+        .navbar-search-btn {
+            border-left: 0;
+            border-radius: 0 0.375rem 0.375rem 0;
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
+            background-color: #f8f9fa;
+            border-color: #ced4da;
+        }
+        .navbar-search-btn:hover {
+            background-color: #e9ecef;
+            border-color: #adb5bd;
+        }
+        .navbar-search-reset {
+            margin-left: 8px;
+            text-decoration: none;
+            color: #6c757d;
+            display: flex;
+            align-items: center;
+            padding: 0.375rem 0.5rem;
+            font-size: 0.875rem;
+            border: 1px solid #dee2e6;
+            border-radius: 0.375rem;
+            background-color: #f8f9fa;
+        }
+        .navbar-search-reset:hover {
+            color: #495057;
+            background-color: #e9ecef;
+            border-color: #adb5bd;
+        }
+        
+        /* Выравнивание элементов навбара */
+        .navbar-nav.with-search {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        @media (max-width: 1199.98px) {
+            .navbar-search-form {
+                max-width: 100%;
+                margin: 0 10px;
+            }
+        }
+        
+        @media (max-width: 991.98px) {
+            .navbar-search-form {
+                max-width: 100%;
+                margin: 10px 0;
+                order: 2;
+            }
+            .navbar-nav.with-search {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .navbar-search-reset {
+                margin-left: 0;
+                margin-top: 5px;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-black">
-    <div class="container-fluid wide-container">
-        <a class="navbar-brand" href="{{ url_for('index') }}">
-            <img src="{{ url_for('static', filename='img/ru.png') }}" alt="" style="height: 20px; margin-right: 5px;">
-            <img src="{{ url_for('static', filename='img/sct.png') }}" alt="" style="height: 20px; margin-right: 8px;">
-            RuScoDB
-            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="" style="height: 40px; margin-right: 8px;">
-        </a>
-        
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('index') }}">
-                        <img src="{{ url_for('static', filename='img/list.png') }}" alt="Список" class="nav-icon">
-                        Все танцы
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('advanced_search') }}">
-                        <img src="{{ url_for('static', filename='img/search.png') }}" alt="Расширенный поиск" class="nav-icon">
-                        Расширенный поиск
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('stats') }}">
-                        <img src="{{ url_for('static', filename='img/chart.png') }}" alt="Статистика" class="nav-icon">
-                        Статистика
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                        <img src="{{ url_for('static', filename='img/settings.png') }}" alt="Настройки" class="nav-icon">
-                        Справочники
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a class="dropdown-item" href="{{ url_for('manage_dance_types') }}">
-                                <img src="{{ url_for('static', filename='img/music.png') }}" alt="Типы танцев" class="nav-icon">
-                                Типы танцев
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="{{ url_for('manage_set_types') }}">
-                                <img src="{{ url_for('static', filename='img/grid.png') }}" alt="Типы сетов" class="nav-icon">
-                                Типы сетов
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="{{ url_for('manage_dance_formats') }}">
-                                <img src="{{ url_for('static', filename='img/ruler.png') }}" alt="Форматы сетов" class="nav-icon">
-                                Форматы сетов
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="{{ url_for('import_dance') }}">
-                                <img src="{{ url_for('static', filename='img/import.png') }}" alt="Импорт" class="nav-icon">
-                                Импорт танцев
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="{{ url_for('batch_import') }}">
-                                <img src="{{ url_for('static', filename='img/batch-import.png') }}" alt="Массовый импорт" class="nav-icon">
-                                Массовый импорт
-                            </a>
-                        </li>
-                        <li><hr class="dropdown-divider"></li>
-                    </ul>
-                </li>
-            </ul>
+        <div class="container-fluid wide-container">
+            <a class="navbar-brand" href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='img/ru.png') }}" alt="" style="height: 20px; margin-right: 5px;">
+                <img src="{{ url_for('static', filename='img/sct.png') }}" alt="" style="height: 20px; margin-right: 8px;">
+                RuScoDB
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="" style="height: 40px; margin-right: 8px;">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                    <!-- Форма поиска между пунктами меню -->
+                    <li class="nav-item d-none d-lg-flex align-items-right">
+                        <form method="get" action="{{ url_for('index') }}" class="navbar-search-form">
+                            <div class="input-group input-group-sm">
+                                <input type="text" 
+                                       class="form-control form-control-sm navbar-search-input" 
+                                       name="search" 
+                                       placeholder="Быстрый поиск танца..."
+                                       value="{{ request.args.get('search', '') }}"
+                                       aria-label="Быстрый поиск танца">
+                                <button type="submit" class="btn btn-outline-light btn-sm navbar-search-btn">
+                                    <img src="{{ url_for('static', filename='img/search.png') }}" alt="Поиск" style="width: 25px; height: 25px;">
+                                </button>
+                            </div>
+                        </form>
+                        {% if request.args.get('search') %}
+                        <a href="{{ url_for('index') }}" class="navbar-search-reset" title="Сбросить поиск">
+                            <small>Сбросить</small>
+                        </a>
+                        {% endif %}
+                    </li>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav with-search ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('index') }}">
+                            <img src="{{ url_for('static', filename='img/list.png') }}" alt="Список" class="nav-icon">
+                            Все танцы
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('advanced_search') }}">
+                            <img src="{{ url_for('static', filename='img/search.png') }}" alt="Расширенный поиск" class="nav-icon">
+                            Расширенный поиск
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('stats') }}">
+                            <img src="{{ url_for('static', filename='img/chart.png') }}" alt="Статистика" class="nav-icon">
+                            Статистика
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <img src="{{ url_for('static', filename='img/settings.png') }}" alt="Настройки" class="nav-icon">
+                            Справочники
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="{{ url_for('manage_dance_types') }}">
+                                    <img src="{{ url_for('static', filename='img/music.png') }}" alt="Типы танцев" class="nav-icon">
+                                    Типы танцев
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ url_for('manage_set_types') }}">
+                                    <img src="{{ url_for('static', filename='img/grid.png') }}" alt="Типы сетов" class="nav-icon">
+                                    Типы сетов
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ url_for('manage_dance_formats') }}">
+                                    <img src="{{ url_for('static', filename='img/ruler.png') }}" alt="Форматы сетов" class="nav-icon">
+                                    Форматы сетов
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ url_for('import_dance') }}">
+                                    <img src="{{ url_for('static', filename='img/import.png') }}" alt="Импорт" class="nav-icon">
+                                    Импорт танцев
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ url_for('batch_import') }}">
+                                    <img src="{{ url_for('static', filename='img/batch-import.png') }}" alt="Массовый импорт" class="nav-icon">
+                                    Массовый импорт
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Поиск для мобильных устройств -->
+                    <li class="nav-item d-lg-none">
+                        <div class="mt-2 mb-2">
+                            <form method="get" action="{{ url_for('index') }}" class="navbar-search-form">
+                                <div class="input-group input-group-sm">
+                                    <input type="text" 
+                                           class="form-control form-control-sm navbar-search-input" 
+                                           name="search" 
+                                           placeholder="Быстрый поиск танца..."
+                                           value="{{ request.args.get('search', '') }}"
+                                           aria-label="Быстрый поиск танца">
+                                    <button type="submit" class="btn btn-outline-light btn-sm navbar-search-btn">
+                                        <img src="{{ url_for('static', filename='img/search.png') }}" alt="Поиск" style="width: 25px; height: 25px;">
+                                    </button>
+                                </div>
+                            </form>
+                            {% if request.args.get('search') %}
+                            <div class="mt-2 text-center">
+                                <a href="{{ url_for('index') }}" class="navbar-search-reset">
+                                    <small>Сбросить поиск</small>
+                                </a>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
     <div class="container-fluid mt-4 wide-container">
         {% with messages = get_flashed_messages(with_categories=true) %}
@@ -256,6 +372,17 @@
             updateProgress(0, 'Готов к импорту');
             clearLog();
         }
+        
+        // Фокус на поле поиска при нажатии Ctrl+K
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                const searchInput = document.querySelector('.navbar-search-input');
+                if (searchInput) {
+                    searchInput.focus();
+                }
+            }
+        });
     </script>
 </body>
 </html>

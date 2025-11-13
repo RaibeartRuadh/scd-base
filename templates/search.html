@@ -14,6 +14,8 @@
             </div>
             <div class="card-body">
                 <form method="GET" action="{{ url_for('advanced_search') }}" id="searchForm">
+                    <input type="hidden" name="search_submitted" value="true">
+                    
                     <!-- Текстовый поиск -->
                     <div class="mb-4">
                         <h6 class="text-muted mb-3 border-bottom pb-2">Текстовый поиск</h6>
@@ -52,7 +54,7 @@
                         
                         <div class="mb-3">
                             <label class="form-label small">Тип танца</label>
-                            <select class="form-select form-select-sm" name="dance_types" multiple size="3">
+                            <select class="form-select form-select-sm search-select" name="dance_types" multiple size="5">
                                 {% for dance_type in dance_types %}
                                 <option value="{{ dance_type.id }}" 
                                         {% if dance_type.id|string in filters.dance_types %}selected{% endif %}>
@@ -60,11 +62,12 @@
                                 </option>
                                 {% endfor %}
                             </select>
+                            <div class="form-text">Для выбора нескольких удерживайте Ctrl</div>
                         </div>
                         
                         <div class="mb-3">
                             <label class="form-label small">Формат сета</label>
-                            <select class="form-select form-select-sm" name="dance_formats" multiple size="3">
+                            <select class="form-select form-select-sm search-select" name="dance_formats" multiple size="5">
                                 {% for dance_format in dance_formats %}
                                 <option value="{{ dance_format.id }}" 
                                         {% if dance_format.id|string in filters.dance_formats %}selected{% endif %}>
@@ -72,11 +75,12 @@
                                 </option>
                                 {% endfor %}
                             </select>
+                            <div class="form-text">Для выбора нескольких удерживайте Ctrl</div>
                         </div>
                         
                         <div class="mb-3">
                             <label class="form-label small">Тип сета</label>
-                            <select class="form-select form-select-sm" name="set_types" multiple size="3">
+                            <select class="form-select form-select-sm search-select" name="set_types" multiple size="5">
                                 {% for set_type in set_types %}
                                 <option value="{{ set_type.id }}" 
                                         {% if set_type.id|string in filters.set_types %}selected{% endif %}>
@@ -84,6 +88,7 @@
                                 </option>
                                 {% endfor %}
                             </select>
+                            <div class="form-text">Для выбора нескольких удерживайте Ctrl</div>
                         </div>
                     </div>
 
@@ -92,7 +97,7 @@
                         <h6 class="text-muted mb-3 border-bottom pb-2">Дополнительно</h6>
                         <div class="mb-3">
                             <label class="form-label small">Танцующие пары</label>
-                            <select class="form-select form-select-sm" name="dance_couples" multiple size="3">
+                            <select class="form-select form-select-sm search-select" name="dance_couples" multiple size="5">
                                 {% for couple_value, couple_display in dance_couples %}
                                 <option value="{{ couple_value }}" 
                                         {% if couple_value in filters.dance_couples %}selected{% endif %}>
@@ -100,6 +105,7 @@
                                 </option>
                                 {% endfor %}
                             </select>
+                            <div class="form-text">Для выбора нескольких удерживайте Ctrl</div>
                         </div>
                         
                         <div class="mb-3">
@@ -298,84 +304,84 @@
             </div>
         </div>
 
-<!-- Пагинация -->
-{% if results and pagination and pagination.pages > 1 and search_performed %}
-<div class="mt-4">
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center mb-2 pagination-sm">
-            <!-- Первая страница -->
-            {% if pagination.page > 1 %}
-            <li class="page-item">
-                <a class="page-link" href="{{ build_pagination_url(1) }}" aria-label="First">
-                    <img src="{{ url_for('static', filename='img/double-arrow-left.png') }}" alt="Первая" style="width: 25px; height: 25px;">
-                </a>
-            </li>
-            {% else %}
-            <li class="page-item disabled">
-                <span class="page-link"><img src="{{ url_for('static', filename='img/double-arrow-left.png') }}" alt="Первая" style="width: 25px; height: 25px; opacity: 0.3;"></span>
-            </li>
-            {% endif %}
-
-            <!-- Предыдущая страница -->
-            {% if pagination.has_prev %}
-            <li class="page-item">
-                <a class="page-link" href="{{ build_pagination_url(pagination.prev_num) }}" aria-label="Previous">
-                    <img src="{{ url_for('static', filename='img/arrow-left.png') }}" alt="Предыдущая" style="width: 25px; height: 25px;">
-                </a>
-            </li>
-            {% else %}
-            <li class="page-item disabled">
-                <span class="page-link"><img src="{{ url_for('static', filename='img/arrow-left.png') }}" alt="Предыдущая" style="width: 25px; height: 25px; opacity: 0.3;"></span>
-            </li>
-            {% endif %}
-
-            <!-- Номера страниц -->
-            {% if pagination.iter_pages %}
-                {% for page_num in pagination.iter_pages(left_edge=2, left_current=2, right_current=2, right_edge=2) %}
-                    {% if page_num %}
-                        <li class="page-item {% if page_num == pagination.page %}active{% endif %}">
-                            <a class="page-link" href="{{ build_pagination_url(page_num) }}">{{ page_num }}</a>
-                        </li>
+        <!-- Пагинация -->
+        {% if results and pagination and pagination.pages > 1 and search_performed %}
+        <div class="mt-4">
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center mb-2 pagination-sm">
+                    <!-- Первая страница -->
+                    {% if pagination.page > 1 %}
+                    <li class="page-item">
+                        <a class="page-link" href="{{ build_pagination_url(1) }}" aria-label="First">
+                            <img src="{{ url_for('static', filename='img/double-arrow-left.png') }}" alt="Первая" style="width: 25px; height: 25px;">
+                        </a>
+                    </li>
                     {% else %}
-                        <li class="page-item disabled"><span class="page-link">...</span></li>
+                    <li class="page-item disabled">
+                        <span class="page-link"><img src="{{ url_for('static', filename='img/double-arrow-left.png') }}" alt="Первая" style="width: 25px; height: 25px; opacity: 0.3;"></span>
+                    </li>
                     {% endif %}
-                {% endfor %}
-            {% endif %}
 
-            <!-- Следующая страница -->
-            {% if pagination.has_next %}
-            <li class="page-item">
-                <a class="page-link" href="{{ build_pagination_url(pagination.next_num) }}" aria-label="Next">
-                    <img src="{{ url_for('static', filename='img/arrow-right.png') }}" alt="Следующая" style="width: 25px; height: 25px;">
-                </a>
-            </li>
-            {% else %}
-            <li class="page-item disabled">
-                <span class="page-link"><img src="{{ url_for('static', filename='img/arrow-right.png') }}" alt="Следующая" style="width: 25px; height: 25px; opacity: 0.3;"></span>
-            </li>
-            {% endif %}
+                    <!-- Предыдущая страница -->
+                    {% if pagination.has_prev %}
+                    <li class="page-item">
+                        <a class="page-link" href="{{ build_pagination_url(pagination.prev_num) }}" aria-label="Previous">
+                            <img src="{{ url_for('static', filename='img/arrow-left.png') }}" alt="Предыдущая" style="width: 25px; height: 25px;">
+                        </a>
+                    </li>
+                    {% else %}
+                    <li class="page-item disabled">
+                        <span class="page-link"><img src="{{ url_for('static', filename='img/arrow-left.png') }}" alt="Предыдущая" style="width: 25px; height: 25px; opacity: 0.3;"></span>
+                    </li>
+                    {% endif %}
 
-            <!-- Последняя страница -->
-            {% if pagination.page < pagination.pages %}
-            <li class="page-item">
-                <a class="page-link" href="{{ build_pagination_url(pagination.pages) }}" aria-label="Last">
-                    <img src="{{ url_for('static', filename='img/double-arrow-right.png') }}" alt="Последняя" style="width: 25px; height: 25px;">
-                </a>
-            </li>
-            {% else %}
-            <li class="page-item disabled">
-                <span class="page-link"><img src="{{ url_for('static', filename='img/double-arrow-right.png') }}" alt="Последняя" style="width: 25px; height: 25px; opacity: 0.3;"></span>
-            </li>
-            {% endif %}
-        </ul>
-    </nav>
-    
-    <!-- Информация о пагинации -->
-    <div class="text-muted text-center mt-3">
-        <small>Показано {{ results|length }} из {{ pagination.total }} танцев (страница {{ pagination.page }} из {{ pagination.pages }})</small>
-    </div>
-</div>
-{% endif %}
+                    <!-- Номера страниц -->
+                    {% if pagination.iter_pages %}
+                        {% for page_num in pagination.iter_pages(left_edge=2, left_current=2, right_current=2, right_edge=2) %}
+                            {% if page_num %}
+                                <li class="page-item {% if page_num == pagination.page %}active{% endif %}">
+                                    <a class="page-link" href="{{ build_pagination_url(page_num) }}">{{ page_num }}</a>
+                                </li>
+                            {% else %}
+                                <li class="page-item disabled"><span class="page-link">...</span></li>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+
+                    <!-- Следующая страница -->
+                    {% if pagination.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="{{ build_pagination_url(pagination.next_num) }}" aria-label="Next">
+                            <img src="{{ url_for('static', filename='img/arrow-right.png') }}" alt="Следующая" style="width: 25px; height: 25px;">
+                        </a>
+                    </li>
+                    {% else %}
+                    <li class="page-item disabled">
+                        <span class="page-link"><img src="{{ url_for('static', filename='img/arrow-right.png') }}" alt="Следующая" style="width: 25px; height: 25px; opacity: 0.3;"></span>
+                    </li>
+                    {% endif %}
+
+                    <!-- Последняя страница -->
+                    {% if pagination.page < pagination.pages %}
+                    <li class="page-item">
+                        <a class="page-link" href="{{ build_pagination_url(pagination.pages) }}" aria-label="Last">
+                            <img src="{{ url_for('static', filename='img/double-arrow-right.png') }}" alt="Последняя" style="width: 25px; height: 25px;">
+                        </a>
+                    </li>
+                    {% else %}
+                    <li class="page-item disabled">
+                        <span class="page-link"><img src="{{ url_for('static', filename='img/double-arrow-right.png') }}" alt="Последняя" style="width: 25px; height: 25px; opacity: 0.3;"></span>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+            
+            <!-- Информация о пагинации -->
+            <div class="text-muted text-center mt-3">
+                <small>Показано {{ results|length }} из {{ pagination.total }} танцев (страница {{ pagination.page }} из {{ pagination.pages }})</small>
+            </div>
+        </div>
+        {% endif %}
     </div>
 </div>
 
@@ -453,6 +459,28 @@
     min-height: 32px;
     justify-content: center;
     flex-direction: column;
+}
+
+/* ===== СТИЛИ ДЛЯ УВЕЛИЧЕННЫХ SELECT-ЭЛЕМЕНТОВ ===== */
+.search-select {
+    min-height: 120px !important;
+    resize: vertical;
+}
+
+.search-select option {
+    padding: 8px 10px;
+    border-bottom: 1px solid #f8f9fa;
+    font-size: 0.9rem;
+}
+
+.search-select option:hover {
+    background-color: #e9ecef;
+}
+
+.search-select option:checked {
+    background-color: #0d6efd !important;
+    color: white !important;
+    font-weight: 500;
 }
 
 /* ===== СТИЛИ ДЛЯ ИКОНОК МАТЕРИАЛОВ ===== */
@@ -632,6 +660,11 @@
         width: 12px !important;
         height: 12px !important;
     }
+    
+    .search-select {
+        min-height: 100px !important;
+        font-size: 0.85rem;
+    }
 }
 
 @media (max-width: 767.98px) {
@@ -639,9 +672,37 @@
         padding: 1rem;
     }
     
-    .form-select[multiple] {
-        min-height: 60px;
+    .search-select {
+        min-height: 80px !important;
+    }
+    
+    .search-select option {
+        padding: 6px 8px;
+        font-size: 0.8rem;
     }
 }
 </style>
+
+<script>
+// Скрипт для улучшения UX множественного выбора
+document.addEventListener('DOMContentLoaded', function() {
+    // Добавляем подсказки для множественного выбора
+    const selectElements = document.querySelectorAll('.search-select');
+    selectElements.forEach(select => {
+        // Показываем количество выбранных элементов
+        function updateSelectionCount() {
+            const selectedCount = Array.from(select.selectedOptions).length;
+            const formText = select.parentElement.querySelector('.form-text');
+            if (formText && selectedCount > 0) {
+                formText.textContent = `Выбрано: ${selectedCount} (удерживайте Ctrl для множественного выбора)`;
+            } else if (formText) {
+                formText.textContent = 'Для выбора нескольких удерживайте Ctrl';
+            }
+        }
+        
+        select.addEventListener('change', updateSelectionCount);
+        updateSelectionCount(); // Инициализация при загрузке
+    });
+});
+</script>
 {% endblock %}

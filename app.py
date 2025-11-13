@@ -537,7 +537,6 @@ def search():
 def advanced_search():
     """Алиас для обратной совместимости"""
     return render_search_results()
-
 def render_search_results():
     """Рендеринг результатов поиска с фильтрами"""
     # Получаем параметры фильтров из GET-запроса
@@ -565,8 +564,6 @@ def render_search_results():
         per_page = 25
     
     # Переменная для определения, был ли выполнен поиск
-    # ИЗМЕНЕНИЕ: поиск считается выполненным только если есть хотя бы один активный фильтр
-    # или если пользователь явно нажал кнопку поиска (определяем по наличию параметра search_submitted)
     search_performed = any(value for key, value in filters.items() if value) or request.args.get('search_submitted') == 'true'
     
     # Строим запрос
@@ -574,7 +571,7 @@ def render_search_results():
     total_count = 0
     pagination = None
     
-    # ИЗМЕНЕНИЕ: выполняем поиск ТОЛЬКО если есть активные фильтры или явный запрос
+    # Выполняем поиск ТОЛЬКО если есть активные фильтры или явный запрос
     if search_performed:
         try:
             query = Dance.query
@@ -609,18 +606,41 @@ def render_search_results():
                 except (ValueError, TypeError):
                     pass
             
-            # Применяем фильтры по категориям
+            # Применяем фильтры по категориям с преобразованием типов
             if filters['dance_types']:
-                query = query.filter(Dance.dance_type_id.in_([int(x) for x in filters['dance_types']]))
+                dance_type_ids = []
+                for type_id in filters['dance_types']:
+                    try:
+                        dance_type_ids.append(int(type_id))
+                    except (ValueError, TypeError):
+                        continue
+                if dance_type_ids:
+                    query = query.filter(Dance.dance_type_id.in_(dance_type_ids))
             
             if filters['dance_formats']:
-                query = query.filter(Dance.dance_format_id.in_([int(x) for x in filters['dance_formats']]))
+                dance_format_ids = []
+                for format_id in filters['dance_formats']:
+                    try:
+                        dance_format_ids.append(int(format_id))
+                    except (ValueError, TypeError):
+                        continue
+                if dance_format_ids:
+                    query = query.filter(Dance.dance_format_id.in_(dance_format_ids))
             
             if filters['set_types']:
-                query = query.filter(Dance.set_type_id.in_([int(x) for x in filters['set_types']]))
+                set_type_ids = []
+                for type_id in filters['set_types']:
+                    try:
+                        set_type_ids.append(int(type_id))
+                    except (ValueError, TypeError):
+                        continue
+                if set_type_ids:
+                    query = query.filter(Dance.set_type_id.in_(set_type_ids))
             
             if filters['dance_couples']:
-                query = query.filter(Dance.dance_couple.in_(filters['dance_couples']))
+                valid_couples = [c for c in filters['dance_couples'] if c and c.strip()]
+                if valid_couples:
+                    query = query.filter(Dance.dance_couple.in_(valid_couples))
             
             # Фильтр по наличию описания
             if filters.get('has_description') == 'on':
@@ -1512,7 +1532,9 @@ def add_dance():
                 description=request.form.get('description', '').strip(),
                 description2=request.form.get('description2', '').strip(),
                 published=request.form.get('published', '').strip(),
-                note=request.form.get('note', '').strip()
+                note=request.form.get('note', '').strip(),
+                # ДОБАВЛЕНО: поле source_url
+                source_url=request.form.get('source_url', '').strip()
             )
             
             db.session.add(dance)
@@ -1567,6 +1589,8 @@ def edit_dance(dance_id):
             dance.description2 = request.form.get('description2', '').strip()
             dance.published = request.form.get('published', '').strip()
             dance.note = request.form.get('note', '').strip()
+            # ДОБАВЛЕНО: поле source_url
+            dance.source_url = request.form.get('source_url', '').strip()
             
             db.session.commit()
             flash('Танец успешно обновлен!', 'success')

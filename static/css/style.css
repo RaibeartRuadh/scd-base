@@ -730,3 +730,36 @@
     justify-content: center;
     flex-direction: column;
 }
+/* ===== СТИЛИ ДЛЯ УВЕЛИЧЕННЫХ SELECT-ЭЛЕМЕНТОВ ===== */
+.form-select[multiple] {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-select[multiple] option {
+    padding: 8px 10px;
+    border-bottom: 1px solid #f8f9fa;
+    font-size: 0.9rem;
+}
+
+.form-select[multiple] option:hover {
+    background-color: #e9ecef;
+}
+
+.form-select[multiple] option:checked {
+    background-color: #0d6efd;
+    color: white;
+    font-weight: 500;
+}
+
+/* Улучшение отображения на мобильных устройствах */
+@media (max-width: 767.98px) {
+    .form-select[multiple] {
+        min-height: 100px;
+        font-size: 0.85rem;
+    }
+    
+    .form-select[multiple] option {
+        padding: 6px 8px;
+    }
+}

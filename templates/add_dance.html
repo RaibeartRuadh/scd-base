@@ -142,6 +142,19 @@ Bars 9-16: Первая и третья пары идут на променад.
                         </div>
                     </div>
 
+                    <!-- ДОБАВЛЕНО: Поле Источник -->
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+                            <label for="source_url" class="form-label">Источник (URL)</label>
+                            <input type="url" class="form-control" id="source_url" name="source_url" 
+                                   placeholder="https://example.com/dance-source"
+                                   value="{{ request.form.get('source_url', '') }}">
+                            <div class="form-text">
+                                Ссылка на оригинальный источник танца (опционально)
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="mb-3">
                         <label for="published" class="form-label">Публикация</label>
                         <input type="text" class="form-control" id="published" name="published" 
