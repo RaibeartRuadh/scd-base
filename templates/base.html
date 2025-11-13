@@ -219,9 +219,16 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                             <img src="{{ url_for('static', filename='img/settings.png') }}" alt="Настройки" class="nav-icon">
-                            Справочники
+                            Настройки
                         </a>
                         <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="{{ url_for('add_dance') }}">
+                                    <img src="{{ url_for('static', filename='img/add_dance.png') }}" alt="Добавить танец" class="nav-icon">
+                                    Добавить танец
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
                             <li>
                                 <a class="dropdown-item" href="{{ url_for('manage_dance_types') }}">
                                     <img src="{{ url_for('static', filename='img/music.png') }}" alt="Типы танцев" class="nav-icon">
@@ -240,6 +247,7 @@
                                     Форматы сетов
                                 </a>
                             </li>
+                            <li><hr class="dropdown-divider"></li>
                             <li>
                                 <a class="dropdown-item" href="{{ url_for('import_dance') }}">
                                     <img src="{{ url_for('static', filename='img/import.png') }}" alt="Импорт" class="nav-icon">
@@ -252,7 +260,6 @@
                                     Массовый импорт
                                 </a>
                             </li>
-                            <li><hr class="dropdown-divider"></li>
                         </ul>
                     </li>
                     

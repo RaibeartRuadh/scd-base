@@ -1,5 +1,6 @@
 {% extends "base.html" %}
-
+[file name]: index.html
+[file content begin]
 {% block content %}
 <div class="d-flex justify-content-between align-items-center mb-4">
     <h3 class="mb-0">
@@ -10,10 +11,10 @@
         {% endif %}
     </h3>
     
-    <!-- Кнопка добавления танца справа -->
+   <!-- Кнопка добавления танца справа 
     <a href="{{ url_for('add_dance') }}" class="btn btn-primary btn-sm">
         Добавить танец
-    </a>
+    </a> -->
 </div>
 
 <!-- Фильтры -->
@@ -53,6 +54,7 @@
                 <tr>
                     <th width="60" class="text-center">ID</th>
                     <th width="280">Название</th>
+                    <th width="180">Автор</th>
                     <th width="120">Тип</th>
                     <th width="130">Формат сета</th>
                     <th width="130">Тип сета</th>
@@ -74,6 +76,16 @@
                                title="{{ dance.name }}">
                                 {{ dance.name }}
                             </a>
+                        </td>
+                        <!-- Автор танца -->
+                        <td>
+                            {% if dance.author %}
+                                <span class="dance-author text-truncate d-block" title="{{ dance.author }}">
+                                    {{ dance.author }}
+                                </span>
+                            {% else %}
+                                <span class="text-muted">-</span>
+                            {% endif %}
                         </td>
                         <!-- Тип танца -->
                         <td>
@@ -191,7 +203,7 @@
                     {% endfor %}
                 {% else %}
                 <tr>
-                    <td colspan="8" class="text-center py-4">
+                    <td colspan="9" class="text-center py-4">
                         <div class="py-3">
                             {% if request.args.get('search') %}
                                 <img src="{{ url_for('static', filename='img/search.png') }}" alt="Поиск" class="mb-2" style="width: 24px; height: 24px; opacity: 0.5;">
@@ -442,16 +454,16 @@ function confirmSingleDelete(danceId, danceName) {
 
 .table-compact.fixed-columns th:nth-child(3),
 .table-compact.fixed-columns td:nth-child(3) {
-    width: 120px;
-    min-width: 120px;
-    max-width: 120px;
+    width: 180px;
+    min-width: 180px;
+    max-width: 180px;
 }
 
 .table-compact.fixed-columns th:nth-child(4),
 .table-compact.fixed-columns td:nth-child(4) {
-    width: 130px;
-    min-width: 130px;
-    max-width: 130px;
+    width: 120px;
+    min-width: 120px;
+    max-width: 120px;
 }
 
 .table-compact.fixed-columns th:nth-child(5),
@@ -463,20 +475,27 @@ function confirmSingleDelete(danceId, danceName) {
 
 .table-compact.fixed-columns th:nth-child(6),
 .table-compact.fixed-columns td:nth-child(6) {
+    width: 130px;
+    min-width: 130px;
+    max-width: 130px;
+}
+
+.table-compact.fixed-columns th:nth-child(7),
+.table-compact.fixed-columns td:nth-child(7) {
     width: 100px;
     min-width: 100px;
     max-width: 100px;
 }
 
-.table-compact.fixed-columns th:nth-child(7),
-.table-compact.fixed-columns td:nth-child(7) {
+.table-compact.fixed-columns th:nth-child(8),
+.table-compact.fixed-columns td:nth-child(8) {
     width: 90px;
     min-width: 90px;
     max-width: 90px;
 }
 
-.table-compact.fixed-columns th:nth-child(8),
-.table-compact.fixed-columns td:nth-child(8) {
+.table-compact.fixed-columns th:nth-child(9),
+.table-compact.fixed-columns td:nth-child(9) {
     width: 140px;
     min-width: 140px;
     max-width: 140px;
@@ -487,6 +506,13 @@ function confirmSingleDelete(danceId, danceName) {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+/* ===== СТИЛИ ДЛЯ АВТОРА ТАНЦА ===== */
+.dance-author {
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-weight: 500;
 }
 
 /* ===== СТИЛИ ДЛЯ ИКОНОК МАТЕРИАЛОВ И ДЕЙСТВИЙ ===== */
@@ -704,6 +730,10 @@ function confirmSingleDelete(danceId, danceName) {
         font-size: 0.8rem;
     }
     
+    .dance-author {
+        font-size: 0.7rem;
+    }
+    
     .badge-type {
         font-size: 0.65rem;
         padding: 0.15rem 0.3rem;
@@ -732,3 +762,4 @@ function confirmSingleDelete(danceId, danceName) {
 }
 </style>
 {% endblock %}
+[file content end]
